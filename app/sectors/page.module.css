@@ -1,0 +1,12 @@
+.sectors section{
+    padding: 80px;
+}
+@media (max-width: 768px) {
+    .sectors section{
+        padding: 20px;
+    }
+    .sectors h1{
+        font-size: 35px;
+        }
+    
+}

@@ -1,0 +1,42 @@
+.expert{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.expert .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 1191px) {
+    .expert .content img{
+        display: none;
+    }
+ 
+    .expert .content{
+        justify-content: center;
+        text-align: center;
+    }
+    .expert h2{
+        text-align: center;
+    }
+    
+}
+@media (max-width:800px) {
+    .expert{
+        padding: 50px 20px !important;
+    }
+    .expert h2{
+        font-size: 30px !important;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px
+    }
+    .content{
+        font-size: 14px !important;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 19.6px;  
+    }
+}

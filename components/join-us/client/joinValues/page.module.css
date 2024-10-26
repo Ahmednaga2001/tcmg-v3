@@ -1,0 +1,132 @@
+.values {
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.292);
+}
+.values .topContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.whyChooseContent p {
+  padding-top: 60px;
+}
+.accordionParent {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  gap: 20px;
+}
+.accordionItemHeader > div:first-child {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.accordionItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+.accordionItem {
+  background-color: #fff;
+  border-radius: 25px;
+  color: #000;
+  width: 18rem;
+}
+.accordionContent {
+  max-height: 0;
+  font-size: 16px;
+  transition: max-height 1s ease-out;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.accordionContent.open {
+  max-height: 1000px;
+}
+.accordionContent p {
+  padding: 10px;
+  text-align: center;
+}
+.bottomIcon {
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.accordionArrowIcon {
+  transition: opacity 0.4s;
+  cursor: pointer;
+}
+.accordionArrowIcon.hide {
+  opacity: 0;
+}
+.accordionItem span {
+  font-weight: bold;
+}
+
+@media (max-width: 1191px) {
+
+  .values .topContent {
+    align-items: center;
+    text-align: center;
+  }
+  .accordionContent{
+      /* height: 400px; */
+  }
+  .accordionParent{
+    flex-wrap: wrap;
+  }
+  .accordionItem{
+    width: 15rem;
+  }
+  .accordionContent{
+    height: 450px;
+  }
+}
+@media (max-width: 768px) {
+
+  .accordionContent{
+      height: auto;
+  }
+  .values .topContent{
+    gap: 20px;
+  }
+  .values .topContent h2{
+    width: 100%;
+    text-align: right;
+  }
+  .accordionParent {
+    padding-top: 45px;
+  }
+  .accordionItem {
+    width: 15rem;
+  }
+  .accordionContent{
+    height: 500px;
+  }
+  .accordionItemHeader > div:first-child {
+    gap: 8px;
+  }
+}
+@media (max-width:620px) {
+.accordionItem{
+  width: 10rem;
+}  
+.accordionContent{
+  height: 700px;
+
+}
+}
+@media (max-width:380px) {
+  .accordionContent{
+    height: auto;
+  }
+}

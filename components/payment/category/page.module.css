@@ -1,0 +1,52 @@
+.majors{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    justify-content: center;
+}
+.majorCard{
+    background:linear-gradient(#1B2340,#0E152C);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    gap: 5px;
+    border-radius: 12px;
+
+}
+.majorCard span:first-child{
+    font-weight: bold;
+    display: block;
+}
+.majorCard p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+.majorCard p span{
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+.majorCard .btn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 1191px) {
+    .majors{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .majors{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

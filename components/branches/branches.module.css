@@ -1,0 +1,177 @@
+/*---------------------------------------------------------------------------------*/
+
+.locations h2 {
+  text-align: center;
+}
+
+.egyLocations .parent {
+  padding-top: 50px;
+}
+
+.egyLocations .parent {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+.parentLocations {
+  background: linear-gradient(#1b2340, #0e152c);
+  border: 1px solid #ffffff74;
+  border-left: none;
+  border-right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0 80px 80px 0;
+  padding: 0 20px;
+  height: 475px;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+.contactInformation {
+  background-image: url("/assets/images/branches/pattern2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contactInformation h2 {
+  text-align: start;
+}
+
+.contactInformation p {
+  padding: 50px 0;
+  font-size: 24px;
+}
+
+/*---------------------------------------------------------------------------------*/
+.contactNumbers h2 {
+  text-align: center;
+}
+
+.contactNumbers .parentLocations {
+  height: 475px;
+}
+
+.contactNumbers .egyLocations {
+  width: 70%;
+  margin: auto;
+}
+
+.contactNumbers .locationInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.locationInfo:not(:last-child) {
+  border-bottom: 3px dashed rgba(128, 128, 128, 0.6);
+}
+.br{
+  display: none;
+}
+
+/*---------------------------------------------------------------------------------*/
+
+
+@media (max-width: 1191px) {
+
+  .egyLocations .parent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .locations .parentLocations {
+    border-radius: 80px;
+  }
+
+  .locations .cardImg img {
+    display: flex;
+    margin: auto;
+  }
+
+  .contactNumbers .parentLocations {
+    width: 70%;
+    margin: auto;
+    border-radius: 50px;
+  }
+
+  .contactNumbers .cardImg {
+    width: 80%;
+    margin: auto;
+  }
+
+  .contactInformation p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .contactInformation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+}
+
+@media (max-width: 800px) {
+  .contactNumbers {
+   display: none;
+  }
+  .contactNumbers {
+    position: relative;
+    background-image: url("/assets/images/branches/cairo.png");
+    background-size: cover;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+  }
+  
+  .contactNumbers::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(27, 35, 64, 0.30) 36.8%, rgba(14, 21, 44, 0.55) 130%);
+    backdrop-filter: blur(10px); /* Example value, adjust as needed */
+    z-index: 1; /* Ensure it's above the background image */
+  }
+  
+  
+  .contactInformation {
+    background-image: none;
+    background-color: #1b2340;
+  }
+  .contactInformation h2{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44.8px;
+  }
+  .contactInformation p{
+    text-align: start;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.6px;
+    padding: 16px 0;
+  }
+  .br{
+    display: block;
+  }
+
+
+}

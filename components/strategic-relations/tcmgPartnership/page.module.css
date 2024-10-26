@@ -1,0 +1,59 @@
+ 
+  .tcmgPartnership {
+    /* min-height: 70vh; */
+      background-image: url(/assets/images/strategicrelations/pattern.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .tcmgPartnership div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    width: 70%;
+  }
+.tcmgPartnership a{
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 20px;
+}
+  @media (max-width: 1191px) {
+    .tcmgPartnership div{
+        width: 100%;
+        align-items: center;
+        text-align: center;
+      }
+    
+  }
+  @media (max-width:800px){
+    .tcmgPartnership{
+      padding: 60px 20px !important;
+    }
+    .tcmgPartnership h2{
+      text-align: start;
+      padding-bottom: 20px;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%;
+    }
+    .tcmgPartnership p{
+      text-align: start;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16.8px;
+    }
+    .tcmgPartnership a{
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 16.8px;
+      text-decoration-line: underline;
+    }
+    .tcmgPartnership div {
+      align-items: start;
+      gap: 10px;
+    }
+    
+  }

@@ -1,0 +1,108 @@
+.legalSupport {
+  /* min-height: 100vh; */
+}
+.legalSupport h2,
+.legalSupport p {
+  text-align: center;
+}
+.legalSupport .heading p{
+  font-size: 16px;
+}
+/*-----------------------------------------------------------------*/
+.legalSupport p {
+  padding-top: 20px;
+}
+.legalSupport .parent {
+  padding-top: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.legalSupport .card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 22rem; /* The initial size of the card */
+  flex-grow: 1;
+  height: 400px;
+  margin: 10px;
+}
+.legalSupport .topCard {
+  min-height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  background-color: #1b2340;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.legalSupport .card span {
+  padding: 20px;
+  font-weight: 900;
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+ @media (max-width: 1191px) {
+  .parent {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+ }
+@media (max-width: 800px) {
+  .legalSupport {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+  .legalSupport h2 {
+    font-size: 28px;
+  }
+  .legalSupport p {
+    padding-top: 20px;
+    font-size: 20px;
+  }
+  .legalSupport .card span {
+    font-size: 18px;
+  }
+  .legalSupport .card {
+    width: 70%;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .legalSupport {
+    margin: 40px 0px;
+  }
+  .legalSupport h2 {
+    font-size: 24px;
+  }
+  .legalSupport p {
+    padding-top: 20px;
+    font-size: 12px;
+  }
+  .legalSupport .card {
+    width: 100%;
+  }
+  .legalSupport .card {
+    align-items: center;
+    flex-basis: 20rem;
+  }
+  .legalSupport .topCard {
+    width: 70%;
+    min-height: 70%;
+  }
+  .legalSupport .topCard img{
+    width: 70px;
+    height: 80px;
+  }
+  .legalSupport .parent {
+    padding-top: 100px;
+  }
+  .legalSupport .card span {
+    font-size: 16px;
+  }
+}

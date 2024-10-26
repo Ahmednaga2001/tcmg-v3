@@ -1,0 +1,30 @@
+.aboutPage section {
+  padding: 80px;
+}
+@media (max-width: 1191px) {
+  .aboutPage h1,
+  .aboutPage h2 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* .aboutPage h1{
+    font-size: 25px;
+    width: 100%;
+    text-align: right;
+  } */
+  .aboutPage p {
+    font-size: 16px;
+    text-align: right;
+  }
+  .aboutPage section {
+    padding: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .aboutPage h1,
+  .aboutPage h2 {
+    font-size: 24px;
+  }
+}

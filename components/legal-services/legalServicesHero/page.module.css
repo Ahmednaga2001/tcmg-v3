@@ -1,0 +1,40 @@
+.hero {
+  background-image: url(/assets/images/Pattern.png);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  margin-top: 100px
+}
+.hero .content {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  padding: 70px 0px;
+}
+@media (max-width: 1191px) {
+  .hero .content {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+  
+}
+@media (max-width : 800px) {
+  .hero{
+    margin-top: 95px;
+  }
+  
+}
+@media (max-width: 768px) {
+  .hero p{
+      font-size: 16px;
+      text-align: right; 
+  }
+  .hero .content h1{
+    text-align: right;
+  }
+  
+}

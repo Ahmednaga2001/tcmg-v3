@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    margin-top: 100px;
+}
+
+
+
+.content {
+    width: 70%;
+    padding: 80px;
+}
+
+
+
+
+
+@media (max-width: 1191px) {
+    .content{
+        width: 60%;
+    }
+    .content h2{
+        font-size: 35px;
+    }
+}
+@media (max-width : 800px) {
+    .container{
+        margin-top: 95px;
+    }
+    
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .content {
+        padding: 20px;
+        width: 100%;
+    }
+    .container{
+        text-align: center;
+    }
+}

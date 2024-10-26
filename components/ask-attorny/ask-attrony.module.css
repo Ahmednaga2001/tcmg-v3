@@ -1,0 +1,374 @@
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+.page section {
+  padding: 80px;
+}
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(#0e152ce4, #0e152ce4),
+    url(/assets/images/askattorny/Pattern.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 100px;
+}
+@media (max-width : 800px) {
+  .hero{
+    margin-top: 95px;
+  }
+  
+}
+/* ask-attrony.module.css */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background: #0d152cec;
+  z-index: 1000;
+  transition: opacity 0.3s;
+}
+.popupContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.popup.hidden {
+  opacity: 0;
+  visibility: hidden; 
+  pointer-events: none; 
+}
+
+.popup p {
+  width: 100%;
+  text-align: center;
+}
+
+.popup button {
+  color: #fff !important;
+}
+
+@media (max-width: 1191px) {
+  .page h1,
+  .page h2 {
+    font-size: 35px;
+  }
+  .hero {
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .page section {
+    padding: 20px;
+  }
+  .connect p,
+  .about p,
+  .ask p,
+  .whyChoose p,
+  .accordionQuestions p,
+  .careerJourney p,
+  .popup p {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+/*-------------------------------------------------------------------------*/
+.connect {
+  min-height: 100vh;
+  padding: 80px 0 !important;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.connect .Img {
+  background-color: var(--main);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 40px;
+}
+.connect .content {
+  margin-right: 450px;
+  height: 100%;
+  background-color: #fff;
+  padding: 30px 50px;
+}
+@media (max-width: 1191px) {
+  .connect .Img {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-20px);
+    display: flex;
+    justify-content: center;
+  }
+  .connect .content {
+    margin-right: 0;
+    padding: 100px;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .connect .content {
+    padding: 20px;
+    margin-right: 0;
+  }
+}
+@media (max-width: 400px) {
+  .connect img {
+    width: 100%;
+  }
+}
+/*-------------------------------------------------------------------------*/
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+.about div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about p {
+  width: 70%;
+}
+.about img {
+  align-self: flex-end;
+}
+@media (max-width: 1191px) {
+  .about img {
+    display: none;
+  }
+  .about p {
+    width: 100%;
+    text-align: center;
+  }
+}
+/*------------------------------------------------------------------------------------*/
+.ask .heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+.ask .askParent {
+  margin-top: 50px;
+}
+.ask .parent {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.ask .parent h3{
+  font-size: 30px;
+}
+.ask .content p,
+.content h3 {
+  width: 80%;
+  margin: auto;
+}
+.ask .content,
+.ask .Img {
+  width: 40rem;
+}
+.ask .Img {
+  padding-top: 100px;
+}
+.ask .content {
+  padding-top: 100px;
+}
+.Img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ask .line {
+  position: relative;
+}
+.line {
+  display: flex;
+  justify-content: center;
+}
+.line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 40%;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-left: 4px dotted rgba(128, 128, 128, 0.6);
+}
+
+@media (max-width: 1191px) {
+  .askParent {
+    margin-top: 0;
+  }
+  .about h2 {
+    text-align: center;
+  }
+  .parent {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .ask .line {
+    display: none;
+  }
+  .ask .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .ask .Img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
+  }
+  .ask .Img:not(:first-child) {
+    order: 1;
+    margin-top: 50px !important;
+  }
+
+  .ask .content {
+    order: 2;
+    padding-top: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .ask .content p,
+  .content h3 {
+    width: 100%;
+    text-align: center;
+  }
+  .ask p {
+    font-size: 16px;
+  }
+  .ask .content,
+  .ask .Img {
+    width: 100%;
+  }
+}
+/*------------------------------------------------------------------------------------*/
+.askLawyerForm h2 {
+  text-align: center;
+}
+.askLawyerForm .formPage {
+  border-radius: 32px;
+  width: 80%;
+  margin: auto;
+  padding: 80px;
+  background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+  border: 1px solid #ffffff28;
+
+}
+.askLawyerForm .names {
+  display: flex;
+  gap: 20px;
+}
+.askLawyerForm .inp {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 30px;
+  border: 1px solid #fff;
+  background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+
+  width: 100%;
+  border: 1px solid #fff;
+  }
+
+
+
+.inp span{
+  font-size: 20px;
+  }
+
+.askLawyerForm .formPage textarea {
+  width: 100%;
+  resize:none;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  height: 100px;
+}
+.formPage .inp:nth-child(6) textarea{
+  height: 50px;
+}
+.checkBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  gap: 10px;
+}
+.formPage button,
+.popup button {
+  background: transparent;
+  background: none;
+  border: none;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  gap: 10px;
+  transition-property: opacity;
+  transition-property: gap;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+  color: #fff;
+}
+.formPage button:hover,
+.popup button:hover {
+  gap: 20px;
+  opacity: 80%;
+}
+
+@media (max-width: 768px) {
+  .askLawyerForm .formPage {
+    width: 100%;
+    padding: 20px;
+  }
+  .names{
+    flex-direction: column;
+    gap: 0;
+  }
+  .ask .parent h3{
+    font-size: 24px;
+  }
+
+}
+@media (max-width: 400px) {
+  
+  .page h1 ,.page h2{
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,41 @@
+.whyUs {
+  }
+  .whyUs h2,
+  .whyUs p {
+    text-align: center;
+  }
+  .whyUs .card {
+    background-color: #1b2340;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 26rem;
+    height: 350px;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  .whyUs .card p {
+    font-weight: 900;
+    font-family: janna bol;
+    font-size: 26px;
+  }
+  .card span{
+    font-weight: bold;
+  }
+  .whyUs .cards {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+  }
+  @media (max-width: 1191px) {
+    .whyUs .cards {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 768px) {
+    .whyUs .card {
+      width: 100%;
+    }
+  }

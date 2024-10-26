@@ -1,0 +1,118 @@
+.experience {
+}
+
+.experience .topContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.accordionParent {
+  padding-top: 60px;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: repeat(2,40%);
+  gap: 40px;
+  justify-content: center;
+}
+/* .accordionItemHeader > div:first-child {
+  width: 100%;
+  gap: 40px;
+  display: flex;
+  align-items: center;
+} */
+.accordionItemHeader {
+ 
+  text-align: center;
+  gap: 20px;
+  padding: 35px;
+  background-color: #fff;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+.accordionItem {
+  border-radius: 40px;
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.experience .accordionItem {
+  color: #fff;
+  border-radius: 40px;
+}
+.experience .accordionItemHeader {
+  background: linear-gradient(#1B2340 0%, #0E152C 100%);
+  border-radius: 40px;
+}
+.experience .topContent p {
+  width: 70%;
+}
+.accordionContent {
+  border-radius: 0 0 40px 40px;
+
+  max-height: 0;
+  font-size: 16px;
+  transition: max-height 1s;
+  overflow: hidden;
+  color: #fff;
+  border-radius: 0 0 40px 40px;
+  height: 200px;
+}
+.accordionContent.open {
+  max-height: 1000px;
+}
+.accordionContent p {
+  padding: 40px 20px;
+  text-align: center;
+}
+.bottomIcon {
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.accordionArrowIcon {
+  transition: opacity 0.4s;
+  cursor: pointer;
+}
+.accordionArrowIcon.hide {
+  opacity: 0;
+}
+.accordionItem span {
+  font-weight: bold;
+  font-size: 24px;
+}
+@media (max-width: 1191px) {
+  .experience .topContent {
+    align-items: center;
+    text-align: center;
+  }
+  .accordionContent {
+    height: auto;
+  }
+  .accordionParent{
+    grid-template-columns: repeat(1,70%);
+  }
+}
+@media (max-width: 768px) {
+  .accordionItem {
+    width: 100%;
+  }
+  .experience .topContent p {
+    width: 100%;
+  }
+  .experience p {
+    font-size: 16px;
+  }
+  .accordionParent{
+    grid-template-columns: repeat(1,100%);
+  }
+  .accordionItem span {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}

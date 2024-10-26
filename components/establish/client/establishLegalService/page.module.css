@@ -1,0 +1,110 @@
+.legalServices .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+.accordionParent {
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(2,40%);
+  justify-content: center;
+  gap: 60px;
+}
+.accordionItemHeader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  /* padding: 10px 50px 10px 10px; */
+  padding: 30px 60px;
+}
+.accordionItem {
+  background: linear-gradient(180deg, #1b2340 6.8%, #0e152c 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 40px;
+}
+.accordionItem span{
+  font-weight: bold;
+  font-size: 24px;
+}
+.accordionContent {
+  max-height: 0;
+  font-size: 16px;
+  transition: max-height 1s;
+  overflow: hidden;
+  height: 280px;
+
+}
+.accordionContent.open {
+  max-height: 1000px;
+}
+.accordionContent p {
+  padding: 20px;
+  text-align: center;
+}
+
+@media (max-width : 1191px) {
+  .accordionParent{
+      grid-template-columns: repeat(2,50%);
+  }
+  .accordionItemHeader {
+    gap: 20px;
+    padding: 15px 9px;
+  }
+}
+@media (max-width : 800px) {
+  .accordionParent{
+    grid-template-columns: repeat(2,50%);
+    gap: 50px;
+    margin: 0px 30px;
+}
+.accordionItemHeader {
+  gap: 10px;
+  padding: 15px 9px;
+}
+}
+@media (max-width : 650px) {
+  .accordionParent{
+      grid-template-columns: repeat(1,100%);
+      
+  }
+  .accordionContent{
+    height: auto;
+  }
+  .accordionItem span{
+    font-size: 20px;
+  }
+  .heading h2 {
+    font-size: 28px;
+    text-align: right;
+    margin-top: 50px;
+    margin-bottom: 10px;
+
+  }
+}
+@media (max-width : 400px) {
+  .accordionParent {
+    gap: 40px;
+    margin: 0px 15px;
+
+  }
+  .legalServices .header h2 {
+    font-size: 24px;
+  }
+  .heading h2{
+    font-size: 28px;
+  }
+  .accordionItemHeader {
+    gap: 10px;
+    padding: 15px 9px;
+    border-radius: 20px;
+  }
+  .accordionItem {
+    border-radius: 20px;
+  }
+}

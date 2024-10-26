@@ -1,0 +1,62 @@
+.ourJourney {
+  background-image: linear-gradient(#0e152c45, #0e152c45),
+    url(/assets/images/joinus/pattern2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 !important;
+}
+.ourJourney div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 80px;
+}
+.ourJourney p {
+  width: 58%;
+}
+.ourJourney a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  padding-top: 30px;
+  transition: 0.3s;
+}
+.ourJourney a:hover {
+  gap: 10px;
+}
+
+
+@media (max-width : 1191px) {
+  .ourJourney{
+    text-align: center;
+  }
+  .ourJourney p{
+    width: 100%;
+  }
+  .ourJourney div {
+    align-items: center;
+  }
+}
+
+@media (max-width : 768px) {
+  .ourJourney {
+    /* background-size: 100% 100%; */
+  }
+  .ourJourney div{
+    padding: 20px;
+    gap: 20px;
+  }
+  .ourJourney div h2{
+    /* font-size: 28px; */
+    width: 100%;
+    text-align: right;
+  }
+  .ourJourney a {
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+}

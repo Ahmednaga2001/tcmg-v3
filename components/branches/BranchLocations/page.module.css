@@ -1,0 +1,258 @@
+.locations {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.locations h2 {
+  text-align: center;
+}
+.egyLocations .parent,
+.saudiaLocation .parent,
+.dubaiLocation .parent,
+.chinaLocation .parent , .palestineLocation .parent,.ammanLocation .parent {
+  padding-top: 50px;
+}
+
+.egyLocations .parent {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
+}
+.egyLocations .parentLocations{
+  width: 100%;
+}
+.parentLocations {
+  background: linear-gradient(#1b2340, #0e152c);
+  border: 1px solid #ffffff74;
+  border-left: none;
+  border-right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0 80px 80px 0;
+  padding: 0 20px;
+  height: 642px;
+}
+
+
+.locationOne {
+  border-bottom: 3px dashed rgba(128, 128, 128, 0.6);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 40px;
+}
+.locationTwo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 40px;
+}
+.locationLink{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+
+
+.locations p , .location a,
+.locations span {
+  font-size: 16px;
+}
+.saudiaLocation .parentLocations,
+.chinaLocation .parentLocations , .ammanLocation .parentLocations {
+  height: 305px;
+  border-radius: 80px 0 0 80px;
+}
+.dubaiLocation .parentLocations , .chinaLocation .palestineLocation{
+  height: 475px;
+  border-radius: 80px 0 0 80px;
+ width: 100%;;
+
+}
+.palestineLocation .parentLocations {
+  height: 275px;
+  width: 100%;
+  border-radius: 80px 0 0 80px;
+
+}
+.saudiaLocation .parent,
+.dubaiLocation .parent,
+.chinaLocation .parent , .palestineLocation .parent ,
+.ammanLocation .parent {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+}
+.location {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  width: 100%;
+}
+  .saudiaLocation .parentLocations,  .palestineLocation , .ammanLocation .parentLocations {
+  border-radius: 0 80px 80px 0;
+  width: 100%;
+}
+.locationsmob {
+  display: none;
+}
+
+@media (max-width: 1191px) {
+  .egyLocations .parent,
+.chinaLocation .parent,
+.dubaiLocation .parent,
+.saudiaLocation .parent,.palestineLocation .parent , .ammanLocation .parent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.locations .parentLocations{
+  border-radius: 80px;
+}
+.locations .cardImg img{
+  display: flex;
+margin: auto;
+}
+.parentLocations , .dubaiLocation .parentLocations{
+  padding: 15px;
+  height: auto;
+}
+.locationOne{
+  padding-bottom: 12px;
+}
+.locationTwo{
+  padding-top: 12px;
+}
+}
+
+@media (max-width: 800px) {
+  .locationsmob{
+    display: block;
+  }
+  .locationsmob h2{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44.8px; 
+    padding-bottom: 20px;
+  }
+  .locations{
+    display: none;
+  }
+  .locationsmob {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+.locationsmob .parentLocations{
+  border-radius: 80px;
+}
+.locationsmob .parentLocations h3{
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 152%;
+}
+.locationsmob .parentLocations p{
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 152%;
+}
+.locationsmob .parentLocations span{
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 152%;
+}
+.locationsmob .parentLocations .locationOne{
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+.locationsmob .parentLocations .locationOne , .locationsmob .parentLocations .locationTwo{
+  padding-bottom: 20px;
+
+}
+  .locationsmob .cardImg img{
+      width: 100%;
+  }
+  .locationsmob .parent{
+    width: 100%;
+    padding: 0!important;
+    position: relative;
+    margin: auto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 152%;
+  }
+  .locationsmob .parent .parentLocations{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+    margin: auto;
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    opacity: 0.8;
+    background: var(--primary-color, #0D152C);
+    padding-bottom: 10px;
+  }
+  .locationsmob .cardImg {
+    border-radius: 25px;
+    width: 100%;
+    height: 409.274px;
+    
+  }
+  .swiper-pagination-bullet {
+    /* Optional: style the bullets */
+    background: transparent !important; /* Change bullet color */ /* Adjust opacity */
+ 
+  }
+  .swiper-pagination-bullet-active {
+    background: #fff !important; /* Change active bullet color */
+  }
+  .locationsmob .cardImg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
+  .swiper {
+    
+    width: 100%;
+    
+  }
+  .swiper-pagination {
+   
+    margin-top: 2000px; /* Adjust the value as needed */
+    text-align: center; /* Optional: center align bullets */
+  }
+  .swiperSlide {
+    
+    background: var(--primary-color, #0D152C);
+    /* min-height: 70vh; */
+    display: flex;
+  } 
+
+ .palestineLocation .swiper{
+  display: none;
+ }
+ .locationsmob .cardImg img{
+  width: 100% ;
+  height: 404px;
+}
+.locationsmob .parent .parentLocations{
+  bottom: 5%;
+
+}
+}

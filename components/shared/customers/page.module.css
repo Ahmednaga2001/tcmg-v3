@@ -1,0 +1,84 @@
+.ourCustomers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.customers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.customer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    flex-basis: 300px;
+    flex-grow: 1;
+   
+}
+
+.customer:nth-of-type(odd) {
+    flex-direction: column-reverse;
+}
+
+.customer:nth-of-type(odd) .bottom {
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 0px;
+}
+
+.customers .top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+   
+}
+
+.customer .top .left {
+    width: 100%;
+}
+
+.customer .top .left span:first-child {
+    font-weight: bold;
+}
+
+.customer .top .left span:last-child {
+    font-size: 14px;
+}
+
+.customer .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    background-color: var(--font);
+    color: #222;
+    padding: 30px;
+    height: 350px;
+    border-top-left-radius: 50px;
+    font-weight: bold;
+    color: #111111;
+    line-height: 1.4;
+    
+}
+
+.customer .bottom img {
+    align-self: flex-end;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}

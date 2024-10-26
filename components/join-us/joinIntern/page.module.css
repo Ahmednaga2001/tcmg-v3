@@ -1,0 +1,52 @@
+.startInternship {
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.292);
+}
+.startInternship .parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.startInternship .content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.imgContainer {
+  position: relative;
+}
+.imgContainer img:first-child {
+  position: absolute;
+}
+.startInternship a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding-top: 30px;
+  transition: 0.3s;
+}
+.startInternship a:hover {
+  gap: 10px;
+}
+
+@media (max-width: 1191px) {
+  .startInternship .imgContainer {
+    display: none;
+  }
+  .startInternship .content {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .startInternship .content {
+    gap: 30px;
+  }
+  .startInternship .content h2{
+    width: 100%;
+    text-align: right;
+  }
+}

@@ -1,0 +1,45 @@
+.careerJourney {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.292);
+  background-image: url(/assets/images/hiring/pattern3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+.careerJourney div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@media (max-width: 1191px) {
+  .careerJourney img{
+      display: none;
+      align-items: center;
+    }
+    .careerJourney h2{
+      text-align: center;
+    }    
+}
+@media (max-width:800px) {
+  .careerJourney {
+  gap: 20px;
+  padding: 50px 20px !important;
+  }
+  .careerJourney h2{
+    text-align: start;
+    font-size: 28px !important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+  }
+  .careerJourney p{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+}

@@ -1,0 +1,42 @@
+.container{
+    width:100%;
+    position: relative;
+    margin-top: 30px;
+    cursor: pointer;
+
+}
+.heading{
+    border-bottom: 1px solid #fff;
+    padding: 10px;
+   
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  .heading h3{
+    font-size: 18px;
+    font-weight: lighter;
+  }
+  .options{
+    backdrop-filter: blur(5px);
+    background-color: #dddddd33;
+    padding: 20px 0;
+   position: absolute;
+   width: 100%;
+   margin-top: 10px;
+   z-index: 20;
+    border-radius: 10px;
+  }
+  .options li{
+    padding:3px 20px;
+    margin-top: 5px;
+  }
+  .options li:hover{
+    background-color: #dddddd33;
+  }
+  
+
+  

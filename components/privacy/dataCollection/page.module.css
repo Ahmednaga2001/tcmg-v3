@@ -1,0 +1,26 @@
+.container ol{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.container ol li{
+    list-style-position: inside;
+}
+.container .title{
+    display: block;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+@media (max-width : 768px) {
+    .container .title{
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .container li{
+        font-size: 16px;
+    }
+}

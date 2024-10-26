@@ -1,0 +1,58 @@
+.cardInfo{
+    background-color: #fff;
+    color: #000;
+    height: fit-content;
+    padding: 30px;
+    width: 30%;
+    font-size: 14px;
+    position: sticky;
+}
+.heading , .price{
+    font-size: 18px;
+    font-weight: 700px;
+}
+.totalParent{
+    border-top: 1px solid #000;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 0;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+.cupon{
+display: flex;
+border: 1px solid rgba(128, 128, 128, 0.415);
+}
+.cupon input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+}
+.cupon button{
+    padding: 5px 20px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 1191px) {
+    .cardInfo{
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .cardInfo{
+        width: 100%;    
+    }
+}

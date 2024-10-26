@@ -1,0 +1,27 @@
+.consultPage section {
+    padding: 80px;
+  }
+  @media (max-width: 1191px) {
+    .consultPage h1,
+    .consultPage h2 {
+      font-size: 35px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+   
+    .consultPage p {
+      font-size: 16px;
+    }
+    .consultPage section {
+      padding: 20px;
+    }
+   
+  }
+  @media (max-width : 400px) {
+    .consultPage h1 , .consultPage h2{
+      font-size: 24px;
+    }
+    
+  }
+  

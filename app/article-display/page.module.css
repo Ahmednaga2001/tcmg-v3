@@ -1,0 +1,10 @@
+.articlDisplay section{
+    padding: 80px;
+} 
+
+@media (max-width: 768px) {
+    .articlDisplay section{
+        padding: 20px;
+    }
+}
+

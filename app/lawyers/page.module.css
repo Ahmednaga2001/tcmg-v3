@@ -1,0 +1,18 @@
+.lawyersPage section {
+  padding: 80px;
+}
+@media (max-width: 1191px) {
+  .lawyersPage h1,
+  .lawyersPage h2 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lawyersPage p {
+    font-size: 16px;
+  }
+  .lawyersPage section {
+    padding: 20px;
+  }
+}

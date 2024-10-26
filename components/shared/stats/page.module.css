@@ -1,0 +1,81 @@
+.stats {
+    background-image: url(/assets/images/homePage/باترن.svg);
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    padding: 50px 80px !important;
+    background-color: var(--font);
+    color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .stats div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-basis: 300px;
+  }
+  
+  /* .stats div:nth-child(2) {
+      border-left: 1px solid #222;
+      border-right: 1px solid #222;
+  } */
+  
+  .stats div span:first-child {
+    font-family: janna bol;
+    font-size: 57px;
+    font-weight: 900;
+  }
+  
+  @media (max-width: 768px) {
+      .stats {
+          background: linear-gradient(150deg, rgba(255, 255, 255, 0.03) 8.9%, rgba(216, 216, 216, 0.03) 85.02%);
+          padding: 80px 30px !important;
+          color: #fff;
+          flex-wrap: nowrap;
+          flex-direction: row-reverse;
+        }
+    .stats div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      flex-basis: 300px;
+      border-right: 2px solid #ffffff55;
+    }
+    .stats div:nth-child(4){
+      border-right: none;
+    }
+    .stats div span:first-child {
+      font-family: Poppins;
+      font-size: 23px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .stats div span:last-child {
+      font-family: "Janna LT";
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+  
+  @media (max-width: 450px){
+    .stats {
+          padding: 40px 30px !important;
+    }
+      .stats div span:first-child {
+          font-family: Poppins;
+          font-size: 14.983px;
+          font-weight: 800;
+        }
+        .stats div span:last-child {
+          font-family: "Janna LT";
+          font-size: 12px;
+          font-weight: 400;
+        }
+  }

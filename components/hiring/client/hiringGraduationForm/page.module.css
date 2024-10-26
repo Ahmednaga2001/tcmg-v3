@@ -1,0 +1,149 @@
+.graduationForm h2 {
+  text-align: center;
+}
+.graduationForm .formPage {
+  border-radius: 32px;
+  width: 80%;
+  margin: auto;
+
+  padding: 80px;
+  border: 1px solid #ffffff28;
+}
+.graduationForm .names {
+  display: flex;
+  gap: 20px;
+}
+.graduationForm .inp {
+  background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 30px;
+  border: 1px solid #fff;
+}
+.inp span{
+font-size: 20px;
+}
+
+.graduationForm .formPage textarea {
+  width: 100%;
+  resize:none;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+
+}
+
+.graduationForm .emailContact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.graduationForm .emailContact p {
+  width: 30%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.file {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #fff;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+.file .right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+  color: #ffffffab;
+}
+.fileInput {
+  opacity: 0; /* Hide the default file input */
+  position: absolute; /* Position it absolutely within the container */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  cursor: pointer;
+}
+.fileLabel Image {
+  vertical-align: middle; /* Align the image with the text */
+}
+.formPage input:placeholder-shown,
+.formPage form h3,
+.formPage textarea:placeholder-shown{
+  font-size: 18px;
+}
+@media (max-width: 800px) {
+  .formPage h2{
+    font-size: 24.774px !important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+  }
+  .graduationForm .formPage {
+    width: 100%;
+    padding: 20px;
+  }
+  .graduationForm .emailContact p {
+    width: 100%;
+  }
+  .graduationForm .names {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .graduationForm h2 {
+    text-align: center;
+    font-size: 30px !important;
+  }
+  .graduationForm .inp {
+    padding: 0 10px;
+  }
+  .graduationForm .inp textarea{
+    padding: 0;
+  }
+  .graduationForm .inp textarea::placeholder{
+    transform: translateY(12px);
+  }
+  .title{
+    font-size: 14.452px;
+    color: white;
+
+  }
+  .stytle{
+    font-size: 10.323px;
+  }
+  .file img{
+    color: white;
+  }
+  .formPage label{
+    font-size: 12.387px;
+  }
+  .formPage button{
+    color: #fff;
+    font-size: 16.516px;
+  }
+  .emailContact{
+    display: none !important;
+  }
+
+}
+
+@media (max-width : 768px) {
+  .names{
+    flex-direction: column;
+    gap: 0;
+  }
+  
+}

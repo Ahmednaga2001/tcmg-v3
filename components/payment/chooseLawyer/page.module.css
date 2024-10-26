@@ -1,0 +1,106 @@
+.chooseLawyer {
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .lawyerCard {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(#1B2340, #0E152C);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 17px;
+    height: 250px;
+  }
+  
+  .heading {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .heading .bullet {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #000;
+    outline: 2px solid #fff;
+  }
+  
+  .heading .lawyerName {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .cardImg {
+    height: 100%;
+  }
+  
+  .cardImg img {
+    height: 100%;
+    object-fit: cover;
+    width: auto;
+  }
+  
+  .cardContent {
+    text-align: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .lawyerCard .desc {
+    font-size: 14px;
+    color: #ffffffef;
+  }
+  
+  .chooseLawyer .btn {
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 1191px) {
+    .chooseLawyer {
+      width: 70%;
+    }
+  }
+  @media (max-width: 768px) {
+    .chooseLawyer {
+      width: 90%;
+    }
+    .lawyerCard {
+        width: 100%;
+      flex-direction: column;
+      height: auto;
+      gap: 20px;
+      padding: 20px;
+    }
+    .lawyerCard .cardImg {
+      display: flex;
+      justify-content: center;
+      height: auto;
+    }
+    .cardContent{
+        order: 2;
+        padding: 0;
+    }
+    .lawyerCard .cardImg img {
+      height: auto;
+    }
+  }
+ 
+  

@@ -1,0 +1,68 @@
+/* .team{
+  padding: 0 80px 80px 80px !important;
+  background-color: red;
+} */
+.swiperContainer{
+  width: 85%;
+  margin: auto;
+}
+.swiperSlide {
+  width: 28.5rem !important;
+  height: 30rem;
+  position: relative;
+}
+.ourTeam .header,
+.ourCustomers .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cards {
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap; */
+
+}
+
+.card {
+  padding: 30px;
+  background-image: linear-gradient(to bottom, #dddddd00, #dddddd15);
+  border-radius: 8px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.card p:last-child {
+  font-size: 14px;
+  color: #845f38;
+}
+
+@media (max-width: 1191px) {
+  .swiperContainer{
+    width: 100%;
+  }
+  .swiperSlide{
+    width: 28rem !important;
+
+  }
+  
+}
+
+@media (max-width: 767px) {
+  /* .team{
+    padding: 20px !important;
+  } */
+  .swiperSlide{
+    width: 100% !important;
+    
+  }
+}

@@ -1,0 +1,132 @@
+.requestSummary section{
+padding: 80px;
+}
+.requestSummary{
+    margin-top: 100px;
+}
+@media (max-width : 800px) {
+    .requestSummary{
+        margin-top: 95px;
+    }
+    
+}
+.buttons{
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 15px 40px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+}
+.buttons div:first-child{
+    display: flex;
+    gap: 40px;
+}
+.buttons div:first-child button:first-child{
+    background-color: #fff;
+}
+.buttons div:first-child button:last-child , .buttons button:last-child{
+    background:none;
+    color: #fff;
+    border: 1px solid #fff;
+}
+@media (max-width: 1191px) {
+    .requestSummary h2{
+        text-align: center;
+    }
+    .buttons{
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .buttons div:first-child{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+
+.order{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    background-color: #DEDEDD;
+    width: 100%;
+    padding: 80px 50px;
+    color: var(--main);
+}
+.summary .parent {
+  width: 100%; 
+  border-radius: 24px; 
+
+  overflow: hidden; 
+}
+.requestSummary table {
+    border-collapse: collapse; 
+    text-align: center;
+    border-radius: 40px;
+    padding: 20px !important;
+    overflow: auto;
+    min-width: 400px;
+    width: 100%;
+    
+}
+.summary table thead th{
+    background-color: var(--main);
+    padding: 10px  !important;
+
+}
+.summary table tbody tr{
+    background-color: #fff;
+    color: #000;
+
+}
+.summary table tbody tr:not(:last-child){
+    border-bottom: 1px solid #9d9d9d49;
+
+}
+.summary table tbody td{
+padding: 10px;
+font-size: 22px;
+
+}
+.tax{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+.total,.tax span:first-child{
+    font-weight: bold;
+}
+.tableContainer{
+    overflow-x: auto;
+}
+@media print {
+    .buttons {
+      display: none;
+    }
+   
+  }
+@media (max-width: 768px) {
+    .order{
+        font-size: 35px;
+    }
+    .requestSummary section{
+        padding: 20px;
+    }
+    .tableContainer table td{
+        font-size: 14px;
+    }
+  
+}

@@ -1,0 +1,190 @@
+.startcompany .heading {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.startcompany .parent {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.startcompany .content p,
+.content h3 {
+  width: 80%;
+  margin: auto;
+}
+.startcompany .content,
+.startcompany .Img {
+  width: 40rem;
+}
+.startcompany .Img {
+  padding-top: 100px;
+}
+.startcompany .content {
+  padding-top: 100px;
+}
+.Img,
+.selectInp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Img .dropdownParent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+.Img .dropdownParent span:first-child {
+  text-align: start;
+}
+.Img .dropdown {
+  background-color: #fff;
+  width: 80%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #00000069;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.startcompany .parent .whatupCard {
+  background-color: #1b2340;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.whatupCard span {
+  font-size: 14px;
+  font-weight: bold;
+}
+.startcompany .card {
+  position: relative;
+  background-image: url("/assets/images/legalconsultations/cardpattern.png");
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.startcompany .img2 {
+  position: absolute;
+  top: 70px;
+  right: 60px;
+  z-index: -1;
+}
+
+.startcompany select {
+  width: 80%;
+  outline: none;
+  padding: 10px;
+  border-radius: 15px;
+  color: gray;
+}
+.startcompany label {
+  margin-bottom: 5px;
+  /* padding-right: 40px; */
+}
+.startcompany .line {
+  position: relative;
+}
+.line {
+  display: flex;
+  justify-content: center;
+}
+.line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 40%;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-left: 4px dotted rgba(128, 128, 128, 0.6);
+}
+
+@media (max-width: 1191px) {
+  .parent {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .startcompany .line {
+    display: none;
+  }
+  .startcompany .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0 !important;
+  }
+  .startcompany .Img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 50px !important;
+  }
+  .startcompany .Img:not(:first-child) {
+    order: 1;
+    padding-top: 20px !important;
+  }
+  .startcompany .content {
+    order: 2;
+    padding-top: 0 !important;
+  }
+}
+@media (max-width: 800px) {
+  .startcompany .content p,
+  .content h3 {
+    width: 100%;
+    text-align: center;
+  }
+  .startcompany p {
+    font-size: 16px;
+  }
+  .startcompany .content,
+  .startcompany .Img {
+    width: 100%;
+  }
+  /* .startcompany .parent .whatupCard {
+    width: 260px;
+    height: 260px;
+  } */
+}
+
+@media (max-width: 600px) {
+  .startcompany .heading h2 {
+    font-size: 28px;
+  }
+  .startcompany .heading p {
+    font-size: 18px
+  }
+  /* .startcompany .parent .whatupCard {
+    background-image: linear-gradient(180deg , #1b2340 , #0e152c);
+    border-radius: 15px ;
+    width: 380px;
+    height: 240px;
+  } */
+}
+
+@media (max-width: 400px) {
+  .startcompany .heading p {
+    font-size: 22px;
+  }
+  /* .startcompany .parent .whatupCard {
+    width: 320px;
+    height: 220px;
+  } */
+  .startcompany p {
+    font-size: 14px;
+  }
+  .whatupCard span {
+    font-size: 18px;
+  }
+}

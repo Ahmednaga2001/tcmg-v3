@@ -1,0 +1,19 @@
+.homeTeam .heading{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.homeTeam .heading div:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+}
+.homeTeam{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}

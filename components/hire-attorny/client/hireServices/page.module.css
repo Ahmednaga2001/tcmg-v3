@@ -1,0 +1,119 @@
+.attorneyrepresentation p {
+  padding: 30px 0;
+}
+.attorneyrepresentation .cards {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.attorneyrepresentation .card {
+  width: 300px;
+  height: 500px;
+  /* background: linear-gradient(#1b2340, #1b2340); */
+  background: linear-gradient(rgba(43, 52, 83, 0.33) 100%, rgba(169, 180, 228, 0.33) 30%);
+  border-radius: 32px;
+  border: 1px solid #353E5C;
+}
+
+.attorneyrepresentation .topCard {
+  position: relative;
+  width: 100%;
+}
+.attorneyrepresentation .topCard .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1b2340;
+  opacity: 0.2;
+}
+.topCardImg {
+  height: 319px;
+  width: 100%;
+}
+.topCardImg img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.attorneyrepresentation .topCard span {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  top: 80%;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.attorneyrepresentation .card p {
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+.attorneyrepresentation .more {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  justify-content: center;
+}
+.cards {
+  padding: 20px 0;
+}
+
+@media (max-width: 1191px) {
+  .attorneyrepresentation .cards{
+      gap: 20px;
+     }
+     .attorneyrepresentation h2 , .attorneyrepresentation p{
+      text-align: center;
+     }
+}
+@media (max-width: 800px) {
+  .attorneyrepresentation {
+    padding: 32px 16px !important;
+  }
+  .attorneyrepresentation .card {
+    width: 70%;
+  }
+  .topCardImg img{
+    width: 100%;
+  }
+  .attorneyrepresentation h2 , .attorneyrepresentation p{
+    text-align: right;
+   }
+   .cards {
+    padding: 20px 0 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .attorneyrepresentation h2 {
+    font-size: 28px;
+  }
+  .attorneyrepresentation p {
+    font-size: 20px;
+  }
+  .attorneyrepresentation .card {
+    width: 85%;
+  }
+}
+
+@media (max-width: 400px) {
+  .attorneyrepresentation h2 {
+    font-size: 24px;
+  }
+  .attorneyrepresentation p {
+    font-size: 14px;
+  }
+  .attorneyrepresentation .card{
+    width: 100%;
+    height: auto;
+   }
+   .attorneyrepresentation .card img{
+    width: 100%;
+   }
+}

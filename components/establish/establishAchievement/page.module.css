@@ -1,0 +1,171 @@
+.countries h2{
+  text-align: center;
+}
+.countries .parentvision {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding-top: 100px;
+}
+.countries .vision {
+  position: relative;
+  width: 100%;
+}
+.countries .vision .imgleft {
+  position: absolute;
+  left: 0;
+  top: -40px;
+  z-index: 10;
+  padding: 10px;
+  background: linear-gradient(rgba(255, 255, 255, 0.23) 0%, rgba(216, 216, 216, 0.23) 100%);
+  border-radius: 25px;
+}
+.countries .vision .imgright {
+  position: absolute;
+  right: 0;
+  top: -40px;
+  z-index: 10;
+  padding: 10px;
+  background: linear-gradient(rgba(255, 255, 255, 0.23) 0%, rgba(216, 216, 216, 0.23) 100%);
+  border-radius: 25px;
+}
+.countries .visioncontent {
+  height: 220px;
+  background: linear-gradient(rgba(255, 255, 255, 0.13) 0%, rgba(216, 216, 216, 0.13) 100%);
+  padding: 20px;
+  border-radius: 0  25px 25px 0;
+  width: calc(100% - 275px);
+}
+.countries .visioncontentleft {
+  height: 220px;
+  padding: 20px;
+  background: linear-gradient(rgba(255, 255, 255, 0.13) 0%, rgba(216, 216, 216, 0.13) 100%);
+  border-radius: 25px 0 0 25px;
+  margin-right: 275px;
+  
+}
+.visioncontent p {
+  width: 90%;
+}
+@media (max-width: 1250px) {
+  .countries .vision {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    background: linear-gradient(rgba(255, 255, 255, 0.13) 0%, rgba(216, 216, 216, 0.13) 100%);
+  }
+  .countries .vision .imgleft {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: none !important;
+    order: 1;
+  }
+  .countries .vision .imgright {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: none !important;
+    order: 1;
+  }
+  .countries .visioncontent {
+    text-align: center;
+    order: 2;
+    height: auto ;
+    background: none ;
+    width: 100%;
+  }
+  .countries .visioncontentleft {
+    text-align: center;
+    order: 2;
+    height: auto ;
+    background: none ;
+    width: 100%;
+    margin-right: 0;
+
+  }
+  .visioncontent p,
+  .visioncontentleft p {
+    width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .countries .vision {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    background: linear-gradient(rgba(255, 255, 255, 0.13) 0%, rgba(216, 216, 216, 0.13) 100%);
+  }
+  .countries .vision .imgleft , .countries .vision .imgright{
+    width: 70%;
+  }
+  .countries .parentvision {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 100px;
+  }
+ 
+  .countries .parentvision {
+    gap: 20px;
+  }
+  
+}
+.visioncontent h3 , .visioncontentleft h3{
+  font-size: 26px;
+}
+ .visioncontent p , .visioncontentleft p{
+  font-size: 20px;
+}
+@media (max-width: 600px){
+  .countries .vision {
+    border-radius: 40px;
+  }
+  .countries .parentvision {
+    gap: 30px;
+    padding-top: 50px;
+  }
+  .countries h2 {
+    font-size: 28px;
+    text-align: right;
+    margin-top: 50px;
+  }
+  .countries .vision .imgleft , .countries .vision .imgright{
+    width: 100%;
+    padding: 0px;
+  }
+  .countries .visioncontent , .countries .visioncontentleft {
+    text-align: right;
+    padding: 30px 20px;
+  }
+   .visioncontent h3 , .visioncontentleft h3{
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+   .visioncontent p , .visioncontentleft p{
+    font-size: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .countries {
+    padding: 32px 20px !important;
+  }
+  .countries h2 {
+    font-size: 24px;
+  }
+  .visioncontent h3 , .visioncontentleft h3{
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+   .visioncontent p , .visioncontentleft p{
+    font-size: 15px;
+  }
+}

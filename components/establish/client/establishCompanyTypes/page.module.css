@@ -1,0 +1,94 @@
+.companiesTypes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.companiesTypes h2{
+  text-align: center;
+}
+.companiesTypes .swiperContainer {
+  width: 60%;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 50px;
+}
+.companiesTypes .swiperContainer::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: -40px;
+  background-image: url(/assets/images/establish/Pattern2.png);
+  background-size: cover;  width: calc(100% + 80px);
+  height: 50%;
+  border-radius: 50px;
+  z-index: -1;
+}
+.companiesTypes .swiperSlide {
+  height: 300px;
+  background-image: url(/assets/images/establish/Pattern2.png);
+  background-size: cover;
+  padding: 80px 50px;
+  text-align: center;
+  border-radius: 50px;
+}
+.companiesTypes .swiperSlide p {
+  padding-top: 20px;
+}
+.swiperSlide .content h3 {
+  font-size: 24px;
+}
+.content p{
+  line-height: 1.4;
+}
+@media (max-width: 1191px) {
+  .companiesTypes .swiperSlide{
+      width: 80%;
+      height: auto;
+
+  }
+}
+@media (max-width: 800px) {
+    .companiesTypes {
+      padding: 32px 20px !important;
+    }
+    .companiesTypes .swiperContainer {
+      width: 100%;
+    }
+    .companiesTypes .swiperSlide {
+      padding: 30px;
+    }
+    .companiesTypes .swiperContainer::before {
+      content: none;
+    }
+}
+
+@media (max-width: 600px){
+  .companiesTypes h2 {
+    font-size:40px;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 400px) {
+    .companiesTypes h2 {
+      font-size: 29px;
+      margin-top: 20px;
+    }
+    .companiesTypes .swiperSlide {
+      padding: 20px 10px;
+    }
+    .swiperSlide .content h3 {
+      font-size: 18px;
+    }
+    .swiperSlide .content p {
+      font-size: 14px;
+    }
+    .swiperContainer .swiper-button-next {
+      right: -15px !important;
+    }
+    .swiperContainer .swiper-button-next {
+      left: -10px !important;
+    } 
+}

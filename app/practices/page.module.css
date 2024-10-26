@@ -1,0 +1,12 @@
+.practices section{
+    padding: 80px;
+}
+
+@media (max-width: 768px) {
+    .practices section{
+        padding: 20px;
+    }
+    .practices h1{
+    font-size: 35px;
+    }
+}

@@ -1,0 +1,87 @@
+.paymentPage section {
+    padding: 80px;
+}
+.paymentPage{
+    margin-top: 100px;
+}
+.paymentPage .steps {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding-top: 50px;
+    direction: ltr;
+}
+
+.paymentPage .steps li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* background-color: #fff; */
+    position: relative;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.steps li:not(:last-child)::after {
+    position: absolute;
+    content: "";
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2px;
+    width: 100%;
+    border-top: 2px dashed grey;
+    z-index: -1;
+}
+
+.paymentPage .steps li.active {
+   /* border: 1px solid gray;
+   color: gray; */
+   background-color: #fff;
+   color: #000;
+
+}
+.completed{
+    background-color: #845F38;
+    /* background-image: url(/assets/icons/payment/correct.svg); */
+}
+.inactive{
+    color: gray;
+    border: 1px solid gray;
+}
+@media (max-width : 800px) {
+    .paymentPage{
+        margin-top: 95px;
+    }
+    
+} 
+    
+
+@media (max-width: 768px) {
+    .paymentPage section {
+        padding: 20px;
+    }
+
+ 
+  .paymentPage h2{
+    text-align: center;
+    font-size: 35px;
+  }
+}
+@media (max-width : 620px) {
+    .paymentPage .steps {
+        gap: 20px;
+    }
+
+    .paymentPage .steps li {
+        width: 50px;
+        height: 50px;
+    }
+
+    .steps li:not(:last-child)::after {
+        width: 20px;
+    }
+}

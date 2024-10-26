@@ -1,0 +1,170 @@
+
+.uniqueServiceFeatures .container{
+  position: relative;
+  margin-top: 150px;
+  width: 80%;
+  margin: 150px auto;
+}
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.card {
+  border: 1px solid #ffffff72; /* Optional border */
+  height: 500px;
+  background: linear-gradient(#1B2340 0% , #0E152C 100%);
+  padding: 40px 20px; 
+  margin: 0 10px;     text-align: center;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.card h3{
+font-weight: bold;
+font-size: 30px;
+}
+.card p{
+line-height: 1.6;
+}
+
+
+.nextbutton {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  background-image: url(/assets/icons/establish/next.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  transform: translateY(-50%);
+}
+.prevbutton {
+  display: block;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  background-image: url(/assets/icons/establish/prev.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: -40px;
+  transform: translateY(-50%);
+}
+
+
+.card span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background:linear-gradient(#1B2340 0% , #1C2D4F 100%);
+  border: 1px solid #fff;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 900;
+  font-family: janna bol;
+}
+
+@media (max-width: 1191px) {
+  .uniqueServiceFeatures .container{
+    width: 100%;
+  }
+    
+.nextbutton {
+  right: -50px;
+}
+.prevbutton {
+  left: -30px;
+}
+}
+
+@media (max-width: 900px) {
+  .card {
+    height: 400px;
+    padding: 10px 10px; 
+  }
+  .card h3{
+    font-size: 23px;
+  }
+    .card p{
+    font-size: 14px;
+  }
+  .nextbutton {
+    right: -50px;
+  }
+  .prevbutton {
+    left: -30px;
+  }
+}
+
+@media (max-width: 772px){
+  .nextbutton ,  .prevbutton {
+    display: none;
+  }
+  .card {
+    height: 300px;
+    padding: 20px 8px; 
+  }
+  .card h3{
+    font-size: 20px;
+  }
+    .card p{
+    font-size: 12px;
+  }
+  .card span {
+    width: 40px;
+    height: 40px;
+  }
+  .card img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .uniqueServiceFeatures h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+  .container {
+    margin: 20px auto !important;
+  }
+  .cardContainer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 370px;
+  }
+  .card {
+    height: 250px;
+    padding: 10px 5px; 
+    margin: 0 15px;     
+    gap: 10px;
+    display: block;
+    width: 250px;
+  }
+  .card h3{
+    font-weight: bold;
+    font-size: 17px;
+  }
+    .card p{
+    line-height: 1.6;
+    font-size: 10px;
+  }      
+}
+
+@media (max-width: 400px) {
+  .uniqueServiceFeatures h2 {
+    font-size: 24px;
+  }
+}

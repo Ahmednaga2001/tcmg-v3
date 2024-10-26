@@ -1,0 +1,90 @@
+.ourofferings h2 {
+  text-align: center;
+}
+.ourofferings .parent {
+  padding-top: 80px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.ourofferings .card {
+  width: 20rem;
+  border-radius: 40px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    180deg,
+      #1b234051 6.8%,
+      rgba(27, 35, 64, 0.299) 100%
+  );
+
+}
+.ourofferings .topCard {
+  padding: 100px 50px;
+  background: linear-gradient(180deg, #1b2340 6.8%, #0e152c 100%);
+  cursor: pointer;
+  position: relative;
+  border-radius: 40px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+
+}
+.ourofferings .topCard h3 {
+  text-align: center;
+}
+
+.ourofferings .topCard span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    #1b2340 6.8%,
+    #0e152c 100%
+  ); 
+  position: absolute;
+  top: -15px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.ourofferings .card .bottomCard {
+  max-height: 0;
+  overflow: hidden;
+  height: 200px;
+  transition:  1s;
+  text-align: center; 
+  border-radius: 0 0 40px 40px;
+  transition: .6s;
+}
+.ourofferings .card .bottomCard p {
+  padding: 20px;
+}
+
+.ourofferings .card .bottomCard.visible {
+  max-height: 1000px;
+  color: #fff;
+}
+
+@media (max-width: 1191px) {
+  .ourofferings{
+    text-align: center;
+  }
+  
+}
+@media (max-width: 768px) {
+  .ourofferings .card {
+    width: 80%;
+    margin : auto;
+  }
+  .ourofferings .topCard{
+    padding: 40px 20px;
+  }
+  .ourofferings .card .bottomCard{
+    height: auto;
+  }
+  
+}

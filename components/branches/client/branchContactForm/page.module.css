@@ -1,0 +1,24 @@
+.contactForm h2 {
+  text-align: center;
+}
+.contactForm .formPage {
+  border-radius: 32px;
+  width: 70%;
+  margin: auto;
+  /* backdrop-filter: blur(5px);
+  background-color: #dddddd27; */
+  border: 1px solid #ffffff28;
+  padding: 80px;
+  background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+
+}
+.contactForm .names {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .contactForm{
+    display: none;
+  }
+}

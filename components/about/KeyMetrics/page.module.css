@@ -1,0 +1,52 @@
+.numbers {
+  margin-top: 80px;
+  padding: 80px;
+  min-height: 300px;
+  background-image: url(/assets/images/about/Pattern3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.numbers div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.numbers span {
+  display: block;
+  font-size: 50px;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .numbers {
+    background: #151C32;
+    color: white;
+    margin-top: 0px ;
+    min-height: 150px;
+  }
+  .numbers div{
+    justify-content: center;
+  }
+  .numbers span{
+    font-size: 18px;
+  }
+  .numbers p{
+    color: #a1a1a1;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 414px){
+  .numbers{
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "tcmg",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.12",
+    "formik": "^2.4.6",
+    "framer-motion": "^11.11.8",
+    "next": "^14.2.12",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-flickity-component": "^4.0.7",
+    "react-id-swiper": "^4.0.0",
+    "swiper": "^11.1.9",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5"
+  }
+}

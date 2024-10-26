@@ -1,0 +1,26 @@
+.privacyStatement{
+    background-image: url(/assets/images/privacypolicy/pattern.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.privacyStatement div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+
+}
+@media (max-width: 1191px) {
+    .privacyStatement div{
+        align-items: center;
+    }
+    .privacyStatement h2{
+        text-align: center;
+    }
+    .privacyStatement p{
+        font-size: 16px;
+        text-align: center;
+    }
+}
+

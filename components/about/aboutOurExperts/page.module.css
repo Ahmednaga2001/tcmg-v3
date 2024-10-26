@@ -1,0 +1,42 @@
+.aboutOurExperts {
+  background-image: url(/assets/images/about/Pattern2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.headingTeam {
+  border-bottom: 1px solid #fff;
+  width: fit-content;
+  padding-bottom: 30px;
+}
+.team p {
+  padding: 100px 0;
+}
+.team .abLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: 0.6s;
+}
+.team .abLink:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 1191px) {
+  .headingTeam{
+    text-align: center;
+  }
+  .team p{
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .headingTeam {
+    border-bottom: 0;
+    padding-bottom: 30px;
+  }
+  .team p {
+    padding: 0 0 30px;
+  }
+}

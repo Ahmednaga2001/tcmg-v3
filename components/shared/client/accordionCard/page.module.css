@@ -1,0 +1,56 @@
+.accordionQuesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+.accordionQues{
+  line-height: 1.8;
+
+}
+.accordionQues ol{
+  list-style: decimal;
+  list-style-position: inside;
+  padding: 10px;
+}
+.accordionQuesHeader img {
+  cursor: pointer;
+}
+.accordionQuesContent {
+  border-bottom: 1px solid #fff;
+  font-size: 16px;
+}
+.accordionQues:not(:first-of-type) {
+  margin-top: 10px;
+}
+.accordionQuesContent {
+  overflow: hidden;
+  max-height: 0;
+  font-size: 16px;
+  transition: max-height 1s;
+}
+.accordionQuesContent p {
+  padding: 10px;
+}
+.accordionQuesContent.open {
+  max-height: 2000px;
+}
+.accordionQuestions h2{
+  text-align: start;
+}
+
+@media (max-width: 768px) {
+  .accordionQuesContent p {
+    font-size: 16px;
+    text-align: center;
+  }
+  .accordionQuesHeader h3{
+    font-size: 18px;
+  }
+}
+
+.accordionContainer{
+padding-top: 30px;
+}

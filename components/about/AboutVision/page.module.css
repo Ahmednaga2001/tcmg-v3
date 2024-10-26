@@ -1,0 +1,151 @@
+
+
+
+
+
+
+
+
+  /*------------------------------------------------------------------------------------*/
+.visionSectionContainer {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.visionItem {
+  position: relative;
+  width: 100%;
+
+}
+.visionItem .imgLeft,
+.visionItem .imgRight {
+  position: absolute;
+  top: -40px;
+  z-index: 10;
+}
+.visionItem .imgLeft {
+  left: -20px;
+}
+.visionItem .imgRight {
+  right: -20px;
+}
+.visioncontent {
+  height: 200px;
+  background: linear-gradient(to left,#1D243D 3% , #121A36 100%);
+  padding: 20px;
+  border-radius: 25px;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.visioncontentleft {
+  width: 95%;
+  height: 200px;
+  padding: 20px;
+  background: linear-gradient(to right,#1D243D 3% , #121A36 100%);
+  border-radius: 25px;
+  padding-right: 200px;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+.aboutVision h2{
+  text-align: center;
+}
+.visioncontent p {
+  width: 85%;
+
+}
+/*-------------------------------------------------------------------------*/
+@media (max-width: 1191px) {
+  .visionItem .imgLeft {
+      position: relative;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0; 
+    }
+    .visionItem .imgRight {
+      position: relative;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+    .visioncontentleft {
+      width: 100%;
+      height: auto;
+      padding: 20px;
+      margin-right: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+    }
+    .visioncontent {
+      text-align: center;
+      height: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      order: 2;
+      gap: 0;
+    }
+    .visionItem {
+      width: 60%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 25px;
+    }
+    .visioncontentleft p {
+      width: 85%;
+    }    
+  
+    .visionSectionContainer {
+      gap: 120px;
+    }
+    .aboutVision h2{
+      text-align: right;
+      margin-bottom: 110px;
+    }
+    .visionItem{
+      width: 100%;
+    }
+    .visioncontent, .visioncontentleft{
+      position: relative;
+      padding-top: 25px;
+    }
+    .visionItem .imgLeft,
+    .visionItem .imgRight{
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      top: -105px;
+      right: 10px;
+    }
+    .visionItem h3{
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .visionItem p , .visionItem h3{
+      text-align: right;
+    }
+    .visioncontentleft p , .visioncontent p{
+        width: 100%;
+    }
+}
+@media (max-width: 767px) {
+  
+    
+    
+}

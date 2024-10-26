@@ -1,0 +1,39 @@
+.expert{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.expert .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content p{
+    width: 80%;
+}
+.link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: .3s;
+}
+.link:hover{
+    gap: 20px;
+}
+@media (max-width: 1191px) {
+    .expert .content img{
+        display: none;
+    }
+  .content p{
+    width: 100%;
+  }
+    .expert .content{
+        justify-content: center;
+        text-align: center;
+    }
+    .expert h2{
+        text-align: center;
+    }
+    
+}

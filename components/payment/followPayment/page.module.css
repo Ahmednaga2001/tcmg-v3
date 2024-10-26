@@ -1,0 +1,85 @@
+.followPayment {
+   display: flex;
+}
+
+.formPage {
+   width: 70%;
+   border: 1px solid #ffffff23;
+   padding: 40px;
+}
+
+.paymentParent {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.checkmark {
+   width: 15%;
+   display: flex; 
+   align-items: center;
+}
+
+.paymentLogo {
+   display: flex;
+   align-items: center;
+   cursor: pointer; 
+}
+
+
+
+.paymentLogo div {
+   width: 100%;
+}
+
+.paymentLogo p {
+   background-color: #fff;
+   display: flex;
+   justify-content: center;
+   border-radius: 12px;
+   padding: 20px;
+}
+
+.paymentLogo span {
+   font-size: 14px;
+}
+
+.btnParent {
+   display: flex; 
+   justify-content: flex-start; 
+   width: 100%;
+}
+
+.btn {
+   width: 100%;
+   background-color: #fff;
+   color: #000;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   text-align: center;
+   padding: 20px;
+   border-radius: 12px;
+   cursor: pointer;
+}
+
+
+
+@media (max-width: 1191px) {
+   .formPage{
+    width: 60%;
+    padding: 20px;
+   }
+}
+
+@media (max-width: 768px) {
+   .followPayment{
+      flex-direction: column;
+   }
+   .formPage{
+    width: 100%;
+   }
+   .checkmark{
+   }
+}

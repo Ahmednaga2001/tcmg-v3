@@ -1,0 +1,193 @@
+.bestPractice h2,
+.category h2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.practiceContainer,
+.categoryContainer {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.practiceCard,
+.categoryCard {
+  position: relative;
+  width: 100%;
+}
+.imgleft {
+  position: absolute;
+  left: -20px;
+  top: -40px;
+  z-index: 10;
+}
+.imgright {
+  position: absolute;
+  right: -20px;
+  top: -40px;
+  z-index: 10;
+}
+.bestPractice .content,
+.category .content {
+  height: 200px;
+  padding: 20px;
+  background: linear-gradient(to left,#1D243D 3% , #121A36 100%);
+  padding: 20px;
+  border-radius: 25px;
+  width: 95%;
+}
+.bestPractice .content p,
+.category .content p {
+  width: 85%;
+}
+.contentleft {
+  width: 95%;
+  height: 200px;
+  padding: 20px;
+  background: linear-gradient(to right,#1D243D 3% , #121A36 100%);
+  padding: 20px;
+  border-radius: 25px;
+  padding-right: 200px;
+  margin-right: 5%;
+}
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.linkContainer > a:first-child {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.6s;
+}
+.linkItem:first-child:hover {
+  transform: scale(1.1);
+}
+.linkContainer > a:last-child {
+  background-color: #fff;
+  padding: 10px 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 30px;
+  color: #000;
+}
+
+@media (max-width: 1191px) {
+  .practiceCard .imgleft,
+  .categoryCard .imgleft {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .practiceCard .imgright,
+  .categoryCard .imgright {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .practiceCard:nth-child(odd) , .categoryCard:nth-child(odd){
+    background: linear-gradient(to bottom,#1D243D 3% , #121A36 100%);
+  
+  }
+  .practiceCard:nth-child(even) , .categoryCard:nth-child(even){
+    background: linear-gradient(to top,#1D243D 3% , #121A36 100%);
+  }
+  .bestPractice .contentleft,
+  .category .contentleft {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-right: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .bestPractice .content,
+  .category .content {
+    text-align: center;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    order: 2;
+  }
+  .practiceCard,
+  .categoryCard {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+  }
+  .bestPractice .contentleft p,
+  .category .contentleft p {
+    width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .bestPractice h2,
+  .category h2 {
+    text-align: right;
+    margin-bottom: 15px;
+  }
+  .bestPractice p,
+  .category p {
+    font-size: 16px;
+  }
+  .bestPractice .contentleft p,
+  .category .contentleft p,
+  .bestPractice .content p,
+  .category .content p{
+    width: 100%;
+    text-align: right;
+  }
+  .bestPractice .contentleft h3,
+  .category .contentleft h3,
+  .bestPractice .content h3,
+  .category .content h3{
+    width: 100%;
+    text-align: right;
+    margin: 25px 0 10px;
+  }
+  .categoryCard,
+  .practiceCard {
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+  }
+  .practiceCard .imgleft,
+  .categoryCard .imgleft {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -60px;
+    right: 10px;
+  }
+  .practiceCard .imgright,
+  .categoryCard .imgright {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -60px;
+    right: 10px;
+  }
+  .leftcontent .img {
+    width: 100%;
+    height: 100%;
+  }
+}

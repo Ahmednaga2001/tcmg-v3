@@ -1,0 +1,215 @@
+.atriclePage section{
+    padding: 80px;
+}
+.atriclePage .mainTitle{
+    font-size: 50px;
+    display: block;
+    line-height: 1.4;
+    padding: 20px 0;
+
+}
+.articleHero{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    text-align: center;
+    background-image: url(/assets/images/article/hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+    margin-top: 100px;
+}
+@media (max-widht : 800px) {
+    .articleHero{
+        margin-top: 95px;
+    }
+    
+}
+.atriclePage ul{
+    list-style-type: disc !important;
+    list-style-position: inside;
+ 
+}
+.atriclePage ol{
+    list-style-position: inside;
+    line-height: 1.8;
+}
+.bulletContent{
+    margin-top: 30px;
+    line-height: 1.8;
+}
+.bulletContent ul , .orderedContent ol{
+    margin-top: 10px;
+}
+.bulletContent .desc{
+    padding: 20px 0;
+}
+ .serviceContent{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.serviceContent{
+    
+}
+.brand{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.headTitle{
+    font-weight: bold;
+    font-size: 20px;
+    display: block;
+}
+.brandImportant{
+    margin-top: 30px;
+}
+.brandImportant img , .regImg{
+    margin-top: 30px;
+}
+
+@media (max-width:1191px) {
+    .brand img , .brandImportant img , .regImg{
+        width: 100%;
+        height: 100%;
+       }
+       .atriclePage h1 , .atriclePage h2 , .mainTitle{
+        font-size: 35px;
+        text-align: center;
+    }
+    
+}
+@media (max-width:768px) {
+    .atriclePage section{
+        padding: 20px;
+    }
+   
+    .atriclePage p , .atriclePage li{
+        text-align: center;
+        font-size: 16px;
+    }
+    .atriclePage .headTitle{
+        text-align: center;
+    }
+ 
+   .brand{
+   }
+   .brandImportant img{
+   }
+    
+}
+
+.divider{
+    padding: 30px 0;
+}
+.divider p{
+margin: auto;    
+    background-color: #fff;
+    color: #000;
+    width: 60%;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    border-radius: 12px;
+}
+/*----------------------------------------------------------------*/
+.articleContact{
+    background-color: #fff;
+    background-image: url("/assets/images/article/pattern.png");
+    background-repeat: no-repeat;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 20px;
+
+}
+.articleContact span{
+    font-weight: bold;
+}
+.articleContact a{
+    color: #000;
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .articleContact{
+        align-items: center;
+        text-align: center;
+    }
+}
+/*----------------------------------------------------------------*/
+.articleConclution{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+@media (max-width : 1191px){ 
+.articleConclution{
+    align-items: center;
+    text-align: center;
+}
+}
+/*----------------------------------------------------------------*/
+.articleMarks{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+}
+.articleMarks .topContent { 
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 50px 0;
+}
+.marksContainer{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.marksContainer p{
+border-radius: 4px;
+border:  1px solid #ffffff85;
+background: linear-gradient(rgba(255, 255, 255, .03) 0%, rgba(216, 216, 216, .03) 100%);
+padding: 10px;
+}
+@media (max-width: 1191px) {
+  .marksContainer{
+    grid-template-columns: repeat(2,1fr);
+
+  }
+}
+@media (max-width: 768px) {
+  .marksContainer{
+    grid-template-columns: repeat(1,1fr);
+
+  }
+  .articleMarks .bottom{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .articleMarks .socialIcons{
+    justify-content: center;
+  }
+}
+
+.articleMarks .bottom{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding: 50px 0;
+}
+.articleMarks .socialIcons{
+    display: flex;
+    gap: 10px;
+}
+.articleMarks .socialIcons img{
+    cursor: pointer;
+}

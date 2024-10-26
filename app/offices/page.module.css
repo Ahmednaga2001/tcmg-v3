@@ -1,0 +1,26 @@
+.branchPage section{
+    padding: 80px;
+} 
+@media (max-width: 1191px) {
+    .branchPage h1,
+    .branchPage h2 {
+        font-size: 35px;
+        text-align: center !important;
+    }
+
+    
+}
+@media (max-width: 768px) {
+    .branchPage section{
+        padding: 20px;
+    }
+    
+}
+@media (max-width: 400px) {
+    .branchPage h1,
+    .branchPage h2 {
+        font-size: 24px;
+    }
+
+    
+}

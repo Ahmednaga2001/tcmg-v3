@@ -1,0 +1,132 @@
+.reserveConsultation {
+}
+.reserveConsultation h2 {
+  text-align: center;
+}
+.parentButtons {
+  padding: 20px 0;
+}
+.reserveConsultation .container {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.reserveConsultation .buttons {
+  display: flex;
+  justify-content: center;
+  background-color: #1b234089;
+  gap: 20px;
+  width: fit-content;
+  margin: auto;
+  border-radius: 50px;
+  padding: 10px;
+}
+.reserveConsultation .buttons button {
+  border: none;
+  background: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+.buttons button.active {
+  background-color: #fff;
+  color: #000;
+  padding: 5px 15px;
+  border-radius: 25px;
+}
+/* .reserveConsultation .companiesServices,
+  .reserveConsultation .individualServices {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  } */
+.reserveConsultation .companiesServices .card,
+.individualServices .card {
+  background: linear-gradient(#1b2340, #0e152c);
+  width: 22rem;
+  padding: 30px 20px;
+  height: 600px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.reserveConsultation .individualServices .popular {
+  background-color: #fff;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 15px;
+  color: #000;
+  font-weight: bold;
+}
+
+.topData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30%;
+}
+.topData .info {
+  text-decoration: none !important;
+  padding-left: 0 !important;
+  padding-top: 20px;
+  font-size: 25px !important;
+}
+.reserveConsultation .companiesServices .topData h3,
+.individualServices .topCard h3 {
+  text-align: center;
+}
+.topData span:first-of-type {
+  text-decoration: line-through;
+  font-size: 20px;
+  padding-left: 50%;
+}
+.topData span:last-of-type {
+  font-size: 35px;
+  font-weight: bold;
+}
+.companiesServices .offer,
+.individualServices .offer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.companiesServices .offer span:not(:nth-child(2)),
+.individualServices .offer span:not(:nth-child(2)) {
+  width: 25%;
+  height: 2px;
+  background-color: #fff;
+}
+.companiesServices .offer span,
+.individualServices .offer span {
+  font-size: 16px;
+}
+.companiesServices .bodyData,
+.individualServices .bodyData {
+  padding: 20px 0;
+  height: 60%;
+}
+.companiesServices .bodyData span,
+.individualServices .bodyData span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+}
+.companiesServices .card a,
+.individualServices .card a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .reserveConsultation .companiesServices .card,
+  .individualServices .card {
+    height: auto;
+  }
+}

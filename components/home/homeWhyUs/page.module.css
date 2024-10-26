@@ -1,0 +1,94 @@
+/* .whyUs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+} */
+.whyUs .heading{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.swiperContainer{
+    padding-top: 50px;
+}
+
+.ourTeam {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+}
+
+.ourTeam .header,
+.ourCustomers .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.SwiperSlide{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card {
+    padding: 50px 30px;
+    background-image: linear-gradient( #0E152C, #21233A);
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /* margin: auto; */
+    display: flex;
+}
+.card img{
+    margin: auto;
+}
+.card p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0E152C;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 800px){
+    .whyUs {
+        padding: 32px 16px !important;
+    }
+}
+
+@media (max-width: 400px){
+    .heading h2 {
+        font-size: 24px;
+    }
+    .heading p {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+  

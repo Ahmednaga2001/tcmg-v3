@@ -1,0 +1,117 @@
+.carousel {
+    height: 100%;
+    width: 100%;
+    background-color: var(--main);
+    color: var(--font);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.carousel .caroChild {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 100px;
+    animation: fade 1.5s ease-out;
+}
+
+
+.carousel .caroChild div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.carousel .caroChild div p {
+    width: 75%;
+
+}
+
+/* @media (max-width: 1191px) {
+    .carousel .bodyContent img{
+        display: none;
+       
+    }
+    .caroChild{
+        align-items: center;
+    }
+    .carousel h2{
+        text-align: center;
+        width: 100%;
+    }
+  
+    .carousel .caroChild div {
+        justify-content: center;
+    }
+    .carousel .caroChild div p {
+        width: 100%;
+        text-align: center;
+    }
+} */
+
+@media (max-width: 800px){
+    .carousel {
+        padding: 32px 16px !important;
+    }
+    .carousel .caroChild div {
+        display: flex;
+        align-items: baseline !important;
+        justify-content: space-between;
+        gap: 40px;
+        width: 100%;
+    }
+    .carousel .bodyContent {
+        display: flex;
+        align-items: baseline;
+        justify-content: baseline;
+
+    }
+    /* .carousel .bodyContent img{
+        display: block;
+    } */
+    .carousel h2{
+        text-align: right;
+    }
+    .carousel .caroChild .bodyContent p{
+        font-size: 16px;
+        font-weight: 400;
+        text-align: right;
+    }
+}
+@media (max-width: 500px){
+    .carousel .bodyContent img{
+        display: none;
+    }
+    .carousel .caroChild div p {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px){
+    .carousel .caroChild h2 {
+        font-size: 26px;
+    }
+    .carousel .caroChild p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 400px){
+    .carousel .caroChild h2 {
+        font-size: 24px;
+    }
+    .carousel .caroChild p {
+        font-size: 14px;
+    }
+    .carousel .caroChild div span {
+        font-size: 14px;
+    }
+}

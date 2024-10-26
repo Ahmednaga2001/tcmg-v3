@@ -1,0 +1,106 @@
+.businessPage section{
+    padding: 80px;
+}
+.businessPage{
+  margin-top: 100px;
+}
+@media (max-width : 800px) {
+  .businessPage{
+    margin-top: 95px;
+  }
+  
+}
+.formPage{
+    width: 70%;
+    border: 1px solid #ffffff23;
+    padding: 40px;
+      background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+      margin: 100px auto;
+ }
+ .formPage p{
+   text-align: center;
+   font-size: 24px;
+ }
+ .additionalInfo label{
+   font-size: 14px;
+ }
+ .inp {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    height: 150px;
+    background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03))
+
+  }
+.inp span{
+  font-size: 20px;
+  color: #fff;
+
+}
+
+   .inp textarea {
+    color: #fff;
+
+    border: none;
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    outline: none;
+    ;
+    font-size: 18px;
+  }
+  .message .inp {
+    height: 80px;
+  }
+ .message,.topic{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+ }
+ .terms{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 30px;
+ }
+.registerWay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    gap: 20px;
+    background-color: #fff;
+    color: #000;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+@media (max-width: 1191px) {
+   .formPage{
+    width: 60%;
+    padding: 20px;
+   }
+   .businessPage h2{
+    text-align: center;
+    font-size: 35px;
+   }
+}
+
+@media (max-width: 768px) {
+    .businessPage section{
+        padding: 20px;
+    }
+  .formPage p{
+    font-size: 18px;
+  }
+   .formPage{
+    width: 100%;
+   }
+}

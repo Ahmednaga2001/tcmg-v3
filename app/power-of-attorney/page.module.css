@@ -1,0 +1,23 @@
+
+.hireAttornyPage section {
+    padding: 80px;
+  }
+  @media (max-width: 1191px) {
+    .hireAttornyPage h1 , .hireAttornyPage h2{
+      font-size: 35px;
+    }
+  }
+  @media (max-width: 768px) {
+      .hireAttornyPage section{
+          padding: 20px;
+      }
+      .hireAttornyPage p{
+          font-size: 16px;
+      }
+  }
+
+  @media (max-width: 400px) {
+    .hireAttornyPage h1 , .hireAttornyPage h2{
+      font-size: 24px;
+    }
+  }

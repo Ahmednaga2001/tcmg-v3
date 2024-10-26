@@ -1,0 +1,132 @@
+.legalinstructions .boxs {
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+.legalinstructions .box {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+}
+.line , .lineM{
+  position: relative;
+    width: 15rem;
+    height: 100px;
+  }
+  .line::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-left: 4px dotted rgba(128, 128, 128, 0.6) ;
+    border-top: 4px dotted rgba(128, 128, 128, 0.6) ;
+    border-radius: 25px 0 0 0;
+  }
+  .lineM::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-right: 4px dotted rgba(128, 128, 128, 0.6) ;
+    border-top: 4px dotted rgba(128, 128, 128, 0.6) ;
+    border-radius: 0 25px 0 0; 
+  }
+.legalinstructions .boxRight {
+  width: 30rem;
+  background: linear-gradient(#111931, #1a223f);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.legalinstructions .boxM {
+  display: flex;
+  justify-content: flex-end;
+}
+.legalinstructions .boxRightM {
+  width: 30rem;
+  background: linear-gradient(#111931, #1a223f);
+  padding: 20px 40px;
+  text-align: center;
+}
+.legalinstructions .boxLeft {
+  position: relative;
+}
+.legalinstructions .cirecleImg1 {
+  position: absolute;
+  right: -30px;
+  top: -10px;
+}
+.legalinstructions .cirecleImg2M {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+}
+.legalinstructions .cirecleImg1M {
+  position: absolute;
+  left: -35px;
+  top: -10px;
+}
+.legalinstructions .cirecleImg2 {
+  position: absolute;
+  bottom: -10px;
+  left: -15px;
+}
+.legalinstructions .boxRight p, .legalinstructions .boxRightM p{
+  font-size: 20px;
+  font-weight: bold;
+ }
+
+@media (max-width: 800px) {
+    .legalinstructions .boxs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 50px 0;
+    }
+    .legalinstructions .box {
+      display: flex;
+      justify-content: center;
+     width: 100%;
+     gap: 0;
+    }
+    .legalinstructions .boxM{
+      justify-content: center;
+    }
+    .legalinstructions .boxRight , .legalinstructions .boxRightM{
+      width: 70%;
+      padding: 15px;
+    }
+    .legalinstructions .boxRight p, .legalinstructions .boxRightM p{
+     font-size: 16px;
+    }
+}
+
+@media (max-width: 600px){
+  .line , .lineM , .cirecleImg1 , .cirecleImg1M , .cirecleImg2 , .cirecleImg2M{
+    display: none;
+  }
+  .legalinstructions .boxRight , .legalinstructions .boxRightM{
+    width: 85%;
+  }
+    .legalinstructions h2 {
+      font-size: 28px;
+    }
+}
+
+@media (max-width: 400px){
+  .legalinstructions h2 {
+    font-size: 24px;
+  }
+  .legalinstructions .boxRight , .legalinstructions .boxRightM{
+    width: 100%;
+    padding: 15px;
+  }
+  .legalinstructions .boxRight p, .legalinstructions .boxRightM p{
+    font-size: 14px;
+   }
+}

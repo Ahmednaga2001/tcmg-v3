@@ -1,0 +1,50 @@
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.infoAccount {
+    display: block;
+    padding: 20px 0;
+    border-bottom: 1px solid #C6C6C6;
+    font-size: 20px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.data span:first-child {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.data .buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.data button {
+    background: none;
+    border: none;
+    outline: none;
+    color: #C6C6C6;
+    cursor: pointer;
+}
+
+.buttons button:first-child {
+    border-left: 1px solid gray;
+    padding-left: 20px;
+}
+
+@media (max-width: 1191px) {
+    .info{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+}

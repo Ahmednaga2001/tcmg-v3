@@ -1,0 +1,23 @@
+.links {
+  background-color: #1b2340;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px;
+  font-size: 24px;
+  flex-wrap: wrap;
+
+}
+.links a{
+  color: #ffffff99;
+}
+.activeLink {
+  color: #fff !important; /* White color for the active link */
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .links{
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,34 @@
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (max-width: 1191px) {
+ 
+  .steps{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (max-width:800px) {
+  .steps{
+    gap: 20px;
+    padding: 50px 20px !important;
+    align-items: start ;
+  }
+  .steps h2{
+    text-align: start !important;
+    font-size: 28px !important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+  }
+  .steps p{
+    text-align: start ;
+    font-size: 14px !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+  }
+}

@@ -1,0 +1,66 @@
+.RequestLawyer h2 {
+    text-align: center;
+  }
+  .RequestLawyer .formPage {
+    border-radius: 32px;
+    width: 80%;
+    margin: auto;
+    /* backdrop-filter: blur(5px);
+    background-color: #dddddd27; */
+    border: 1px solid #ffffff28;
+
+      padding: 80px;
+  }
+  .RequestLawyer .names {
+    display: flex;
+    gap: 20px;
+  }
+  .RequestLawyer .inp {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 30px;
+  }
+.formPage TextArea{
+  height: 100px;
+  color: #fff;
+  font-size: 18px;
+}
+
+ 
+  .formPage button {
+    background: transparent;
+    background: none;
+    border: none; 
+    text-align: center;
+    width: 100%;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    gap: 10px;
+    transition-property: opacity;
+    transition-property: gap;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+    color: #fff;
+  }
+  .formPage button:hover {
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .RequestLawyer .formPage {
+        width: 100%;
+        padding: 20px;
+      }
+      .RequestLawyer .names {
+        flex-direction: column;
+        gap: 0;
+      }
+  }

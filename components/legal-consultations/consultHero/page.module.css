@@ -1,0 +1,61 @@
+.hero {
+ background-image: url("/assets/images/legalconsultations/الإستشارات القانونية.jpg");
+  background-size: cover;
+  background-position: center center;
+  
+}
+.hero .content {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (max-width: 1191px) {
+  .hero .content {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }    
+}
+
+@media (max-width: 800px){
+  .hero{
+    margin-top: 95px;
+  }
+  .hero .content {
+    gap: 30px;
+    padding: 100px 0px 150px;
+    align-items: flex-start;
+    text-align: right;
+  }
+  .hero .content p{
+    font-size: 20px;
+    line-height: 35.6px;
+  }
+}
+
+@media (max-width: 600px){
+  .hero .content h1{
+    font-size: 28px;
+  }
+  .hero .content p{
+    font-size: 20px;
+    line-height: 25.6px;
+  }
+}
+
+@media (max-width: 400px){
+  .hero {
+    background-image: none;
+  }
+  .hero .content {
+    gap: 16px;
+  }
+  .hero .content h1{
+    font-size: 24px;
+  }
+  .hero .content p{
+    font-size: 14px;
+  }
+}

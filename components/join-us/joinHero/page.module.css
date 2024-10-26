@@ -1,0 +1,36 @@
+.hero {
+  min-height: 70vh;
+  padding: 80px;
+  background-image: linear-gradient(#0e152cd8, #0e152cd8),
+    url(/assets/images/joinus/pattern1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+@media (max-width : 1191px) {
+  .hero h1 {
+      text-align: center;
+    }
+  
+}
+@media (max-width : 800px) {
+ .hero{
+  margin-top: 95px;
+ }
+  
+}
+@media (max-width: 768px) {
+  .hero{
+    min-height: 56vh;
+  }
+  .hero h1{
+    text-align: right;
+  }
+  .hero h1 span{
+    font-size: 23px;
+  }
+}

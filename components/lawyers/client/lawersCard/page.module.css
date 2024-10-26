@@ -1,0 +1,52 @@
+.lawyerCard {
+    display: flex;
+    /* align-items: center; */
+    gap: 40px;
+    background: linear-gradient(#1b2340, #0e152c);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 17px;
+    height: 169px;
+    
+  }
+
+  
+   .cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .lawyerPhone,
+  .lawyerEmail,
+  .lawyerDownloadCv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .lawyerName {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .lawyerCategory {
+    font-size: 14px;
+    color: gray;
+  }
+
+
+  
+  @media (max-width: 450px) {
+    .lawyerCard {
+     flex-direction: column;
+     height: auto;
+     align-items: center;
+     gap: 10px;
+     padding: 10px;
+    }
+    
+  }

@@ -1,0 +1,28 @@
+.privacyPage section{
+    padding: 80px;
+}
+.privacyPage .title{
+    display: block;
+    font-size: 30px;
+}
+@media (max-width : 1191px) {
+    .privacyPage h1 , .privacyPage h2{
+        font-size: 35px;
+        }
+    
+}
+@media (max-width: 768px) {
+    .privacyPage section{
+        padding: 20px;
+    }
+   
+    
+}
+@media (max-width: 400px) {
+ 
+    .privacyPage h1 , .privacyPage h2{
+    font-size: 24px;
+    color: red;
+    }
+    
+}

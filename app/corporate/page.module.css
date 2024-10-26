@@ -1,0 +1,26 @@
+.buisnessPage section {
+    padding: 80px;
+  }
+  @media (max-width: 1191px) {
+    .buisnessPage h1,
+    .buisnessPage h2 {
+      font-size: 35px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .buisnessPage p {
+      font-size: 16px;
+    }
+    .buisnessPage section {
+      padding: 20px;
+    }
+   
+  }
+  
+  @media (max-width: 400px) {
+    .buisnessPage h1,
+    .buisnessPage h2 {
+      font-size: 24px;
+    }
+  }

@@ -1,0 +1,26 @@
+.hiringPage section {
+    padding: 80px;
+  }
+  @media (max-width: 1191px) {
+    .hiringPage h1,
+    .hiringPage h2 {
+      font-size: 35px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hiringPage p {
+      font-size: 16px;
+    }
+    .hiringPage section {
+      padding: 20px;
+    }
+   
+  }
+  
+  @media (max-width: 768px) {
+    .hiringPage h1,
+    .hiringPage h2 {
+      font-size: 24px;
+    }
+  }
