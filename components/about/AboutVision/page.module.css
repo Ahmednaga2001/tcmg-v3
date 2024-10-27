@@ -8,10 +8,11 @@
 
   /*------------------------------------------------------------------------------------*/
 .visionSectionContainer {
-  padding: 20px 0;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 60px;
+
 }
 .visionItem {
   position: relative;
@@ -31,7 +32,7 @@
   right: -20px;
 }
 .visioncontent {
-  height: 200px;
+  height: 230px;
   background: linear-gradient(to left,#1D243D 3% , #121A36 100%);
   padding: 20px;
   border-radius: 25px;
@@ -42,7 +43,7 @@
 }
 .visioncontentleft {
   width: 95%;
-  height: 200px;
+  height: 230px;
   padding: 20px;
   background: linear-gradient(to right,#1D243D 3% , #121A36 100%);
   border-radius: 25px;
