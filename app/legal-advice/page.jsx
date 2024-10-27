@@ -11,7 +11,7 @@ import ConsultWhyTrust from "@/components/legal-consultations/client/consultWhyT
 import Accordion from "@/components/legal-consultations/client/Accordion";
 import ConsultStrongestLawyers from "@/components/legal-consultations/consultStrongestLawyers/ConsultStrongestLawyers";
 export const metadata={
-  title : "Legal Consultations",
+  title : "Legal Advice",
   description : "هل تبحث عن أكبر مكتب استشارات قانونية مصرية؟ اطلب الآن استشارة قانونية فورية للأفراد والشركات واحصل على رد من مستشار قانوني أون لاين أو بالهاتف في مصر.",
   keywords : "استشارة قانونية فورية، استشارات قانونية، مكتب استشارات قانونية، استشارة محامي، استشارات قانونية اونلاين"
 }
