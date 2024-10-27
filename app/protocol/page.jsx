@@ -6,7 +6,7 @@ import TcmgPartnership from "@/components/strategic-relations/tcmgPartnership/Tc
 import styles from "./page.module.css"
 import RelationHero from "@/components/strategic-relations/relationHero/RelationHero";
 export const metadata={
-  title : "Strategic Relations",
+  title : "Protocol",
   description : "قم بمعقد بروتوكول تعاون مع مكاتب TCMG للمحاماة؛ لتحقيق شراكات استراتيجية تساهم بشكل فعَّال في تعزيز الخبرات القانونية وتقديم خدمات مبتكرة لضمان نجاح مشترك.",
 }
 function StrategicRelations() {

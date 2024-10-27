@@ -416,9 +416,6 @@ const InternGraduationForm = () => {
       formData.append("email", values.email);
       formData.append("agreeToPrivacy", values.agreeToPrivacy);
 
-      for (const [key, value] of formData.entries()) {
-        console.log(`${key}: ${value}`);
-      }
 
       axios
         .post("https://tcmg-production.up.railway.app/internship", formData, {

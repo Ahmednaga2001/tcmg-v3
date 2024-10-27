@@ -11,7 +11,7 @@ import Team from "@/components/shared/client/Team/Team";
 import Links from "@/components/shared/linksPagination/Links";
 import styles from "./page.module.css";
 export const metadata={
-  title : "Hiring",
+  title : "Careers",
   description : "انضم إلى فريق TCMG للمحاماة واكتشف وظائف محامين مميزة تٌمَكنك من العمل في بيئة تدعم التطور المهني. ابنِ مسيرتك المهنية الواعدة وحقق طموحاتك في عالم المحاماة."
 }
 

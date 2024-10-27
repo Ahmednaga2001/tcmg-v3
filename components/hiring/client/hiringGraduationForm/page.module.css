@@ -13,8 +13,21 @@
   display: flex;
   gap: 20px;
 }
+.errorWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.error {
+  font-size: 16px;
+  color: red;
+}
 .graduationForm .inp {
-  background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(216, 216, 216, 0.03)
+  );
 
   display: flex;
   align-items: center;
@@ -25,19 +38,18 @@
   margin-top: 30px;
   border: 1px solid #fff;
 }
-.inp span{
-font-size: 20px;
+.inp span {
+  font-size: 20px;
 }
 
 .graduationForm .formPage textarea {
   width: 100%;
-  resize:none;
+  resize: none;
   background-color: transparent;
   outline: none;
   border: none;
   color: #fff;
   font-size: 18px;
-
 }
 
 .graduationForm .emailContact {
@@ -81,11 +93,11 @@ font-size: 20px;
 }
 .formPage input:placeholder-shown,
 .formPage form h3,
-.formPage textarea:placeholder-shown{
+.formPage textarea:placeholder-shown {
   font-size: 18px;
 }
 @media (max-width: 800px) {
-  .formPage h2{
+  .formPage h2 {
     font-size: 24.774px !important;
     font-style: normal;
     font-weight: 700;
@@ -110,40 +122,37 @@ font-size: 20px;
   .graduationForm .inp {
     padding: 0 10px;
   }
-  .graduationForm .inp textarea{
+  .graduationForm .inp textarea {
     padding: 0;
   }
-  .graduationForm .inp textarea::placeholder{
+  .graduationForm .inp textarea::placeholder {
     transform: translateY(12px);
   }
-  .title{
+  .title {
     font-size: 14.452px;
     color: white;
-
   }
-  .stytle{
+  .stytle {
     font-size: 10.323px;
   }
-  .file img{
+  .file img {
     color: white;
   }
-  .formPage label{
+  .formPage label {
     font-size: 12.387px;
   }
-  .formPage button{
+  .formPage button {
     color: #fff;
     font-size: 16.516px;
   }
-  .emailContact{
+  .emailContact {
     display: none !important;
   }
-
 }
 
-@media (max-width : 768px) {
-  .names{
+@media (max-width: 768px) {
+  .names {
     flex-direction: column;
     gap: 0;
   }
-  
 }

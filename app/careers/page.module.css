@@ -18,7 +18,7 @@
    
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 400px) {
     .hiringPage h1,
     .hiringPage h2 {
       font-size: 24px;
