@@ -4,9 +4,10 @@ import CheckBox from "@/components/ui/CheckBox";
 import Input from "@/components/ui/Input";
 import SelectComponent from "@/components/ui/selectComponent/SelectComponent";
 import { useState } from "react";
-import styles from "./page.module.css"
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import styles from "./page.module.css";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import axios from "axios";
 const officeOptions = [
   {
     value: "القاهرة",
@@ -18,60 +19,82 @@ const officeOptions = [
     value: "الرياض",
   },
   {
-    value: "تشنغدو"
+    value: "تشنغدو",
   },
   {
-    value: "عمان"
+    value: "عمان",
   },
   {
-    value: "جنين"
-  }
-]
+    value: "جنين",
+  },
+];
 
 const RequestLawyer = () => {
+  const [success, setsuccess] = useState(null);
 
   const formik = useFormik({
-
     initialValues: {
-      fName: "",
-      lName: "",
+      f_name: "",
+      l_name: "",
+      office: "",
+      clientCategory: "",
       email: "",
       phone: "",
-      major: "",
-      issueInfo: "",
-      office: "",
-      customer: "",
+      legalCase: "",
+      lawerSpecialization: "",
       agreeToPrivacy: false, // Checkbox state
     },
     validationSchema: Yup.object({
-      fName: Yup.string()
-        .max(6, 'Must be 6 characters or less')
-        .required('Required'),
-      lName: Yup.string()
-        .max(6, 'Must be 6 characters or less')
-        .required('Required'),
-      email: Yup.string().email('Invalid email address').required('Required'),
+      f_name: Yup.string()
+        .max(10, "Must be 10 characters or less")
+        .required("Required")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
+      l_name: Yup.string()
+        .max(10, "Must be 10 characters or less")
+        .required("Required")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
+      email: Yup.string()
+        .matches(
+          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          "please enter a valid email"
+        )
+        .required("Required"),
       phone: Yup.string()
-        .min(11, 'Phone Number Must be 11 Numbers')
-        .required('Required'),
-      major: Yup.string()
-        .required('Required'),
-      issueInfo: Yup.string()
-        .min(20, 'Must be at least 20 characters')
-        .required('Required'),
-      office: Yup.string().required('Required'),     // Validation for office
-      customer: Yup.string().required('Required'),     // Validation for office
+        .matches(
+          /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
+          "invalid phone number"
+        )
+        .required("Required"),
+      lawerSpecialization: Yup.string()
+        .required("Required")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "major invalid "),
+      legalCase: Yup.string()
+        .min(20, "Must be at least 20 characters")
+        .required("Required"),
+      office: Yup.string().required("Required"), // Validation for office
+      clientCategory: Yup.string().required("Required"), // Validation for office
       agreeToPrivacy: Yup.boolean()
-        .oneOf([true], 'You must agree to the privacy policy') // Validation rule
-        .required('Required'),
+        .oneOf([true], "You must agree to the privacy policy") // Validation rule
+        .required("Required"),
     }),
-    validateOnBlur: true,   // This ensures validation on blur
+    validateOnBlur: true, // This ensures validation on blur
     validateOnChange: true,
-    onSubmit: values => {
+    onSubmit: (values) => {
       // alert(JSON.stringify(values, null, 2));
+      axios
+        .post("https://tcmg-production-0be9.up.railway.app/hire-lawer", values)
+        .then((res) => {
+          console.log("say", res.data.message);
+          setsuccess(res.data.message);
+          setTimeout(() => {
+            setsuccess(null);
+          }, 3000);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
       console.log(values);
     },
-
   });
   return (
     <section className={styles.RequestLawyer}>
@@ -85,13 +108,13 @@ const RequestLawyer = () => {
                 imgPath="/assets/icons/form/solar_user-bold.svg"
                 placeholder="الاسم الاول"
                 alt={"person icon"}
-                name={"fName"}
-                value={formik.values.fName}
+                name={"f_name"}
+                value={formik.values.f_name}
                 change={formik.handleChange}
                 blur={formik.handleBlur}
               />
-              {formik.touched.fName && formik.errors.fName ? (
-                <div className={styles.error}>{formik.errors.fName}</div>
+              {formik.touched.f_name && formik.errors.f_name ? (
+                <div className={styles.error}>{formik.errors.f_name}</div>
               ) : null}
             </div>
 
@@ -101,13 +124,13 @@ const RequestLawyer = () => {
                 imgPath="/assets/icons/form/solar_user-bold.svg"
                 placeholder="اسم العائلة"
                 alt={"person icon"}
-                name={"lName"}
-                value={formik.values.lName}
+                name={"l_name"}
+                value={formik.values.l_name}
                 change={formik.handleChange}
                 blur={formik.handleBlur}
               />
-              {formik.touched.lName && formik.errors.lName ? (
-                <div className={styles.error}>{formik.errors.lName}</div>
+              {formik.touched.l_name && formik.errors.l_name ? (
+                <div className={styles.error}>{formik.errors.l_name}</div>
               ) : null}
             </div>
           </div>
@@ -147,9 +170,9 @@ const RequestLawyer = () => {
             <SelectComponent
               options={[{ value: "أفراد" }, { value: "شركات ومؤسسات" }]}
               head="فئة العميل"
-              selectedOption={formik.values.customer}
+              selectedOption={formik.values.clientCategory}
               setSelectedOption={(value) => {
-                formik.setFieldValue('customer', value); // Update Formik state
+                formik.setFieldValue("clientCategory", value); // Update Formik state
               }}
               imgPath="/assets/icons/form/mdi_arrow-down-drop.svg"
               w={24}
@@ -157,17 +180,18 @@ const RequestLawyer = () => {
               onChange={formik.handleChange} // Bind Formik onChange
               onBlur={formik.handleBlur} // Bind Formik onBlur
             />
-            {formik.touched.customer && formik.errors.customer ? (
-              <div className={styles.error}>{formik.errors.customer}</div>
+            {formik.touched.clientCategory && formik.errors.clientCategory ? (
+              <div className={styles.error}>{formik.errors.clientCategory}</div>
             ) : null}
           </div>
 
           <div className={styles.errorWrapper}>
-            <SelectComponent head={"اختر المكتب"}
+            <SelectComponent
+              head={"اختر المكتب"}
               options={officeOptions}
               selectedOption={formik.values.office}
               setSelectedOption={(value) => {
-                formik.setFieldValue('office', value); // Update Formik state
+                formik.setFieldValue("office", value); // Update Formik state
               }}
               imgPath="/assets/icons/form/mdi_arrow-down-drop.svg"
               w={24}
@@ -184,44 +208,51 @@ const RequestLawyer = () => {
               label="التخصص"
               placeholder="التخصص"
               imgPath={"/assets/icons/form/category.png"}
-              alt={"major icon"}
-              name={"major"}
-              value={formik.values.major}
+              alt={"lawerSpecialization icon"}
+              name={"lawerSpecialization"}
+              value={formik.values.lawerSpecialization}
               change={formik.handleChange}
               blur={formik.handleBlur}
             />
-            {formik.touched.major && formik.errors.major ? (
-              <div className={styles.error}>{formik.errors.major}</div>
+            {formik.touched.lawerSpecialization &&
+            formik.errors.lawerSpecialization ? (
+              <div className={styles.error}>
+                {formik.errors.lawerSpecialization}
+              </div>
             ) : null}
           </div>
 
           <div className={styles.errorWrapper}>
             <div className={styles.inp}>
               <textarea
-                name="issueInfo"
-                id="issueInfo"
-                value={formik.values.issueInfo}  // Bind Formik value
-                onChange={formik.handleChange}   // Bind Formik onChange
-                onBlur={formik.handleBlur}       // Bind Formik onBlur
+                name="legalCase"
+                id="legalCase"
+                value={formik.values.legalCase} // Bind Formik value
+                onChange={formik.handleChange} // Bind Formik onChange
+                onBlur={formik.handleBlur} // Bind Formik onBlur
                 placeholder="ما هي قضيتك المراد توكيل محامي لها؟"
               ></textarea>
               <span>?</span>
             </div>
-            {formik.touched.issueInfo && formik.errors.issueInfo ? (
-              <div className={styles.error}>{formik.errors.issueInfo}</div>
+            {formik.touched.legalCase && formik.errors.legalCase ? (
+              <div className={styles.error}>{formik.errors.legalCase}</div>
             ) : null}
           </div>
           <div className={styles.errorWrapper}>
-            <CheckBox label="أوافق على سياسة الخصوصية"
+            <CheckBox
+              label="أوافق على سياسة الخصوصية"
               name="agreeToPrivacy" // Bind the checkbox to Formik state
               checked={formik.values.agreeToPrivacy} // Control the checkbox
               onChange={formik.handleChange} // Use Formik's onChange
               onBlur={formik.handleBlur} // Use Formik's onBlur
-              error={formik.touched.agreeToPrivacy && formik.errors.agreeToPrivacy}
+              error={
+                formik.touched.agreeToPrivacy && formik.errors.agreeToPrivacy
+              }
             />
           </div>
           <Button text="ارسال" />
         </form>
+        <p className="success">{success}</p>
       </div>
     </section>
   );

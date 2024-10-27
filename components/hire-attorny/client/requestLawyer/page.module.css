@@ -1,64 +1,64 @@
 .RequestLawyer h2 {
-    text-align: center;
-  }
+  text-align: center;
+}
+.RequestLawyer .formPage {
+  border-radius: 32px;
+  width: 80%;
+  margin: auto;
+  border: 1px solid #ffffff28;
+
+  padding: 80px;
+  background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+
+}
+.RequestLawyer .names {
+  display: flex;
+  gap: 20px;
+}
+.RequestLawyer .inp {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 30px;
+  background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+  border: 1px solid #fff;
+
+}
+.RequestLawyer .formPage textarea {
+  width: 100%;
+  resize: none;
+  background-color: transparent;
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 100px;
+  color: #fff;
+  font-size: 18px;
+
+}
+
+@media (max-width: 768px) {
   .RequestLawyer .formPage {
-    border-radius: 32px;
-    width: 80%;
-    margin: auto;
-    border: 1px solid #ffffff28;
-
-    padding: 80px;
-    background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
-
-  }
-  .RequestLawyer .names {
-    display: flex;
-    gap: 20px;
-  }
-  .RequestLawyer .inp {
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    gap: 10px;
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 30px;
-    background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
-    border: 1px solid #fff;
-
-  }
-  .RequestLawyer .formPage textarea {
-    width: 100%;
-    resize: none;
-    background-color: transparent;
-    width: 100%;
-    outline: none;
-    border: none;
-    height: 100px;
-    color: #fff;
-    font-size: 18px;
-
-  }
-
-  @media (max-width: 768px) {
-    .RequestLawyer .formPage {
-        width: 100%;
-        padding: 20px;
-      }
-      .names{
-        flex-direction: column;
-        gap: 0 !important;
-      }
-    
-  }
-  .errorWrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-  }
-  .error{
-    font-size: 16px;
-    color:red
-  }
+      width: 100%;
+      padding: 20px;
+    }
+    .names{
+      flex-direction: column;
+      gap: 0 !important;
+    }
+  
+}
+.errorWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.error{
+  font-size: 16px;
+  color:red
+}
