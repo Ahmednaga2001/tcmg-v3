@@ -17,9 +17,7 @@ function AskAttorny() {
     <div className={styles.page}>
       <section className={styles.hero}>
         <h1>
-          بناء شراكات استراتيجية: اكتشف فرص التعاون والتواصل مع مكاتب TCMG
-          للمحاماة لتحقيق النجاح المشترك
-        </h1>
+        اسأل محامي مصري من خبراء مكاتب TCMG للمحاماة        </h1>
       </section>
       <PopUp/>
 

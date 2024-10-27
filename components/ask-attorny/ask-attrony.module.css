@@ -56,7 +56,9 @@
 .popup button {
   color: #fff !important;
 }
-
+.errorWrapper{
+  width: 100%;
+}
 @media (max-width: 1191px) {
   .page h1,
   .page h2 {

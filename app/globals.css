@@ -489,3 +489,7 @@ a {
   color: green;
   text-align: center;
 }
+.error {
+  font-size: 16px;
+  color: red;
+}

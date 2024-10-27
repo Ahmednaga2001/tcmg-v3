@@ -1,87 +1,100 @@
- .additionalInfo{
-    display: flex;
+.additionalInfo {
+   display: flex;
  }
- .formPage{
-    width: 70%;
-    border: 1px solid #ffffff23;
-    padding: 40px;
-      background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+ .formPage {
+   width: 70%;
+   border: 1px solid #ffffff23;
+   padding: 40px;
+   background: linear-gradient(
+     rgba(255, 255, 255, 0.03) 0%,
+     rgba(216, 216, 216, 0.03)
+   );
  }
- .formPage p{
+ .formPage p {
    text-align: center;
    font-size: 24px;
  }
- .additionalInfo label{
+ .additionalInfo label {
    font-size: 14px;
  }
+ .errorWrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+   width: 100%;
+ }
+ .error {
+   font-size: 16px;
+   color: red;
+ }
  .inp {
-    display: flex;
-    padding: 10px;
-    gap: 10px;
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid #fff;
-    height: 150px;
-    background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03))
-
-  }
-.inp span{
-  font-size: 20px;
-  color: #fff;
-
-}
-
-   .inp textarea {
-    color: #fff;
-
-    border: none;
-    width: 100%;
-    resize: none;
-    background-color: transparent;
-    width: 100%;
-    outline: none;
-    ;
-    font-size: 18px;
-  }
- .message{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
+   display: flex;
+   padding: 10px;
+   gap: 10px;
+   width: 100%;
+   border-radius: 10px;
+   border: 1px solid #fff;
+   height: 150px;
+   background: linear-gradient(
+     rgba(255, 255, 255, 0.03) 0%,
+     rgba(216, 216, 216, 0.03)
+   );
  }
- .terms{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 30px;
+ .inp span {
+   font-size: 20px;
+   color: #fff;
  }
-.registerWay{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    gap: 20px;
-    background-color: #fff;
-    color: #000;
-    padding: 15px;
-    width: 100%;
-    cursor: pointer;
-    margin-top: 30px;
-}
-
-@media (max-width: 1191px) {
-   .formPage{
-    width: 60%;
-    padding: 20px;
+ 
+ .inp textarea {
+   color: #fff;
+ 
+   border: none;
+   width: 100%;
+   resize: none;
+   background-color: transparent;
+   width: 100%;
+   outline: none;
+   font-size: 18px;
+ }
+ .message {
+   margin-top: 30px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+ }
+ .terms {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   margin-top: 30px;
+ }
+ .registerWay {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 12px;
+   gap: 20px;
+   background-color: #fff;
+   color: #000;
+   padding: 15px;
+   width: 100%;
+   cursor: pointer;
+   margin-top: 30px;
+ }
+ 
+ @media (max-width: 1191px) {
+   .formPage {
+     width: 60%;
+     padding: 20px;
    }
-}
-
-@media (max-width: 768px) {
-   .additionalInfo{
-      flex-direction: column;
+ }
+ 
+ @media (max-width: 768px) {
+   .additionalInfo {
+     flex-direction: column;
    }
-   .formPage{
-    width: 100%;
+   .formPage {
+     width: 100%;
    }
-}
+ }
+ 
