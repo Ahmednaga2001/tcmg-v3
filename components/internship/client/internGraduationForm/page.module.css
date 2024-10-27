@@ -5,7 +5,10 @@
   border-radius: 32px;
   width: 80%;
   margin: auto;
-  background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(216, 216, 216, 0.03)
+  );
   border: 1px solid #ffffff28;
   padding: 80px;
 }
@@ -22,24 +25,35 @@
   width: 100%;
   border-radius: 10px;
   margin-top: 30px;
-  background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(216, 216, 216, 0.03)
+  );
   border: 1px solid #fff;
- 
 }
-.inp span{
-font-size: 20px;
+.inp span {
+  font-size: 20px;
 }
 
 .graduationForm .formPage textarea {
   width: 100%;
-  resize:none;
+  resize: none;
   background-color: transparent;
   outline: none;
   border: none;
   color: #fff;
   font-size: 18px;
 }
-
+.errorWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.error {
+  font-size: 16px;
+  color: red;
+}
 .graduationForm .emailContact {
   display: flex;
   flex-direction: column;
@@ -70,10 +84,10 @@ font-size: 20px;
   color: #ffffffab;
 }
 .fileInput {
-  opacity: 0; 
-  position: absolute; 
-  width: 100%; 
-  height: 100%; 
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
 }
 .fileLabel Image {
@@ -81,7 +95,7 @@ font-size: 20px;
 }
 .formPage input:placeholder-shown,
 .formPage form h3,
-.formPage textarea:placeholder-shown{
+.formPage textarea:placeholder-shown {
   font-size: 18px;
 }
 
@@ -107,7 +121,7 @@ font-size: 20px;
     width: 100%;
     font-size: 24px;
   }
-  .graduationForm .names{
+  .graduationForm .names {
     flex-direction: column;
     gap: 0;
   }

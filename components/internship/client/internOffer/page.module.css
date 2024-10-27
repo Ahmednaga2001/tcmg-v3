@@ -79,7 +79,7 @@
   overflow: hidden;
   background-color: #101830;
   color: #fff;
-  height: 250px;
+  height: 300px;
 }
 
 .accordionContent.open {
@@ -121,11 +121,7 @@
   font-weight: bold;
 }
 
-@media (max-width: 1300px) {
-  .accordionContent{
-    height: 300px;
-  }
-}
+
 
 @media (max-width: 1191px) {
 
@@ -167,7 +163,7 @@
     gap: 40px;
   }
   .accordionContent{
-    height: 300px;
+    height: 350px;
   }
   .accordionItemHeader{
     padding: 5px 10px;
