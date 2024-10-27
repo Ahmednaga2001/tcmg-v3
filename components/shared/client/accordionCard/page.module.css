@@ -10,8 +10,13 @@
   line-height: 1.8;
 
 }
-.accordionQues ol{
+.accordionContainer ol{
   list-style: decimal;
+  list-style-position: inside;
+  padding: 10px;
+}
+.accordionContainer ul{
+  list-style: disc;
   list-style-position: inside;
   padding: 10px;
 }
