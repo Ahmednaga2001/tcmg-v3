@@ -480,3 +480,12 @@ a {
   position: absolute;
   bottom: 40px;
 }
+
+.err{
+  color: red;
+  text-align: center;
+}
+.success{
+  color: green;
+  text-align: center;
+}

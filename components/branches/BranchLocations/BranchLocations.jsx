@@ -83,7 +83,7 @@ const BranchLocations = () => {
             <div className={styles.location}>
               <h3>الرياض</h3>
               <p>(بالتعاون مع الجبار و المزارقة للمحاماة)</p>
-              <span>مخرج 7 - طريق عائمان بن عفان</span>
+              <span>مخرج 7 - طريق عائمان بن عثمان</span>
               <span>11536</span>
               <span>الرياض - المملكة العربية السعودية</span>
             </div>
@@ -128,15 +128,15 @@ const BranchLocations = () => {
       </div>
 
       <div className={styles.ammanLocation}>
-        <h2>عمان</h2>
+        <h2>الأردن</h2>
         <div className={styles.parent}>
           <div className={styles.parentLocations}>
             <div className={styles.location}>
-              <h3>الأردن</h3>
+              <h3>عمان</h3>
               <p>(بالتعاون مع شركة المرسي لأعمال المحاماة )</p>
               <span>  خلدا - بالقرب من اشارات البنك العربي </span>
               <span>مجمع رقم 116</span>
-              <span>عمان - خلدا - الأردن</span>
+              <span>الصينعمّان  - خلدا - الأردن</span>
             </div>
           </div>
           <div className={styles.cardImg}>

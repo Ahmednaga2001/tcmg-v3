@@ -1,184 +1,193 @@
-
-.contactForm{
+.contactForm {
     display: none;
-}
-@media (max-width:800px) {
-    .formPage{
-        z-index: 999999;
+  }
+  @media (max-width: 800px) {
+    .formPage {
+      z-index: 999999;
     }
-    .contactForm{
-       display: block;
-        width: 100%;
-        min-height: 100vh;
-        position: relative;
-        background-color: #1b2340;
-        
+    .contactForm {
+      display: block;
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      background-color: #1b2340;
+    }
+    .errorWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+    .error {
+      font-size: 16px;
+      color: red;
     }
     .contactForm::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url("/assets/images/branches/cairo.png"); /* Replace with your image */
-        background-size: cover;
-        background-position: center;
-        filter: opacity(10%); /* Apply your desired filter */
-        z-index: -9999; /* Ensure it's below the content */
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("/assets/images/branches/cairo.png"); /* Replace with your image */
+      background-size: cover;
+      background-position: center;
+      filter: opacity(10%); /* Apply your desired filter */
+      z-index: -9999; /* Ensure it's below the content */
     }
-    .bg{
-        position: absolute;
-        width: 100%;
-        min-height: 100vh;
-        left: 0;
-        top: 0;
+    .bg {
+      position: absolute;
+      width: 100%;
+      min-height: 100vh;
+      left: 0;
+      top: 0;
     }
-    .egyLocations h2{
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 44.8px;
+    .egyLocations h2 {
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 44.8px;
     }
-    .parentLocations{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    .parentLocations {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
-    .egyLocations{
-        width: 100%;
+    .egyLocations {
+      width: 100%;
     }
-    .locationInfo{
-        width: 100%;
-        height: 60px;
-        border: 3px dashed rgba(128, 128, 128, 0.6);
-        display: flex;
-        border-radius: 18px;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
+    .locationInfo {
+      width: 100%;
+      height: 60px;
+      border: 3px dashed rgba(128, 128, 128, 0.6);
+      display: flex;
+      border-radius: 18px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
     }
-    .locationInfo h4{
-        color: #FFF;
-        text-align: right;
-        font-family: "Janna LT";
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 22.4px;
+    .locationInfo h4 {
+      color: #fff;
+      text-align: right;
+      font-family: "Janna LT";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 22.4px;
     }
-    .parent{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 30px 0;
+    .parent {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 0;
     }
-    .locationInfo a{
-        color: #FFF;
-        font-family: "Janna LT";
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 22.4px;
-        padding: 0 10px;
+    .locationInfo a {
+      color: #fff;
+      font-family: "Janna LT";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 22.4px;
+      padding: 0 10px;
     }
-    .formpage h2{
-        color: #FFF;
-        text-align: right;
-        font-family: "Janna LT";
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 44.8px;
+    .formpage h2 {
+      color: #fff;
+      text-align: right;
+      font-family: "Janna LT";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 44.8px;
     }
-    .contactForm .formPage{
-        border-radius: 25px;
-        width: 100%;
-        /* backdrop-filter: blur(5px);
-        background-color: #dddddd27; */
-        
-        padding: 20px;
-        border: 1px solid #ffffff28;
-        background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+    .contactForm .formPage {
+      border-radius: 25px;
+      width: 100%;
+      /* backdrop-filter: blur(5px);
+          background-color: #dddddd27; */
+  
+      padding: 20px;
+      border: 1px solid #ffffff28;
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(216, 216, 216, 0.03)
+      );
     }
-    .h2{
-        color: #FFF;
-        text-align: right;
-        font-family: "Janna LT";
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 44.8px;
-        padding-bottom: 20px;
+    .h2 {
+      color: #fff;
+      text-align: right;
+      font-family: "Janna LT";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 44.8px;
+      padding-bottom: 20px;
     }
-    .names{
-        display: flex;
-        gap: 20px;
+    .names {
+      display: flex;
+      gap: 20px;
     }
-   .formPage Input::placeholder{
-    /* color: #0E152C; */
-    color: #9D9D9D;
-
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-   }
-   .formPage TextArea::placeholder{
-    /* color:  #0E152C; */
-    color: #9D9D9D;
-    text-align: right;
-    font-family: "Janna LT";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-   }
-   .formPage TextArea{
-    color: #fff;
-    font-size: 18px;
-   }
-   .formPage :nth-child(4) h3{
-    color: #0E152C;
-    text-align: right;
-    font-family: "Janna LT";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    padding: 5px;
-   }
-   .formPage :nth-child(6){
-    justify-content: start;
-   }
-    .formPage :nth-child(6) label{
-        justify-content: start;
-        font-family: "Janna LT";
-        font-size: 12px !important;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-   }
-    .formPage :nth-child(6) input{
-        width: 16px;
-        height: 16px;
-        appearance: auto;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        font-size: 2rem;
-        
-        border: 1px solid white;
-            
-          
-          
-   }
-   .formPage button {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
-   }
-}
+    .formPage Input::placeholder {
+      /* color: #0E152C; */
+      color: #9d9d9d;
+  
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .formPage TextArea::placeholder {
+      /* color:  #0E152C; */
+      color: #9d9d9d;
+      text-align: right;
+      font-family: "Janna LT";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .formPage TextArea {
+      color: #fff;
+      font-size: 18px;
+    }
+    .formPage :nth-child(4) h3 {
+      color: #0e152c;
+      text-align: right;
+      font-family: "Janna LT";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      padding: 5px;
+    }
+    .formPage :nth-child(6) {
+      justify-content: start;
+    }
+    .formPage :nth-child(6) label {
+      justify-content: start;
+      font-family: "Janna LT";
+      font-size: 12px !important;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .formPage :nth-child(6) input {
+      width: 16px;
+      height: 16px;
+      appearance: auto;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      font-size: 2rem;
+  
+      border: 1px solid white;
+    }
+    .formPage button {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+    }
+  }
+  
