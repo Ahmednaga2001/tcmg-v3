@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <Nav />
         <SideNav />
         <main>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
         <FooterMobile />
       </body>
     </html>

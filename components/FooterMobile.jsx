@@ -7,7 +7,7 @@ function FooterMobile() {
       <div className={styles.topIcons}>
         <div>
           <Link href="join-us" target="_blank" className={styles.mainLink}>
-            <h2 className={styles.linkText}>إنضم إلينا</h2>
+            <h2>إنضم إلينا</h2>
             <Image
               src="/assets/icons/arrow-left.svg"
               alt="Arrow Left"
@@ -18,7 +18,7 @@ function FooterMobile() {
         </div>
         <div>
           <Link href="legal-consultations" target="_blank" className={styles.mainLink}>
-            <h2 className={styles.linkText}>الإستشارات القانونية </h2>
+            <h2>الإستشارات القانونية </h2>
             <Image
               src="/assets/icons/arrow-left.svg"
               alt="Arrow Left"
@@ -104,27 +104,65 @@ function FooterMobile() {
                 alt="LinkedIn Icon"
                 width={25}
                 height={25}
+                quality={100}
               />
             </span>
             <span>
               <Image
                 src="assets/icons/twitter.svg"
-                alt="LinkedIn Icon"
+                alt="Twiter Icon"
+                width={25}
+                height={25}
+                quality={100}
+              />
+            </span>
+            <span>
+              <Image
+                src="assets/icons/youtube.svg"
+                quality={100}
+                alt="Youtube Icon"
                 width={25}
                 height={25}
               />
             </span>
             <span>
               <Image
-                src="assets/icons/facebook.svg"
-                alt="LinkedIn Icon"
+                src="assets/icons/instgram.svg"
+                alt="Instgram Icon"
                 width={25}
                 height={25}
+                quality={100}
+              />
+            </span>
+            <span>
+              <Image
+                src="assets/icons/facebook.svg"
+                alt="Facebook Icon"
+                width={25}
+                height={25}
+                quality={100}
               />
             </span>
           </div>
         </div>
       </div>
+
+      <div className={styles.centerLinks}>
+          <Link href="">
+            <h2 className={styles.linkText}>إشترك</h2>
+          </Link>
+          <Link href="privacy-policy">
+            <h2 className={styles.linkText}>سياسة الخصوصية</h2>
+          </Link>
+          <Link href="">
+            <h2 className={styles.linkText}>خريطة الموقع</h2>
+          </Link>
+        </div>
+
+        <div className={styles.info}>
+          <p>تعد المجموعة التجارية والبحرية للمحاماة أكبر مكتب محاماة متكامل في تقديم الخدمات القانونية للأفراد والشركات. </p>
+          <p>جميع حقوق النسخ والنشر محفوظة المجموعة التجارية والبحرية للمحاماة ©2019 ©2024 </p>
+        </div>
     </footer>
   );
 }

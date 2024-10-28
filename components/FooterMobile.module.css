@@ -1,17 +1,25 @@
 .footer{
     /* display: flex; */
     /* justify-content: space-between; */
-    padding: 20px;
+    padding: 30px;
     font-size: 14px;
+    display: none;
+}
+.footer a:hover {
+    opacity: 80%;
 }
 .topIcons{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+}
+.topIcons h2{
+    font-size: 18px;
 }
 .mainLink{
     display: flex;
-    gap: 4px;
+    gap: 10px;
     align-items: center;
     border-bottom: 1px solid #fff;
     padding-bottom: 8px;
@@ -28,6 +36,7 @@
 }
 .boldLink{
     font-weight: bold;
+    font-size: 16px;
 }
 .social{
     margin-top: 15px;
@@ -52,4 +61,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.centerLinks{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    border-bottom: 1px solid #ffffff18;
+    margin-top: 40px;
+padding-bottom: 20px;
+}
+.info{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.info p:first-child{
+    line-height: 150%;
+}
+.info p:last-child{
+    line-height: 150%;
+    font-weight: bold;
+}
+@media (max-width : 600px) {
+    .footer{
+        display: block;
+    }
 }

@@ -418,7 +418,7 @@ const InternGraduationForm = () => {
 
 
       axios
-        .post("https://tcmg-production.up.railway.app/internship", formData, {
+        .post("https://tcmg-alpha.vercel.app/internship", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
