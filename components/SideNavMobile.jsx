@@ -123,12 +123,12 @@ function SideNavMob({ isOpen, toggleSideNav }) {
         <motion.div className={styles.sideNav} initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ duration: 0.5 }}>
           <div className={styles.header}>
             <div className={styles.right}>
-              <Image src="/assets/icons/searchwhite.svg" alt="Search" width={18} height={18} />
-              <Image src="/assets/icons/Hamburger Menu close.svg" alt="Close" width={18} height={18} onClick={toggleSideNav} />
-              <Image src="/assets/icons/Language Icon.svg" width={18} height={18} alt="Language" />
+              <Image src="/assets/icons/Hamburger Menu close.svg" alt="Close" width={20} height={20} onClick={toggleSideNav} />
+              <Image src="/assets/icons/searchwhite.svg" alt="Search" width={20} height={20} />
+              <Image src="/assets/icons/Language Icon.svg" width={20} height={20} alt="Language" />
             </div>
             <div className={styles.logo}>
-              <Image src="/assets/icons/logo/Logo.svg" alt="Logo" width={108} height={24} />
+              <Image src="/assets/icons/logo/Logo.svg" alt="Logo" width={120} height={40} />
             </div>
           </div>
 
@@ -292,7 +292,7 @@ function SideNavMob({ isOpen, toggleSideNav }) {
     >
       <div className={styles.login}>
         <Image src="/assets/icons/form/solar_user-bold.png" width={24} height={24} />
-        تسجيل
+        تسجيل الدخول
       </div>
       <div className={styles.reg}>
         <span>احجز استشارتك الآن</span>

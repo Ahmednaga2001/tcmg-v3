@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #fff;
+  /* border-bottom: 1px solid #fff; */
   padding-bottom: 20px;
   cursor: pointer;
 }
@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 .accordionQuesContent {
-  border-bottom: 1px solid #fff;
+  /* border-bottom: 1px solid #fff; */
   font-size: 16px;
 }
 .accordionQues:not(:first-of-type) {
@@ -57,5 +57,8 @@
 }
 
 .accordionContainer{
-padding-top: 30px;
+margin-top: 30px;
+background-color: #0F172E;
+border-radius: 11px;
+padding: 12px;
 }

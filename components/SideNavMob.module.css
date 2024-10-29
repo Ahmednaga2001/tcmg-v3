@@ -1,14 +1,15 @@
 .sideNav {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     width: 100%;
     background-color: var(--main);
     color: var(--main);
     z-index: 9999;
-    padding: 30px;
-    min-height: 100vh;
-   
+    padding: 20px;
+    overflow-y: auto; /* Add scrolling if content exceeds height */
+
+    height: 100%;
 }
 .header{
     display: flex;
@@ -22,9 +23,9 @@
  .sideLinks{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     color: var(--font);
-    padding: 30px 0;
+    padding: 20px 0;
  }
  .sideLinks span{
     display: flex;
@@ -36,10 +37,9 @@
  }
  .bottom{
     color: var(--font);
-    padding-top: 50px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 10px;
 }
  .login{
     font-weight: bold;

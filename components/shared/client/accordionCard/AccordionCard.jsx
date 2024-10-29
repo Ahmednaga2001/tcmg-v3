@@ -11,7 +11,6 @@ const AccordionCard = ({ title, desc }) => {
   };
 
   useEffect(() => {
-    // Simple regex to check for HTML tags
     const containsHTML = (str) => /<[^>]+>/.test(str);
     
     setIsHTML(containsHTML(desc));
@@ -22,12 +21,13 @@ const AccordionCard = ({ title, desc }) => {
       <div className={styles.accordionQues}>
         <div className={styles.accordionQuesHeader} onClick={handleIsOpen}>
           <h3>{title}</h3>
+          <div></div>
           <Image
-            src="/assets/icons/legalservices/buttonDropdown.png"
-            width={30}
-            height={30}
-            alt="Toggle"
-          />
+                      src={isOpen ? '/assets/icons/form/closeacc.svg' : '/assets/icons/form/openacc.svg'}
+                      width={24}
+                      height={24}
+                      alt={isOpen ? 'Close icon' : 'Open icon'}
+                    />
         </div>
         <div
           className={`${styles.accordionQuesContent} ${
