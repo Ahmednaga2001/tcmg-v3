@@ -147,7 +147,7 @@ function SideNav({ isOpen, toggleSideNav}) {
           <div className={styles.bottom}>
             <div className={styles.login}>
               <Image src="/assets/icons/form/solar_user-bold.png" width={24} height={24}/>
-            التسجيل
+         تسجيل الدخول
             </div>
             <div className={styles.reg}>
               <span>احجز استشارتك الآن</span>
