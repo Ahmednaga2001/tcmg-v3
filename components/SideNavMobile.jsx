@@ -123,7 +123,7 @@ function SideNavMob({ isOpen, toggleSideNav }) {
         <motion.div className={styles.sideNav} initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ duration: 0.5 }}>
           <div className={styles.header}>
             <div className={styles.right}>
-              <Image src="/assets/icons/Hamburger Menu close.svg" alt="Close" width={20} height={20} onClick={toggleSideNav} />
+              <Image src="/assets/icons/Hamburger Menu close.svg" style={{cursor : "pointer"}} alt="Close" width={20} height={20} onClick={toggleSideNav} />
               <Image src="/assets/icons/searchwhite.svg" alt="Search" width={20} height={20} />
               <Image src="/assets/icons/Language Icon.svg" width={20} height={20} alt="Language" />
             </div>

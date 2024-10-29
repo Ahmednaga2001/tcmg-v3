@@ -123,27 +123,58 @@ function SideNav({ isOpen, toggleSideNav}) {
             />
           </div>
           <div className={styles.sideLinks}>
-            <span className={activeItem === 0 ? styles.active : ''} onClick={() => handleItemClick(0)}>
-              من نحن
-              <Image quality={100} src={activeItem ? "/assets/icons/form/arrow-left-black.png" : "/assets/icons/form/arrow-left-white.png"} width={24} height={24} alt="arrow left icon" />
-            </span>
-            <span className={activeItem === 1 ? styles.active : ''} onClick={() => handleItemClick(1)}>
-              إنضم الينا
-              <Image quality={100} src={activeItem ? "/assets/icons/form/arrow-left-black.png" : "/assets/icons/form/arrow-left-white.png"} width={24} height={24} alt="arrow left icon" />
-            </span>
-            <span className={activeItem === 2 ? styles.active : ''} onClick={() => handleItemClick(2)}>
-              خدماتنا
-              <Image quality={100} src={activeItem ? "/assets/icons/form/arrow-left-black.png" : "/assets/icons/form/arrow-left-white.png"} width={24} height={24} alt="arrow left icon" />
-            </span>
-            <span className={activeItem === 3 ? styles.active : ''} onClick={() => handleItemClick(3)}>
-              أخبار وروي
-              <Image quality={100} src={activeItem ? "/assets/icons/form/arrow-left-black.png" : "/assets/icons/form/arrow-left-white.png"} width={24} height={24} alt="arrow left icon" />
-            </span>
-            <span className={activeItem === 4 ? styles.active : ''} onClick={() => handleItemClick(4)}>
-              الفروع
-              <Image quality={100} src={activeItem ? "/assets/icons/form/arrow-left-black.png" : "/assets/icons/form/arrow-left-white.png"} width={24} height={24} alt="arrow left icon" />
-            </span>
-          </div>
+  <span className={activeItem === 0 ? styles.active : ''} onClick={() => handleItemClick(0)}>
+    من نحن
+    <Image 
+      quality={100} 
+      src={activeItem === 0 ? "/assets/icons/form/arrow-left-black.png" : "/assets/icons/form/arrow-left-white.png"} 
+      width={24} 
+      height={24} 
+      alt="arrow left icon" 
+    />
+  </span>
+  <span className={activeItem === 1 ? styles.active : ''} onClick={() => handleItemClick(1)}>
+    إنضم الينا
+    <Image 
+      quality={100} 
+      src={activeItem === 1 ? "/assets/icons/form/arrow-left-black.png" : "/assets/icons/form/arrow-left-white.png"} 
+      width={24} 
+      height={24} 
+      alt="arrow left icon" 
+    />
+  </span>
+  <span className={activeItem === 2 ? styles.active : ''} onClick={() => handleItemClick(2)}>
+    خدماتنا
+    <Image 
+      quality={100} 
+      src={activeItem === 2 ? "/assets/icons/form/arrow-left-black.png" : "/assets/icons/form/arrow-left-white.png"} 
+      width={24} 
+      height={24} 
+      alt="arrow left icon" 
+    />
+  </span>
+  <span className={activeItem === 3 ? styles.active : ''} onClick={() => handleItemClick(3)}>
+    أخبار وروي
+    <Image 
+      quality={100} 
+      src={activeItem === 3 ? "/assets/icons/form/arrow-left-black.png" : "/assets/icons/form/arrow-left-white.png"} 
+      width={24} 
+      height={24} 
+      alt="arrow left icon" 
+    />
+  </span>
+  <span className={activeItem === 4 ? styles.active : ''} onClick={() => handleItemClick(4)}>
+    الفروع
+    <Image 
+      quality={100} 
+      src={activeItem === 4 ? "/assets/icons/form/arrow-left-black.png" : "/assets/icons/form/arrow-left-white.png"} 
+      width={24} 
+      height={24} 
+      alt="arrow left icon" 
+    />
+  </span>
+</div>
+
           <div className={styles.bottom}>
             <div className={styles.login}>
               <Image src="/assets/icons/form/solar_user-bold.png" width={24} height={24}/>
