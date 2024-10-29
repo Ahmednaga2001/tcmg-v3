@@ -162,16 +162,10 @@
 .accordionParent{
   gap: 10px;
 }  
+.accordionContent{
+ height: 480px; 
 }
-@media (max-width: 375px) {  
-  .accordionItem {
-    width: 100%;
-  }
-  .accordionParent{
-    grid-template-columns: repeat(1,100%);
-  }
-  .accordionContent{
-    height: auto;
-  }
+
 }
+
 
