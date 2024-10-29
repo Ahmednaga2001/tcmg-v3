@@ -11,6 +11,7 @@
     gap: 40px;
 
 }
+
 @media (max-width: 1191px) {
     .privacyStatement div{
         align-items: center;
@@ -21,6 +22,22 @@
     .privacyStatement p{
         font-size: 16px;
         text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .privacyStatement div{
+        align-items: center;
+        gap: 20px;
+    }
+    .privacyStatement div h2{
+        width: 100%;
+        text-align: right;
+        font-size: 28px;
+    }
+    .privacyStatement p{
+        font-size: 16px;
+        text-align: right;
     }
 }
 

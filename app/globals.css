@@ -254,7 +254,7 @@ a {
   direction: rtl;
   font-family: janna reg;
   word-spacing: 1px;
-  letter-spacing: 1px;
+  letter-spacing: 0;
 }
 
 h1,

@@ -2,16 +2,10 @@
     display: flex;
 }
 
-
-
 .content {
     width: 70%;
     padding: 80px;
 }
-
-
-
-
 
 @media (max-width: 1191px) {
     .content{
@@ -22,13 +16,10 @@
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        text-align: right;
     }
 
     .content {
-        padding: 20px;
-        width: 100%;
-    }
-    .container{
-        text-align: center;
+        display: none;
     }
 }

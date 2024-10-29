@@ -17,15 +17,25 @@
 }
 .container a {
     text-decoration: underline;
-  }
-  
+}
+
 @media (max-width: 768px) {
-    .container ul li {
-        font-size: 16px;
+    .container{
+        gap: 10px;
+    }
+    .container ul{
+        gap: 0px;
     }
     .container .title{
         display: block;
-        font-size: 24px;
-        font-weight: bold;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .container ul li,
+    .container p {
+        font-size: 12px;
+        font-weight: 400;
+        padding: 0 10px;
+        border-right: none;
     }
 }

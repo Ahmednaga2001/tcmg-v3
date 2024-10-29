@@ -14,11 +14,11 @@
 }
 @media (max-width: 800px) {
     .hero{
-        margin-top: 95px;
+        margin-top: 80px;
     }
 }
 @media (max-width: 768px) {
     .hero{
-        min-height: 20vh;
+        min-height: 60vh;
     }
 }

@@ -55,7 +55,7 @@
   .Img {
     background-color: var(--main);
     position: absolute;
-    top: -22%;
+    top: -23% !important;
     transform: translateY(-50%);
     right:5%;
     width: 200px;
@@ -82,10 +82,11 @@
     letter-spacing: -0.96px;
   }
   .content p{
-    font-size: 12px;
+    font-size: 12px !important;
     font-style: normal;
     font-weight: 400;
     line-height: 16.8px;
+    letter-spacing: 0% !important;
   }
 }
 @media (max-width : 400px) {

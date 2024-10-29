@@ -5,32 +5,43 @@
 }
 
 .activeItem {
-   border-right: 6px solid #fff !important;
+    border-right: 6px solid #fff !important;
     background: linear-gradient(rgba(255, 255, 255,.05) 0%, rgba(216, 216, 216, .05));
 }
 .sideBar ol li {
     cursor: pointer;
-   border-right: 6px solid #ffffff11;
- padding: 20px;
- border-radius: 20px 0 0 20px;
-   list-style-position: inside;
-
+    border-right: 6px solid #ffffff11;
+    padding: 20px;
+    border-radius: 20px 0 0 20px;
+    list-style-position: inside;
 }
 .sideBar ol li:not(:first-child){
     padding-top: 20px;
-
+}
+section.content {
+    display: none;
 }
 @media (max-width: 1191px) {
     .sideBar {
         width: 40%;
         padding:  20px;
     }
- 
-  
 }
 @media (max-width: 768px) {
     .sideBar{
         width: 100%;
         min-height: auto;
-     }  
+    }  
+    .sideBar ol li {
+        font-size: 14px;
+        font-weight: 700;
+        border-right: 6px solid #ffffff11;
+        padding: 13.86px 14px;
+        border-radius: 3.46px;
+    }
+    section.content {
+        display: block;
+        padding: 10px;
+        width: 100%;
+    }
 }
