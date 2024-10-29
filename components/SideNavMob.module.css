@@ -1,0 +1,157 @@
+.sideNav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    background-color: var(--main);
+    color: var(--main);
+    z-index: 9999;
+    padding: 30px;
+    min-height: 100vh;
+   
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+ .header .right{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ }
+ .sideLinks{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    color: var(--font);
+    padding: 30px 0;
+ }
+ .sideLinks span{
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1.6;
+ }
+ .bottom{
+    color: var(--font);
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+ .login{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+
+}
+.reg{
+    border-radius: 11px;
+    border: 1px solid #ffffff6d;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    line-height: 1.4;
+}
+.reg span{
+    font-weight: bold;
+}
+.registerLink{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    justify-content: center;
+    padding: 12px 8px;
+}
+
+
+
+
+.toggle{
+    cursor: pointer;
+}
+.mainContent{
+    color: var(--font);
+width: 100%;
+padding-top: 50px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 30px;
+}
+.mainContent .links{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+.itemLink {
+    border-bottom: 1px solid #ffffff4f;
+    padding-bottom: 10px;
+    font-size: 24px;
+
+}
+.prLink{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ffffff4f;
+    padding-bottom: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.practiceLinkContainer{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease;
+}
+
+  
+  .practiceLinkContainer.show {
+    max-height: 2000px; 
+
+  }
+  
+
+  .infoHeader{
+    display: flex;
+    justify-content: space-between;
+  }
+  .infoHeader .prev{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+  }
+  .boldTitle{
+    display: block;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  @media (max-width: 600px) {
+    .sideNav {
+        display: block; 
+    }
+}
+
+@media (min-width: 601px) {
+    .sideNav {
+        display: none; 
+    }
+}

@@ -1,69 +1,222 @@
 .sideNav {
-    display: none;
     position: absolute;
     right: 0;
     top: 0;
     width: 100%;
-    height: 100%;
-    background-color: var(--font);
+    background-color: var(--main);
     color: var(--main);
-    overflow: hidden;
     z-index: 9999;
-    animation: slide 500ms 0s;
     padding: 30px;
-    overflow: auto;
-    align-items: center;
+ display: none;
+   
+}
+
+.layout{
+    display: flex;
+    gap: 40px;
+    
+}
+.side{
+    width: 25%;
+
+}
+.logo{
+    display: flex;
     justify-content: center;
+}
+.sideLinks{
+    display: flex;
     flex-direction: column;
+    gap: 10px;
+    padding-top: 50px;
 }
 
-
-.cancel {
-    position: absolute;
-    top: 2%;
-    left: 2%;
-    font-size: 30px;
+.sideLinks span{
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    justify-content: space-between;
+    color: var(--font);
     cursor: pointer;
-    padding: 20px;
-    width: 50px;
-    height: 50px;
+}
+.sideLinks span.active{
+    background-color: var(--font);
+    color: #000;
+}
+.content{
+    width: 75%;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+
+}
+.inp{
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: 1px solid #333;
-    border-radius: 50%;
+    gap: 10px;
+    border: 1px solid #ffffff4f;
+    border-radius: 12px;
+    padding: 10px 24px;
+    width: 100%;
+}
+.inp input{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 100%;
+
+}
+.inp input::placeholder{
+    color: #fff;
+}
+.mainContent{
+    color: var(--font);
+    display: flex;
+    padding-top: 50px;
+}
+.mainContent h2{
+    font-size: 35px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.mainContent .links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.itemLink {
+    border-bottom: 1px solid #ffffff4f;
+    padding-bottom: 10px;
+    font-size: 24px;
+
+}
+.prLink{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ffffff4f;
+    padding-bottom: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.practiceLinkContainer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease;
 }
 
-.sideContent {
+  
+  .practiceLinkContainer.show {
+    max-height: 500px; 
+
+  }
+  
+ 
+
+.bottom{
+    color: var(--font);
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.login{
+    font-weight: bold;
     display: flex;
     align-items: center;
+    gap: 5px;
+    padding: 12px 24px;
+
+
+}
+.reg{
+    border-radius: 11px;
+    border: 1px solid #ffffff6d;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    line-height: 1.4;
+}
+.reg span{
+    font-weight: bold;
+}
+.reg a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
     justify-content: center;
-    width: 60%;
-    height: 100%;
-    animation: fade 1300ms ease-out;
+    padding: 12px 8px;
 }
 
-@keyframes slide {
-    from {
-        transform: translateX(200%);
-        opacity: 0%;
 
-    }
 
-    to {
-        opacity: 100%;
-        transform: translateX(0);
-    }
+
+.toggle{
+    cursor: pointer;
 }
 
-@keyframes fade {
-    from {
-        filter: blur(10px);
-        opacity: 0;
-    }
 
-    to {
-        filter: blur(0px);
-        opacity: 100%;
+
+
+
+
+@media (max-width : 1191px) {
+    .mainContent h2{
+        font-size: 24px;
+    }
+    .itemLink , .prLink , .sideLinks span{
+        font-size: 20px;
+    }
+    .side{
+        width: 35%;
+    }
+    .content{
+        width: 65%;
     }
 }
+@media (max-width : 900px) {
+    .reg{
+        padding: 20px 10px;
+    }
+    .reg a{
+        font-size: 14px;
+        letter-spacing: .2px;
+    }
+    .reg img{
+        width: 15px;
+        height: 15px;
+    }
+    
+}
+
+@media (max-width : 768px) {
+    .top{
+        gap: 20px;
+    }
+  
+    
+}
+
+
+ @media (min-width : 600px) {
+    .sideNav{
+        display: block;
+    }
+    
+ }

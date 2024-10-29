@@ -1,9 +1,18 @@
+"use client"
 import Image from "next/image";
 import styles from "./Nav.module.css";
 import Link from "next/link";
-import toggleSideNav from "@/utils/toggleSideNav";
+import { useState } from "react";
+import SideNav from "./SideNav";
+import SideNavMob from "./SideNavMobile";
 function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSideNav = () => {
+    setIsOpen(prev => !prev);
+  };
   return (
+    <>
     <nav className={styles.nav}>
       <div className={styles.expand} onClick={toggleSideNav}>
         <Image
@@ -56,6 +65,9 @@ function Nav() {
         </Link>
       </div>
     </nav>
+          <SideNav isOpen={isOpen} toggleSideNav={toggleSideNav} />
+          <SideNavMob isOpen={isOpen} toggleSideNav={toggleSideNav} />
+</>
   );
 }
 
