@@ -195,4 +195,7 @@
     width: 219.049px;
     height: 266.725px;
   }
+  .contactInformation h2{
+    text-align: right !important;
+  }
 }
