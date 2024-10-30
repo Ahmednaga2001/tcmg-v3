@@ -152,35 +152,22 @@
   .startcompany .Img {
     width: 100%;
   }
-  /* .startcompany .parent .whatupCard {
-    width: 260px;
-    height: 260px;
-  } */
 }
 
 @media (max-width: 600px) {
   .startcompany .heading h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
   .startcompany .heading p {
     font-size: 18px
   }
-  /* .startcompany .parent .whatupCard {
-    background-image: linear-gradient(180deg , #1b2340 , #0e152c);
-    border-radius: 15px ;
-    width: 380px;
-    height: 240px;
-  } */
 }
 
 @media (max-width: 400px) {
   .startcompany .heading p {
-    font-size: 22px;
+    font-size: 16px;
+    letter-spacing: 0px;
   }
-  /* .startcompany .parent .whatupCard {
-    width: 320px;
-    height: 220px;
-  } */
   .startcompany p {
     font-size: 14px;
   }

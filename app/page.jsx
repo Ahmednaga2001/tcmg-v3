@@ -168,11 +168,10 @@ function Home() {
       <HomeScroll cases={cases} services={services} />
       <HomeTeam />
       <Stats />
+      <Parteners />
       {/* <Customers customers={customers} /> */}
-
       <HomeArticleScroll articles={articles} />
       <Branches />
-      <Parteners />
     </div>
   );
 }

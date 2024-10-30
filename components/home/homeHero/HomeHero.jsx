@@ -1,7 +1,6 @@
 'use client'
-
-import Image from "next/image";
 import styles from "./page.module.css";
+
 
 const HomeHero = () => {
   return (
@@ -16,7 +15,7 @@ const HomeHero = () => {
           من الخدمات القانونية الشاملة وأعمال الشركات.
         </p>
         <div className={styles.animation}>
-          <iframe src="https://lottie.host/embed/296b3114-2400-47ea-8a1d-903e52e49002/2tBJMaFFKd.json" style={{ border: 'none', marginTop: '50px' }}></iframe>
+          <iframe src="https://lottie.host/embed/5c8cb5db-732f-4f67-b717-5f739c8980b2/R8K8DXZUOR.json" style={{ border: 'none', marginTop: '96px', width: '46px' , height: '46px'}}></iframe>
           <p className="link">
             أكتشف المزيد
           </p>

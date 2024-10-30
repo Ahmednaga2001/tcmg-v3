@@ -1,6 +1,7 @@
 "use client";
 
 import AccordionCard from "@/components/shared/client/accordionCard/AccordionCard";
+import styles from "./establishLegalService/page.module.css";
 
 const data = [
   {
@@ -212,8 +213,8 @@ const data = [
 
 const Accordion = () => {
   return (
-    <section className="accordionQuestions">
-      <h2>أسئلة عملائنا حول خدمة تأسيس الشركات</h2>
+    <section className={`accordionQuestions`}>
+      <h2 >أسئلة عملائنا حول خدمة تأسيس الشركات</h2>
       {data.map((el, index) => (
         <AccordionCard title={el.title} desc={el.desc} key={index} />
       ))}

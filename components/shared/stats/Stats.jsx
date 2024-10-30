@@ -25,13 +25,13 @@ const Stats = () => {
     return () => clearInterval(interval); 
   }, [clients, count, expNum, x]);
 
-  const labels = ["مكاتب محاماة اقليمية","سنين الخبرة","عدد الخبراء","العملاء"];
+  const labels = ["مكاتب","خبرة","خبير","عميل"];
 
   return (
     <section className={styles.stats}>
       {currentValues.map((value, index) => (
         <div key={index}>
-          <span>            {index === 1 || index === 3 ? `${value}+` : value}
+          <span>{index === 1 || index === 3 ? `${value}+` : value}
           </span>
           <span>{labels[index]}</span>
         </div>

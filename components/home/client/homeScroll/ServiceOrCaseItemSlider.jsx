@@ -7,8 +7,13 @@ import "swiper/css/pagination";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 export const ServiceOrCaseItemSlider = ({services}) => {
+  let navigation = {
+    img1: "/assets/images/homePage/left.svg",
+    img2: "/assets/images/homePage/right.svg",
+  }
   return (
     <div className={styles.Slides}>
+      <Image src={navigation.img2} alt="Description of image" width={50} height={50} className={`${styles.navigation1} prev`} />
       <Swiper
       spaceBetween={30}
       effect="fade"
@@ -17,7 +22,10 @@ export const ServiceOrCaseItemSlider = ({services}) => {
         horizontalClass: "--swiper-pagination-horizontal",
         type: "bullets",
       }}
-      navigation={true}
+      navigation={{
+        nextEl: ".prev",
+        prevEl: ".next",
+      }}
       loop={true}
       autoplay={{
         delay: 5000,
@@ -61,6 +69,7 @@ export const ServiceOrCaseItemSlider = ({services}) => {
             ))
         }
       </Swiper>
+      <Image src={navigation.img1} alt="Description of image" width={50} height={50} className={`${styles.navigation2} next`} />
     </div>
    
         

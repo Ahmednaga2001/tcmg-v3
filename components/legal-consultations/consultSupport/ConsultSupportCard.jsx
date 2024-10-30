@@ -1,5 +1,8 @@
-import styles from "./page.module.css"
-import Image from "next/image"
+"use client";
+
+import styles from "./page.module.css";
+import Image from "next/image";
+
 const ConsultSupportCard = ({title , path , w , h}) => {
   return (
     <div className={styles.card}>
@@ -7,9 +10,11 @@ const ConsultSupportCard = ({title , path , w , h}) => {
         <Image src = {path} width={w} height={h} alt={title}/>
     </div>
     <span>{title}</span>
-
-</div>
+  </div>
   )
 }
 
-export default ConsultSupportCard
+export default ConsultSupportCard;
+
+
+

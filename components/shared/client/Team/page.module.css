@@ -1,7 +1,4 @@
-/* .team{
-  padding: 0 80px 80px 80px !important;
-  background-color: red;
-} */
+
 .swiperContainer{
   width: 85%;
   margin: auto;
@@ -18,15 +15,6 @@
   justify-content: center;
   flex-direction: column;
   gap: 10px;
-}
-
-.cards {
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap; */
-
 }
 
 .card {
@@ -58,11 +46,18 @@
 }
 
 @media (max-width: 767px) {
-  /* .team{
-    padding: 20px !important;
-  } */
   .swiperSlide{
     width: 100% !important;
-    
+  }
+  .card p:last-child {
+    font-size: 12px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 500px) {
+  .card p:last-child {
+    font-size: 14px;
+    line-height: 16px;
   }
 }

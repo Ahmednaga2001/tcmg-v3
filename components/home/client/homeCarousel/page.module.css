@@ -32,7 +32,6 @@
 
 .carousel .caroChild div p {
     width: 75%;
-
 }
 
 /* @media (max-width: 1191px) {
@@ -59,24 +58,32 @@
 
 @media (max-width: 800px){
     .carousel {
-        padding: 32px 16px !important;
+        padding: 32px 16px 70px !important;
+    }
+    .carousel .caroChild {
+        padding-bottom: 0px;
     }
     .carousel .caroChild div {
         display: flex;
         align-items: baseline !important;
         justify-content: space-between;
-        gap: 40px;
+        gap: 20px;
         width: 100%;
     }
     .carousel .bodyContent {
         display: flex;
         align-items: baseline;
         justify-content: baseline;
-
     }
-    /* .carousel .bodyContent img{
+    .carousel .bodyContent p {
+        align-self: center;
+        margin-top: 40px;
+    }
+    .carousel .bodyContent img{
         display: block;
-    } */
+        width: 50px;
+        height: 50px;
+    }
     .carousel h2{
         text-align: right;
     }
@@ -87,29 +94,27 @@
     }
 }
 @media (max-width: 500px){
-    .carousel .bodyContent img{
-        display: none;
+    .carousel .caroChild {
+        gap: 10px;
+    }
+    .carousel .caroChild div{
+        gap: 0px;
     }
     .carousel .caroChild div p {
         width: 100%;
     }
 }
 
-@media (max-width: 600px){
-    .carousel .caroChild h2 {
-        font-size: 26px;
-    }
-    .carousel .caroChild p {
-        font-size: 20px;
-    }
-}
-
 @media (max-width: 400px){
     .carousel .caroChild h2 {
-        font-size: 24px;
+        font-size: 32px;
+        line-height: 44px;
+        letter-spacing: 0px;
     }
     .carousel .caroChild p {
-        font-size: 14px;
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 0px;
     }
     .carousel .caroChild div span {
         font-size: 14px;

@@ -74,7 +74,7 @@ const EstablishCompanyTypes = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="swiper-button-prev prev" />
+        <div className="swiper-button-prev prev" style={{position: 'absolute' , left: '20px'}}/>
         <div className="swiper-button-next next" />
       </div>
     </section>

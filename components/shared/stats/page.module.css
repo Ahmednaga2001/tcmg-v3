@@ -1,3 +1,4 @@
+
 .stats {
     background-image: url(/assets/images/homePage/باترن.svg);
     background-position: center center;
@@ -20,11 +21,6 @@
     flex-basis: 300px;
   }
   
-  /* .stats div:nth-child(2) {
-      border-left: 1px solid #222;
-      border-right: 1px solid #222;
-  } */
-  
   .stats div span:first-child {
     font-family: janna bol;
     font-size: 57px;
@@ -33,7 +29,10 @@
   
   @media (max-width: 768px) {
       .stats {
-          background: linear-gradient(150deg, rgba(255, 255, 255, 0.03) 8.9%, rgba(216, 216, 216, 0.03) 85.02%);
+          background-image: url(/assets/images/homePage/باترن.svg);
+          background-color: #1c243d;
+          background-size: auto;
+          background-position: center;
           padding: 80px 30px !important;
           color: #fff;
           flex-wrap: nowrap;

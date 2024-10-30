@@ -36,6 +36,28 @@ const Team = ({ lawyers }) => {
               slideShadows: false,
             }
           }
+          navigation={{
+            nextEl: ".prev",
+            prevEl: ".next",
+          }}
+          // breakpoints={{
+          //   380: {
+          //     slidesPerView: 1,
+          //     spaceBetween: 20,
+          //   },
+          //   768: {
+          //     slidesPerView: 1.7,
+          //     spaceBetween: 20,
+          //   },
+          //   1000: {
+          //     slidesPerView: 2.5,
+          //     spaceBetween: 20,
+          //   },
+          //   1200: {
+          //     slidesPerView: 3,
+          //     spaceBetween: 40,
+          //   },
+          // }}
           loop={true}
           autoplay={{
             delay: 5000,
@@ -48,13 +70,6 @@ const Team = ({ lawyers }) => {
             <SwiperSlide
               className={styles.swiperSlide}
               key={lawyer.id}
-              style={{
-                // border: activeIndex === index ? "1px solid #ffffff74" : "none",
-                // opacity: activeIndex === index ? 1 : 0.7,
-                // transition: "border 0.3s , opacity 0.2s",
-                // transform: activeIndex === index ? "scale(1.1)" : "scale(1)",
-
-              }}
             >
               <div className={styles.card}>
                 <Image

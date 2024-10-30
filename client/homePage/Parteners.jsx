@@ -1,8 +1,11 @@
 "use client";
 
 import styles from "@/app/page.module.css";
-
-import Flickity from "react-flickity-component";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "flickity/dist/flickity.min.css";
 import Image from "next/image";
 
@@ -60,25 +63,58 @@ function Parteners() {
   };
 
   return (
-    <section className={styles.partners}>
-      <Flickity
-        options={flickityOptions}
-        disableImagesLoaded={true}
-        reloadOnUpdate={true}
-        static
-        className={styles.parent}>
-        {partners.map((partner) => (
-          <div className={styles.logo} key={partner.id}>
-            <Image
-              src={partner.img}
-              alt={partner.img}
-              width={partner.w}
-              height={partner.h}
-            />
-          </div>
-        ))}
-      </Flickity>
-    </section>
+    <>
+      <h1 style={{ textAlign: "center", padding: "40px" }}>أحدث عملائنا</h1>
+      <section className={styles.partners} style={{padding: '20px 0px'}}>
+            <Swiper
+              effect="coverflow"
+              spaceBetween={100}
+              centeredSlides={true}
+              slidesPerView={1}
+              loop={true}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              breakpoints={{
+                480: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                1000: {
+                  slidesPerView: 3,
+                  spaceBetween: 10,
+                },
+                1200: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
+                },
+              }}
+              style={{
+                "--swiper-navigation-color": "#fff",
+                "--swiper-pagination-color": "#fff",
+              }}
+              modules={[Navigation, Autoplay, Pagination]} // Added modules back
+            >
+              {partners.map((partner) => (
+                <SwiperSlide key={partner.id} className={styles.partner}>
+                  <div className={styles.logo} key={partner.id} style={{width: '280px'}}>
+                    <Image
+                      src={partner.img}
+                      alt={partner.img}
+                      width={partner.w}
+                      height={partner.h}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+      </section>
+    </>
   );
 }
 

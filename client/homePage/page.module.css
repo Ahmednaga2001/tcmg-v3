@@ -38,11 +38,10 @@
 .branches .link {
   position: absolute;
   left: 50%;
+  top: 30%;
   transform: translateX(-50%);
   bottom: 0;
-  padding: 10px 80px;
-  backdrop-filter: blur(5px);
-  background-color: #dddddd33;
+  padding: 10px 20px;
 }
 
 .branches .link:hover {
@@ -50,21 +49,29 @@
 } 
 
 /* ============================================================================ */
-
 .partners {
   width: 100%;
-  background-color: var(--font);
   color: #333;
-  padding: 20px 80px !important;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 20px !important;
 }
 
-.partners .logo {
-  width: 200px;
+.partner .logo {
+  width: 300px; 
   height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-} 
+  flex-direction: column;
+}
+.partners .partner {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
 
 @media (max-width: 800px){
   .branches .branche span {
@@ -74,12 +81,19 @@
       bottom: 0;
       padding: 10px 40px;
   }
-  .partners {
-      padding: 20px 40px !important;
-  }
+  .branches .link {
+    bottom: 0;
+    padding: 10px 7px;
+}
+  .branches .link p{
+    font-size: 14px;
+}
 }
 
 @media (max-width: 450px){
+  .partners .logo {
+    padding-left: 50px !important;
+  } 
   .branches .branche span {
       font-size: 40.067px;
   }
@@ -87,17 +101,4 @@
       bottom: 0;
       padding: 10px 7px;
   }
-  .branches .link p{
-      font-size: 14px;
-  }
-  .partners {
-      padding: 20px 20px !important;
-  }
-  .partners .logo {
-      width: 120px;
-  } 
-  .partners .logo img{
-      width: 90px;
-      height: 90px;
-  } 
 }

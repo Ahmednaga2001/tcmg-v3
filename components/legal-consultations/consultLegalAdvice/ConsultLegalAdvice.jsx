@@ -21,9 +21,9 @@ const consultationsData = [
       والبحرية للمحاماة عبر حساب الواتس اب الرسمي لها، ثم توضيح موضوع استشارتك 
       ليقوم بالرد عليك مستشار قانوني متخصص مستعد لدعمك.`,
     image: {
-      src: "/assets/icons/legalconsultations/whatsup.svg",
-      width: 134,
-      height: 135,
+      src: "/assets/icons/legalconsultations/Simplification.svg",
+      width: 120,
+      height: 120,
       alt: "اجتماع اونلاين",
     },
   },
