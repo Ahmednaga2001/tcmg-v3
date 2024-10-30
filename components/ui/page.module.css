@@ -64,7 +64,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* This will now apply properly */
+    gap: 10px; /* This will now apply properly */
+    line-height: 1.4;
 
   }
 
