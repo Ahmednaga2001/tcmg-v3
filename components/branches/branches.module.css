@@ -126,52 +126,73 @@
 }
 
 @media (max-width: 800px) {
-  .contactNumbers {
-   display: none;
+  .overlay{
+    display: none;
   }
-  .contactNumbers {
-    position: relative;
-    background-image: url("/assets/images/branches/cairo.png");
-    background-size: cover;
-    width: 100%;
-    height: 90vh;
-    overflow: hidden;
-  }
-  
-  .contactNumbers::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, rgba(27, 35, 64, 0.30) 36.8%, rgba(14, 21, 44, 0.55) 130%);
-    backdrop-filter: blur(10px); /* Example value, adjust as needed */
-    z-index: 1; /* Ensure it's above the background image */
-  }
-  
-  
-  .contactInformation {
+  .contactInformation{
     background-image: none;
-    background-color: #1b2340;
   }
-  .contactInformation h2{
+  .contactInformation .content h2{
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
     line-height: 44.8px;
+    text-align: start ;
   }
   .contactInformation p{
-    text-align: start;
-    font-size: 14px;
+    padding: 10px 0 !important;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 19.6px;
-    padding: 16px 0;
+    text-align: start;
   }
-  .br{
-    display: block;
+ .br{
+  display: block;
+ }
+ .contactNumbers .egyLocations h2{
+  display: none;
+ }
+ .contactNumbers .egyLocations{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  padding-top: 400px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+ }
+ .contactNumbers .egyLocations .parent{
+  margin: 0;
+  width: 100% ;
+}
+.contactNumbers .egyLocations .parent .parentLocations{
+  width: 100%;
+  border-radius: 50px 50px 0 0  !important;
+  z-index: 9999;
+}
+.contactNumbers .egyLocations .parent .cardImg{
+  width: 478.026px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 70%;
+}
+.contactNumbers .egyLocations .parent .cardImg :nth-child(1) {
+  width: 100%;
+  height: 100%;
+}
+}
+@media (max-width:400px) {
+  .contactNumbers .egyLocations{
+    padding-top: 200px;
   }
-
-
+  .contactNumbers .egyLocations .parent .cardImg{
+    width: 219.049px;
+    height: 266.725px;
+  }
 }

@@ -98,9 +98,7 @@
   border-radius: 0 80px 80px 0;
   width: 100%;
 }
-.locationsmob {
-  display: none;
-}
+
 
 @media (max-width: 1191px) {
   .egyLocations .parent,
@@ -131,128 +129,225 @@ margin: auto;
 }
 
 @media (max-width: 800px) {
-  .locationsmob{
-    display: block;
-  }
-  .locationsmob h2{
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 44.8px; 
-    padding-bottom: 20px;
-  }
-  .locations{
-    display: none;
-  }
-  .locationsmob {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-.locationsmob .parentLocations{
-  border-radius: 80px;
-}
-.locationsmob .parentLocations h3{
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 152%;
-}
-.locationsmob .parentLocations p{
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 152%;
-}
-.locationsmob .parentLocations span{
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 152%;
-}
-.locationsmob .parentLocations .locationOne{
-  border: none;
-  display: flex;
-  flex-direction: column;
-}
-.locationsmob .parentLocations .locationOne , .locationsmob .parentLocations .locationTwo{
-  padding-bottom: 20px;
-
-}
-  .locationsmob .cardImg img{
-      width: 100%;
-  }
-  .locationsmob .parent{
-    width: 100%;
-    padding: 0!important;
-    position: relative;
-    margin: auto;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 152%;
-  }
-  .locationsmob .parent .parentLocations{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 10%;
-    margin: auto;
-    width: 300px;
-    height: auto;
-    border-radius: 15px;
-    opacity: 0.8;
-    background: var(--primary-color, #0D152C);
-    padding-bottom: 10px;
-  }
-  .locationsmob .cardImg {
-    border-radius: 25px;
-    width: 100%;
-    height: 409.274px;
-    
-  }
-  .swiper-pagination-bullet {
-    /* Optional: style the bullets */
-    background: transparent !important; /* Change bullet color */ /* Adjust opacity */
- 
-  }
-  .swiper-pagination-bullet-active {
-    background: #fff !important; /* Change active bullet color */
-  }
-  .locationsmob .cardImg img{
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-  }
-  .swiper {
-    
-    width: 100%;
-    
-  }
-  .swiper-pagination {
-   
-    margin-top: 2000px; /* Adjust the value as needed */
-    text-align: center; /* Optional: center align bullets */
-  }
-  .swiperSlide {
-    
-    background: var(--primary-color, #0D152C);
-    /* min-height: 70vh; */
-    display: flex;
-  } 
-
- .palestineLocation .swiper{
+ .hhh{
   display: none;
- }
- .locationsmob .cardImg img{
-  width: 100% ;
-  height: 404px;
 }
-.locationsmob .parent .parentLocations{
-  bottom: 5%;
+.locations{
+  padding-bottom: 100px !important;
+}
+.mob{
+  display: block;
+  font-size: 24.852px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-bottom:14.201px;
+  text-align: center !important;
+}
+.locationOne h3{
+  font-size: 14.201px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 145%;
+}
+.locations .parentLocations{
+  border-radius: 60px 60px 0 0;
+  position: relative;
+  z-index: 99999999;
+}
+.egyLocations{
+  position: relative;
+  padding-top: 400px;
+  margin-top: 50px;
+}
+.egyLocations .parent{
+  margin: 0;
+  width: 100%;
 
 }
+.egyLocations .parent .cardImg{
+  width: 478.026px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  opacity: 70%;
+}
+.egyLocations .parent .cardImg :nth-child(1) {
+  width: 100%;
+  height: 100%;
+}
+.dubaiLocation{
+  position: relative;
+  padding-top: 400px;
+  margin-top: 50px;
+}
+.dubaiLocation .parent{
+  margin: 0;
+  width: 100%;
+}
+.dubaiLocation .parent .cardImg{
+  width: 478.026px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 70%;
+}
+.dubaiLocation .parent .cardImg :nth-child(1) {
+  width: 100%;
+  height: 100%;
+}
+.saudiaLocation{
+  position: relative;
+  padding-top: 400px;
+  margin-top: 50px;
+}
+.saudiaLocation .parent{
+  margin: 0;
+  width: 100%;
+}
+.saudiaLocation .parent .cardImg{
+  width: 478.026px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 70%;
+}
+.saudiaLocation .parent .cardImg :nth-child(1) {
+  width: 100%;
+  height: 100%;
+}
+.chinaLocation{
+  position: relative;
+  padding-top: 400px;
+  margin-top: 50px;
+}
+.chinaLocation .parent{
+  margin: 0;
+  width: 100%;
+}
+.chinaLocation .parent .cardImg{
+  width: 478.026px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 70%;
+}
+.chinaLocation .parent .cardImg :nth-child(1) {
+  width: 100%;
+  height: 100%;
+}
+.ammanLocation{
+  position: relative;
+  padding-top: 400px;
+  margin-top: 50px;
+}
+.ammanLocation .parent{
+  margin: 0;
+  width: 100%;
+}
+.ammanLocation .parent .cardImg{
+  width: 478.026px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 70%;
+}
+.ammanLocation .parent .cardImg :nth-child(1) {
+  width: 100%;
+  height: 100%;
+}
+.palestineLocation{
+  position: relative;
+  padding-top: 400px;
+  margin-top: 50px;
+}
+.palestineLocation .parent{
+  margin: 0;
+  width: 100%;
+}
+.palestineLocation .parent .cardImg{
+  width: 478.026px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 70%;
+}
+.palestineLocation .parent .cardImg :nth-child(1) {
+  width: 100%;
+  height: 100%;
+}
+.chinaLocation .parentLocations{
+  height: auto;
+}
+
+ 
+}
+@media (max-width:400px) {
+  .egyLocations{
+    padding-top: 200px;
+  }
+  .egyLocations .parent .cardImg{
+    width: 219.049px;
+    height: 266.725px;
+  }
+  .dubaiLocation{
+    padding-top: 200px;
+  }
+  .dubaiLocation .parent .cardImg{
+    width: 219.049px;
+    height: 266.725px;
+  }
+  .saudiaLocation{
+    padding-top: 200px;
+  }
+  .saudiaLocation .parent .cardImg{
+    width: 219.049px;
+    height: 266.725px;
+  }
+  .chinaLocation{
+    padding-top: 200px;
+  }
+  .chinaLocation .parent .cardImg{
+    width: 219.049px;
+    height: 266.725px;
+  }
+  .ammanLocation{
+    padding-top: 200px;
+  }
+  .ammanLocation .parent .cardImg{
+    width: 219.049px;
+    height: 266.725px;
+  }
+  .palestineLocation{
+    padding-top: 200px;
+  }
+  .palestineLocation .parent .cardImg{
+    width: 219.049px;
+    height: 266.725px;
+  }
 }

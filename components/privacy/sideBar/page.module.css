@@ -38,7 +38,16 @@ section.content {
         border-right: 6px solid #ffffff11;
         padding: 13.86px 14px;
         border-radius: 3.46px;
+        /* width: 100%; */
+        position: relative;
     }
+    .sideBar ol li::after {
+        content: "↙";
+        position: absolute;
+        left: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+}
     section.content {
         display: block;
         padding: 10px;

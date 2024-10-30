@@ -4,7 +4,7 @@ import ContactNumbers from "@/components/branches/ContactNumbers";
 import BranchHero from "@/components/branches/branchHero/BranchHero";
 import BranchLocations from "@/components/branches/BranchLocations/BranchLocations";
 import BranchContactForm from "@/components/branches/client/branchContactForm/BranchContactForm";
-import BranchLocationsMob from "@/components/branches/BranchLocations/BranchLocationsMob"
+
 import ContactMobile from "@/components/branches/ContactMobile/ContactMobile";
 export const metadata = {
   title: "Offices",
@@ -18,14 +18,12 @@ function Branches() {
       <BranchHero />
 
      <BranchLocations/>
-     <BranchLocationsMob/>
 
       <ContactInformation />
       <ContactNumbers />
       
 
       <BranchContactForm />
-      <ContactMobile/>
 
     </div>
   );

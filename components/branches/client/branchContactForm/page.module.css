@@ -28,7 +28,25 @@
 }
 
 @media (max-width: 800px) {
-  .contactForm{
-    display: none;
+  .contactForm .formPage{
+    margin: 0;
+    width: 90%;
+    padding: 40px;
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.01) 8.9%, rgba(216, 216, 216, 0.01) 85.02%)
+  }
+  .contactForm {
+    display: flex;
+    justify-content: center;
+  }
+  .contactForm .formPage h2{
+    text-align: center !important;
+    font-size: 24.774px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+  }
+  .contactForm .formPage .names{
+    flex-direction: column;
+    gap: 0;
   }
 }

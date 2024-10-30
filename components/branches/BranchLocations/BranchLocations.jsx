@@ -5,9 +5,10 @@ const BranchLocations = () => {
   return (
     <section className={styles.locations}>
       <div className={styles.egyLocations}>
-        <h2>جمهورية مصر العربية</h2>
+        <h2 className={styles.hhh}>جمهورية مصر العربية</h2>
         <div className={styles.parent}>
           <div className={styles.parentLocations}>
+            <h2 className={styles.mob}>جمهورية مصر العربية</h2>
             <div className={styles.locationOne}>
               <h3>العباسية (الفرع الرئيسي)</h3>
               <p>
@@ -17,9 +18,19 @@ const BranchLocations = () => {
               <span>11517</span>
               <span>القاهرة - مصر</span>
               <a href="#" className={styles.locationLink}>
-                <Image src="/assets/icons/form/Map pin.png" width={16} height={16} alt="location icon" />
+                <Image
+                  src="/assets/icons/form/Map pin.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
                 الفرع علي الخريطة
-                <Image src="/assets/icons/form/arrow-left-white.png" width={16} height={16} alt="location icon" />
+                <Image
+                  src="/assets/icons/form/arrow-left-white.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
               </a>
             </div>
             <div className={styles.locationTwo}>
@@ -28,9 +39,19 @@ const BranchLocations = () => {
               <span>11522</span>
               <span>القاهرة - مصر</span>
               <a href="#" className={styles.locationLink}>
-                <Image src="/assets/icons/form/Map pin.png" width={16} height={16} alt="location icon" />
+                <Image
+                  src="/assets/icons/form/Map pin.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
                 الفرع علي الخريطة
-                <Image src="/assets/icons/form/arrow-left-white.png" width={16} height={16} alt="location icon" />
+                <Image
+                  src="/assets/icons/form/arrow-left-white.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
               </a>
             </div>
           </div>
@@ -47,7 +68,7 @@ const BranchLocations = () => {
       </div>
 
       <div className={styles.dubaiLocation}>
-        <h2>الإمارات العربية المتحدة</h2>
+        <h2 className={styles.hhh}>الإمارات العربية المتحدة</h2>
         <div className={styles.parent}>
           <div className={styles.cardImg}>
             <CardImg
@@ -59,6 +80,7 @@ const BranchLocations = () => {
             />
           </div>
           <div className={styles.parentLocations}>
+            <h2 className={styles.mob}>الإمارات العربية المتحدة</h2>
             <div className={styles.locationOne}>
               <h3>دبى</h3>
               <p>(بالتعاون مع زايد الشحي للمحاماة)</p>
@@ -77,9 +99,10 @@ const BranchLocations = () => {
       </div>
 
       <div className={styles.saudiaLocation}>
-        <h2>المملكة العربية السعودية</h2>
+        <h2 className={styles.hhh}>المملكة العربية السعودية</h2>
         <div className={styles.parent}>
           <div className={styles.parentLocations}>
+            <h2 className={styles.mob}>المملكة العربية السعودية</h2>
             <div className={styles.location}>
               <h3>الرياض</h3>
               <p>(بالتعاون مع الجبار و المزارقة للمحاماة)</p>
@@ -100,9 +123,8 @@ const BranchLocations = () => {
         </div>
       </div>
 
-
       <div className={styles.chinaLocation}>
-        <h2>الصين</h2>
+        <h2 className={styles.hhh}>الصين</h2>
         <div className={styles.parent}>
           <div className={styles.cardImg}>
             <CardImg
@@ -114,6 +136,7 @@ const BranchLocations = () => {
             />
           </div>
           <div className={styles.parentLocations}>
+            <h2 className={styles.mob}>الصين</h2>
             <div className={styles.location}>
               <h4>تشنغدو</h4>
               <p> (بالتعاون مع شركة سيتشوان ينجلينج هيشي للمحاماة)</p>
@@ -128,15 +151,16 @@ const BranchLocations = () => {
       </div>
 
       <div className={styles.ammanLocation}>
-        <h2>الأردن</h2>
+        <h2 className={styles.hhh}>الأردن</h2>
         <div className={styles.parent}>
           <div className={styles.parentLocations}>
+            <h2 className={styles.mob}>الأردن</h2>
             <div className={styles.location}>
               <h3>عمان</h3>
               <p>(بالتعاون مع شركة المرسي لأعمال المحاماة )</p>
               <span>  خلدا - بالقرب من اشارات البنك العربي </span>
               <span>مجمع رقم 116</span>
-              <span>الصينعمّان  - خلدا - الأردن</span>
+              <span>الصينعمّان - خلدا - الأردن</span>
             </div>
           </div>
           <div className={styles.cardImg}>
@@ -152,7 +176,7 @@ const BranchLocations = () => {
       </div>
 
       <div className={styles.palestineLocation}>
-        <h2>فلسطين</h2>
+        <h2 className={styles.hhh}>فلسطين</h2>
         <div className={styles.parent}>
           <div className={styles.cardImg}>
             <CardImg
@@ -165,6 +189,7 @@ const BranchLocations = () => {
           </div>
 
           <div className={styles.parentLocations}>
+            <h2 className={styles.mob}>فلسطين</h2>
             <div className={styles.location}>
               <h4>جنين</h4>
               <p>(بالتعاون مع فريحات للمحاماة)</p>
