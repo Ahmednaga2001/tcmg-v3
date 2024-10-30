@@ -133,11 +133,6 @@
     gap: 30px;
     padding-top: 50px;
   }
-  .countries h2 {
-    font-size: 28px;
-    text-align: right;
-    margin-top: 50px;
-  }
   .countries .vision .imgleft , .countries .vision .imgright{
     width: 100%;
     padding: 0px;
@@ -146,26 +141,25 @@
     text-align: right;
     padding: 30px 20px;
   }
-   .visioncontent h3 , .visioncontentleft h3{
+  .countries h2 {
+    font-size: 31px;
+    letter-spacing: 0px;
+  }
+  .visioncontent h3 , .visioncontentleft h3{
     font-size: 26px;
+    letter-spacing: 0px;
     margin-bottom: 10px;
   }
    .visioncontent p , .visioncontentleft p{
-    font-size: 20px;
+    font-size: 16px;
+    letter-spacing: 0px;
+    line-height: 24px;
   }
+ 
 }
 @media (max-width: 400px) {
   .countries {
     padding: 32px 20px !important;
   }
-  .countries h2 {
-    font-size: 24px;
-  }
-  .visioncontent h3 , .visioncontentleft h3{
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-   .visioncontent p , .visioncontentleft p{
-    font-size: 15px;
-  }
+  
 }

@@ -8,6 +8,7 @@ import {AnimatePresence, motion} from "framer-motion"
 const data = [
   {
     title: "نقدم خدمات قانونية المتكاملة على المستوى المحلي والإقليمي والدولي",
+    l0 : {t : "الخدمات القانونية",ref : "legal-services"},
     l1: { t: "الإستشارات القانونية", ref: "legal-advice" },
     l2: { t: "تأسيس الشركات", ref: "establishing-companies" },
     l3: { t: "أعمال الشركات", ref: "corporate" },
@@ -64,6 +65,7 @@ const data = [
 const joinUs = [
   {
     title: "إنضم إلينا في المجموعة التجارية والبحرية للمحاماة: حيث نحقق النجاح معًا في عالم المحاماة",
+    l0 : {t : "انضم الينا",ref : "join-us"},
     l1: { t: "المتدربين", ref: "internship" },
     l2: { t: "المحامين", ref: "careers" },
     l3: { t: "العلاقات العامة", ref: "protocol" },
@@ -84,9 +86,45 @@ const news = [
   },
 ];
 
+const branches = [
+  {
+    title: "تواصل معنا للحصول على استشارتك القانونية اليوم وتحقيق نحاجك القانوني",
+    l1: {
+      t: "الفروع",
+      ref: "offices"
+    },
+    options: [
+      {
+        t: "مصر",
+        ref: "#egypt" // Link to Egypt section
+      },
+      {
+        t: "الإمارات العربية المتحدة",
+        ref: "#uae" // Link to UAE section
+      },
+      {
+        t: "المملكة العربية السعودية",
+        ref: "#saudi-arabia" // Link to Saudi Arabia section
+      },
+      {
+        t: "الصين",
+        ref: "#china" // Link to China section
+      },
+      {
+        t: "عمّان",
+        ref: "#jordan" // Link to Jordan section
+      },
+      {
+        t: "فلسطين",
+        ref: "#palestine" // Link to Palestine section
+      }
+    ]
+  }
+]
 function SideNav({ isOpen, toggleSideNav}) {
   const [showPractice, setShowPractice] = useState(false);
   const [showSector, setShowSector] = useState(false);
+  const [showBranches, setShowBranches] = useState(false);
   const [activeItem, setActiveItem] = useState(0);
 
   const handlePracticeToggle = () => {
@@ -95,6 +133,9 @@ function SideNav({ isOpen, toggleSideNav}) {
 
   const handleSectorToggle = () => {
     setShowSector((prev) => !prev);
+  };
+  const handleBranchToggle = () => {
+    setShowBranches((prev) => !prev);
   };
 
   const handleItemClick = (index) => {
@@ -223,6 +264,7 @@ function SideNav({ isOpen, toggleSideNav}) {
             {activeItem === 1 && joinUs.map((el, index) => (
               <div key={index} className={styles.card}>
                 <h2>{el.title}</h2>
+                <Link onClick={toggleSideNav}  className={styles.itemLink} href={el.l0.ref}>{el.l0.t}</Link>
                 <Link onClick={toggleSideNav}  className={styles.itemLink} href={el.l1.ref}>{el.l1.t}</Link>
                 <Link onClick={toggleSideNav}  className={styles.itemLink} href={el.l2.ref}>{el.l2.t}</Link>
                 <Link onClick={toggleSideNav}  className={styles.itemLink} href={el.l3.ref}>{el.l3.t}</Link>
@@ -233,6 +275,7 @@ function SideNav({ isOpen, toggleSideNav}) {
               <div key={index} className={styles.card}>
                 <h2>{el.title}</h2>
                 <div className={styles.links}>
+                  <Link onClick={toggleSideNav}  className={styles.itemLink} href={el.l0.ref}>{el.l0.t}</Link>
                   <Link onClick={toggleSideNav}  className={styles.itemLink} href={el.l1.ref}>{el.l1.t}</Link>
                   <Link onClick={toggleSideNav}  className={styles.itemLink} href={el.l2.ref}>{el.l2.t}</Link>
                   <Link onClick={toggleSideNav}  className={styles.itemLink} href={el.l3.ref}>{el.l3.t}</Link>
@@ -273,9 +316,37 @@ function SideNav({ isOpen, toggleSideNav}) {
             {activeItem === 3 && news.map((el, index) => (
               <div key={index} className={styles.card}>
                 <h2>{el.title}</h2>
-                <Link className={styles.itemLink} href={el.l1.ref}>{el.l1.title}</Link>
+                <Link onClick={toggleSideNav} className={styles.itemLink} href={el.l1.ref}>{el.l1.title}</Link>
               </div>
             ))}
+
+
+{activeItem === 4 && branches.map((el, index) => (
+              <div key={index} className={styles.card}>
+                <h2>{el.title}</h2>
+                <div className={styles.links}>
+                
+                  <div onClick={handleBranchToggle} className={styles.prLink}>
+                    <Link  onClick={toggleSideNav}  href={el.l1.ref}>{el.l1.t}</Link>
+                    <Image
+                      src={showBranches ? '/assets/icons/form/closeacc.svg' : '/assets/icons/form/openacc.svg'}
+                      width={24}
+                      height={24}
+                      alt={showBranches ? 'Close icon' : 'Open icon'}
+                    />
+                  </div>
+                  <div className={`${styles.practiceLinkContainer} ${styles.branches} ${showBranches ? styles.show : ''}`}>
+                  {el.options.map((option, idx) => (
+                      <Link onClick={toggleSideNav}  key={idx} href={"offices"+option.ref}>{option.t}</Link>
+                    ))}
+                  </div>
+              
+          
+                </div>
+              </div>
+            ))}
+
+
           </div>
         </div>
       </div>

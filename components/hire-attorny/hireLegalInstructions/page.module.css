@@ -114,19 +114,17 @@
     width: 85%;
   }
     .legalinstructions h2 {
-      font-size: 28px;
+      font-size: 35px;
+      letter-spacing: 0px;
     }
+    .legalinstructions .boxRight p, .legalinstructions .boxRightM p{
+      font-size: 16px;
+     }
 }
 
 @media (max-width: 400px){
-  .legalinstructions h2 {
-    font-size: 24px;
-  }
   .legalinstructions .boxRight , .legalinstructions .boxRightM{
     width: 100%;
     padding: 15px;
   }
-  .legalinstructions .boxRight p, .legalinstructions .boxRightM p{
-    font-size: 14px;
-   }
 }

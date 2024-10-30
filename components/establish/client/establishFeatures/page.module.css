@@ -153,6 +153,13 @@ line-height: 1.6;
     display: block;
     width: 250px;
   }
+  .card img{
+    padding-top: 5px;
+  }
+  .card span {
+    width: 30px;
+    height: 30px;
+  }
   .card h3{
     font-weight: bold;
     font-size: 17px;
@@ -165,6 +172,7 @@ line-height: 1.6;
 
 @media (max-width: 400px) {
   .uniqueServiceFeatures h2 {
-    font-size: 24px;
+    font-size: 25px;
+    letter-spacing: 0px;
   }
 }

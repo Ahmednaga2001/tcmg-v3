@@ -20,8 +20,22 @@
 }
 .side{
     width: 25%;
+position: relative;
  
 
+}
+.side::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(/assets/images/homePage/sidepatternright.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.2; /* 10% opacity */
+    z-index: -1; /* Send the overlay behind content */
 }
 .logo{
     display: flex;
@@ -62,7 +76,7 @@
     background-image: url(/assets/images/homePage/sideleftpattern.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0.1; /* 10% opacity */
+    opacity: 0.2; /* 10% opacity */
     z-index: -1; /* Send the overlay behind content */
 }
 .top{
@@ -107,7 +121,8 @@
 .mainContent .links{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
+
 
 }
 .itemLink {
@@ -123,17 +138,26 @@
     padding-bottom: 10px;
     font-size: 24px;
     cursor: pointer;
+    width: 100%;
+}
+.card{
+    width: 100%;
 }
 .practiceLinkContainer{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 20px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s ease;
+    gap: 20px;
 }
-
-  
+.practiceLinkContainer.branches{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+  .practiceLinkContainer a{
+    padding-top: 10px;
+  }
   .practiceLinkContainer.show {
     max-height: 500px; 
 

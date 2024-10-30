@@ -9,11 +9,9 @@
 }
 .attorneyrepresentation .card {
   width: 300px;
-  height: 550px;
-  /* background: linear-gradient(#1b2340, #1b2340); */
+  height: 500px;
   background: linear-gradient(rgba(43, 52, 83, 0.33) 100%, rgba(169, 180, 228, 0.33) 30%);
-  border-radius: 32px;
-  border: 1px solid #353E5C;
+  border-radius: 30px;
 }
 
 .attorneyrepresentation .topCard {
@@ -28,6 +26,7 @@
   height: 100%;
   background-color: #1b2340;
   opacity: 0.2;
+  border-radius: 30px;
 }
 .topCardImg {
   height: 319px;
@@ -36,7 +35,6 @@
 .topCardImg img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 .attorneyrepresentation .topCard span {
   display: block;
@@ -78,9 +76,11 @@
   }
   .attorneyrepresentation .card {
     width: 70%;
+    margin-bottom: 15px;
   }
   .topCardImg img{
     width: 100%;
+    border-radius: 30px;
   }
   .attorneyrepresentation h2 , .attorneyrepresentation p{
     text-align: right;
@@ -92,10 +92,14 @@
 
 @media (max-width: 600px) {
   .attorneyrepresentation h2 {
-    font-size: 28px;
+    font-size: 31px;
+    letter-spacing: 0px;
   }
   .attorneyrepresentation p {
-    font-size: 20px;
+    font-size: 16px;
+    letter-spacing: 0px;
+    line-height: 24px;
+    margin-bottom: 20px;
   }
   .attorneyrepresentation .card {
     width: 85%;
@@ -103,12 +107,6 @@
 }
 
 @media (max-width: 400px) {
-  .attorneyrepresentation h2 {
-    font-size: 24px;
-  }
-  .attorneyrepresentation p {
-    font-size: 14px;
-  }
   .attorneyrepresentation .card{
     width: 100%;
     height: auto;

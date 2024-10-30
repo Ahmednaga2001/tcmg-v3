@@ -22,7 +22,7 @@ const officeOptions = [
     value: "تشنغدو",
   },
   {
-    value: "عمان",
+    value: "عمّان",
   },
   {
     value: "جنين",
@@ -46,43 +46,43 @@ const RequestLawyer = () => {
     },
     validationSchema: Yup.object({
       f_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
+        .max(10, "يجب أن يكون 10 أحرف أو أقل")
+        .required("مطلوب")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "الاسم غير صالح "),
       l_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
+        .max(10, "يجب أن يكون 10 أحرف أو أقل")
+        .required("مطلوب")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "الاسم غير صالح"),
       email: Yup.string()
         .matches(
           /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-          "please enter a valid email"
+          "الرجاء إدخال بريد إلكتروني صالح"
         )
-        .required("Required"),
+        .required("مطلوب"),
       phone: Yup.string()
         .matches(
           /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
-          "invalid phone number"
+          "رقم الهاتف غير صالح"
         )
-        .required("Required"),
+        .required("مطلوب"),
       lawerSpecialization: Yup.string()
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "major invalid "),
+        .required("مطلوب")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "معاق رئيسي "),
       legalCase: Yup.string()
-        .min(20, "Must be at least 20 characters")
-        .required("Required"),
-      office: Yup.string().required("Required"), // Validation for office
-      clientCategory: Yup.string().required("Required"), // Validation for office
+        .min(20, "يجب أن يكون على الأقل 20 حرفًا")
+        .required("مطلوب"),
+      office: Yup.string().required("مطلوب"), // Validation for office
+      clientCategory: Yup.string().required("مطلوب"), // Validation for office
       agreeToPrivacy: Yup.boolean()
-        .oneOf([true], "You must agree to the privacy policy") // Validation rule
-        .required("Required"),
+        .oneOf([true], "يجب عليك الموافقة على سياسة الخصوصية") // Validation rule
+        .required("مطلوب"),
     }),
     validateOnBlur: true, // This ensures validation on blur
     validateOnChange: true,
     onSubmit: (values) => {
       // alert(JSON.stringify(values, null, 2));
       axios
-        .post("https://tcmg-production-0be9.up.railway.app/hire-lawer", values)
+        .post("https://tcmg-alpha.vercel.app/hire-lawer", values)
         .then((res) => {
           console.log("say", res.data.message);
           setsuccess(res.data.message);
@@ -114,7 +114,7 @@ const RequestLawyer = () => {
                 blur={formik.handleBlur}
               />
               {formik.touched.f_name && formik.errors.f_name ? (
-                <div className={styles.error}>{formik.errors.f_name}</div>
+                <div className="error">{formik.errors.f_name}</div>
               ) : null}
             </div>
 
@@ -130,7 +130,7 @@ const RequestLawyer = () => {
                 blur={formik.handleBlur}
               />
               {formik.touched.l_name && formik.errors.l_name ? (
-                <div className={styles.error}>{formik.errors.l_name}</div>
+                <div className="error">{formik.errors.l_name}</div>
               ) : null}
             </div>
           </div>
@@ -147,7 +147,7 @@ const RequestLawyer = () => {
               blur={formik.handleBlur}
             />
             {formik.touched.email && formik.errors.email ? (
-              <div className={styles.error}>{formik.errors.email}</div>
+              <div className="error">{formik.errors.email}</div>
             ) : null}
           </div>
 
@@ -163,7 +163,7 @@ const RequestLawyer = () => {
               blur={formik.handleBlur}
             />
             {formik.touched.phone && formik.errors.phone ? (
-              <div className={styles.error}>{formik.errors.phone}</div>
+              <div className="error">{formik.errors.phone}</div>
             ) : null}
           </div>
           <div className={styles.errorWrapper}>
@@ -181,7 +181,7 @@ const RequestLawyer = () => {
               onBlur={formik.handleBlur} // Bind Formik onBlur
             />
             {formik.touched.clientCategory && formik.errors.clientCategory ? (
-              <div className={styles.error}>{formik.errors.clientCategory}</div>
+              <div className="error">{formik.errors.clientCategory}</div>
             ) : null}
           </div>
 
@@ -200,7 +200,7 @@ const RequestLawyer = () => {
               onBlur={formik.handleBlur} // Bind Formik onBlur
             />
             {formik.touched.office && formik.errors.office ? (
-              <div className={styles.error}>{formik.errors.office}</div>
+              <div className="error">{formik.errors.office}</div>
             ) : null}
           </div>
           <div className={styles.errorWrapper}>
@@ -216,7 +216,7 @@ const RequestLawyer = () => {
             />
             {formik.touched.lawerSpecialization &&
             formik.errors.lawerSpecialization ? (
-              <div className={styles.error}>
+              <div className="error">
                 {formik.errors.lawerSpecialization}
               </div>
             ) : null}
@@ -235,7 +235,7 @@ const RequestLawyer = () => {
               <span>?</span>
             </div>
             {formik.touched.legalCase && formik.errors.legalCase ? (
-              <div className={styles.error}>{formik.errors.legalCase}</div>
+              <div className="error">{formik.errors.legalCase}</div>
             ) : null}
           </div>
           <div className={styles.errorWrapper}>

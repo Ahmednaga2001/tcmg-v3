@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 const BranchLocations = () => {
   return (
     <section className={styles.locations}>
-      <div className={styles.egyLocations}>
+      <div className={styles.egyLocations} id="egypt">
         <h2 className={styles.hhh}>جمهورية مصر العربية</h2>
         <div className={styles.parent}>
           <div className={styles.parentLocations}>
@@ -67,7 +67,7 @@ const BranchLocations = () => {
         </div>
       </div>
 
-      <div className={styles.dubaiLocation}>
+      <div className={styles.dubaiLocation} id="uae">
         <h2 className={styles.hhh}>الإمارات العربية المتحدة</h2>
         <div className={styles.parent}>
           <div className={styles.cardImg}>
@@ -98,7 +98,7 @@ const BranchLocations = () => {
         </div>
       </div>
 
-      <div className={styles.saudiaLocation}>
+      <div className={styles.saudiaLocation} id="saudi-arabia">
         <h2 className={styles.hhh}>المملكة العربية السعودية</h2>
         <div className={styles.parent}>
           <div className={styles.parentLocations}>
@@ -123,7 +123,7 @@ const BranchLocations = () => {
         </div>
       </div>
 
-      <div className={styles.chinaLocation}>
+      <div className={styles.chinaLocation} id="china">
         <h2 className={styles.hhh}>الصين</h2>
         <div className={styles.parent}>
           <div className={styles.cardImg}>
@@ -150,7 +150,7 @@ const BranchLocations = () => {
         </div>
       </div>
 
-      <div className={styles.ammanLocation}>
+      <div className={styles.ammanLocation} id="jordan">
         <h2 className={styles.hhh}>الأردن</h2>
         <div className={styles.parent}>
           <div className={styles.parentLocations}>
@@ -175,7 +175,7 @@ const BranchLocations = () => {
         </div>
       </div>
 
-      <div className={styles.palestineLocation}>
+      <div className={styles.palestineLocation} id="palestine">
         <h2 className={styles.hhh}>فلسطين</h2>
         <div className={styles.parent}>
           <div className={styles.cardImg}>
