@@ -3,6 +3,12 @@
   flex-direction: column;
   gap: 40px;
 }
+.hhh{
+  display: block;
+}
+.mob{
+  display:none;
+}
 .locations h2 {
   text-align: center;
 }
