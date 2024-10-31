@@ -30,38 +30,32 @@ const HiringGraduationForm = () => {
     },
     validationSchema: Yup.object({
       howDidYouHearAboutUs: Yup.string()
-        .min(20, "Must be at least 20 characters")
-        .required("Required"),
+      .min(20, "يجب أن يكون على الأقل 20 حرفًا")
+      .required("مطلوب"),
       first_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
+      .max(10, "يجب أن يكون 10 أحرف أو أقل")
+      .required("مطلوب")
+      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
       last_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
+      .max(10, "يجب أن يكون 10 أحرف أو أقل")
+      .required("مطلوب")
+      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
       email: Yup.string()
-        .matches(
-          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-          "please enter a valid email"
-        )
-        .required("Required"),
+      .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "يرجى إدخال بريد إلكتروني صالح")
+      .required("مطلوب"),
       phone: Yup.string()
-        .matches(
-          /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
-          "invalid phone number"
-        )
-        .required("Required"),
-      address: Yup.string().required("Required"),
-      office: Yup.string().required("Required"),
-      job: Yup.string().required("Required"),
+      .matches(/^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/, "رقم الهاتف غير صالح")
+      .required("مطلوب"),
+      address: Yup.string().required("مطلوب"),
+      office: Yup.string().required("مطلوب"),
+      job: Yup.string().required("مطلوب"),
       agreeToPrivacy: Yup.boolean()
-        .oneOf([true], "You must agree to the privacy policy")
-        .required("Required"),
+      .oneOf([true], "يجب أن توافق على سياسة الخصوصية")
+        .required("مطلوب"),
         cv: Yup.mixed()
-        .required("Required")
-        .test("fileSize", "File too large", value => value && value.size <= 15 * 1024 * 1024)
-        .test("fileType", "Unsupported File Format", value => value && (value.type === "application/pdf" || value.type === "application/msword")),
+        .required("مطلوب")
+        .test("fileSize", "الملف كبير جدًا", value => value && value.size <= 15 * 1024 * 1024)
+        .test("fileType", "تنسيق ملف غير مدعوم", value => value && (value.type === "application/pdf" || value.type === "application/msword")),
       
     }),
     validateOnBlur: true,
@@ -82,7 +76,7 @@ const HiringGraduationForm = () => {
 
 
       axios
-        .post("https://tcmg-production.up.railway.app/employments", formData, {
+        .post("https://tcmg-alpha.vercel.app/employments", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -152,7 +146,7 @@ const HiringGraduationForm = () => {
       value: "تشنغدو",
     },
     {
-      value: "عمان",
+      value: "عمّان",
     },
     {
       value: "جنين",
@@ -177,7 +171,7 @@ const HiringGraduationForm = () => {
               />
               {Intern_Graduation_Form.touched.first_name &&
               Intern_Graduation_Form.errors.first_name ? (
-                <div className={styles.error}>
+                <div className="error">
                   {Intern_Graduation_Form.errors.first_name}
                 </div>
               ) : null}
@@ -195,7 +189,7 @@ const HiringGraduationForm = () => {
               />
               {Intern_Graduation_Form.touched.last_name &&
               Intern_Graduation_Form.errors.last_name ? (
-                <div className={styles.error}>
+                <div className="error">
                   {Intern_Graduation_Form.errors.last_name}
                 </div>
               ) : null}
@@ -215,7 +209,7 @@ const HiringGraduationForm = () => {
             />
             {Intern_Graduation_Form.touched.email &&
             Intern_Graduation_Form.errors.email ? (
-              <div className={styles.error}>
+              <div className="error">
                 {Intern_Graduation_Form.errors.email}
               </div>
             ) : null}
@@ -234,7 +228,7 @@ const HiringGraduationForm = () => {
             />
             {Intern_Graduation_Form.touched.phone &&
             Intern_Graduation_Form.errors.phone ? (
-              <div className={styles.error}>
+              <div className="error">
                 {Intern_Graduation_Form.errors.phone}
               </div>
             ) : null}
@@ -256,7 +250,7 @@ const HiringGraduationForm = () => {
             />
             {Intern_Graduation_Form.touched.office &&
             Intern_Graduation_Form.errors.office ? (
-              <div className={styles.error}>
+              <div className="error">
                 {Intern_Graduation_Form.errors.office}
               </div>
             ) : null}
@@ -275,7 +269,7 @@ const HiringGraduationForm = () => {
             />
             {Intern_Graduation_Form.touched.job &&
             Intern_Graduation_Form.errors.job ? (
-              <div className={styles.error}>
+              <div className="error">
                 {Intern_Graduation_Form.errors.job}
               </div>
             ) : null}
@@ -294,7 +288,7 @@ const HiringGraduationForm = () => {
             />
             {Intern_Graduation_Form.touched.address &&
             Intern_Graduation_Form.errors.address ? (
-              <div className={styles.error}>
+              <div className="error">
                 {Intern_Graduation_Form.errors.address}
               </div>
             ) : null}
@@ -314,7 +308,7 @@ const HiringGraduationForm = () => {
             </div>
             {Intern_Graduation_Form.touched.howDidYouHearAboutUs &&
             Intern_Graduation_Form.errors.howDidYouHearAboutUs ? (
-              <div className={styles.error}>
+              <div className="error">
                 {Intern_Graduation_Form.errors.howDidYouHearAboutUs}
               </div>
             ) : null}
@@ -353,7 +347,7 @@ const HiringGraduationForm = () => {
             </div>
             {Intern_Graduation_Form.touched.cv &&
             Intern_Graduation_Form.errors.cv ? (
-              <div className={styles.error}>
+              <div className="error">
                 {Intern_Graduation_Form.errors.cv}
               </div>
             ) : null}
