@@ -16,31 +16,12 @@
   }
 
   .joinPage h2 {
-    /* font-size: 32px; */
+    font-size: 30px;
   }
 
   .joinPage p {
-    font-size: 16px;
-    text-align: right;
-  }
-  .joinPage section {
-    padding: 20px;
-  }
-  
-}
-@media (max-width: 400px) {
-
-  .joinPage h1,
-  .joinPage h2 {
-    text-align: right;
-  }
-
-  .joinPage h2 , .joinPage h1 {
-    font-size: 24px;
-  }
-
-  .joinPage p {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 400;
     text-align: right;
   }
   .joinPage section {

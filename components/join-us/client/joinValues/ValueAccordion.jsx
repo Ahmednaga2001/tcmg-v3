@@ -11,27 +11,25 @@ const ValueAccordion = ({ title, path, desc }) => {
   };
 
   return (
-    <div>
+  <div>
       <div className={styles.accordionItem}>
         <div className={styles.accordionItemHeader} onClick={handleIsOpenOne}>
-          <div>
+          <div className={styles.headerContent}>
             <Image
               src={path}
-              width={40}
-              height={40}
+              width={60}
+              height={60}
               alt={title}
               className={styles.accordionItemIcon}
             />
             <span>{title}</span>
           </div>
           <Image
-            src="/assets/icons/hireattorny/doublalarroweleft.png"
-            alt="doublalarroweleft"
-            width={24}
-            height={24}
-            className={`${styles.accordionArrowIcon} ${
-              isOpenOne ? styles.hide : ""
-            }`}
+            src="/assets/icons/strategicrelations/arrow-down.png"
+            alt="Drop Icon"
+            width={11}
+            height={6}
+            className={`${styles.accordionArrowIcon} ${isOpenOne ? "" : ""}`}
           />
         </div>
         <div
@@ -41,16 +39,17 @@ const ValueAccordion = ({ title, path, desc }) => {
         >
           <p>{desc}</p>
           <Image
-            src="/assets/icons/hireattorny/arrowtop.png"
-            width={10}
-            height={14}
+            src="/assets/icons/strategicrelations/ep_arrow-down-bold.png"
+
+            width={11}
+            height={6}
             onClick={handleIsOpenOne}
-            alt="bottomIcon"
+            alt="Up Icon"
             className={styles.bottomIcon}
           />
         </div>
       </div>
-    </div>
+      </div>
   );
 };
 

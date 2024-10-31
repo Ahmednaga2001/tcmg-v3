@@ -17,6 +17,10 @@
   gap: 40px;
 }
 
+.about .parent div p.child3{
+  display: none;
+}
+
 /* @media (max-width : 1191px) {
   .about .parent {
       flex-direction: column;
@@ -32,6 +36,10 @@
 } */
 
 @media (max-width: 768px) {
+  .about {
+    padding: 32px 16px;
+
+  }
   .about .parent {
     flex-direction: row;
     justify-content: center;
@@ -39,7 +47,21 @@
   }
   .about .parent div {
     text-align: right;
-    gap: 20px;
+    gap: 15px;
+  }
+  .about .parent div p.child3{
+    display: block;
+    width: 120px;
+    position: relative;
+    cursor: pointer;
+  }
+  .about .parent div p.child3::after{
+    content: "←";
+    margin-right: 3px;
+    transition: .4s;
+  }
+  .about .parent div p.child3:hover::after{
+    margin-right: 10px;
   }
   .about img {
     display: block;
@@ -47,6 +69,6 @@
     height: 70px;
   }
   .about .parent div img{
-    margin-top: -70px;
+    margin-top: -50px;
   }
 }
