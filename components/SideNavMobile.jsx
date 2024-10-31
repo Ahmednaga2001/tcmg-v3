@@ -7,6 +7,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 const data = [
   {
+    l0 : {t : "الخدمات القانونية",ref : "legal-services"},
     l1: { t: "الإستشارات القانونية", ref: "legal-advice" },
     l2: { t: "تأسيس الشركات", ref: "establishing-companies" },
     l3: { t: "أعمال الشركات", ref: "corporate" },
@@ -83,12 +84,35 @@ const news = [
 const contact = [
   {
     l1: {
-      title: "الفروع",
+      title: "جميع الفروع ",
       ref: "offices"
     },
-    l2: {
-      title: "الأسئلة الشائعة"
-    }
+    options: [
+      {
+        t: "القاهرة",
+        ref: "#egypt" // Link to Egypt section
+      },
+      {
+        t: "دبي",
+        ref: "#uae" // Link to UAE section
+      },
+      {
+        t: "الرياض",
+        ref: "#saudi-arabia" // Link to Saudi Arabia section
+      },
+      {
+        t: "تشنغدو",
+        ref: "#china" // Link to China section
+      },
+      {
+        t: "عمّان",
+        ref: "#jordan" // Link to Jordan section
+      },
+      {
+        t: "جنين",
+        ref: "#palestine" // Link to Palestine section
+      }
+    ]
   }
 ];
 
@@ -97,6 +121,7 @@ function SideNavMob({ isOpen, toggleSideNav }) {
   const [activeItem, setActiveItem] = useState(null);
   const [showPractice, setShowPractice] = useState(false);
   const [showSector, setShowSector] = useState(false);
+  const [showBranches, setShowBranches] = useState(false);
   const [title, setTitle] = useState("");
 
   const handleItemClick = (index, title) => {
@@ -117,6 +142,10 @@ function SideNavMob({ isOpen, toggleSideNav }) {
   const handleSectorToggle = () => {
     setShowSector((prev) => !prev);
   };
+  const handleBranchToggle = () => {
+    setShowBranches((prev) => !prev);
+  };
+  
   return (
     <AnimatePresence>
       {isOpen && (
@@ -138,22 +167,22 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                 من نحن
                 <Image src="/assets/icons/form/arrow-left-white.png" width={24} height={24}/>
                 </span>
-              <span onClick={() => handleItemClick(1, "الخدمات القانونية ")}>
-                الخدمات القانونية 
-                <Image src="/assets/icons/form/arrow-left-white.png" width={24} height={24}/>
-                </span>
               <span onClick={() => handleItemClick(2, "إنضم الينا")}>
                 إنضم الينا
                 <Image src="/assets/icons/form/arrow-left-white.png" width={24} height={24}/>
                 </span>
-              <span onClick={() => handleItemClick(3, "تواصلوا معنا")}>
-                تواصلوا معنا
+              <span onClick={() => handleItemClick(1, "خدماتنا")}>
+              خدماتنا
                 <Image src="/assets/icons/form/arrow-left-white.png" width={24} height={24}/>
                 </span>
               <span onClick={() => handleItemClick(4, "أخبار وروي")}>
                 أخبار وروي
                 <Image src="/assets/icons/form/arrow-left-white.png" width={24} height={24}/>
 
+                </span>
+              <span onClick={() => handleItemClick(3, "تواصلوا معنا")}>
+                تواصلوا معنا
+                <Image src="/assets/icons/form/arrow-left-white.png" width={24} height={24}/>
                 </span>
             </div>
           )}
@@ -185,10 +214,10 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                 <Link onClick={toggleSideNav} className={styles.itemLink} href="#">
                   {aboutUs[0].l2.title}
                 </Link>
-                <a href="#" className={styles.registerLink}>
+                {/* <a href="#" className={styles.registerLink}>
           احجز استشارتك الآن
           <Image src="/assets/icons/form/arrow-left-black.png" width={24} height={24} alt="arrow left" />
-        </a>
+        </a> */}
                 </motion.div>
             )}
 
@@ -218,6 +247,7 @@ function SideNavMob({ isOpen, toggleSideNav }) {
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
               >
+                <Link onClick={toggleSideNav} className={styles.itemLink} href={el.l0.ref}>{el.l0.t}</Link>
                 <Link onClick={toggleSideNav} className={styles.itemLink} href={el.l1.ref}>{el.l1.t}</Link>
                 <Link onClick={toggleSideNav} className={styles.itemLink} href={el.l2.ref}>{el.l2.t}</Link>
                 <Link onClick={toggleSideNav} className={styles.itemLink} href={el.l3.ref}>{el.l3.t}</Link>
@@ -244,26 +274,42 @@ function SideNavMob({ isOpen, toggleSideNav }) {
 
                 <Link onClick={toggleSideNav} className={styles.itemLink} href={el.l6.ref}>{el.l6.t}</Link>
                 <Link onClick={toggleSideNav} className={styles.itemLink} href={el.l7.ref}>{el.l7.t}</Link>
-                <a href="#" className={styles.registerLink}>
+                {/* <a href="#" className={styles.registerLink}>
           احجز استشارتك الآن
           <Image src="/assets/icons/form/arrow-left-black.png" width={24} height={24} alt="arrow left" />
-        </a>
+        </a> */}
               </motion.div>
             ))}
-{activeItem === 3 && (
-  <motion.div 
-    className={styles.card}
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: 20 }}
-    transition={{ duration: 0.3 }}
-  >
-    <Link onClick={toggleSideNav} className={styles.itemLink} href={contact[0].l1.ref}>
-      {contact[0].l1.title}
-    </Link>
-    <span className={styles.itemLink}>{contact[0].l2.title}</span>
-  </motion.div>
-)}
+
+{activeItem === 3 && data.map((el, index) => (
+              <motion.div key={index} className={styles.card}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
+           
+             
+             
+
+                <div onClick={() => setShowBranches((prev) => !prev)} className={styles.prLink}>
+                  <Link onClick={toggleSideNav} href={contact[0].l1.ref}>{contact[0].l1.title}</Link>
+                  <Image src={showBranches ? '/assets/icons/form/closeacc.svg' : '/assets/icons/form/openacc.svg'} width={24} height={24} />
+                </div>
+                <div className={`${styles.practiceLinkContainer} ${showBranches ? styles.show : ''}`}>
+                    {contact[0].options.map((option, idx) => (
+                      <Link onClick={toggleSideNav}  key={idx} href={option.ref}>{option.t}</Link>
+                    ))}
+                    </div>
+
+           
+                {/* <a href="#" className={styles.registerLink}>
+          احجز استشارتك الآن
+          <Image src="/assets/icons/form/arrow-left-black.png" width={24} height={24} alt="arrow left" />
+        </a> */}
+              </motion.div>
+            ))}
+
 
 
             {activeItem === 4 && news.map((el, index) => (
@@ -274,16 +320,16 @@ function SideNavMob({ isOpen, toggleSideNav }) {
               transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 <Link className={styles.itemLink} href={el.l1.ref}>{el.l1.title}</Link>
-        <a href="#" className={styles.registerLink}>
+        {/* <a href="#" className={styles.registerLink}>
           احجز استشارتك الآن
           <Image src="/assets/icons/form/arrow-left-black.png" width={24} height={24} alt="arrow left" />
-        </a>
+        </a> */}
               </motion.div>
             ))}
           </div>
 
           {
-  ( activeItem === 1 || activeItem === null) && (
+ isOpen&& (
     <motion.div className={styles.bottom}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}

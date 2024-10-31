@@ -65,7 +65,7 @@ const data = [
 const joinUs = [
   {
     title: "إنضم إلينا في المجموعة التجارية والبحرية للمحاماة: حيث نحقق النجاح معًا في عالم المحاماة",
-    l0 : {t : "انضم الينا",ref : "join-us"},
+    l0 : {t : "إبدأ رحلتك معنا" ,ref : "join-us"},
     l1: { t: "المتدربين", ref: "internship" },
     l2: { t: "المحامين", ref: "careers" },
     l3: { t: "العلاقات العامة", ref: "protocol" },
@@ -95,19 +95,19 @@ const branches = [
     },
     options: [
       {
-        t: "مصر",
+        t: "القاهرة",
         ref: "#egypt" // Link to Egypt section
       },
       {
-        t: "الإمارات العربية المتحدة",
+        t: "دبي",
         ref: "#uae" // Link to UAE section
       },
       {
-        t: "المملكة العربية السعودية",
+        t: "الرياض",
         ref: "#saudi-arabia" // Link to Saudi Arabia section
       },
       {
-        t: "الصين",
+        t: "تشنغدو",
         ref: "#china" // Link to China section
       },
       {
@@ -115,7 +115,7 @@ const branches = [
         ref: "#jordan" // Link to Jordan section
       },
       {
-        t: "فلسطين",
+        t: "جنين",
         ref: "#palestine" // Link to Palestine section
       }
     ]
@@ -205,7 +205,7 @@ function SideNav({ isOpen, toggleSideNav}) {
     />
   </span>
   <span className={activeItem === 4 ? styles.active : ''} onClick={() => handleItemClick(4)}>
-    الفروع
+  تواصل معنا
     <Image 
       quality={100} 
       src={activeItem === 4 ? "/assets/icons/form/arrow-left-black.png" : "/assets/icons/form/arrow-left-white.png"} 
