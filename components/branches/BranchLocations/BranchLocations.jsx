@@ -87,12 +87,42 @@ const BranchLocations = () => {
               <span>مبنى المسعود - شارع آل مكتوم - بورسعيد</span>
               <span>3669</span>
               <span>دبي – الإمارات العربية المتحدة</span>
+              <a href="#" className={styles.locationLink}>
+                <Image
+                  src="/assets/icons/form/Map pin.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
+                الفرع علي الخريطة
+                <Image
+                  src="/assets/icons/form/arrow-left-white.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
+              </a>
             </div>
             <div className={styles.locationTwo}>
               <h3> دبي</h3>
               <p>(بالتعاون مع ذا ويلث تيلر لخدمات رجال الأعمال ذ.م.م)</p>
               <span>48 مبنى بروج محور الشيخ زايد</span>
               <span>دبى - الامارات العربية المتحدة</span>
+              <a href="#" className={styles.locationLink}>
+                <Image
+                  src="/assets/icons/form/Map pin.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
+                الفرع علي الخريطة
+                <Image
+                  src="/assets/icons/form/arrow-left-white.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -109,6 +139,21 @@ const BranchLocations = () => {
               <span>مخرج 7 - طريق عائمان بن عثمان</span>
               <span>11536</span>
               <span>الرياض - المملكة العربية السعودية</span>
+              <a href="#" className={styles.locationLink}>
+                <Image
+                  src="/assets/icons/form/Map pin.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
+                الفرع علي الخريطة
+                <Image
+                  src="/assets/icons/form/arrow-left-white.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
+              </a>
             </div>
           </div>
           <div className={styles.cardImg}>
@@ -145,6 +190,21 @@ const BranchLocations = () => {
               </span>
               <span> رقم 157، القسم 2، طريق جيانشي الشمالي،</span>
               <span>منطقة تشنغهوا، مدينة تشنغدو، مقاطعة سيتشوان، الصين </span>
+              <a href="#" className={styles.locationLink}>
+                <Image
+                  src="/assets/icons/form/Map pin.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
+                الفرع علي الخريطة
+                <Image
+                  src="/assets/icons/form/arrow-left-white.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -161,6 +221,21 @@ const BranchLocations = () => {
               <span>  خلدا - بالقرب من اشارات البنك العربي </span>
               <span>مجمع رقم 116</span>
               <span>الصينعمّان - خلدا - الأردن</span>
+              <a href="#" className={styles.locationLink}>
+                <Image
+                  src="/assets/icons/form/Map pin.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
+                الفرع علي الخريطة
+                <Image
+                  src="/assets/icons/form/arrow-left-white.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
+              </a>
             </div>
           </div>
           <div className={styles.cardImg}>
@@ -195,6 +270,21 @@ const BranchLocations = () => {
               <p>(بالتعاون مع فريحات للمحاماة)</p>
               <span>برج فريحات ط١ - شارع حيفا - بجانب بنك القاهرة عمان </span>
               <span>جنين - فلسطين</span>
+              <a href="#" className={styles.locationLink}>
+                <Image
+                  src="/assets/icons/form/Map pin.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
+                الفرع علي الخريطة
+                <Image
+                  src="/assets/icons/form/arrow-left-white.png"
+                  width={16}
+                  height={16}
+                  alt="location icon"
+                />
+              </a>
             </div>
           </div>
         </div>
