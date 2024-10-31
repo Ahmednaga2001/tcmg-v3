@@ -41,6 +41,7 @@
 .path p {
   padding: 30px;
   border-radius: 8px;
+  height:150px;
 
 }
 .path p:nth-child(odd) {

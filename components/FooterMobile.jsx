@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./FooterMobile.module.css";
 import Link from "next/link";
+
 function FooterMobile() {
   return (
     <footer className={styles.footer}>
@@ -18,7 +19,7 @@ function FooterMobile() {
         </div>
         <div>
           <Link href="legal-consultations" target="_blank" className={styles.mainLink}>
-            <h2>الإستشارات القانونية </h2>
+            <h2>الإستشارات القانونية</h2>
             <Image
               src="/assets/icons/arrow-left.svg"
               alt="Arrow Left"
@@ -28,73 +29,75 @@ function FooterMobile() {
           </Link>
         </div>
       </div>
+      
       <div className={styles.mainContent}>
         <div className={styles.bottomLinks}>
           <ul>
-            <div>
+            <li>
               <Link href="about-us" target="_blank" className={styles.boldLink}>
-                <li>من نحن</li>
+                من نحن
               </Link>
-              <li>فريق العمل</li>
-            </div>
-            <div>
+            </li>
+            <li>فريق العمل</li>
+            <li className={styles.space}>
               <Link href="legal-services" target="_blank" className={styles.boldLink}>
-                <li>الخدمات القانونيه</li>
+                الخدمات القانونية
               </Link>
               <div className={styles.links}>
                 <div className={styles.rightLinks}>
-                  <Link href="legal-consultations">
-                    <li>الإستشارات القانونية</li>
-                  </Link>
-                  <Link href="corporate">
-                    <li>أعمال الشركات</li>
-                  </Link>
-                  <Link href="sectors">
-                    <li>القطاعات</li>
-                  </Link>
-                  <Link href="ask-a-lawyer">
-                    <li>إسأل محامي</li>
-                  </Link>
+                  <ul>
+                    <li>
+                      <Link href="legal-consultations">الإستشارات القانونية</Link>
+                    </li>
+                    <li>
+                      <Link href="corporate">أعمال الشركات</Link>
+                    </li>
+                    <li>
+                      <Link href="sectors">القطاعات</Link>
+                    </li>
+                    <li>
+                      <Link href="ask-a-lawyer">إسأل محامي</Link>
+                    </li>
+                  </ul>
                 </div>
                 <div className={styles.leftLinks}>
-                  <Link href="legal-consultations">
-                    <li>تأسيس الشركات</li>
-                  </Link>
-                  <Link href="corporate">
-                    <li>أعمال الشركات</li>
-                  </Link>
-                  <Link href="sectors">
-                    <li>القطاعات</li>
-                  </Link>
-                  <Link href="ask-a-lawyer">
-                    <li>إسأل محامي</li>
-                  </Link>
+                  <ul>
+                    <li>
+                      <Link href="legal-consultations">تأسيس الشركات</Link>
+                    </li>
+                    <li>
+                      <Link href="corporate">أعمال الشركات</Link>
+                    </li>
+                    <li>
+                      <Link href="sectors">القطاعات</Link>
+                    </li>
+                    <li>
+                      <Link href="ask-a-lawyer">إسأل محامي</Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
-            <div>
+            </li>
+            <li className={styles.space}>
               <Link href="join-us" target="_blank" className={styles.boldLink}>
-                <li>انضم الينا</li>
+                انضم الينا
               </Link>
-              <Link href="internship">
-                <li>المتدربين</li>
-              </Link>
-              <Link href="careers">
-                <li>المحامين</li>
-              </Link>
-            </div>
-            <div>
-              <li className={styles.boldLink}>تواصلو معنا</li>
-              <Link href="offices">
-                <li>القروع</li>
-              </Link>
-            </div>
-            <div>
-              <li className={styles.boldLink}>اخبار ورؤي</li>
-              <li>مراجع قانونية</li>
-            </div>
+            </li>
+            <li>
+              <Link href="internship">المتدربين</Link>
+            </li>
+            <li>
+              <Link href="careers">المحامين</Link>
+            </li>
+            <li className={`${styles.boldLink} ${styles.space}`}>تواصلو معنا</li>
+            <li>
+              <Link href="offices">الفروع</Link>
+            </li>
+            <li className={`${styles.boldLink} ${styles.space}`}>اخبار ورؤي</li>
+            <li>مراجع قانونية</li>
           </ul>
         </div>
+
         <div className={styles.social}>
           <span className={styles.boldLink}>تابعنا علي</span>
           <div className={styles.socialIcons}>
@@ -110,7 +113,7 @@ function FooterMobile() {
             <span>
               <Image
                 src="assets/icons/twitter.svg"
-                alt="Twiter Icon"
+                alt="Twitter Icon"
                 width={25}
                 height={25}
                 quality={100}
@@ -120,7 +123,7 @@ function FooterMobile() {
               <Image
                 src="assets/icons/youtube.svg"
                 quality={100}
-                alt="Youtube Icon"
+                alt="YouTube Icon"
                 width={25}
                 height={25}
               />
@@ -128,7 +131,7 @@ function FooterMobile() {
             <span>
               <Image
                 src="assets/icons/instgram.svg"
-                alt="Instgram Icon"
+                alt="Instagram Icon"
                 width={25}
                 height={25}
                 quality={100}
@@ -148,21 +151,21 @@ function FooterMobile() {
       </div>
 
       <div className={styles.centerLinks}>
-          <Link href="">
-            <h2 className={styles.linkText}>إشترك</h2>
-          </Link>
-          <Link href="privacy-policy">
-            <h2 className={styles.linkText}>سياسة الخصوصية</h2>
-          </Link>
-          <Link href="">
-            <h2 className={styles.linkText}>خريطة الموقع</h2>
-          </Link>
-        </div>
+        <Link href="">
+          <h2 className={styles.linkText}>إشترك</h2>
+        </Link>
+        <Link href="privacy-policy">
+          <h2 className={styles.linkText}>سياسة الخصوصية</h2>
+        </Link>
+        <Link href="">
+          <h2 className={styles.linkText}>خريطة الموقع</h2>
+        </Link>
+      </div>
 
-        <div className={styles.info}>
-          <p>تعد المجموعة التجارية والبحرية للمحاماة أكبر مكتب محاماة متكامل في تقديم الخدمات القانونية للأفراد والشركات. </p>
-          <p>جميع حقوق النسخ والنشر محفوظة المجموعة التجارية والبحرية للمحاماة ©2019 ©2024 </p>
-        </div>
+      <div className={styles.info}>
+        <p>تعد المجموعة التجارية والبحرية للمحاماة أكبر مكتب محاماة متكامل في تقديم الخدمات القانونية للأفراد والشركات.</p>
+        <p>جميع حقوق النسخ والنشر محفوظة المجموعة التجارية والبحرية للمحاماة ©2019 ©2024</p>
+      </div>
     </footer>
   );
 }

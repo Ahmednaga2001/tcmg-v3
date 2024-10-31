@@ -29,10 +29,10 @@
     font-weight: bold;
 }
 .bottomLinks ul{
-    margin-top: 20px;
+    /* margin-top: 20px; */
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    /* gap: 15px; */
 }
 .boldLink{
     font-weight: bold;
@@ -43,6 +43,9 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+.space {
+    margin-top: 20px;
 }
 .socialIcons{
     display: flex;

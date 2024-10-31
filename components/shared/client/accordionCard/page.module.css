@@ -3,8 +3,10 @@
   justify-content: space-between;
   align-items: center;
   /* border-bottom: 1px solid #fff; */
-  padding-bottom: 20px;
   cursor: pointer;
+  border: 1px solid  rgba(255, 255, 255, 0.1);
+  padding:  20px;
+  border-radius: 10px;
 }
 .accordionQues{
   line-height: 1.8;
@@ -28,7 +30,6 @@
   font-size: 16px;
 }
 .accordionQues:not(:first-of-type) {
-  margin-top: 10px;
 }
 .accordionQuesContent {
   overflow: hidden;
@@ -57,9 +58,8 @@
   }
 }
 
-.accordionContainer{
-margin-top: 30px;
-background-color: #0F172E;
-border-radius: 11px;
-padding: 12px;
+.accordionContainer:not(:last-child){
+margin-top: 20px;
+border: 1px solid  rgba(255, 255, 255, 0.1);
+border-radius: 10px;
 }
