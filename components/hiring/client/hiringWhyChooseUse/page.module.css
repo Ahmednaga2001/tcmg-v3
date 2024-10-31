@@ -1,44 +1,61 @@
 
-.whyChooseContent p {
-  padding-top: 60px;
+
+.experience {
+  /* min-height: 100vh; */
 }
+ .topContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .accordionParent {
   padding-top: 60px;
+ 
   display: grid;
   grid-template-columns: repeat(2,35%);
   justify-content: center;
   gap: 60px;
 }
-.accordionItemHeader > div:first-child {
+.accordionItemHeader .headerContent {
+  
+  gap: 40px;
   display: flex;
-  gap: 20px;
   align-items: center;
+ width: 100%;
+
 }
+
 .accordionItemHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
   padding: 30px;
-  background-color: #fff;
-  border-radius: 32px;
-  transition: border-radius .4s;
+  background: linear-gradient(#1b2340, #0e152c) !important;
+  border-radius: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+cursor: pointer;
 }
+
 .accordionItem {
-  border-radius: 32px;
-  color: #000;
-  cursor: pointer;
+
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 11px ;
+
 }
 .accordionContent {
+  border-radius: 0 0 11px 11px;
+height: 350px;
   max-height: 0;
   font-size: 16px;
   transition: max-height 1s;
   overflow: hidden;
-  background:linear-gradient(#121A36 0% , #212842 100%);
-  height: 350px;
-  color: #fff;
-
-  border-radius: 0 0 32px 32px;
+  background-color: #101830;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .accordionContent.open {
   max-height: 1000px;
@@ -46,10 +63,6 @@
 .accordionContent p {
   padding: 20px;
   text-align: center;
-}
-.accordionItemHeader.open {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
 }
 .bottomIcon {
   cursor: pointer;
@@ -67,105 +80,76 @@
 .accordionItem span {
   font-weight: bold;
 }
-/* @media (max-width: 1191px) {
-  .whyChoose h2,
-  .whyChoose p {
-    text-align: center;
-  }
-  .accordionParent{
-    grid-template-columns: repeat(2, 50%);
-   
 
-  }
-  .accordionContent{
-    color: green;
-    height: 350px;
-
-  }
-
- 
- 
-} */
-/* @media (max-width: 1000px) {
+@media (max-width : 1191px) {
   .accordionParent{
-    grid-template-columns: repeat(1, 70%);
-    gap: 40px;
-  }
-  
-  .accordionContent{
-    height: auto;
-  }
-  .accordionItem {
-    width: 100%;
-  }
-} */
- @media (max-width:1191px) {
-  .accordionParent{
-    grid-template-columns: repeat(2,45%);
-  }
-  
- }
-@media (max-width:1000px) {
-  .whyChooseContent{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  .whyChooseContent h2{
-    text-align: start;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 162%;
-  }
-  .whyChooseContent p{
-    text-align: start;
-    padding-top: 0;
-    font-size: 14px ;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 19.6px
-  }
-  .accordionParent {
-    padding-top: 40;
     grid-template-columns: repeat(2,48%);
     gap: 40px;
   }
-  .accordionItem img{
-    width: 10px;
-    height: 10px;
+  /* .accordionItemHeader{
+    padding:  20px;
+  } */
+  .accordionItemHeader .headerContent {
+    gap: 20px;
   }
-  .accordionItemHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0;
-    padding: 20px 10px;
+  /* .accordionContent{
+    height: 300px;
+  } */
+}
+@media (max-width : 950px) {
+  .accordionParent{
+  gap: 20px;
+  }
+  .accordionItemHeader{
+    padding:  20px 10px;
     font-size: 14px;
-    border-radius: 20px;
   }
-  .accordionItem p{
-    font-size: 10.838px !important;
+  .accordionItemHeader .headerContent {
+    gap: 10px;
+    letter-spacing: .2px;
+    width: 100%;
+  }
+  .accordionItemHeader .headerContent img{
+    width: 40px;
+    height: 40px;
 
-  }
-  .accordionItem span{
-    font-size: 10.838px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 162%;
   }
   .accordionContent{
-
+    height: 400px;
   }
 }
-@media (max-width:800px) {
-.accordionParent{
-  gap: 10px;
-}  
-.accordionContent{
- height: 480px; 
+@media (max-width : 700px) {
+  .accordionContent{
+    height: 500px;
+  }
+  
 }
+@media (max-width : 500px) {
+  .accordionItemHeader .headerContent img{
+    width: 20px;
+    height: 20px;
 
+  }
+  .accordionItemHeader{
+    font-size: 10px;
+    /* line-height: 162%;
+    letter-spacing: .1px;
+    padding: 20px 5px;
+    display: flex;
+    justify-content: flex-start; */
+  }
+  .headerContent{
+    gap: 5px;
+  }
+  .accordionContent p{
+    font-size: 7px !important;
+  }
+  .accordionContent{
+    height: 230px;
+  }
+  .topContent h2 {
+    font-size: 35px;
+    letter-spacing: 0px;
+  }
+  
 }
-
-
