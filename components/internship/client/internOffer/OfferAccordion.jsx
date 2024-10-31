@@ -13,22 +13,22 @@ const OfferAccordion = ({ title, path, desc,alt }) => {
   return (
     <div>
       <div className={styles.accordionItem}>
-        <div className={`${styles.accordionItemHeader} ${isOpenOne ? styles.open : ""}`} onClick={handleIsOpenOne}>
-          <div>
+        <div className={styles.accordionItemHeader} onClick={handleIsOpenOne}>
+          <div className={styles.headerContent}>
             <Image
               src={path}
               width={60}
               height={60}
-              alt={alt}
+              alt={title}
               className={styles.accordionItemIcon}
             />
             <span>{title}</span>
           </div>
           <Image
-            src="/assets/icons/internship/top-arrow.png"
-            alt="arrow-top"
-            width={20}
-            height={11}
+            src="/assets/icons/strategicrelations/arrow-down.png"
+            alt="Drop Icon"
+            width={11}
+            height={6}
             className={`${styles.accordionArrowIcon} ${isOpenOne ? "" : ""}`}
           />
         </div>
@@ -38,14 +38,15 @@ const OfferAccordion = ({ title, path, desc,alt }) => {
           }`}
         >
           <p>{desc}</p>
-          {/* <Image
-            src="/assets/icons/strategicrelations/arrow-down.png"
-            width={24}
-            height={24}
+          <Image
+            src="/assets/icons/strategicrelations/ep_arrow-down-bold.png"
+
+            width={11}
+            height={6}
             onClick={handleIsOpenOne}
-            alt="bottomIcon"
+            alt="Up Icon"
             className={styles.bottomIcon}
-          /> */}
+          />
         </div>
       </div>
     </div>

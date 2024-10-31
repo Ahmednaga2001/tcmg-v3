@@ -62,13 +62,25 @@
 }
 @media (max-width: 768px) {
   .internshipTcmg{
-    min-height: 58vh;
+    min-height: 45vh;
   }
   .internshipTcmg .parent {
     width: 100%;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+  .internshipTcmg .parent h3 {
+    font-size: 16px;
+    font-weight: 700;
   }
-  .internshipTcmg .selectParent {
-    justify-content: center;
+  .internshipTcmg form div.selectParent {
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
   }

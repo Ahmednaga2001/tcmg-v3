@@ -1,41 +1,42 @@
 import styles from "./page.module.css"
 import ExperienceAccordion from "./ExperienceAccordion";
+import OfferAccordion from "./OfferAccordion";
 const data = [
   {
     title: "تطوير المهارات",
     desc : "تسلّح بالمهارات القانونية الحديثة مع برنامج تدريب المحاماة. نقدم لك خدمة التدريب في مكتب محاماة متخصص حيث سيساعدك هذا في تنمية فنون المرافعة, التحليل القضائي والاستراتيجيات القانونية الخاصة بك. كل ذلك في بيئة ديناميكية تزودك بالأدوات اللازمة للتفوق والابتكار المستمر في مسيرتك المهنية",
-    path: "/assets/icons/internship/تطوير المهارات.png",
+    path: "/assets/icons/internship/تطوير المهارات.svg",
     alt : " تدريب محاماة مميز لتطوير المهارات"
   },
   {
     title: "فهم أعمق للقانون",
     desc : "إذا كنت مبتدئ في مجال المحاماة وتبحث عن مكتب يعرض برنامج تدريب محامين حديثي التخرج, يمكنك الاعتماد على مكاتب TCMG للمحاماة بالاشتراك في دورة التدريب، التي من خلالها ستكتسب فهماً أعمق للقانون عن طريق تحليل القضايا وتطبيق الاستراتيجيات القانونية المناسبة والاطلاع على قضايا ناجحة سابقة؛ مما سيجعلك ذلك قادراً على تقديم استشارات قانونية متخصصة وخدمة العملاء بكفاءة عالية.",
-    path: "/assets/icons/internship/فهم أعمق للقانون.png",
+    path: "/assets/icons/internship/فهم أعمق للقانون.svg",
     alt : "فهم اعمق للقانون"
   },
   {
     title: "العمل على قضايا حقيقية",
     desc : "خلال فترة التدريب في مكتب محاماة متخصص مثل مكاتبنا؛ ستكتسب خبرة عملية قيّمة من خلال التعامل مع قضايا حقيقية صعبة؛ مما سيساعدك هذا على تطبيق المعرفة النظرية في سياقات قانونية فعلية وتطوير مهاراتك في حل المشاكل القانونية بفعالية.",
-    path: "/assets/icons/internship/العمل على قضايا حقيقية.png",
+    path: "/assets/icons/internship/العمل على قضايا حقيقية.svg",
     alt : " تدريب محامين للعمل على قضايا حقيقية"
   },
   {
     title : "شبكة العلاقات",
     desc : "خلال التدريب في مكاتب TCMG للمحاماة، ستُكوّن شبكة علاقات مهنية قيِّمة مع المحامين المختصين والعملاء المحتملين؛ مما يمكنك من توسيع دائرة اتصالاتك وزيادة فرص التعاون المستقبلية. يمكننا ضمان انتقالك من شخص كان يبحث عن تدريب محاماة؛ إلى شخص محترف يمتلك شبكة واسعة من العلاقات القانونية.",
-    path : "/assets/icons/internship/شبكة العلاقات.png",
+    path : "/assets/icons/internship/شبكة العلاقات.svg",
     alt : "بناء شبكة قانونية قوية"
   },
   
   {
     title: "بناء الثقة والاعتمادية",
     desc : "خلال فترة تدريبك في مكاتبنا، ستعمل على بناء الثقة والاعتماد على الذات. وسيتم ذلك من خلال تطوير مهاراتك الشخصية والمهنية. وبرنامج تدريب المحامين سيزيد من ثقتك في قدرتك؛ ما سيساعدك على تقديم الخدمات القانونية بجودة عالية وأداء متميز، ووضعك على طريق مستمر من التطور.",
-    path: "/assets/icons/internship/بناء الثقة والاعتمادية.png",
+    path: "/assets/icons/internship/بناء علاقات استراتيجية.svg",
     alt : "تدريب محامين حديثي التخرج موثوق"
   },
   {
     title : "الاحترافية في العمل",
     desc : "في برنامج تدريب المحاماة, نلتزم بتعليمك كيفية التعامل مع العملاء بفعالية واحترام كذلك كيفية إدارة القضايا بكفاءة بالإضافة إلى الالتزام بالمعايير الأخلاقية الصارمة. نحن سنؤهلك لتصبح محامي متميز وقادر على تقديم خدمات قانونية بأعلى جودة ممكنة, مع بناء علاقات متينة مع العملاء وزملائك في المجال القانوني.",
-    path : "/assets/icons/internship/الاحترافية في العمل.png",
+    path : "/assets/icons/internship/الاحترافية في العمل.svg",
     alt : "التدريب في مكتب محاماة احترافي"
   },
 
@@ -48,41 +49,41 @@ const InternExperience = () => {
         <p>"في رحلتك المهنية، كل خطوة تعليمية تمثِّل بناءً لمعرفتك." من خلال برنامج تدريب المحامين الخاص بنا، لن تكتسب المعرفة فقط، بل ستُضَاف أبعادًا جديدة لخبرتك القانونية. منها:</p>
       </div>
       <div className={styles.accordionParent}>
-        <ExperienceAccordion
+        <OfferAccordion
           title={data[0].title}
           desc={data[0].desc}
           path={data[0].path}
           alt = {data[0].alt}
         />
-        <ExperienceAccordion
+        <OfferAccordion
           title={data[1].title}
           desc={data[1].desc}
           path={data[1].path}
           alt = {data[1].alt}
 
         />
-        <ExperienceAccordion
+        <OfferAccordion
           title={data[2].title}
           desc={data[2].desc}
           path={data[2].path}
           alt = {data[2].alt}
 
         />
-        <ExperienceAccordion
+        <OfferAccordion
           title={data[3].title}
           desc={data[3].desc}
           path={data[3].path}
           alt = {data[3].alt}
 
         />
-        <ExperienceAccordion
+        <OfferAccordion
           title={data[4].title}
           desc={data[4].desc}
           path={data[4].path}
           alt = {data[4].alt}
 
         />
-        <ExperienceAccordion
+        <OfferAccordion
           title={data[5].title}
           desc={data[5].desc}
           path={data[5].path}

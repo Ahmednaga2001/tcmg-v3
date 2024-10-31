@@ -18,8 +18,13 @@
   line-height: 150%;
 }
 @media(max-width: 768px){
-.challenges{
-  margin: 20px 0;
-  min-height: 25vh;
-}
+  .challenges{
+    margin: 20px 0;
+    min-height: 25vh;
+  }
+  main .challenges p{
+    width: 258px;
+    font-size: 16px;
+    font-weight: 700;
+  }
 }
