@@ -16,10 +16,10 @@ function Nav() {
     <nav className={styles.nav}>
       <div className={styles.expand} onClick={toggleSideNav}>
         <Image
-          src="/assets/icons/HamburgerMenu-1.svg"
+          src="/assets/icons/Hamburger Menu.svg"
           alt="Logo"
-          width={50}
-          height={60}
+          width={34}
+          height={24}
         />
       </div>
       <div className={styles.SearchIconForMobile}>
@@ -28,8 +28,8 @@ function Nav() {
       </div>
       <div className={styles.search}>
         <Image
-          src="/assets/icons/search.svg"
-          alt="Search Icon"
+                src="/assets/icons/searchwhite.svg"
+                alt="Search Icon"
           width={20}
           height={20}
           className={styles.searchIcon}
@@ -40,7 +40,7 @@ function Nav() {
           id="search"
           placeholder="كيف يمكننا مساعدتك ؟"
         />
-        <div className={styles.lens}>
+        {/* <div className={styles.lens}>
           <Image
             src="/assets/icons/search.svg"
             alt="Search Icon"
@@ -48,7 +48,7 @@ function Nav() {
             height={20}
             className={styles.searchIcon}
           />
-        </div>
+        </div> */}
       </div>
       <div className={styles.selector}>
         <div>فروعنا</div>

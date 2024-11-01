@@ -1,40 +1,51 @@
+
 // import styles from "./page.module.css";
 
-// const CheckBox = ({ label }) => {
+// const CheckBox = ({ label, checked, onChange, onBlur, name, error }) => {
 //   return (
-//     <div className={styles.checkBox}>
-//       <label htmlFor={label}>
-//         {label}
-//       </label>
-//       <input type="checkbox" id={label} />
+//     <div className={styles.checkWrapper}>
+//       <div className={styles.checkBox}>
+//         <input
+//           type="checkbox"
+//           id={name}
+//           checked={checked} // Control the checkbox using the checked prop
+//           onChange={onChange} // Use Formik's onChange
+//           onBlur={onBlur} // Use Formik's onBlur
+//         />
+//         <label htmlFor={name}>
+//           {label}
+//         </label>
+//       </div>
+//       {error && <div className={styles.error}>{error}</div>} {/* Render error message */}
 //     </div>
 //   );
 // };
 
 // export default CheckBox;
 
-// CheckBox.js
 import styles from "./page.module.css";
 
-const CheckBox = ({ label, checked, onChange, onBlur, name, error }) => {
+const CheckBox = ({ label, checked, onChange, onBlur, name, error, onLabelClick }) => {
   return (
     <div className={styles.checkWrapper}>
       <div className={styles.checkBox}>
         <input
           type="checkbox"
           id={name}
-          checked={checked} // Control the checkbox using the checked prop
-          onChange={onChange} // Use Formik's onChange
-          onBlur={onBlur} // Use Formik's onBlur
+          checked={checked}
+          onChange={onChange}
+          onBlur={onBlur}
         />
-        <label htmlFor={name}>
+        <span
+          className={styles.clickableLabel}
+          onClick={onLabelClick} // Make the text clickable
+        >
           {label}
-        </label>
+        </span>
       </div>
-      {error && <div className={styles.error}>{error}</div>} {/* Render error message */}
+      {error && <div className={styles.error}>{error}</div>}
     </div>
   );
 };
 
 export default CheckBox;
-

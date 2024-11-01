@@ -62,11 +62,19 @@
    flex-direction: column;
    gap: 10px;
  }
+ .termsC{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+
+ }
  .terms {
+font-size: 18px;
    display: flex;
    align-items: center;
-   gap: 5px;
-   margin-top: 30px;
+   gap: 10px;
+ }
+ .terms div:first-of-type{
  }
  .registerWay {
    display: flex;

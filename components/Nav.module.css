@@ -35,20 +35,23 @@
 .search input {
     border: none;
     outline: none;
-    background-color: #F1EEFF;
+    /* background-color: #F1EEFF; */
     color: var(--main);
     border-radius: 10px;
     padding: 7px 20px;
     font-size: 18px;
     width: 100%;
     transition: all 200ms;
+    background-color: var(--main);
+    color: var(--font);
+    outline: 1px solid var(--font);
 }
 
 .search input:focus {
     /* transform: translateX(5px); */
     background-color: var(--main);
     color: var(--font);
-    outline: 1px solid var(--font);
+ 
 }
 
 .search .searchIcon {

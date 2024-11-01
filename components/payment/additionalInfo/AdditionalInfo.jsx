@@ -52,7 +52,6 @@ export default function AdditionalInfo({ onNextStep }) {
     validateOnBlur: true,
     validateOnChange: true,
     onSubmit: (values) => {
-      setShowModal(true);
       //   axios
       //     .post("https://tcmg-production-0be9.up.railway.app/contact-us", values)
       //     .then((res) => {
@@ -78,12 +77,10 @@ export default function AdditionalInfo({ onNextStep }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setShowModal(true);
   };
 
   const handleModalClose = () => {
     setShowModal(false);
-    onNextStep();
   };
 
   return (
@@ -106,7 +103,7 @@ export default function AdditionalInfo({ onNextStep }) {
               blur={contact_us_form.handleBlur}
             />
             {contact_us_form.touched.first_name &&
-            contact_us_form.errors.first_name ? (
+              contact_us_form.errors.first_name ? (
               <div className={styles.error}>
                 {contact_us_form.errors.first_name}
               </div>
@@ -141,7 +138,7 @@ export default function AdditionalInfo({ onNextStep }) {
               onBlur={contact_us_form.handleBlur} // Bind Formik onBlur
             />
             {contact_us_form.touched.clientType &&
-            contact_us_form.errors.clientType ? (
+              contact_us_form.errors.clientType ? (
               <div className={styles.error}>
                 {contact_us_form.errors.clientType}
               </div>
@@ -178,7 +175,7 @@ export default function AdditionalInfo({ onNextStep }) {
                 <span>?</span>
               </div>
               {contact_us_form.touched.message &&
-              contact_us_form.errors.message ? (
+                contact_us_form.errors.message ? (
                 <div className={styles.error}>
                   {contact_us_form.errors.message}
                 </div>
@@ -186,20 +183,35 @@ export default function AdditionalInfo({ onNextStep }) {
             </div>
           </div>
           <div className={styles.errorWrapper}>
-            <div className={styles.terms}>
-              <CheckBox
-                label="إوافق على سياسة الخصوصية"
+            <div className={styles.termsC}>
+             <div className={styles.terms}>
+             <input
+                type="checkbox"
+                id="agreeToPrivacy"
                 name="agreeToPrivacy"
-                checked={contact_us_form.values.agreeToPrivacy} // Control the checkbox
-                onChange={contact_us_form.handleChange} // Use Formik's onChange
-                onBlur={contact_us_form.handleBlur} // Use Formik's onBlur
-                error={
-                  contact_us_form.touched.agreeToPrivacy &&
-                  contact_us_form.errors.agreeToPrivacy
-                }
+                checked={contact_us_form.values.agreeToPrivacy}
+                onChange={(e) => {
+                  // Update Formik state directly
+                  contact_us_form.setFieldValue("agreeToPrivacy", e.target.checked);
+                }}
+                onBlur={contact_us_form.handleBlur}
               />
+              <label
+                htmlFor="agreeToPrivacy"
+                style={{ cursor: "pointer", color: "white", textDecoration: "underline", paddingBottom: "10px" ,fontSize: "18px"}}  
+                className={styles.labelUnderlined} // Apply the underline class
+                onClick={() => setShowModal(true)} // Show modal when label is clicked
+              >
+                إوافق على سياسة الخصوصية
+              </label>
+             </div>
+              {contact_us_form.touched.agreeToPrivacy && contact_us_form.errors.agreeToPrivacy ? (
+                <div className={styles.error}>{contact_us_form.errors.agreeToPrivacy}</div>
+              ) : null}
             </div>
           </div>
+
+
 
           <button type="submit" className={styles.registerWay}>
             المتابعة
