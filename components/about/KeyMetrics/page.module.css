@@ -11,6 +11,7 @@
   align-items: center;
 }
 .numbers div{
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,12 +36,16 @@
   .numbers div{
     justify-content: center;
   }
+  .numbers div:not(:last-child){
+    border-left: 1px #fff solid;
+  }
   .numbers span{
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: 800;
   }
   .numbers p{
     color: #a1a1a1;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 

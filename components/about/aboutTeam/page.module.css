@@ -71,9 +71,17 @@
 
 @media (max-width: 768px) {
   .headingTeam {
-    margin-bottom: 10px;
+    display: none;
+  }
+  .teamParent {
+    padding: 0 0 40px;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.292);
   }
   .teamCard {
+    display: none;
+  }
+  .teamCard:first-child {
+    display: block;
     width: 80%;
     height: auto;
   }

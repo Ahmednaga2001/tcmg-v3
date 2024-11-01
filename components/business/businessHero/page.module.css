@@ -1,7 +1,6 @@
 .hero {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 20px;
     background: linear-gradient(#0e152ce4, #0e152ce4),
       url(/assets/images/business/Pattern.png);
@@ -17,14 +16,20 @@
   .hero h1 {
     width: 85%;
   }
-
+.hero .btn{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: .5s;
+}
+.btn:hover{
+  gap: 20px;
+}
  @media (max-width: 1191px) {
     .hero {
-        justify-content: center;
       }
       .hero h1 , .hero p {
         width: 100%;
-        text-align: center;
       }
       .hero p{
         font-size: 25px;
@@ -37,14 +42,13 @@
   
  }
  @media (max-width: 768px) {
-    .hero {
-        justify-content: center;
-      }
-      .hero h1 , .hero p {
-        width: 100%;
-        text-align: center;
-      }
+    .hero{
+    }
+    .hero h1 , .hero p{
+      text-align: start;
+    }
       .hero p{
         font-size: 20px;
       }
  } 
+

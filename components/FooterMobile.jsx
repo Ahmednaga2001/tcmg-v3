@@ -151,7 +151,7 @@ function FooterMobile() {
       </div>
 
       <div className={styles.centerLinks}>
-        <Link href="">
+        <Link href="subscriptions">
           <h2 className={styles.linkText}>إشترك</h2>
         </Link>
         <Link href="privacy-policy">

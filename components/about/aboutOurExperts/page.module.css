@@ -32,11 +32,15 @@
 }
 
 @media (max-width: 768px) {
+  .aboutOurExperts{
+    background-image: none;
+  }
   .headingTeam {
     border-bottom: 0;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
   }
   .team p {
     padding: 0 0 30px;
+    font-size: 14px;
   }
 }

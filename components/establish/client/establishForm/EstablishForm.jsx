@@ -35,39 +35,38 @@ const EstablishForm = () => {
     },
     validationSchema: Yup.object({
       message: Yup.string()
-        .min(20, "Must be at least 20 characters")
-        .required("Required"),
+      .min(20, "يجب أن يكون على الأقل 20 حرفًا")
+      .required("مطلوب"),
       first_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
+      .max(10, "يجب أن يكون 10 أحرف أو أقل")
+      .required("مطلوب")
+      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
       last_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
+      .max(10, "يجب أن يكون 10 أحرف أو أقل")
+      .required("مطلوب")
+      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
       email: Yup.string()
-        .matches(
-          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-          "please enter a valid email"
-        )
-        .required("Required"),
+      .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "يرجى إدخال بريد إلكتروني صالح")
+
+      .required("مطلوب"),
       phone: Yup.string()
-        .matches(
-          /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
-          "invalid phone number"
-        )
-        .required("Required"),
-      numberOfPartners: Yup.string()
-        .matches(/^\d+$/, "invalid number Of Partners")
-        .required("Required"),
+      .matches(/^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/, "رقم الهاتف غير صالح")
+
+        .required("مطلوب"),
+        numberOfPartners: Yup.string()
+        .matches(/^\d+$/, "رقم الشركاء غير صالح")
+        .required("مطلوب"),
       address: Yup.string()
-        
-        .required("Required"),
-      capital: Yup.string().matches(/^\d+$/, "please enter numbers only").required("Required"),
-      companyType: Yup.string().required("Required"),
+        .required("مطلوب"),
+      capital: Yup.string()
+        .matches(/^\d+$/, "يرجى إدخال أرقام فقط")
+        .required("مطلوب"),
+      companyType: Yup.string()
+        .required("مطلوب"),
       agreeToPrivacy: Yup.boolean()
-        .oneOf([true], "You must agree to the privacy policy")
-        .required("Required"),
+        .oneOf([true], "يجب عليك الموافقة على سياسة الخصوصية")
+        .required("مطلوب"),
+      
     }),
     validateOnBlur: true,
     validateOnChange: true,
@@ -75,7 +74,7 @@ const EstablishForm = () => {
       
       axios
         .post(
-          "https://tcmg-production.up.railway.app/establishing-companies",
+          "https://tcmg-alpha.vercel.app/establishing-companies",
           values
         )
         .then((res) => {

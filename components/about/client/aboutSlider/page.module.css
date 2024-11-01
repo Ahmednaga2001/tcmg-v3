@@ -51,4 +51,7 @@
   .swiperContent h2{
     font-size: 30px;
   }
+  .swiperContent p{
+    font-size: 14px;
+  }
 }

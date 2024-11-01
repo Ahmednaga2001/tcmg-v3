@@ -31,31 +31,48 @@ function Footer() {
       <div className={styles.midSection}>
         <div className={styles.left}>
           <ul>
-            <Link href="legal-services">
-              <li>الخدمات القانونية </li>
-            </Link>
-            <Link href="legal-consultations">
-              <li>الإستشارات القانونية</li>
-            </Link>
-            <Link href="establishing-companies">
-              <li>تأسيس الشركات</li>
-            </Link>
-            <Link href="corporate">
-              <li>أعمال الشركات</li>
-            </Link>
-            <Link href="practices">
-              <li>الممارسات</li>
-            </Link>
-            <Link href="sectors">
-              <li>القطاعات </li>
-            </Link>
+            <li>
 
+              <Link href="legal-services">
+                الخدمات القانونية
+              </Link>
+            </li>
+            <li>
+              <Link href="legal-consultations">
+                الإستشارات القانونية
+              </Link>
+            </li>
+              <li>
+            <Link href="establishing-companies">
+            تأسيس الشركات
+            </Link>
+            </li>
+              <li>
+            <Link href="corporate">
+            أعمال الشركات
+            </Link>
+            </li>
+              <li>
+            <Link href="practices">
+            الممارسات
+            </Link>
+            </li>
+              <li>
+            <Link href="sectors">
+            القطاعات 
+            </Link>
+            </li>
+
+              <li>
             <Link href="hire-attorny" target="blank">
-              <li>توكيل محامي</li>
+            توكيل محامي
             </Link>
+            </li>
+              <li>
             <Link href="ask-a-lawyer">
-              <li>إسأل محامي</li>
+            إسأل محامي
             </Link>
+            </li>
           </ul>
         </div>
         <div className={styles.centerContainer}>
@@ -80,76 +97,76 @@ function Footer() {
             <Link href="offices">الفروع</Link>
             <span>الأسئلة الشائعة</span>
           </div>
-            <div className={styles.social}>
-          <span className={styles.boldLink}>تابعنا علي</span>
-          <div className={styles.socialIcons}>
-            <span>
-              <Image
-                src="assets/icons/linkedin.svg"
-                alt="LinkedIn Icon"
-                width={25}
-                height={25}
-                quality={100}
-              />
-            </span>
-            <span>
-              <Image
-                src="assets/icons/twitter.svg"
-                alt="Twiter Icon"
-                width={25}
-                height={25}
-                quality={100}
-              />
-            </span>
-            <span>
-              <Image
-                src="assets/icons/youtube.svg"
-                quality={100}
-                alt="Youtube Icon"
-                width={25}
-                height={25}
-              />
-            </span>
-            <span>
-              <Image
-                src="assets/icons/instgram.svg"
-                alt="Instgram Icon"
-                width={25}
-                height={25}
-                quality={100}
-              />
-            </span>
-            <span>
-              <Image
-                src="assets/icons/facebook.svg"
-                alt="Facebook Icon"
-                width={25}
-                height={25}
-                quality={100}
-              />
-            </span>
+          <div className={styles.social}>
+            <span className={styles.boldLink}>تابعنا علي</span>
+            <div className={styles.socialIcons}>
+              <span>
+                <Image
+                  src="assets/icons/linkedin.svg"
+                  alt="LinkedIn Icon"
+                  width={25}
+                  height={25}
+                  quality={100}
+                />
+              </span>
+              <span>
+                <Image
+                  src="assets/icons/twitter.svg"
+                  alt="Twiter Icon"
+                  width={25}
+                  height={25}
+                  quality={100}
+                />
+              </span>
+              <span>
+                <Image
+                  src="assets/icons/youtube.svg"
+                  quality={100}
+                  alt="Youtube Icon"
+                  width={25}
+                  height={25}
+                />
+              </span>
+              <span>
+                <Image
+                  src="assets/icons/instgram.svg"
+                  alt="Instgram Icon"
+                  width={25}
+                  height={25}
+                  quality={100}
+                />
+              </span>
+              <span>
+                <Image
+                  src="assets/icons/facebook.svg"
+                  alt="Facebook Icon"
+                  width={25}
+                  height={25}
+                  quality={100}
+                />
+              </span>
+            </div>
           </div>
         </div>
-          </div>
-        </div>
+      </div>
 
-        <div className={styles.centerLinks}>
-          <Link href="">
-            <span className={styles.boldLink}>إشترك</span>
-          </Link>
-          <Link href="privacy-policy">
-            <span className={styles.boldLink}>سياسة الخصوصية</span>
-          </Link>
-          <Link href="">
-            <span className={styles.boldLink}>خريطة الموقع</span>
-          </Link>
-        </div>
+      <div className={styles.centerLinks}>
+        <Link href="subscriptions">
+          <span className={styles.boldLink}>إشترك</span>
+        </Link>
+        <Link href="privacy-policy">
+          <span className={styles.boldLink}>سياسة الخصوصية</span>
+        </Link>
+        <Link href="">
+          <span className={styles.boldLink}>خريطة الموقع</span>
+        </Link>
+      </div>
 
-        <div className={styles.info}>
-          <p>تعد المجموعة التجارية والبحرية للمحاماة أكبر مكتب محاماة متكامل في تقديم الخدمات القانونية للأفراد والشركات. </p>
-          <p>جميع حقوق النسخ والنشر محفوظة المجموعة التجارية والبحرية للمحاماة ©2019 ©2024 </p>
-        </div>
-  
+      <div className={styles.info}>
+        <p>تعد المجموعة التجارية والبحرية للمحاماة أكبر مكتب محاماة متكامل في تقديم الخدمات القانونية للأفراد والشركات. </p>
+        <p>جميع حقوق النسخ والنشر محفوظة المجموعة التجارية والبحرية للمحاماة ©2019 ©2024 </p>
+      </div>
+
     </footer>
   );
 }

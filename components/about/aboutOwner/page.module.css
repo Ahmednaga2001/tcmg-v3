@@ -64,13 +64,13 @@
 .owner{
   margin-bottom: 0px;
 }
-.ownerInfo {
-  padding: 20px;
-}
 .ownerInfo{
-  padding: 20px;
-  padding-top: 40px;
+  padding: 60px 20px 20px 50px;
   position: relative;
+}
+.ownerInfo p{
+  font-size: 16px;
+  font-weight: 400;
 }
 .ownerImg{
   position: static;

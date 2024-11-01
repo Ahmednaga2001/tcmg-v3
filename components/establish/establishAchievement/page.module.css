@@ -47,6 +47,9 @@
 .visioncontent p {
   width: 90%;
 }
+.link{
+  display: none;
+}
 @media (max-width: 1250px) {
   .countries .vision {
     margin: auto;
@@ -160,6 +163,13 @@
 @media (max-width: 400px) {
   .countries {
     padding: 32px 20px !important;
+  }
+  .link{
+    display: block;
+    font-weight: bold;
+    padding-top: 10px;
+    display: flex;
+    justify-content: flex-start;
   }
   
 }

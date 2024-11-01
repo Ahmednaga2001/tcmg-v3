@@ -4,8 +4,8 @@ import styles from "./page.module.css";
 const servicesData = [
   {
     title: "اجتماع اونلاين",
-    priceOriginal: 349,
-    priceDiscounted: 199,
+    priceOriginal: 1999,
+    priceDiscounted: 999,
     features: [
       // "دعم من مستشار قانوني متخصص",
       // "خصوصية عملائنا",
@@ -20,8 +20,8 @@ const servicesData = [
   },
   {
     title: "استشارة هاتفية",
-    priceOriginal: 449,
-    priceDiscounted: 299,
+    priceOriginal: 999,
+    priceDiscounted: 499,
     features: [
       // "دعم من مستشار قانوني متخصص",
       // "خصوصية عملائنا",
@@ -36,8 +36,8 @@ const servicesData = [
   },
   {
     title: "استشارة مكتبية",
-    priceOriginal: 999,
-    priceDiscounted: 499,
+    priceOriginal: 2999,
+    priceDiscounted: 1999,
     features: [
       // "دعم من مستشار قانوني متخصص",
       // "خصوصية عملائنا",

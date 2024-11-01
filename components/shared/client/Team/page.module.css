@@ -31,7 +31,9 @@
 
 .card p:last-child {
   font-size: 14px;
-  color: #845f38;
+  /* color: #845f38; */
+  color: var(--font);
+  line-height: 1.4;
 }
 
 @media (max-width: 1191px) {

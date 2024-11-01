@@ -1,7 +1,7 @@
 .aboutMilestoneItem {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 .aboutMilestonesSection h2{
     text-align: center;
@@ -21,9 +21,20 @@
 }
 
 .betweencontent {
-    background-image: url(/assets/symbols/about/vline.png);
-    background-size: cover;
+    /* background-image: url(/assets/symbols/about/vline.png);
+    background-size: cover; */
     padding: 15px 0;
+   position: relative;
+}
+.betweencontent::after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 40%;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-left: 4px dotted rgba(128, 128, 128, 0.6);
 }
 
 .milestoneCard h3 {
