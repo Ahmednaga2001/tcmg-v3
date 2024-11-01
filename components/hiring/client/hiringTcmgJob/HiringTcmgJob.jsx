@@ -38,7 +38,7 @@ const HiringTcmgJob = () => {
         value : "تشغندو"
       },
       {
-        value : "عمان"
+        value : "عمّان"
       },{
         value : "جنين"
       }

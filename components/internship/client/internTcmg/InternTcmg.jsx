@@ -38,7 +38,7 @@ const InternTcmg = () => {
       value : "تشغندو"
     },
     {
-      value : "عمان"
+      value : "عمّان"
     },{
       value : "جنين"
     }
