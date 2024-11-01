@@ -68,7 +68,7 @@ function Parteners() {
       <section className={styles.partners} style={{padding: '20px 0px'}}>
             <Swiper
               effect="coverflow"
-              spaceBetween={100}
+              spaceBetween={30}
               centeredSlides={true}
               slidesPerView={1}
               loop={true}
@@ -77,12 +77,16 @@ function Parteners() {
                 disableOnInteraction: false,
               }}
               breakpoints={{
-                480: {
+                380: {
                   slidesPerView: 1,
                   spaceBetween: 10,
                 },
-                768: {
+                480: {
                   slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 3,
                   spaceBetween: 10,
                 },
                 1000: {
@@ -102,7 +106,7 @@ function Parteners() {
             >
               {partners.map((partner) => (
                 <SwiperSlide key={partner.id} className={styles.partner}>
-                  <div className={styles.logo} key={partner.id} style={{width: '280px'}}>
+                  <div className={styles.logo} key={partner.id} style={{width: '330px'}}>
                     <Image
                       src={partner.img}
                       alt={partner.img}

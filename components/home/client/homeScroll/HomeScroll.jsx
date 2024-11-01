@@ -2,21 +2,18 @@ import Image from "next/image";
 import styles from "./page.module.css"
 import { ServiceOrCaseItem } from "./ServiceOrCaseItem ";
 import { ServiceOrCaseItemSlider } from "./ServiceOrCaseItemSlider";
+import Link from "next/link";
 function HomeScroll({ cases, services }) {
+    
     return (
         <>
             <section className={styles.scroll}>
                 <div className={styles.right}>
-                    <h2>خدمات قانونية عالمية المستوى منذ 1986</h2>
+                    <h2>خدمات قانونية: حلول متكاملة تحفظ الحقوق وتدعم نمو الأعمال</h2>
                     <p>
-                        نختصّ بتقديم أكثر من 30 خدمة قانونية بخبرات عالمية وفهم واسع للبيئة
-                        القانونية. لتقديم أفضل مستوى من الحلول القانونية على الصعيد المحلي
-                        والدولي في مكتبنا بقلب مدينة القاهرة. فمن خلال دمج خبرات فريق العمل
-                        المكون من أكثر من 40 محامي متخصصين في مجالات القانون المختلفة، تكمن
-                        قوتنا في تقديم خدمات قانونية بمعايير أداء عالمية ومستوى فاعلية ممتاز
-                        في الجودة والوقت.
+                    نختصّ كشركة محاماة دولية في مصر بتقديم أكثر من 30 خدمة قانونية للأفراد والشركات بفهم واسع للبيئة القانونية. ونسعى جاهدين لتقديم أفضل مستوى من الحلول القانونية على الصعيد المحلي والدولي من خلال دمج خبرات فريق العمل المكون من أكثر من 40 محامي مختص في مجالات القانون المختلفة. تكمن قوة مكاتب محاماة TCMG في تقديم خدمات قانونية بمعايير أداء عالمية ومستوى فاعلية ممتاز في كلًا من الجودة والوقت.
                     </p>
-                    <span className="link">
+                    <Link href="legal-services" className="link">
                         توجه إلي صفحة الخدمات القانونية
                         <Image
                             src="assets/icons/arrow-left.svg"
@@ -24,7 +21,7 @@ function HomeScroll({ cases, services }) {
                             width={20}
                             height={20}
                         />
-                    </span>
+                    </Link>
                 </div>
                 <div className={styles.left}>
 

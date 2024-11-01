@@ -26,7 +26,7 @@
   height: 100%;
   background-color: #1b2340;
   opacity: 0.2;
-  border-radius: 30px;
+  border-radius: 10px;
 }
 .topCardImg {
   height: 319px;
@@ -112,7 +112,13 @@
     width: 100%;
     height: auto;
    }
+  .attorneyrepresentation .cards{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+  }
    .attorneyrepresentation .card img{
     width: 100%;
+    object-fit: cover;
    }
 }

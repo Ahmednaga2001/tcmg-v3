@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
+import Link from "next/link";
 export const ServiceOrCaseItemSlider = ({services}) => {
   let navigation = {
     img1: "/assets/images/homePage/left.svg",
@@ -55,15 +56,17 @@ export const ServiceOrCaseItemSlider = ({services}) => {
                           <h3>{service.header}</h3>
                           {service.date && <span className={styles.date}>{service.date}</span>}
                           <p>{service.body}</p>
-                         <span className={`link ${styles.goPage}`} >
-                            الذهاب إلي الصفحة
-                            <Image
-                              src="assets/icons/arrow-left.svg"
-                              alt="Arrow Left Small"
-                              width={20}
-                              height={20}
-                            />
-                          </span>
+                          {service.ref && (
+              <Link className="link" href={service.ref}>
+                الذهاب إلي الصفحة
+                <Image
+                  src="assets/icons/arrow-left.svg"
+                  alt="Arrow Left Small"
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            )}
                      </div>
                 </SwiperSlide>
             ))

@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -75,14 +75,9 @@ const HomeWhyUs = () => {
   return (
     <section className={styles.whyUs}>
       <div className={styles.heading}>
-        <h2>لماذا تختارنا وبكل ثقة؟</h2>
+       <h2>لماذا تختار مكاتب TCMG كشريك قانوني؟</h2>
         <p>
-          يمتاز مكتبنا عن غيره من مكاتب المحاماة المعتمدة الأخرى في الأخلاقيات
-          التي تسيّر آلية العمل داخل مكتبنا، بالإضافة إلى مبادئ المحامين
-          والشركاء العاملين في المكتب والمؤمنين بأهمية تطوير الذات على المستوى
-          العملي والقانوني سعيًا منهم لتحويل مكتبنا لشركة محاماة دولية في مصر.
-          فقد شهد عملاؤنا بقوة مكتبنا وثقة التعامل معنا، والمبادئ التالية ما
-          ستجدها عند التعامل معنا:
+        يمتاز مكتبنا عن غيرها من مكاتب المحاماة المعتمدة, بالأخلاقيات التي تسيّر آلية العمل داخله، بالإضافة إلى مبادئ المحامين والشركاء العاملين في المكتب والمؤمنين بأهمية التطور على المستوى العملي والقانوني. تتمتع شركة TCMG للمحاماة بعدد من المبادئ وهي:
         </p>
       </div>
       <div className={`${styles.swiperContainer}`} id="swiperSlide">
@@ -109,7 +104,7 @@ const HomeWhyUs = () => {
           }
           breakpoints={{
             380: {
-              slidesPerView: 1.5,
+              slidesPerView: 1,
               spaceBetween: 20,
             },
             768: {
@@ -117,11 +112,11 @@ const HomeWhyUs = () => {
               spaceBetween: 20,
             },
             1000: {
-              slidesPerView: 2.5,
+              slidesPerView:2.3,
               spaceBetween: 20,
             },
             1200: {
-              slidesPerView: 3,
+              slidesPerView: 2.3,
               spaceBetween: 20,
             },
           }}
@@ -134,17 +129,18 @@ const HomeWhyUs = () => {
             nextEl: ".prev",
             prevEl: ".next",
           }}
-          pagination={{
-            clickable: true,
-          }}
+          // pagination={{
+          //   clickable: true,
+          // }}
           style={{
             "--swiper-navigation-color": "#fff",
             "--swiper-pagination-color": "#fff",
           }}
-          modules={[Navigation, Autoplay, Pagination]} // Added modules back
+          modules={[Navigation, Autoplay, Pagination , EffectCoverflow]} // Added modules back
         >
-          {lawyers.map((lawyer,index) => (
-              <SwiperSlide key={index} className={styles.SwiperSlide}>
+          {lawyers.map((lawyer) => (
+            <>
+              <SwiperSlide key={lawyer.id} className={styles.SwiperSlide}>
                 <div className={styles.card}>
                   <Image
                     src={lawyer.img}
@@ -155,6 +151,7 @@ const HomeWhyUs = () => {
                   <p>{lawyer.name}</p>
                 </div>
               </SwiperSlide>
+            </>
           ))}
         </Swiper>
         <Image
