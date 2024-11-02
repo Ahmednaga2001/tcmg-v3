@@ -156,6 +156,9 @@ const BranchContactForm = () => {
 
           <div className={styles.errorWrapper}>
             <SelectComponent
+                        imgPath="/assets/icons/form/mdi_arrow-down-drop.svg"
+                        w={24}
+                        h={24}
               head={"فئة العميل"}
               options={options}
               name="clientType"

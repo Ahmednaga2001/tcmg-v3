@@ -38,7 +38,7 @@
 }
 .branche img{
     transition: transform  1s;
-
+object-fit: cover;
 }
 .branchHover:hover img{
 
@@ -58,7 +58,6 @@
         font-family: janna bol;
     }
     .branche img{
-        background-color: red;
         height: 600px;
     }
     .branches .branche .content span:last-child{

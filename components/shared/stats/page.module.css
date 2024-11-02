@@ -51,7 +51,6 @@
       border-right: none;
     }
     .stats div span:first-child {
-      font-family: Poppins;
       font-size: 23px;
       font-weight: 800;
       margin-bottom: 10px;
@@ -68,7 +67,6 @@
           padding: 40px 30px !important;
     }
       .stats div span:first-child {
-          font-family: Poppins;
           font-size: 14.983px;
           font-weight: 800;
         }

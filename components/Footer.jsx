@@ -17,7 +17,7 @@ function Footer() {
           </Link>
         </div>
         <div>
-          <Link href="join-us" target="_blank">
+          <Link href="join-us">
             <h2>إنضم إلينا </h2>
             <Image
               src="/assets/icons/arrow-left.svg"
@@ -38,7 +38,7 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="legal-consultations">
+              <Link href="legal-advice">
                 الإستشارات القانونية
               </Link>
             </li>
@@ -64,7 +64,7 @@ function Footer() {
             </li>
 
               <li>
-            <Link href="hire-attorny" target="blank">
+            <Link href="power-of-attorny">
             توكيل محامي
             </Link>
             </li>

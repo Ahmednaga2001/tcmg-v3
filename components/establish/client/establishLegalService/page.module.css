@@ -116,6 +116,9 @@
   .accordionItem {
     border-radius: 20px;
   }
+  .accordionContent p{
+    font-size: 14px;
+  }
   .accordionContent{
     height: 500px;
   }

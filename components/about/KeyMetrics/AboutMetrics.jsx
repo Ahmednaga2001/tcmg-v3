@@ -3,22 +3,25 @@ import styles from './page.module.css'
 const AboutMetrics = () => {
   return (
     <section className={styles.numbers}>
-    <div>
-      <span>7</span>
-      <p>مكاتب محاماه اقليمية</p>
+        <div>
+      <span>1000+</span>
+      <p>عميل</p>
     </div>
     <div>
-      <span>+50</span>
-      <p>سنين الخبرة</p>
+      <span>+25</span>
+      <p>خبير</p>
     </div>
     <div>
-      <span>40</span>
-      <p>عدد الخبراء</p>
+      <span>+15</span>
+      <p>خبرة</p>
     </div>
     <div>
-      <span>300</span>
-      <p>العملاء</p>
+      <span>5</span>
+      <p>مكاتب</p>
     </div>
+   
+  
+  
   </section>
 
   )

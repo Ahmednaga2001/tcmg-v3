@@ -7,7 +7,7 @@ function FooterMobile() {
     <footer className={styles.footer}>
       <div className={styles.topIcons}>
         <div>
-          <Link href="join-us" target="_blank" className={styles.mainLink}>
+          <Link href="join-us"  className={styles.mainLink}>
             <h2>إنضم إلينا</h2>
             <Image
               src="/assets/icons/arrow-left.svg"
@@ -18,7 +18,7 @@ function FooterMobile() {
           </Link>
         </div>
         <div>
-          <Link href="legal-consultations" target="_blank" className={styles.mainLink}>
+          <Link href="legal-advice"  className={styles.mainLink}>
             <h2>الإستشارات القانونية</h2>
             <Image
               src="/assets/icons/arrow-left.svg"
@@ -34,20 +34,20 @@ function FooterMobile() {
         <div className={styles.bottomLinks}>
           <ul>
             <li>
-              <Link href="about-us" target="_blank" className={styles.boldLink}>
+              <Link href="about-us"  className={styles.boldLink}>
                 من نحن
               </Link>
             </li>
             <li>فريق العمل</li>
             <li className={styles.space}>
-              <Link href="legal-services" target="_blank" className={styles.boldLink}>
+              <Link href="legal-services"  className={styles.boldLink}>
                 الخدمات القانونية
               </Link>
               <div className={styles.links}>
                 <div className={styles.rightLinks}>
                   <ul>
                     <li>
-                      <Link href="legal-consultations">الإستشارات القانونية</Link>
+                      <Link href="legal-advice">الإستشارات القانونية</Link>
                     </li>
                     <li>
                       <Link href="corporate">أعمال الشركات</Link>
@@ -63,7 +63,7 @@ function FooterMobile() {
                 <div className={styles.leftLinks}>
                   <ul>
                     <li>
-                      <Link href="legal-consultations">تأسيس الشركات</Link>
+                      <Link href="establishing-companies">تأسيس الشركات</Link>
                     </li>
                     <li>
                       <Link href="corporate">أعمال الشركات</Link>
@@ -79,7 +79,7 @@ function FooterMobile() {
               </div>
             </li>
             <li className={styles.space}>
-              <Link href="join-us" target="_blank" className={styles.boldLink}>
+              <Link href="join-us"  className={styles.boldLink}>
                 انضم الينا
               </Link>
             </li>
