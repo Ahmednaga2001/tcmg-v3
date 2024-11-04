@@ -283,7 +283,7 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                 </div>
                 <div className={`${styles.practiceLinkContainer} ${showBranches ? styles.show : ''}`}>
                     {contact[0].options.map((option, idx) => (
-                      <Link onClick={toggleSideNav}  key={idx} href={option.ref}>{option.t}</Link>
+                      <Link onClick={toggleSideNav}  key={idx} href={`offices${option.ref}`}>{option.t}</Link>
                     ))}
                     </div>
 

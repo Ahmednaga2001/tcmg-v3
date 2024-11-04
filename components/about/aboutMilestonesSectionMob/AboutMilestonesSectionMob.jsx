@@ -132,7 +132,7 @@ export default function AboutMilestonesSectionMob() {
             "--swiper-navigation-color": "#fff",
             "--swiper-pagination-color": "#fff",
           }}
-          modules={[Navigation]}
+          modules={[Navigation,Autoplay]}
         >
           {cardInfo.map((el, index) => (
             <SwiperSlide key={index} className={styles.swiperSlide}>
