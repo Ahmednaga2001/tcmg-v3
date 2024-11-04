@@ -1,4 +1,3 @@
-
 "use client";
 import styles from "./page.module.css";
 import Button from "@/components/ui/Button";
@@ -10,12 +9,14 @@ import Image from "next/image";
 import * as Yup from "yup";
 import axios from "axios";
 import { useState } from "react";
+import { TailSpin } from "react-loader-spinner";
 
 const InternGraduationForm = () => {
   const [cvFile, setCvFile] = useState(null);
   const [fileName, setFileName] = useState("");
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState(null);
+  const [isloading, setisloading] = useState(false);
 
   const Intern_Graduation_Form = useFormik({
     initialValues: {
@@ -31,33 +32,52 @@ const InternGraduationForm = () => {
     },
     validationSchema: Yup.object({
       howDidYouHearAboutUs: Yup.string()
-      .min(20, "يجب أن يكون على الأقل 20 حرفًا")
-      .required("مطلوب"),
+        .min(20, "يجب أن يكون على الأقل 20 حرفًا")
+        .required("مطلوب"),
       first_name: Yup.string()
-      .max(10, "يجب أن يكون 10 أحرف أو أقل")
+        .max(10, "يجب أن يكون 10 أحرف أو أقل")
         .required("مطلوب")
         .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "اسم غير صالح"),
       last_name: Yup.string()
-      .max(10, "يجب أن يكون 10 أحرف أو أقل")
-      .required("مطلوب")
-      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "اسم غير صالح"),
+        .max(10, "يجب أن يكون 10 أحرف أو أقل")
+        .required("مطلوب")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "اسم غير صالح"),
       email: Yup.string()
-      .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "يرجى إدخال بريد إلكتروني صالح")
-      .required("مطلوب"),
+        .matches(
+          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          "يرجى إدخال بريد إلكتروني صالح"
+        )
+        .required("مطلوب"),
       phone: Yup.string()
-      .matches(/^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/, "رقم الهاتف غير صالح")
-      .required("مطلوب"),
+        .matches(
+          /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
+          "رقم الهاتف غير صالح"
+        )
+        .required("مطلوب"),
       address: Yup.string().required("مطلوب"),
       office: Yup.string().required("مطلوب"),
       agreeToPrivacy: Yup.boolean()
-      .oneOf([true], "يجب أن توافق على سياسة الخصوصية")
-      .required("مطلوب"),
+        .oneOf([true], "يجب أن توافق على سياسة الخصوصية")
+        .required("مطلوب"),
       cv: Yup.mixed()
-      .required("مطلوب")
-        .test("fileSize", "الملف كبير جدًا", value => value && value.size <= 15 * 1024 * 1024)
-        .test("fileType", "تنسيق ملف غير مدعوم", value => value && (value.type === "application/pdf" || value.type === "application/msword")),
+        .required("مطلوب")
+        .test(
+          "fileSize",
+          "الملف كبير جدًا",
+          (value) => value && value.size <= 15 * 1024 * 1024
+        )
+        .test(
+          "fileType",
+          "تنسيق ملف غير مدعوم",
+          (value) =>
+            value &&
+            (value.type === "application/pdf" ||
+              value.type === "application/msword")
+        ),
     }),
     onSubmit: (values) => {
+      setisloading(true);
+
       const formData = new FormData();
       formData.append("cv", cvFile);
       formData.append("first_name", values.first_name);
@@ -69,7 +89,6 @@ const InternGraduationForm = () => {
       formData.append("email", values.email);
       formData.append("agreeToPrivacy", values.agreeToPrivacy);
 
-
       axios
         .post("https://tcmg-alpha.vercel.app/internship", formData, {
           headers: {
@@ -77,10 +96,14 @@ const InternGraduationForm = () => {
           },
         })
         .then((res) => {
+          setisloading(false);
+
+          // console.log(res.data);
           setSuccess(res.data.status);
           setTimeout(() => setSuccess(null), 3000);
         })
         .catch((err) => {
+          setisloading(false);
           setError(err.response?.data?.message || "Something went wrong");
           setTimeout(() => setError(null), 3000);
         });
@@ -122,9 +145,12 @@ const InternGraduationForm = () => {
                 blur={Intern_Graduation_Form.handleBlur}
                 alt="person icon"
               />
-              {Intern_Graduation_Form.touched.first_name && Intern_Graduation_Form.errors.first_name && (
-                <div className="error">{Intern_Graduation_Form.errors.first_name}</div>
-              )}
+              {Intern_Graduation_Form.touched.first_name &&
+                Intern_Graduation_Form.errors.first_name && (
+                  <div className="error">
+                    {Intern_Graduation_Form.errors.first_name}
+                  </div>
+                )}
             </div>
             <div className={styles.errorWrapper}>
               <Input
@@ -137,9 +163,12 @@ const InternGraduationForm = () => {
                 blur={Intern_Graduation_Form.handleBlur}
                 alt="person icon"
               />
-              {Intern_Graduation_Form.touched.last_name && Intern_Graduation_Form.errors.last_name && (
-                <div className="error">{Intern_Graduation_Form.errors.last_name}</div>
-              )}
+              {Intern_Graduation_Form.touched.last_name &&
+                Intern_Graduation_Form.errors.last_name && (
+                  <div className="error">
+                    {Intern_Graduation_Form.errors.last_name}
+                  </div>
+                )}
             </div>
           </div>
 
@@ -154,9 +183,12 @@ const InternGraduationForm = () => {
               blur={Intern_Graduation_Form.handleBlur}
               alt="email icon"
             />
-            {Intern_Graduation_Form.touched.email && Intern_Graduation_Form.errors.email && (
-              <div className="error">{Intern_Graduation_Form.errors.email}</div>
-            )}
+            {Intern_Graduation_Form.touched.email &&
+              Intern_Graduation_Form.errors.email && (
+                <div className="error">
+                  {Intern_Graduation_Form.errors.email}
+                </div>
+              )}
           </div>
 
           <div className={styles.errorWrapper}>
@@ -170,9 +202,12 @@ const InternGraduationForm = () => {
               blur={Intern_Graduation_Form.handleBlur}
               alt="phone icon"
             />
-            {Intern_Graduation_Form.touched.phone && Intern_Graduation_Form.errors.phone && (
-              <div className="error">{Intern_Graduation_Form.errors.phone}</div>
-            )}
+            {Intern_Graduation_Form.touched.phone &&
+              Intern_Graduation_Form.errors.phone && (
+                <div className="error">
+                  {Intern_Graduation_Form.errors.phone}
+                </div>
+              )}
           </div>
 
           <div className={styles.errorWrapper}>
@@ -183,13 +218,18 @@ const InternGraduationForm = () => {
               head="اختر المكتب"
               options={officeOptions}
               selectedOption={Intern_Graduation_Form.values.office}
-              setSelectedOption={(value) => Intern_Graduation_Form.setFieldValue("office", value)}
+              setSelectedOption={(value) =>
+                Intern_Graduation_Form.setFieldValue("office", value)
+              }
               onChange={Intern_Graduation_Form.handleChange}
               onBlur={Intern_Graduation_Form.handleBlur}
             />
-            {Intern_Graduation_Form.touched.office && Intern_Graduation_Form.errors.office && (
-              <div className="error">{Intern_Graduation_Form.errors.office}</div>
-            )}
+            {Intern_Graduation_Form.touched.office &&
+              Intern_Graduation_Form.errors.office && (
+                <div className="error">
+                  {Intern_Graduation_Form.errors.office}
+                </div>
+              )}
           </div>
 
           <div className={styles.errorWrapper}>
@@ -203,9 +243,12 @@ const InternGraduationForm = () => {
               blur={Intern_Graduation_Form.handleBlur}
               alt="location icon"
             />
-            {Intern_Graduation_Form.touched.address && Intern_Graduation_Form.errors.address && (
-              <div className="error">{Intern_Graduation_Form.errors.address}</div>
-            )}
+            {Intern_Graduation_Form.touched.address &&
+              Intern_Graduation_Form.errors.address && (
+                <div className="error">
+                  {Intern_Graduation_Form.errors.address}
+                </div>
+              )}
           </div>
 
           <div className={styles.errorWrapper}>
@@ -219,9 +262,12 @@ const InternGraduationForm = () => {
               />
               <span>؟</span>
             </div>
-            {Intern_Graduation_Form.touched.howDidYouHearAboutUs && Intern_Graduation_Form.errors.howDidYouHearAboutUs && (
-              <div className="error">{Intern_Graduation_Form.errors.howDidYouHearAboutUs}</div>
-            )}
+            {Intern_Graduation_Form.touched.howDidYouHearAboutUs &&
+              Intern_Graduation_Form.errors.howDidYouHearAboutUs && (
+                <div className="error">
+                  {Intern_Graduation_Form.errors.howDidYouHearAboutUs}
+                </div>
+              )}
           </div>
 
           <div className={styles.errorWrapper}>
@@ -232,7 +278,9 @@ const InternGraduationForm = () => {
                 ) : (
                   <>
                     <span>قم برفع سيرتك الذاتية</span>
-                    <span>( ارفع ملف مدعوم وواضح بصيغة PDF,WORD بحد اقصي 15ميجا )</span>
+                    <span>
+                      ( ارفع ملف مدعوم وواضح بصيغة PDF,WORD بحد اقصي 15ميجا )
+                    </span>
                   </>
                 )}
               </div>
@@ -251,9 +299,10 @@ const InternGraduationForm = () => {
                 alt="Upload icon"
               />
             </div>
-            {Intern_Graduation_Form.touched.cv && Intern_Graduation_Form.errors.cv && (
-              <div className="error">{Intern_Graduation_Form.errors.cv}</div>
-            )}
+            {Intern_Graduation_Form.touched.cv &&
+              Intern_Graduation_Form.errors.cv && (
+                <div className="error">{Intern_Graduation_Form.errors.cv}</div>
+              )}
           </div>
 
           <div className={styles.errorWrapper}>
@@ -263,18 +312,44 @@ const InternGraduationForm = () => {
               checked={Intern_Graduation_Form.values.agreeToPrivacy}
               onChange={Intern_Graduation_Form.handleChange}
               onBlur={Intern_Graduation_Form.handleBlur}
-              error={Intern_Graduation_Form.touched.agreeToPrivacy && Intern_Graduation_Form.errors.agreeToPrivacy}
+              error={
+                Intern_Graduation_Form.touched.agreeToPrivacy &&
+                Intern_Graduation_Form.errors.agreeToPrivacy
+              }
             />
           </div>
 
-          <Button text="ارسال" />
+          {isloading ? (
+            <>
+              <div className="loader">
+                <Button disabled text="ارسال" />
+                <TailSpin
+                  visible={true}
+                  height="30"
+                  width="30"
+                  color="#eee"
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </div>
+            </>
+          ) : (
+            <Button text="ارسال" />
+          )}
         </form>
         <p className="err">{error}</p>
         <p className="success">{success}</p>
       </div>
       <div className={styles.emailContact}>
-        <p>بريد التواصل للمنحة الصيفية لطلاب السنة الثالثة والرابعة بكلية الحقوق</p>
-        <a href="mailto:Careers@tcmglaw.com" style={{ textDecoration: "underline" }}>
+        <p>
+          بريد التواصل للمنحة الصيفية لطلاب السنة الثالثة والرابعة بكلية الحقوق
+        </p>
+        <a
+          href="mailto:Careers@tcmglaw.com"
+          style={{ textDecoration: "underline" }}
+        >
           Careers@tcmglaw.com
         </a>
       </div>

@@ -9,12 +9,14 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useFormik } from "formik";
 import CheckBox from "@/components/ui/CheckBox";
+import { TailSpin } from "react-loader-spinner";
 
 const options = [{ value: "أفراد" }, { value: "مؤسسات وشركات" }];
 
 export default function AdditionalInfo({ onNextStep }) {
   const [success, setsuccess] = useState(null);
   const [error, seterror] = useState(null);
+  const [isloading, setisloading] = useState(false);
 
   const contact_us_form = useFormik({
     initialValues: {
@@ -27,34 +29,38 @@ export default function AdditionalInfo({ onNextStep }) {
     },
     validationSchema: Yup.object({
       message: Yup.string()
-        .min(20, "Must be at least 20 characters")
-        .required("Required"),
+        .min(20, "يجب ائن يكون على الأقل 20 حرفًا")
+        .required("مطلوب"),
       first_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
+        .max(10, "يجب ائن يكون 10 أحرف او اقل")
+        .required("مطلوب")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "اسم غير صالح"),
       major: Yup.string()
 
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "major invalid "),
+        .required("مطلوب")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "تخصص غير صالح"),
 
       phone: Yup.string()
         .matches(
           /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
-          "invalid phone number"
+          "رقم الهاتف غير صالح"
         )
-        .required("Required"),
-      clientType: Yup.string().required("Required"),
+        .required("مطلوب"),
+      clientType: Yup.string().required("مطلوب"),
       agreeToPrivacy: Yup.boolean()
-        .oneOf([true], "You must agree to the privacy policy")
-        .required("Required"),
+        .oneOf([true], "يرجى الموافقة على سياسة الخصوصية")
+        .required("مطلوب"),
     }),
     validateOnBlur: true,
     validateOnChange: true,
     onSubmit: (values) => {
+      setisloading(true);
+
       //   axios
       //     .post("https://tcmg-production-0be9.up.railway.app/contact-us", values)
       //     .then((res) => {
+      // setisloading(false);
+
       //       console.log("say", res.data);
       //       setsuccess(res.data.status);
       //       setTimeout(() => {
@@ -62,8 +68,10 @@ export default function AdditionalInfo({ onNextStep }) {
       //       }, 3000);
       //     })
       //     .catch((err) => {
-      //       console.log(err.response.data.error[0].msg);
-      //       seterror(err.response.data.error[0].msg);
+      // setisloading(true);
+
+      //       console.log(err);
+      //       seterror('some thing went wrong ');
       //       setTimeout(() => {
       //         seterror(null);
       //       }, 3000);
@@ -101,9 +109,10 @@ export default function AdditionalInfo({ onNextStep }) {
               value={contact_us_form.values.first_name}
               change={contact_us_form.handleChange}
               blur={contact_us_form.handleBlur}
+              display="block"
             />
             {contact_us_form.touched.first_name &&
-              contact_us_form.errors.first_name ? (
+            contact_us_form.errors.first_name ? (
               <div className={styles.error}>
                 {contact_us_form.errors.first_name}
               </div>
@@ -119,6 +128,8 @@ export default function AdditionalInfo({ onNextStep }) {
               value={contact_us_form.values.phone}
               change={contact_us_form.handleChange}
               blur={contact_us_form.handleBlur}
+              display="block"
+
             />
             {contact_us_form.touched.phone && contact_us_form.errors.phone ? (
               <div className={styles.error}>{contact_us_form.errors.phone}</div>
@@ -127,6 +138,7 @@ export default function AdditionalInfo({ onNextStep }) {
           <div className={styles.errorWrapper}>
             <SelectComponent
               head={"فئة العميل"}
+              label={"فئة العميل"}
               options={options}
               name="clientType"
               id="clientType"
@@ -136,9 +148,10 @@ export default function AdditionalInfo({ onNextStep }) {
               }}
               onChange={contact_us_form.handleChange} // Bind Formik onChange
               onBlur={contact_us_form.handleBlur} // Bind Formik onBlur
+              display="block"
             />
             {contact_us_form.touched.clientType &&
-              contact_us_form.errors.clientType ? (
+            contact_us_form.errors.clientType ? (
               <div className={styles.error}>
                 {contact_us_form.errors.clientType}
               </div>
@@ -154,6 +167,7 @@ export default function AdditionalInfo({ onNextStep }) {
               value={contact_us_form.values.major}
               change={contact_us_form.handleChange}
               blur={contact_us_form.handleBlur}
+
             />
             {contact_us_form.touched.major && contact_us_form.errors.major ? (
               <div className={styles.error}>{contact_us_form.errors.major}</div>
@@ -175,7 +189,7 @@ export default function AdditionalInfo({ onNextStep }) {
                 <span>?</span>
               </div>
               {contact_us_form.touched.message &&
-                contact_us_form.errors.message ? (
+              contact_us_form.errors.message ? (
                 <div className={styles.error}>
                   {contact_us_form.errors.message}
                 </div>
@@ -184,44 +198,80 @@ export default function AdditionalInfo({ onNextStep }) {
           </div>
           <div className={styles.errorWrapper}>
             <div className={styles.termsC}>
-             <div className={styles.terms}>
-             <input
-                type="checkbox"
-                id="agreeToPrivacy"
-                name="agreeToPrivacy"
-                checked={contact_us_form.values.agreeToPrivacy}
-                onChange={(e) => {
-                  // Update Formik state directly
-                  contact_us_form.setFieldValue("agreeToPrivacy", e.target.checked);
-                }}
-                onBlur={contact_us_form.handleBlur}
-              />
-              <label
-                htmlFor="agreeToPrivacy"
-                style={{ cursor: "pointer", color: "white", textDecoration: "underline", paddingBottom: "10px" ,fontSize: "18px"}}  
-                className={styles.labelUnderlined} // Apply the underline class
-                onClick={() => setShowModal(true)} // Show modal when label is clicked
-              >
-                إوافق على سياسة الخصوصية
-              </label>
-             </div>
-              {contact_us_form.touched.agreeToPrivacy && contact_us_form.errors.agreeToPrivacy ? (
-                <div className={styles.error}>{contact_us_form.errors.agreeToPrivacy}</div>
+              <div className={styles.terms}>
+                <input
+                  type="checkbox"
+                  id="agreeToPrivacy"
+                  name="agreeToPrivacy"
+                  checked={contact_us_form.values.agreeToPrivacy}
+                  onChange={(e) => {
+                    // Update Formik state directly
+                    contact_us_form.setFieldValue(
+                      "agreeToPrivacy",
+                      e.target.checked
+                    );
+                  }}
+                  onBlur={contact_us_form.handleBlur}
+                />
+                <label
+                  htmlFor="agreeToPrivacy"
+                  style={{
+                    cursor: "pointer",
+                    color: "white",
+                    textDecoration: "underline",
+                    paddingBottom: "10px",
+                    fontSize: "18px",
+                  }}
+                  className={styles.labelUnderlined} // Apply the underline class
+                  onClick={() => setShowModal(true)} // Show modal when label is clicked
+                >
+                  إوافق على سياسة الخصوصية
+                </label>
+              </div>
+              {contact_us_form.touched.agreeToPrivacy &&
+              contact_us_form.errors.agreeToPrivacy ? (
+                <div className={styles.error}>
+                  {contact_us_form.errors.agreeToPrivacy}
+                </div>
               ) : null}
             </div>
           </div>
 
-
-
-          <button type="submit" className={styles.registerWay}>
-            المتابعة
-            <Image
-              src="/assets/icons/form/arrow-left-black.png"
-              width={24}
-              height={24}
-              alt="arrow-left icon"
-            />
-          </button>
+          {isloading ? (
+            <>
+              <div className="loader">
+                <button disabled type="submit" className={styles.registerWay}>
+                  المتابعة
+                  <Image
+                    src="/assets/icons/form/arrow-left-black.png"
+                    width={24}
+                    height={24}
+                    alt="arrow-left icon"
+                  />
+                </button>
+                <TailSpin
+                  visible={true}
+                  height="30"
+                  width="30"
+                  color="#eee"
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </div>
+            </>
+          ) : (
+            <button type="submit" className={styles.registerWay}>
+              المتابعة
+              <Image
+                src="/assets/icons/form/arrow-left-black.png"
+                width={24}
+                height={24}
+                alt="arrow-left icon"
+              />
+            </button>
+          )}
         </form>
         <p className="err">{error}</p>
         <p className="success">{success}</p>

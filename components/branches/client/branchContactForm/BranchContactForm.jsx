@@ -9,10 +9,12 @@ import SelectComponent from "@/components/ui/selectComponent/SelectComponent";
 import * as Yup from "yup";
 import axios from "axios";
 import { useFormik } from "formik";
+import { TailSpin } from "react-loader-spinner";
 const BranchContactForm = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [success, setsuccess] = useState(null);
   const [error, seterror] = useState(null);
+  const [isloading, setisloading] = useState(false);
 
   const contact_us_form = useFormik({
     initialValues: {
@@ -26,53 +28,58 @@ const BranchContactForm = () => {
     },
     validationSchema: Yup.object({
       message: Yup.string()
-        .min(20, "Must be at least 20 characters")
-        .required("Required"),
-      first_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
+        .min(20, "يجب أن يكون على الأقل 20 حرفًا")
+        .required("مطلوب"),
+        first_name: Yup.string()
+        .max(10, "يجب أن يكون 10 أحرف أو أقل")
+        .required("مطلوب")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
       last_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
+        .max(10, "يجب أن يكون 10 أحرف أو أقل")
+        .required("مطلوب")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
       email: Yup.string()
         .matches(
           /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-          "please enter a valid email"
+          "يرجى إدخال بريد إلكتروني صالح"
         )
-        .required("Required"),
+        .required("مطلوب"),
       phone: Yup.string()
         .matches(
           /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
-          "invalid phone number"
+          "رقم الهاتف غير صالح"
         )
-        .required("Required"),
-      clientType: Yup.string().required("Required"),
+        .required("مطلوب"),
+      clientType: Yup.string().required("مطلوب"),
+
       agreeToPrivacy: Yup.boolean()
-        .oneOf([true], "You must agree to the privacy policy")
-        .required("Required"),
+        .oneOf([true], "يجب أن توافق على سياسة الخصوصية")
+        .required("مطلوب"),
     }),
     validateOnBlur: true,
     validateOnChange: true,
     onSubmit: (values) => {
+      setisloading(true);
+
       axios
-        .post("https://tcmg-production-0be9.up.railway.app/contact-us", values)
+        .post("https://tcmg-alpha.vercel.app/contact-us", values)
         .then((res) => {
-          console.log("say", res.data);
+          setisloading(false);
+
           setsuccess(res.data.status);
           setTimeout(() => {
             setsuccess(null);
           }, 3000);
         })
         .catch((err) => {
-          console.log(err.response.data.error[0].msg);
-          seterror(err.response.data.error[0].msg);
+          setisloading(false);
+
+          // console.log(err.response?.data?.error[0]?.msg);
+          seterror(err.response?.data?.error[0]?.msg);
           setTimeout(() => {
             seterror(null);
           }, 3000);
         });
-      console.log(values);
     },
   });
 
@@ -156,9 +163,9 @@ const BranchContactForm = () => {
 
           <div className={styles.errorWrapper}>
             <SelectComponent
-                        imgPath="/assets/icons/form/mdi_arrow-down-drop.svg"
-                        w={24}
-                        h={24}
+              imgPath="/assets/icons/form/mdi_arrow-down-drop.svg"
+              w={24}
+              h={24}
               head={"فئة العميل"}
               options={options}
               name="clientType"
@@ -209,7 +216,25 @@ const BranchContactForm = () => {
               }
             />
           </div>
-          <Button text="إرسال استمارة التواصل" />
+          {isloading ? (
+            <>
+              <div className="loader">
+                <Button disabled text="إرسال استمارة التواصل" />
+                <TailSpin
+                  visible={true}
+                  height="30"
+                  width="30"
+                  color="#eee"
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </div>
+            </>
+          ) : (
+            <Button text="إرسال استمارة التواصل" />
+          )}
         </form>
         <p className="err">{error}</p>
         <p className="success">{success}</p>

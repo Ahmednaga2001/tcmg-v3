@@ -8,6 +8,7 @@ import styles from "./page.module.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { Oval, TailSpin } from "react-loader-spinner";
 const officeOptions = [
   {
     value: "القاهرة",
@@ -31,7 +32,8 @@ const officeOptions = [
 
 const RequestLawyer = () => {
   const [success, setsuccess] = useState(null);
-
+  const [isloading, setisloading] = useState(false);
+  const [error, seterror] = useState(null);
   const formik = useFormik({
     initialValues: {
       f_name: "",
@@ -80,11 +82,14 @@ const RequestLawyer = () => {
     validateOnBlur: true, // This ensures validation on blur
     validateOnChange: true,
     onSubmit: (values) => {
-      // alert(JSON.stringify(values, null, 2));
+      setisloading(true); // alert(JSON.stringify(values, null, 2));
       axios
         .post("https://tcmg-alpha.vercel.app/hire-lawer", values)
         .then((res) => {
+          console.log("hello");
+
           console.log("say", res.data.message);
+          setisloading(false);
           setsuccess(res.data.message);
           setTimeout(() => {
             setsuccess(null);
@@ -92,6 +97,12 @@ const RequestLawyer = () => {
         })
         .catch((err) => {
           console.log(err);
+          setisloading(false);
+
+          seterror("some thing went wrong");
+          setTimeout(() => {
+            seterror(null);
+          }, 3000);
         });
       console.log(values);
     },
@@ -216,9 +227,7 @@ const RequestLawyer = () => {
             />
             {formik.touched.lawerSpecialization &&
             formik.errors.lawerSpecialization ? (
-              <div className="error">
-                {formik.errors.lawerSpecialization}
-              </div>
+              <div className="error">{formik.errors.lawerSpecialization}</div>
             ) : null}
           </div>
 
@@ -250,9 +259,29 @@ const RequestLawyer = () => {
               }
             />
           </div>
-          <Button text="ارسال" />
+
+          {isloading ? (
+            <>
+              <div className="loader">
+                <Button disabled text="ارسال" />
+                <TailSpin
+                  visible={true}
+                  height="30"
+                  width="30"
+                  color="#eee"
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </div>
+            </>
+          ) : (
+            <Button text="ارسال" />
+          )}
         </form>
         <p className="success">{success}</p>
+        <p className="err">{error}</p>
       </div>
     </section>
   );

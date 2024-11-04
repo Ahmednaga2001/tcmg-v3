@@ -19,9 +19,10 @@ export const Register = ({ onNextStep }) => {
       email: Yup.string()
         .matches(
           /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-          "please enter a valid email"
+          "الرجاء إدخال بريد إلكتروني صالح"
+     
         )
-        .required("Required"),
+        .required("مطلوب"),
     }),
     validateOnBlur: true,
     validateOnChange: true,

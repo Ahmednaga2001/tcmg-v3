@@ -1,5 +1,6 @@
 "use client";
 import styles from "@/components/ask-attorny/ask-attrony.module.css";
+import Button from "@/components/ui/Button";
 // import styles from "./page.module.css";
 
 import CheckBox from "@/components/ui/CheckBox";
@@ -9,6 +10,7 @@ import axios from "axios";
 import { useFormik } from "formik";
 import Image from "next/image";
 import { useState } from "react";
+import { TailSpin } from "react-loader-spinner";
 import * as Yup from "yup";
 const majorOptions = [
   {
@@ -32,7 +34,7 @@ const officeOptions = [
     value: "تشنغدو",
   },
   {
-    value: "عمان",
+    value: "عمّان",
   },
   {
     value: "جنين",
@@ -41,6 +43,8 @@ const officeOptions = [
 const AskLawyerForm = () => {
   const [selectedmajor, setSelectedmajor] = useState();
   const [selectedOffice, setSelectedOffice] = useState(null);
+  const [isloading, setisloading] = useState(false);
+  const [error, seterror] = useState(null);
 
   const [success, setsuccess] = useState(null);
 
@@ -59,54 +63,61 @@ const AskLawyerForm = () => {
     },
     validationSchema: Yup.object({
       first_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
-      last_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "name invalid "),
-      email: Yup.string()
-        .matches(
-          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-          "please enter a valid email"
-        )
-        .required("Required"),
-      phone: Yup.string()
-        .matches(
-          /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
-          "invalid phone number"
-        )
-        .required("Required"),
+      .max(10, "يجب أن يكون 10 أحرف أو أقل")
+      .required("مطلوب")
+      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "اسم غير صالح"),
+    last_name: Yup.string()
+      .max(10, "يجب أن يكون 10 أحرف أو أقل")
+      .required("مطلوب")
+      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "اسم غير صالح"),
+    email: Yup.string()
+      .matches(
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        "يرجى إدخال بريد إلكتروني صالح"
+      )
+      .required("مطلوب"),
+    phone: Yup.string()
+      .matches(
+        /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
+        "رقم الهاتف غير صالح"
+      )
+      .required("مطلوب"),
       question: Yup.string()
-        .required("Required")
-        .min(20, "Must be at least 20 characters")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "major invalid "),
+      .required("مطلوب")
+
+        .min(20, "يجب أن يكون على الاقل 20 أحرف"),
 
       howDidYouHearAboutUs: Yup.string()
-        .min(5, "Must be at least 5 characters")
-        .required("Required"),
-      questionTitle: Yup.string().required("Required"), // Validation for office
-      questionCategory: Yup.string().required("Required"), // Validation for office
+        .min(5, "يجب أن يكون على الاقل 5 أحرف")
+        .required("مطلوب"),
+      questionTitle: Yup.string().required("مطلوب"), // Validation for office
+      questionCategory: Yup.string().required("مطلوب"), // Validation for office
       agreeToPrivacy: Yup.boolean()
-        .oneOf([true], "You must agree to the privacy policy") // Validation rule
-        .required("Required"),
+      .oneOf([true], "يجب أن توافق على سياسة الخصوصية")
+      .required("مطلوب"),
     }),
     validateOnBlur: true, // This ensures validation on blur
     validateOnChange: true,
     onSubmit: (values) => {
+      setisloading(true);
       // alert(JSON.stringify(values, null, 2));
       axios
-        .post("https://tcmg-production.up.railway.app/ask-attorney", values)
+        .post("https://tcmg-alpha.vercel.app/ask-attorney", values)
         .then((res) => {
           console.log("say", res.data.status);
           setsuccess(res.data.status);
+          setisloading(false);
           setTimeout(() => {
             setsuccess(null);
           }, 3000);
         })
         .catch((err) => {
           console.log(err);
+          setisloading(false);
+          seterror("some thing went wrong");
+          setTimeout(() => {
+            seterror(null);
+          }, 3000);
         });
       console.log(values);
       console.log("helloo");
@@ -276,15 +287,25 @@ const AskLawyerForm = () => {
             }
           />
 
-          <button type="submit">
-            إرسال
-            <Image
-              src="/assets/icons/askattorny/arrow-left.png"
-              alt="Arrow Left Small"
-              width={26}
-              height={26}
-            />
-          </button>
+          {isloading ? (
+            <>
+              <div className="loader">
+                <Button disabled text="ارسال" />
+                <TailSpin
+                  visible={true}
+                  height="30"
+                  width="30"
+                  color="#eee"
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </div>
+            </>
+          ) : (
+            <Button text="ارسال" />
+          )}
         </form>
         <p className="success">{success}</p>
       </div>

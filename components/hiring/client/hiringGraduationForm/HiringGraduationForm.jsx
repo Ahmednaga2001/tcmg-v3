@@ -9,11 +9,14 @@ import Image from "next/image";
 import { useState } from "react";
 import * as Yup from "yup";
 import axios from "axios";
+import { TailSpin } from "react-loader-spinner";
+
 const HiringGraduationForm = () => {
   const [fileName, setFileName] = useState("");
   const [cvFile, setCvFile] = useState(null); // Track file object
   const [success, setsuccess] = useState(null);
   const [error, seterror] = useState(null);
+  const [isloading, setisloading] = useState(false);
 
   const Intern_Graduation_Form = useFormik({
     initialValues: {
@@ -30,50 +33,66 @@ const HiringGraduationForm = () => {
     },
     validationSchema: Yup.object({
       howDidYouHearAboutUs: Yup.string()
-      .min(20, "يجب أن يكون على الأقل 20 حرفًا")
-      .required("مطلوب"),
+        .min(20, "يجب أن يكون على الأقل 20 حرفًا")
+        .required("مطلوب"),
       first_name: Yup.string()
-      .max(10, "يجب أن يكون 10 أحرف أو أقل")
-      .required("مطلوب")
-      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
+        .max(10, "يجب أن يكون 10 أحرف أو أقل")
+        .required("مطلوب")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
       last_name: Yup.string()
-      .max(10, "يجب أن يكون 10 أحرف أو أقل")
-      .required("مطلوب")
-      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
+        .max(10, "يجب أن يكون 10 أحرف أو أقل")
+        .required("مطلوب")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
       email: Yup.string()
-      .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "يرجى إدخال بريد إلكتروني صالح")
-      .required("مطلوب"),
+        .matches(
+          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          "يرجى إدخال بريد إلكتروني صالح"
+        )
+        .required("مطلوب"),
       phone: Yup.string()
-      .matches(/^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/, "رقم الهاتف غير صالح")
-      .required("مطلوب"),
+        .matches(
+          /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
+          "رقم الهاتف غير صالح"
+        )
+        .required("مطلوب"),
       address: Yup.string().required("مطلوب"),
       office: Yup.string().required("مطلوب"),
       job: Yup.string().required("مطلوب"),
       agreeToPrivacy: Yup.boolean()
-      .oneOf([true], "يجب أن توافق على سياسة الخصوصية")
+        .oneOf([true], "يجب أن توافق على سياسة الخصوصية")
         .required("مطلوب"),
-        cv: Yup.mixed()
+      cv: Yup.mixed()
         .required("مطلوب")
-        .test("fileSize", "الملف كبير جدًا", value => value && value.size <= 15 * 1024 * 1024)
-        .test("fileType", "تنسيق ملف غير مدعوم", value => value && (value.type === "application/pdf" || value.type === "application/msword")),
-      
+        .test(
+          "fileSize",
+          "الملف كبير جدًا",
+          (value) => value && value.size <= 15 * 1024 * 1024
+        )
+        .test(
+          "fileType",
+          "تنسيق ملف غير مدعوم",
+          (value) =>
+            value &&
+            (value.type === "application/pdf" ||
+              value.type === "application/msword")
+        ),
     }),
     validateOnBlur: true,
     validateOnChange: true,
     onSubmit: (values) => {
+      setisloading(true);
+
       const formData = new FormData();
       formData.append("cv", cvFile);
-  formData.append("first_name", values.first_name);
-  formData.append("last_name", values.last_name);
-  formData.append("job", values.job);
-  formData.append("howDidYouHearAboutUs", values.howDidYouHearAboutUs);
-  formData.append("office", values.office);
-  formData.append("address", values.address);
-  formData.append("phone", values.phone);
-  formData.append("email", values.email);
-  formData.append("agreeToPrivacy", values.agreeToPrivacy);
-
-
+      formData.append("first_name", values.first_name);
+      formData.append("last_name", values.last_name);
+      formData.append("job", values.job);
+      formData.append("howDidYouHearAboutUs", values.howDidYouHearAboutUs);
+      formData.append("office", values.office);
+      formData.append("address", values.address);
+      formData.append("phone", values.phone);
+      formData.append("email", values.email);
+      formData.append("agreeToPrivacy", values.agreeToPrivacy);
 
       axios
         .post("https://tcmg-alpha.vercel.app/employments", formData, {
@@ -82,6 +101,8 @@ const HiringGraduationForm = () => {
           },
         })
         .then((res) => {
+          setisloading(false);
+
           console.log("say", res.data);
           setsuccess(res.data.status);
           setTimeout(() => {
@@ -89,6 +110,8 @@ const HiringGraduationForm = () => {
           }, 3000);
         })
         .catch((err) => {
+          setisloading(false);
+
           console.log(err);
           seterror(err.response?.data?.message || "Something went wrong");
           setTimeout(() => {
@@ -209,9 +232,7 @@ const HiringGraduationForm = () => {
             />
             {Intern_Graduation_Form.touched.email &&
             Intern_Graduation_Form.errors.email ? (
-              <div className="error">
-                {Intern_Graduation_Form.errors.email}
-              </div>
+              <div className="error">{Intern_Graduation_Form.errors.email}</div>
             ) : null}
           </div>
 
@@ -228,9 +249,7 @@ const HiringGraduationForm = () => {
             />
             {Intern_Graduation_Form.touched.phone &&
             Intern_Graduation_Form.errors.phone ? (
-              <div className="error">
-                {Intern_Graduation_Form.errors.phone}
-              </div>
+              <div className="error">{Intern_Graduation_Form.errors.phone}</div>
             ) : null}
           </div>
 
@@ -269,9 +288,7 @@ const HiringGraduationForm = () => {
             />
             {Intern_Graduation_Form.touched.job &&
             Intern_Graduation_Form.errors.job ? (
-              <div className="error">
-                {Intern_Graduation_Form.errors.job}
-              </div>
+              <div className="error">{Intern_Graduation_Form.errors.job}</div>
             ) : null}
           </div>
 
@@ -331,12 +348,12 @@ const HiringGraduationForm = () => {
                 )}
               </div>
               <input
-                 type="file"
-                 name="cv"
-                 id="cv"
-                 onChange={handleFileChange}
-                 onBlur={Intern_Graduation_Form.handleBlur}
-                 className={styles.fileInput}
+                type="file"
+                name="cv"
+                id="cv"
+                onChange={handleFileChange}
+                onBlur={Intern_Graduation_Form.handleBlur}
+                className={styles.fileInput}
               />
               <Image
                 src="/assets/icons/form/Vector.png"
@@ -347,9 +364,7 @@ const HiringGraduationForm = () => {
             </div>
             {Intern_Graduation_Form.touched.cv &&
             Intern_Graduation_Form.errors.cv ? (
-              <div className="error">
-                {Intern_Graduation_Form.errors.cv}
-              </div>
+              <div className="error">{Intern_Graduation_Form.errors.cv}</div>
             ) : null}
           </div>
           <div className={styles.errorWrapper}>
@@ -365,7 +380,25 @@ const HiringGraduationForm = () => {
               }
             />
           </div>
-          <Button text="ارسال" />
+          {isloading ? (
+            <>
+              <div className="loader">
+                <Button disabled text="ارسال" />
+                <TailSpin
+                  visible={true}
+                  height="30"
+                  width="30"
+                  color="#eee"
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </div>
+            </>
+          ) : (
+            <Button text="ارسال" />
+          )}
         </form>
         <p className="err">{error}</p>
         <p className="success">{success}</p>

@@ -502,11 +502,17 @@ a {
   bottom: 40px;
 }
 
-.err{
+.err {
   color: red;
   text-align: center;
 }
-.success{
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+.success {
   color: green;
   text-align: center;
 }

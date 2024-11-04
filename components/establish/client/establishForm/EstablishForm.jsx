@@ -10,6 +10,7 @@ import CheckBox from "@/components/ui/CheckBox";
 import * as Yup from "yup";
 import axios from "axios";
 import { useFormik } from "formik";
+import { TailSpin } from "react-loader-spinner";
 
 const options = [
   {
@@ -35,68 +36,74 @@ const EstablishForm = () => {
     },
     validationSchema: Yup.object({
       message: Yup.string()
-      .min(20, "يجب أن يكون على الأقل 20 حرفًا")
-      .required("مطلوب"),
+        .min(20, "يجب أن يكون على الأقل 20 حرفًا")
+        .required("مطلوب"),
       first_name: Yup.string()
-      .max(10, "يجب أن يكون 10 أحرف أو أقل")
-      .required("مطلوب")
-      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
+        .max(10, "يجب أن يكون 10 أحرف أو أقل")
+        .required("مطلوب")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
       last_name: Yup.string()
-      .max(10, "يجب أن يكون 10 أحرف أو أقل")
-      .required("مطلوب")
-      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
+        .max(10, "يجب أن يكون 10 أحرف أو أقل")
+        .required("مطلوب")
+        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
       email: Yup.string()
-      .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "يرجى إدخال بريد إلكتروني صالح")
-
-      .required("مطلوب"),
-      phone: Yup.string()
-      .matches(/^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/, "رقم الهاتف غير صالح")
+        .matches(
+          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          "يرجى إدخال بريد إلكتروني صالح"
+        )
 
         .required("مطلوب"),
-        numberOfPartners: Yup.string()
+      phone: Yup.string()
+        .matches(
+          /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
+          "رقم الهاتف غير صالح"
+        )
+
+        .required("مطلوب"),
+      numberOfPartners: Yup.string()
         .matches(/^\d+$/, "رقم الشركاء غير صالح")
         .required("مطلوب"),
-      address: Yup.string()
-        .required("مطلوب"),
+      address: Yup.string().required("مطلوب"),
       capital: Yup.string()
         .matches(/^\d+$/, "يرجى إدخال أرقام فقط")
         .required("مطلوب"),
-      companyType: Yup.string()
-        .required("مطلوب"),
+      companyType: Yup.string().required("مطلوب"),
       agreeToPrivacy: Yup.boolean()
         .oneOf([true], "يجب عليك الموافقة على سياسة الخصوصية")
         .required("مطلوب"),
-      
     }),
     validateOnBlur: true,
     validateOnChange: true,
     onSubmit: (values) => {
-      
+      setisloading(true);
       axios
-        .post(
-          "https://tcmg-alpha.vercel.app/establishing-companies",
-          values
-        )
+        .post("https://tcmg-alpha.vercel.app/establishing-companies", values)
         .then((res) => {
           console.log("say", res.data);
+          setisloading(false);
           setsuccess(res.data.status);
           setTimeout(() => {
             setsuccess(null);
           }, 3000);
         })
         .catch((err) => {
-          console.log(err.response.data.message);
-          seterror(err.response.data.message);
+          setisloading(false);
+          // seterror("some thing went wrong");
+          setTimeout(() => {
+            seterror(null);
+          }, 3000);
+          console.log(err);
+          seterror(err.response.data.message | "some thing went wrong ");
           setTimeout(() => {
             seterror(null);
           }, 3000);
         });
-      console.log(values);
     },
   });
   const [selectedOption, setSelectedOption] = useState(null);
   const [success, setsuccess] = useState(null);
   const [error, seterror] = useState(null);
+  const [isloading, setisloading] = useState(false);
 
   return (
     <section className={styles.RequestLawyer}>
@@ -289,7 +296,25 @@ const EstablishForm = () => {
             />
           </div>
 
-          <Button text="إرسال" />
+          {isloading ? (
+            <>
+              <div className="loader">
+                <Button disabled text="ارسال" />
+                <TailSpin
+                  visible={true}
+                  height="30"
+                  width="30"
+                  color="#eee"
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </div>
+            </>
+          ) : (
+            <Button text="ارسال" />
+          )}
         </form>
         <p className="err">{error}</p>
         <p className="success">{success}</p>
