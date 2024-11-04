@@ -1,0 +1,103 @@
+.slider {
+    overflow: hidden; /* Hide overflowing slides */
+    width: 100%; /* Full width */
+}
+
+.slide {
+    min-width: 100%; /* Each slide takes full width */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    padding: 20px; /* Padding inside each slide */
+}
+
+.milestonesSection h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.milestonesSection h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.image {
+    width: 100%; /* Full width */
+}
+
+.milestonesSection p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.yearList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 47px;
+    padding: 10px;
+    background: linear-gradient(rgba(255, 255, 255, 0.05) 0%, rgba(216, 216, 216, .05) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.prev, .next {
+    background-image: url(/assets/icons/2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;  
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 0; /* Position the previous button on the left */
+}
+
+.next {
+    right: 0; /* Position the next button on the right */
+    background-image: url(/assets/icons/1.png);
+
+}
+
+.yearButton {
+    text-align: center;
+    cursor: pointer;
+    min-width: 33%;
+    overflow: hidden;
+    color: #8E8888;
+}
+
+.yearButton.active {
+    font-weight: bold;
+    color: #fff; 
+}
+.swiperContainer{
+    background: linear-gradient(rgba(255, 255, 255, 0.05) 0%, rgba(216, 216, 216, .05) 100%);
+    border-radius: 47px;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.swiperContainer .swiperSlide{
+    text-align: center;
+}
+.slider{
+    padding-top: 20px;
+}
+.slider .slide{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    line-height: 1.4;
+}
+/* .swiperSlide{
+    color: red;
+    background-color: red;
+} */
+
+.active{
+    font-weight: bold;
+}

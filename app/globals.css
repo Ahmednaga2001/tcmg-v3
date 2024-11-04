@@ -271,10 +271,7 @@ h2 {
   
 }
 
-/* ::selection {
-  background-color: var(--font);
-  color: var(--main);
-} */
+
 
 ::-webkit-scrollbar {
   background-color: var(--font);
@@ -393,7 +390,27 @@ a {
   z-index: 10 !important;
   right: -30px !important;
 }
+#Milestones{
+  position: relative;
+}
+#Milestones .swiper-button-next {
+  background-repeat: no-repeat !important;
+  background-size: 100% auto !important;
+  background-position: center !important;
+  background-image: url(/assets/icons/1.png) !important;
+  z-index: 10 !important;
+  right: -10px;
+}
+#Milestones .swiper-button-prev  {
+  position: absolute;
+  background-repeat: no-repeat !important;
+  background-size: 100% auto !important;
+  background-position: center !important;
+  background-image: url(/assets/icons/2.png) !important;
+  left: -10px;
+  z-index: 10 !important;
 
+}
 
 #featureSlide .swiper-button-next::after,
 #featureSlide .swiper-button-prev::after,
@@ -404,7 +421,11 @@ a {
   display: none !important;
   content: none !important;
 }
-
+#Milestones .swiper-button-next::after,
+#Milestones .swiper-button-prev::after {
+  display: none !important;
+  content: none !important;
+}
 
 @media (max-width : 768px) {
 
