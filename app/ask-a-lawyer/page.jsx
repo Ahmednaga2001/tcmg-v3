@@ -16,8 +16,9 @@ function AskAttorny() {
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
-        <h1>
-        اسأل محامي مصري من خبراء مكاتب TCMG للمحاماة        </h1>
+        <h1>اسأل محامي  استشِر خبراء القانون
+        لحل جميع استفساراتك القانونية
+              </h1>
       </section>
       <PopUp/>
 

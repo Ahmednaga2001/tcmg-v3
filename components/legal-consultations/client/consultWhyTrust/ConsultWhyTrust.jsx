@@ -133,7 +133,7 @@ const ConsultWhyTrust = () => {
           modules={[Navigation, Autoplay, Pagination]} // Added modules back
         >
           {data.map((item, index) => (
-            <SwiperSlide key={item.id} className={styles.customers}>
+            <SwiperSlide key={index} className={styles.customers}>
               <div key={index} className={styles.card}>
                 <Image
                   src={item.path}

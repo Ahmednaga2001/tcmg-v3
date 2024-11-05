@@ -1,3 +1,6 @@
+.aboutMilestonesSectionMob{
+    display: none;
+}
 .slider {
     overflow: hidden; /* Hide overflowing slides */
     width: 100%; /* Full width */
@@ -100,4 +103,13 @@
 
 .active{
     font-weight: bold;
+}
+
+@media (max-width : 500px) {
+    .aboutMilestonesSectionMob{
+        display: block;
+    }
+    .aboutMilestonesSectionMob h2{
+        display: none;
+    }
 }

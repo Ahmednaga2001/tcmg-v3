@@ -68,92 +68,11 @@ const AskLawyer = () => {
               />
             </div>
             <div className={styles.Img}>
-              <Image quality={100} src={el.path} width={el.w} height={el.h} alt={el.alt} />
+              <Image quality={100} src={el.path} width={el.w} height={el.h} alt={el.alt}  />
             </div>
           </div>
         ))}
-        {/* 
-        <div className={styles.parent}>
-          <div className={styles.Img}>
-            <Image
-              src={data[1].path}
-              width={data[1].w}
-              height={data[1].h}
-              alt={data[1].path}
-            />
-          </div>
-          <div className={styles.line}>
-          <Image src="/assets/symbols/about/circle.svg" className={styles.circleImg} alt='circle image' width={30} height={30} />     
-          </div>
-          <div className={styles.content}>
-            <h3>{data[1].title}</h3>
-            <p>{data[1].desc}</p>
-          </div>
-        </div>
-
-        <div className={styles.parent}>
-          <div className={styles.content}>
-            <h3>{data[2].title}</h3>
-            <p>{data[2].desc}</p>
-          </div>
-          <div className={styles.line}>
-          <Image src="/assets/symbols/legalconsultations/circle.svg" className={styles.circleImg} alt='circle image' width={30} height={30} />     
-          </div>
-          <div className={styles.Img}>
-            <label htmlFor="kind">نوع الاستشارة</label>
-            <select name="" id="kind">
-              <option value="النوع" disabled selected>
-                النوع
-              </option>
-            </select>
-          </div>
-        </div>
-
-        <div className={styles.parent}>
-          <div className={styles.Img}>
-          <div className={styles.card}>
-            <Image
-              src={data[3].path}
-              width={data[3].w}
-              height={data[3].h}
-              alt={data[3].path}
-            />
-            <Image
-              src={data[3].path2}
-              width={data[3].w2}
-              height={data[3].h2}
-              alt={data[3].path2}
-              className={styles.img2}
-
-            />
-            </div>
-          </div>
-          <div className={styles.line}>
-          <Image src="/assets/symbols/about/circle.svg" className={styles.circleImg} alt='circle image' width={30} height={30} />     
-          </div>
-          <div className={styles.content}>
-            <h3>{data[3].title}</h3>
-            <p>{data[3].desc}</p>
-          </div>
-        </div>
-
-        <div className={styles.parent}>
-          <div className={styles.content}>
-            <h3>{data[4].title}</h3>
-            <p>{data[4].desc}</p>
-          </div>
-          <div className={styles.line}>
-          <Image src="/assets/symbols/about/circle.svg" className={styles.circleImg} alt='circle image' width={30} height={30} />     
-          </div>
-          <div className={styles.Img}>
-            <Image
-              src={data[4].path}
-              width={data[4].w}
-              height={data[4].h}
-              alt={data[4].path}
-            />
-          </div>
-        </div> */}
+       
       </div>
     </section>
   );

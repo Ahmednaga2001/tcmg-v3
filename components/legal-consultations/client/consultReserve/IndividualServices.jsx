@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 const servicesData = [
   {
+    id : 1,
     title: "اجتماع اونلاين",
     priceOriginal: 1999,
     priceDiscounted: 999,
@@ -19,6 +20,7 @@ const servicesData = [
     ],
   },
   {
+    id : 2,
     title: "استشارة هاتفية",
     priceOriginal: 999,
     priceDiscounted: 499,
@@ -35,6 +37,7 @@ const servicesData = [
     isPopular: true,
   },
   {
+    id:3,
     title: "استشارة مكتبية",
     priceOriginal: 2999,
     priceDiscounted: 1999,
@@ -69,7 +72,7 @@ const IndividualServices = () => {
           <div className={styles.bodyData}>
             <div className={styles.offer}>
               <span></span>
-              <span>لفترة محدودة</span>
+              <span>{service.id==1?'إجتماع Zoom , Google meet' : 'لفترة محدودة'}</span>
               <span></span>
             </div>
             {service.features.map((feature, idx) => (

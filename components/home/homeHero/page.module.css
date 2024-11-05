@@ -51,6 +51,9 @@
         margin-bottom: 50px;
         text-align: right;
     }
+    .hero h1{
+        font-size: 32px !important;
+    }
     .hero .content p {
         font-size: 25px;
     }

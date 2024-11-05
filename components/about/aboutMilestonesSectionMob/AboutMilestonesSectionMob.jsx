@@ -112,7 +112,7 @@ export default function AboutMilestonesSectionMob() {
   const displayedCard = cardInfo[activeIndex];
 
   return (
-    <section>
+    <section className={styles.aboutMilestonesSectionMob}>
       <div className={styles.swiperContainer} id="Milestones">
         <Swiper
           spaceBetween={30}

@@ -6,6 +6,8 @@
     width: 30%;
     font-size: 14px;
     position: sticky;
+    top: 100px; /* Adjust this value to control where the card sticks on scroll */
+    z-index: 10; /* Ensure it stays on top of other elements */
 }
 .heading , .price{
     font-size: 18px;

@@ -120,6 +120,7 @@ const HomeWhyUs = () => {
               spaceBetween: 20,
             },
           }}
+          grabCursor={true}
           loop={true}
           autoplay={{
             delay: 5000,
@@ -138,9 +139,8 @@ const HomeWhyUs = () => {
           }}
           modules={[Navigation, Autoplay, Pagination , EffectCoverflow]} // Added modules back
         >
-          {lawyers.map((lawyer) => (
-            <>
-              <SwiperSlide key={lawyer.id} className={styles.SwiperSlide}>
+          {lawyers.map((lawyer,index) => (
+              <SwiperSlide key={index} className={styles.SwiperSlide}>
                 <div className={styles.card}>
                   <Image
                     src={lawyer.img}
@@ -151,7 +151,6 @@ const HomeWhyUs = () => {
                   <p>{lawyer.name}</p>
                 </div>
               </SwiperSlide>
-            </>
           ))}
         </Swiper>
         <Image

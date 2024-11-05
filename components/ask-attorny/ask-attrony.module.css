@@ -7,7 +7,6 @@
   padding: 80px;
 }
 .hero {
-  min-height: 70vh;
   display: flex;
   align-items: center;
   background: linear-gradient(#0e152ce4, #0e152ce4),
@@ -15,6 +14,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin-top: 100px;
+  min-height: 50vh;
+}
+.hero h1 {
+  width: 60%;
 }
 @media (max-width : 800px) {
   .hero{
@@ -124,11 +127,53 @@
     text-align: center;
   }
 }
-@media (max-width: 768px) {
-  .connect .content {
-    padding: 20px;
-    margin-right: 0;
+@media (max-width: 800px) {
+  .connect{
+    min-height: auto;
+    padding: 0 !important;
+    margin-top: 230px !important;
   }
+ 
+  .connect .Img {
+    width: 180px;
+    height: 250px;
+    overflow: hidden;
+    background-color: var(--main);
+    position: absolute;
+    top: -200px;
+    transform: translateY(0);
+    right: 3%;
+    border-radius: 10px;
+    z-index: 999;
+  }
+  .connect img{
+    width: 100%;
+    height: 100%;
+  }
+  .connect .content {
+    position: relative;
+    margin-right:0;
+    padding: 50px 20px 30px 10px;
+    text-align: start;
+    gap: 20px;
+  }
+  .content h2{
+    font-size: 24px !important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 33.6px;
+    letter-spacing: -0.96px;
+  }
+  .content p{
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  
+  .hero h1{
+    width: 80%;
+    line-height: 1.4;}
 }
 @media (max-width: 400px) {
   .connect img {

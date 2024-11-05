@@ -8,11 +8,11 @@ const AboutMetrics = () => {
       <p>عميل</p>
     </div>
     <div>
-      <span>+25</span>
+      <span>25+</span>
       <p>خبير</p>
     </div>
     <div>
-      <span>+15</span>
+      <span>15+</span>
       <p>خبرة</p>
     </div>
     <div>
