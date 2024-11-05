@@ -14,9 +14,19 @@
   width: 80%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
 }
 
+.link a{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: .3s;
+  justify-content: center;
+}
+.link a:hover{
+  gap: 15px;
+}
 .about .parent div p.child3{
   display: none;
 }
@@ -49,7 +59,7 @@
     text-align: right;
     gap: 15px;
   }
-  .about .parent div p.child3{
+  /* .about .parent div p.child3{
     display: block;
     width: 120px;
     position: relative;
@@ -62,13 +72,16 @@
   }
   .about .parent div p.child3:hover::after{
     margin-right: 10px;
-  }
-  .about img {
+  } */
+  .about .img {
     display: block;
     width: 70px;
     height: 70px;
   }
-  .about .parent div img{
+  .about .parent div .img{
     margin-top: -50px;
+  }
+  .link a{
+    justify-content: flex-start;
   }
 }

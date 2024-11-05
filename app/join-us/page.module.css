@@ -30,3 +30,10 @@
   
 }
 
+@media (max-width: 400px) {
+  .joinPage h1,
+  .joinPage h2 {
+    font-size: 24px;
+  }
+  
+}

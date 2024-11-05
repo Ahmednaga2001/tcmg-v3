@@ -1,5 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.css"
+import Link from "next/link"
 const JoinAbout = () => {
   return (
     <section className={styles.about}>
@@ -10,18 +11,27 @@ const JoinAbout = () => {
           المجموعة التجارية والبحرية للمحاماة مؤسسة قانونية رائدة في مصر والوطن العربي, نتخصص في تقديم خدمات متميزة في مجال القانون, حيث نُعد مكتبًا موثوقًا للإستشارات القانونية والتمثيل القانوني. نجمع بين الخبرة العميقة والخدمة المتميزة لعملائنا، وتضم مكاتبنا فريقًا متميزًا من المحامين والمستشارين القانونيين الذين يتمتعون بخبرة واسعة في مختلف مجالات القانون؛ مما يمكِّنهم من تقديم حلول فعّالة ومبتكرة لقضايا عملائهم
           </p>
           <p className={styles.child3}>تعرف علينا</p>
+   <div className={styles.link}>
+   <Link href="about-us">
+       تعرف علينا
+      <Image src="/assets/icons/joinus/arrow-left.png" width={24} height={24} alt="arrow-left.png"/>
+      </Link>
+   </div>
           <Image
           src="/assets/images/joinus/bottomL.png"
           width={135}
           height={135}
           alt="bottomL image"
+          className={styles.img}
         />
         </div>
+     
         <Image
           src="/assets/images/joinus/topL.png"
           width={135}
           height={135}
           alt="topL image"
+          className={styles.img}
         />
         </div>
       </section>
