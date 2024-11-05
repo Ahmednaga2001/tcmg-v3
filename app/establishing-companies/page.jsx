@@ -9,6 +9,7 @@ import EstablishCompanyTypes from "@/components/establish/client/establishCompan
 import Slider from "@/components/shared/client/slider/Slider";
 import EstablishForm from "@/components/establish/client/establishForm/EstablishForm";
 import CompanyEst from "@/components/establish/companyEst/CompanyEst"
+import EstablishCompanyMob from "@/components/establish/establishCompanyMob/EstablishCompanyMob";
 export const metadata={
   title : "Establishing-Companies",
   description : "هل تبحث عن أفضل مكتب تأسيس شركات قانوني يقدم خدمة تأسيس الشركات  بأعلى الإمتيازات في مصر؟ قدم طلب الآن بتأسيس شركة مصرية واحصل على أفضل دعم في مجال أعمال الشركات القانوني.",
@@ -37,6 +38,7 @@ function Establish() {
       <EstablishHero/>
       <EstablishFeatures/>
       <EstablishCompany/>
+      <EstablishCompanyMob/>
     <EstablishLegalServices/>
     <EstablishAchievement/>
     <EstablishCompanyTypes/>
