@@ -4,18 +4,19 @@
   align-items: center;
   margin-top: 100px;
  }
- .hero h1{
-   width: 85%;
+
+ .head{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 85%;
  }
 .headmob{
   display: none;
 }
 
  @media (max-width: 1191px) {
-  .hero h1{
-      width: 100%;
-      text-align: center;
-    }
+  
     .hero{
       justify-content: center;
     }
@@ -40,7 +41,6 @@
   .headmob h2{
     text-align: start;
     padding-bottom: 20px;
-    font-size: 32px !important;
     font-style: normal;
     font-weight: 700;
     line-height: 37px; 
