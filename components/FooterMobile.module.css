@@ -51,7 +51,7 @@
     display: flex;
     gap: 10px;
 }
-.socialIcons span{
+.socialIcons a{
     width: 40px;
     aspect-ratio: 1/1;
     border-radius: 50%;
@@ -88,7 +88,7 @@ padding-bottom: 20px;
     line-height: 150%;
     font-weight: bold;
 }
-@media (max-width : 600px) {
+@media (max-width : 700px) {
     .footer{
         display: block;
     }

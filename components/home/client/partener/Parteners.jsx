@@ -52,6 +52,42 @@ const partners = [
     w: 175,
     h: 51,
   },
+  {
+    id : "8",
+    img : "/assets/images/homePage/partners/Frame 427321792.png",
+    w : 112,
+    h : 81
+  },
+  {
+    id : "9",
+    img : "/assets/images/homePage/partners/LOGO 1.png",
+    w : 152,
+    h : 103
+  },
+  {
+    id : "10",
+    img : "/assets/images/homePage/partners/846267_354348 1.png",
+    w : 172,
+    h : 82
+  },
+  {
+    id : "11",
+    img : "/assets/images/homePage/partners/344768973_1269518143646550_1976666299951207228_n 1.png",
+    w : 114,
+    h : 81
+  },
+  {
+    id : "12",
+    img : "/assets/images/homePage/partners/logo 1 (1).png",
+    w : 202,
+    h : 62
+  },
+  {
+    id : "13",
+    img : "/assets/images/homePage/partners/277734692_344158171062444_2748486069442598100_n 2.png",
+    w :100,
+    h : 85
+  }
 ];
 
 function Parteners() {
@@ -98,6 +134,7 @@ function Parteners() {
                   spaceBetween: 20,
                 },
               }}
+              grabCursor={true}
               style={{
                 "--swiper-navigation-color": "#fff",
                 "--swiper-pagination-color": "#fff",
@@ -112,6 +149,7 @@ function Parteners() {
                       alt={partner.img}
                       width={partner.w}
                       height={partner.h}
+                      quality={100}
                     />
                   </div>
                 </SwiperSlide>

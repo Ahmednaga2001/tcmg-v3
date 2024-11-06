@@ -7,7 +7,7 @@ function FooterMobile() {
     <footer className={styles.footer}>
       <div className={styles.topIcons}>
         <div>
-          <Link href="join-us"  className={styles.mainLink}>
+          <Link href="join-us" className={styles.mainLink}>
             <h2>إنضم إلينا</h2>
             <Image
               src="/assets/icons/arrow-left.svg"
@@ -18,7 +18,7 @@ function FooterMobile() {
           </Link>
         </div>
         <div>
-          <Link href="legal-advice"  className={styles.mainLink}>
+          <Link href="legal-advice" className={styles.mainLink}>
             <h2>الإستشارات القانونية</h2>
             <Image
               src="/assets/icons/arrow-left.svg"
@@ -29,41 +29,38 @@ function FooterMobile() {
           </Link>
         </div>
       </div>
-      
+
       <div className={styles.mainContent}>
         <div className={styles.bottomLinks}>
           <ul>
-            <li>
-              <Link href="about-us"  className={styles.boldLink}>
-                من نحن
-              </Link>
-            </li>
-            <li>فريق العمل</li>
+            <span className={`${styles.boldLink} ${styles.space}`}>من نحن</span>
+            <Link href="about-us">تعرف علينا</Link>
+            <Link href="lawyers">فريق العمل</Link>
             <li className={styles.space}>
-              <Link href="legal-services"  className={styles.boldLink}>
-                الخدمات القانونية
-              </Link>
+              <li className={styles.boldLink}>خدماتنا</li>
+
               <div className={styles.links}>
                 <div className={styles.rightLinks}>
                   <ul>
                     <li>
-                      <Link href="legal-advice">الإستشارات القانونية</Link>
+                      <Link href="legal-services">الخدمات القانونية</Link>
                     </li>
                     <li>
-                      <Link href="corporate">أعمال الشركات</Link>
+                      <Link href="establishing-companies">تأسيس الشركات</Link>
                     </li>
                     <li>
-                      <Link href="sectors">القطاعات</Link>
+                      <Link href="practices">الممارسات</Link>
                     </li>
+
                     <li>
-                      <Link href="ask-a-lawyer">إسأل محامي</Link>
+                      <Link href="power-of-attorney">توكيل محامي</Link>
                     </li>
                   </ul>
                 </div>
                 <div className={styles.leftLinks}>
                   <ul>
                     <li>
-                      <Link href="establishing-companies">تأسيس الشركات</Link>
+                      <Link href="legal-advice">الاستشارات القانونية</Link>
                     </li>
                     <li>
                       <Link href="corporate">أعمال الشركات</Link>
@@ -79,73 +76,94 @@ function FooterMobile() {
               </div>
             </li>
             <li className={styles.space}>
-              <Link href="join-us"  className={styles.boldLink}>
-                انضم الينا
-              </Link>
+              <span className={`${styles.boldLink} ${styles.space}`}>
+                إنضم إلينا
+              </span>
+              <div className={styles.links}>
+                <div className={styles.rightLinks}>
+                  <ul>
+                    <li>
+                      <Link href="join-us">إبدأ رحلتك معنا</Link>
+                    </li>
+                    <li>
+                      <Link href="careers">المحامين</Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className={styles.leftLinks}>
+                  <ul>
+                    <li>
+                      <Link href="internship">المتدربين</Link>
+                    </li>
+                    <li>
+                      <Link href="protocol">العلاقات العامة</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </li>
+
+            <li className={`${styles.boldLink} ${styles.space}`}>اخبار ورؤي</li>
             <li>
-              <Link href="internship">المتدربين</Link>
+              <Link href="article-display">المقالات</Link>
             </li>
-            <li>
-              <Link href="careers">المحامين</Link>
-            </li>
-            <li className={`${styles.boldLink} ${styles.space}`}>تواصلو معنا</li>
+            <li className={`${styles.boldLink} ${styles.space}`}>
+            تواصل معنا         
+               </li>
             <li>
               <Link href="offices">الفروع</Link>
             </li>
-            <li className={`${styles.boldLink} ${styles.space}`}>اخبار ورؤي</li>
-            <li>مراجع قانونية</li>
           </ul>
         </div>
 
         <div className={styles.social}>
           <span className={styles.boldLink}>تابعنا علي</span>
           <div className={styles.socialIcons}>
-            <span>
-              <Image
-                src="assets/icons/linkedin.svg"
-                alt="LinkedIn Icon"
-                width={25}
-                height={25}
-                quality={100}
-              />
-            </span>
-            <span>
-              <Image
-                src="assets/icons/twitter.svg"
-                alt="Twitter Icon"
-                width={25}
-                height={25}
-                quality={100}
-              />
-            </span>
-            <span>
-              <Image
-                src="assets/icons/youtube.svg"
-                quality={100}
-                alt="YouTube Icon"
-                width={25}
-                height={25}
-              />
-            </span>
-            <span>
-              <Image
-                src="assets/icons/instgram.svg"
-                alt="Instagram Icon"
-                width={25}
-                height={25}
-                quality={100}
-              />
-            </span>
-            <span>
-              <Image
-                src="assets/icons/facebook.svg"
-                alt="Facebook Icon"
-                width={25}
-                height={25}
-                quality={100}
-              />
-            </span>
+          <Link href="https://www.linkedin.com/company/tcmglawco" target="_blank">
+                <Image
+                  src="assets/icons/linkedin.svg"
+                  alt="LinkedIn Icon"
+                  width={25}
+                  height={25}
+                  quality={100}
+                />
+              </Link>
+              <Link href="https://x.com/tcmglaw" target="_blank">
+                <Image
+                  src="assets/icons/twitter.svg"
+                  alt="Twiter Icon"
+                  width={25}
+                  height={25}
+                  quality={100}
+                />
+              </Link>
+              <Link href="https://youtube.com/@tcmglaw" target="_blank">
+                <Image
+                  src="assets/icons/youtube.svg"
+                  quality={100}
+                  alt="Youtube Icon"
+                  width={25}
+                  height={25}
+                />
+              </Link>
+              <Link href="https://www.instagram.com/tcmglaw" target="_blank">
+                <Image
+                  src="assets/icons/instgram.svg"
+                  alt="Instgram Icon"
+                  width={25}
+                  height={25}
+                  quality={100}
+                />
+              </Link>
+              <Link href="https://m.facebook.com/@tcmglaw/" target="_blank">
+                <Image
+                  src="assets/icons/facebook.svg"
+                  alt="Facebook Icon"
+                  width={25}
+                  height={25}
+                  quality={100}
+                />
+              </Link>
           </div>
         </div>
       </div>
@@ -163,8 +181,14 @@ function FooterMobile() {
       </div>
 
       <div className={styles.info}>
-        <p>تعد المجموعة التجارية والبحرية للمحاماة أكبر مكتب محاماة متكامل في تقديم الخدمات القانونية للأفراد والشركات.</p>
-        <p>جميع حقوق النسخ والنشر محفوظة المجموعة التجارية والبحرية للمحاماة ©2019 ©2024</p>
+        <p>
+          تعد المجموعة التجارية والبحرية للمحاماة أكبر مكتب محاماة متكامل في
+          تقديم الخدمات القانونية للأفراد والشركات.
+        </p>
+        <p>
+          جميع حقوق النسخ والنشر محفوظة المجموعة التجارية والبحرية للمحاماة
+          ©2019 ©2024
+        </p>
       </div>
     </footer>
   );

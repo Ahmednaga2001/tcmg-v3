@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
 import Image from "next/image";
+import Link from "next/link";
 
 
 
@@ -86,6 +87,10 @@ const Team = ({ lawyers }) => {
           ))}
         </Swiper>
       </div>
+      <Link href="lawyers" className="link">
+        مشاهدة كامل فريق العمل
+        <Image src="/assets/icons/form/arrow-left-white.png" width={24} height={24} alt='View Icon' />
+        </Link>
     </div>
     // </section>
   );

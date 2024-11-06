@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -29,8 +29,9 @@ const data = [
   },
 ];
 const HomeCarousel = () => {
+
   return (
-    <section className={styles.carousel}>
+    <section className={styles.carousel} id="home-carousel">
     <Swiper
       spaceBetween={30}
       effect="fade"

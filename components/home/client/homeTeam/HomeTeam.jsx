@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./page.module.css"
 import Image from 'next/image'
 import Team from '@/components/shared/client/Team/Team'
+import Link from 'next/link';
 const lawyers = [
   {
     id: 1,
@@ -55,6 +56,7 @@ const HomeTeam = () => {
 
       </div>
       <Team lawyers={lawyers} />
+      
 
     </section>
   )

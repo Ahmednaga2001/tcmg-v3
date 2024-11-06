@@ -11,7 +11,7 @@ const ConsultReserve = () => {
   };
 
   return (
-    <section className={styles.reserveConsultation}>
+    <section className={styles.reserveConsultation} id="reserve">
       <h2>بادر بحجز استشارتك الآن مع أفضل المتخصصين في مصر!</h2>
       <div className={styles.parentButtons}>
         <div className={styles.buttons}>
