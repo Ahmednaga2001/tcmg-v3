@@ -33,94 +33,63 @@ function FooterMobile() {
       <div className={styles.mainContent}>
         <div className={styles.bottomLinks}>
           <ul>
-            <span className={`${styles.boldLink} ${styles.space}`}>من نحن</span>
-            <Link href="about-us">تعرف علينا</Link>
-            <Link href="lawyers">فريق العمل</Link>
             <li className={styles.space}>
-              <li className={styles.boldLink}>خدماتنا</li>
-
+              <span className={`${styles.boldLink} ${styles.space}`}>من نحن</span>
+              <ul>
+                <li><Link href="about-us">تعرف علينا</Link></li>
+                <li><Link href="lawyers">فريق العمل</Link></li>
+              </ul>
+            </li>
+            <li className={styles.space}>
+              <span className={`${styles.boldLink} ${styles.space}`}>خدماتنا</span>
               <div className={styles.links}>
                 <div className={styles.rightLinks}>
                   <ul>
-                    <li>
-                      <Link href="legal-services">الخدمات القانونية</Link>
-                    </li>
-                    <li>
-                      <Link href="establishing-companies">تأسيس الشركات</Link>
-                    </li>
-                    <li>
-                      <Link href="practices">الممارسات</Link>
-                    </li>
-
-                    <li>
-                      <Link href="power-of-attorney">توكيل محامي</Link>
-                    </li>
+                    <li><Link href="legal-services">الخدمات القانونية</Link></li>
+                    <li><Link href="establishing-companies">تأسيس الشركات</Link></li>
+                    <li><Link href="practices">الممارسات</Link></li>
+                    <li><Link href="power-of-attorney">توكيل محامي</Link></li>
                   </ul>
                 </div>
                 <div className={styles.leftLinks}>
                   <ul>
-                    <li>
-                      <Link href="legal-advice">الاستشارات القانونية</Link>
-                    </li>
-                    <li>
-                      <Link href="corporate">أعمال الشركات</Link>
-                    </li>
-                    <li>
-                      <Link href="sectors">القطاعات</Link>
-                    </li>
-                    <li>
-                      <Link href="ask-a-lawyer">إسأل محامي</Link>
-                    </li>
+                    <li><Link href="legal-advice">الاستشارات القانونية</Link></li>
+                    <li><Link href="corporate">أعمال الشركات</Link></li>
+                    <li><Link href="sectors">القطاعات</Link></li>
+                    <li><Link href="ask-a-lawyer">إسأل محامي</Link></li>
                   </ul>
                 </div>
               </div>
             </li>
             <li className={styles.space}>
-              <span className={`${styles.boldLink} ${styles.space}`}>
-                إنضم إلينا
-              </span>
+              <span className={`${styles.boldLink} ${styles.space}`}>إنضم إلينا</span>
               <div className={styles.links}>
                 <div className={styles.rightLinks}>
                   <ul>
-                    <li>
-                      <Link href="join-us">إبدأ رحلتك معنا</Link>
-                    </li>
-                    <li>
-                      <Link href="careers">المحامين</Link>
-                    </li>
+                    <li><Link href="join-us">إبدأ رحلتك معنا</Link></li>
+                    <li><Link href="careers">المحامين</Link></li>
                   </ul>
                 </div>
                 <div className={styles.leftLinks}>
                   <ul>
-                    <li>
-                      <Link href="internship">المتدربين</Link>
-                    </li>
-                    <li>
-                      <Link href="protocol">العلاقات العامة</Link>
-                    </li>
+                    <li><Link href="internship">المتدربين</Link></li>
+                    <li><Link href="protocol">العلاقات العامة</Link></li>
                   </ul>
                 </div>
               </div>
             </li>
 
             <li className={`${styles.boldLink} ${styles.space}`}>اخبار ورؤي</li>
-            <li>
-              <Link href="article-display">المقالات</Link>
-            </li>
+            <li><Link href="article-display">المقالات</Link></li>
             <li className={`${styles.boldLink} ${styles.space}`}>تواصل معنا</li>
-            <li>
-              <Link href="offices">الفروع</Link>
-            </li>
+            <li><Link href="offices">الفروع</Link></li>
           </ul>
         </div>
 
         <div className={styles.social}>
           <span className={styles.boldLink}>تابعنا علي</span>
           <div className={styles.socialIcons}>
-            <Link
-              href="https://www.linkedin.com/company/tcmglawco"
-              target="_blank"
-            >
+            <Link href="https://www.linkedin.com/company/tcmglawco" target="_blank">
               <Image
                 src="assets/icons/linkedin.svg"
                 alt="LinkedIn Icon"
@@ -132,7 +101,7 @@ function FooterMobile() {
             <Link href="https://x.com/tcmglaw" target="_blank">
               <Image
                 src="assets/icons/twitter.svg"
-                alt="Twiter Icon"
+                alt="Twitter Icon"
                 width={25}
                 height={25}
                 quality={100}
@@ -141,16 +110,16 @@ function FooterMobile() {
             <Link href="https://youtube.com/@tcmglaw" target="_blank">
               <Image
                 src="assets/icons/youtube.svg"
-                quality={100}
-                alt="Youtube Icon"
+                alt="YouTube Icon"
                 width={25}
                 height={25}
+                quality={100}
               />
             </Link>
             <Link href="https://www.instagram.com/tcmglaw" target="_blank">
               <Image
-                src="assets/icons/instgram.svg"
-                alt="Instgram Icon"
+                src="assets/icons/instagram.svg"
+                alt="Instagram Icon"
                 width={25}
                 height={25}
                 quality={100}
