@@ -1,9 +1,18 @@
+import Image from 'next/image'
 import styles from './page.module.css'
 
 export default function DataCollection() {
   return (
     <div className={styles.container}>
+      <div className={styles.header}>
       <span className={styles.title}>المعلومات التي نجمعها منك عند زيارة موقع المجموعة التجارية والبحرية الإلكتروني</span>
+      <Image
+            src="/assets/icons/form/closeacc.svg"
+            width={24}
+            height={24}
+            alt= "Close icon"
+          />
+      </div>
       <ol>
         <li>لست مطالبا بتقديم أي معلومات إلى موقعنا ومع ذلك ، يمكنك اختيار القيام بذلك عن طريق ملء النماذج المتاحة في عدة أقسام من موقعنا الإلكتروني، بما في ذلك: الخدمات المقدمة والمحادثة المباشرة واسأل محامي والمهن والأحداث الخ.</li>
         <li>

@@ -18,8 +18,15 @@
 .container a {
     text-decoration: underline;
 }
-
-@media (max-width: 768px) {
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header img{
+    display: none;
+}
+@media (max-width: 900px) {
     .container{
         gap: 10px;
     }
@@ -31,14 +38,14 @@
         font-size: 16px;
         font-weight: 700;
         width: 100%;
-        position: relative;
+        /* position: relative; */
     }
-    .container .title::after{
+    /* .container .title::after{
         content: "↖";
         position: absolute;
         left: 0;
         top: 0;
-    }
+    } */
     .container ul li,
     .container p {
         font-size: 12px;
@@ -46,7 +53,11 @@
         padding: 0 10px;
         border-right: none;
     }
-    .container ul li::after {
+    /* .container ul li::after {
         content: none;
+    } */
+
+    .header img{
+        display: block;
     }
 }

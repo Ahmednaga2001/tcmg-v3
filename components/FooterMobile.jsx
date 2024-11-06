@@ -107,9 +107,7 @@ function FooterMobile() {
             <li>
               <Link href="article-display">المقالات</Link>
             </li>
-            <li className={`${styles.boldLink} ${styles.space}`}>
-            تواصل معنا         
-               </li>
+            <li className={`${styles.boldLink} ${styles.space}`}>تواصل معنا</li>
             <li>
               <Link href="offices">الفروع</Link>
             </li>
@@ -119,51 +117,54 @@ function FooterMobile() {
         <div className={styles.social}>
           <span className={styles.boldLink}>تابعنا علي</span>
           <div className={styles.socialIcons}>
-          <Link href="https://www.linkedin.com/company/tcmglawco" target="_blank">
-                <Image
-                  src="assets/icons/linkedin.svg"
-                  alt="LinkedIn Icon"
-                  width={25}
-                  height={25}
-                  quality={100}
-                />
-              </Link>
-              <Link href="https://x.com/tcmglaw" target="_blank">
-                <Image
-                  src="assets/icons/twitter.svg"
-                  alt="Twiter Icon"
-                  width={25}
-                  height={25}
-                  quality={100}
-                />
-              </Link>
-              <Link href="https://youtube.com/@tcmglaw" target="_blank">
-                <Image
-                  src="assets/icons/youtube.svg"
-                  quality={100}
-                  alt="Youtube Icon"
-                  width={25}
-                  height={25}
-                />
-              </Link>
-              <Link href="https://www.instagram.com/tcmglaw" target="_blank">
-                <Image
-                  src="assets/icons/instgram.svg"
-                  alt="Instgram Icon"
-                  width={25}
-                  height={25}
-                  quality={100}
-                />
-              </Link>
-              <Link href="https://m.facebook.com/@tcmglaw/" target="_blank">
-                <Image
-                  src="assets/icons/facebook.svg"
-                  alt="Facebook Icon"
-                  width={25}
-                  height={25}
-                  quality={100}
-                />
-              </Link>
+            <Link
+              href="https://www.linkedin.com/company/tcmglawco"
+              target="_blank"
+            >
+              <Image
+                src="assets/icons/linkedin.svg"
+                alt="LinkedIn Icon"
+                width={25}
+                height={25}
+                quality={100}
+              />
+            </Link>
+            <Link href="https://x.com/tcmglaw" target="_blank">
+              <Image
+                src="assets/icons/twitter.svg"
+                alt="Twiter Icon"
+                width={25}
+                height={25}
+                quality={100}
+              />
+            </Link>
+            <Link href="https://youtube.com/@tcmglaw" target="_blank">
+              <Image
+                src="assets/icons/youtube.svg"
+                quality={100}
+                alt="Youtube Icon"
+                width={25}
+                height={25}
+              />
+            </Link>
+            <Link href="https://www.instagram.com/tcmglaw" target="_blank">
+              <Image
+                src="assets/icons/instgram.svg"
+                alt="Instgram Icon"
+                width={25}
+                height={25}
+                quality={100}
+              />
+            </Link>
+            <Link href="https://m.facebook.com/@tcmglaw/" target="_blank">
+              <Image
+                src="assets/icons/facebook.svg"
+                alt="Facebook Icon"
+                width={25}
+                height={25}
+                quality={100}
+              />
+            </Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import {useState } from 'react';
 import styles from "./page.module.css";
 import SideBar from '../sideBar/SideBar';
 import DataCollection from '../dataCollection/DataCollection';
@@ -15,6 +15,7 @@ import Communication from '../Communication';
 import DataControl from '../DataControl';
 export default function PrivacyDetails() {
   const [activeItem, setActiveItem] = useState('dataCollection');
+
 
   const renderComponent = () => {
     switch (activeItem) {
