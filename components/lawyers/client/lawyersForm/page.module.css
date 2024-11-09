@@ -4,6 +4,10 @@
   row-gap: 20px;
   grid-template-columns: repeat(1, 1fr);
 }
+.l .Mob {
+  display: none; 
+}
+
 
 .customInput {
   width: 100%;
@@ -46,7 +50,9 @@
   gap: 20px;
   justify-content: center;
 }
-
+.mobClear{
+  display: none;
+}
 @media (min-width: 1191px) {
   .inputsSearchContainer {
     grid-template-columns: repeat(10, 1fr);
@@ -86,11 +92,64 @@
   .inputsSearchContainer {
     grid-template-columns: repeat(1, 1fr);
   }
+  .inputsSearchContainer .customInput {
+    grid-column: span 1; 
+  }
 
   .inputsSearchContainer .practices,
   .inputsSearchContainer .sectors,
-  .inputsSearchContainer .customInput,
+  .inputsSearchContainer .locations,
+  .inputsSearchContainer .cities,
   .inputsSearchContainer .search {
-    grid-column: span 1; /* Make sure elements do not span extra columns */
+    grid-column: span 1; 
   }
+  .inputsSearchContainer .locations {
+    grid-row: auto; 
+  }
+  .l .Mob{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .l .formContainer{
+    display: none;
+    border: 1px solid #ffffff89;
+    border-radius: 9px;
+    padding: 16px;
+  }
+  .l .formContainer.visible {
+    display: block; /* إظهار الفورم عند تفعيل الكلاس "visible" */
+  }
+  
+  .mobClear{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mobClear img{
+    cursor: pointer;
+  }
+  .inputsSearchContainer button{
+    width: 100%;
+  }
+}
+.showMoreButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.noResultsMessage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  font-weight: bold;
+  font-size: 20px;
 }

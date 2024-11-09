@@ -31,4 +31,7 @@
   .service a {
     font-size: 18px;
   }
+  .services{
+    gap: 20px;
+  }
 }

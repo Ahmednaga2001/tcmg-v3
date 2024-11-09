@@ -7,8 +7,8 @@ const page = () => {
   return (
     <div className={styles.lawyersPage}>
       <Hero
-        title={"المحامين"}
-        path={"/assets/images/lawyers/Hero Section - المحامين.jpg"}
+        title={"خبراؤنا"}
+        path={"/assets/images/lawyers/hero.png"}
         w = {256}
         h = {74}
       />

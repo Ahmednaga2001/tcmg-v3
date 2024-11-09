@@ -2,9 +2,10 @@
     display: flex;
     /* align-items: center; */
     gap: 40px;
-    background: linear-gradient(#1b2340, #0e152c);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 17px;
+    border-radius: 19px;
+    border: 1px solid rgba(157, 157, 157, 0.10);
+    background: #111A35;
+    
     height: 169px;
     
   }
@@ -41,12 +42,12 @@
 
   
   @media (max-width: 450px) {
-    .lawyerCard {
+    /* .lawyerCard {
      flex-direction: column;
      height: auto;
      align-items: center;
      gap: 10px;
      padding: 10px;
-    }
+    } */
     
   }

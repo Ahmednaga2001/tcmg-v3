@@ -13,8 +13,8 @@ const LawyersCard = ({title , category , imgPath}) => {
       </div>
       <div className={styles.cardContent}>
         <span className={styles.lawyerName}>{title}</span>
-        <span className={styles.lawyerCategory}>{category}</span>
-        <span className={styles.lawyerPhone}>
+        <span className={styles.lawyerCategory}>{category.toString()}</span>
+        {/* <span className={styles.lawyerPhone}>
           +201276299998
           <Image
             src={"/assets/icons/form/phone frame.png"}
@@ -31,7 +31,7 @@ const LawyersCard = ({title , category , imgPath}) => {
             height={19}
             alt="Email Icon"
           />
-        </a>
+        </a> */}
         <span className={styles.lawyerDownloadCv}>
           <Image
             src={"/assets/icons/form/downloadedicon.png"}
