@@ -232,7 +232,7 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                 <span className={styles.boldTitle}>{title}</span>
                 <div className={styles.prev} onClick={handleBackClick}>
                   <span>الرجوع</span>
-                  <div>
+                  <div className={styles.backIcon}>
                     <Image
                       src="/assets/icons/back.svg"
                       width={18}

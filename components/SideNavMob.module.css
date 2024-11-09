@@ -152,6 +152,9 @@ padding-top: 20px;
     cursor: pointer;
 
   }
+  .prev .backIcon{
+    align-self: flex-end;
+  }
   .boldTitle{
     display: block;
     font-weight: bold;
