@@ -6,12 +6,10 @@ import LawyersForm from "@/components/lawyers/client/lawyersForm/LawyersForm";
 const page = () => {
   return (
     <div className={styles.lawyersPage}>
-      <Hero
-        title={"خبراؤنا"}
-        path={"/assets/images/lawyers/hero.png"}
-        w = {256}
-        h = {74}
-      />
+   
+         <section className={styles.hero}>
+        <h1>خبراؤنا</h1>
+      </section>
      <LawyersForm/>
     </div>
   );

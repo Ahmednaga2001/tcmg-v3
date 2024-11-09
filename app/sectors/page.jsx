@@ -1,6 +1,6 @@
-import Hero from '@/components/shared/hero/Hero'
-import Services from '@/components/shared/services/Services'
-import styles from './page.module.css'
+import Hero from "@/components/shared/hero/Hero";
+import Services from "@/components/shared/services/Services";
+import styles from "./page.module.css";
 // const data = [
 //   "العقارات", "الخدمات المالية","الرعاية الصحية"," الفنادق والترفيه","التجزئة والمستهلك","التصنيع","النقل والشحن البحري",
 //   "النقل","السيارات","التأمين","التعليم","وسائل الإعلام","الطاقة","الاتصالات"
@@ -15,19 +15,19 @@ const data = [
   "الرعاية الصحية",
   "التجزئة والمستهلك",
   "التقاضي",
-  "جميع القطاعات"
-]
-export const metadata={
-  title : "Sectors",
-}
+];
+export const metadata = {
+  title: "Sectors",
+};
 const Sectors = () => {
-  
   return (
-    <section className={styles.sectors}>
-      <Hero title = {"القطاعات"} path={"/assets/images/sectors/hero.jpg"}/>
-      <Services data = {data}/>
-          </section>
-  )
-}
+    <div className={styles.sectors}>
+      <section className={styles.hero}>
+        <h1>القطاعات</h1>
+      </section>{" "}
+      <Services data={data} />
+    </div>
+  );
+};
 
-export default Sectors
+export default Sectors;

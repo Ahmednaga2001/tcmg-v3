@@ -1,272 +1,246 @@
 .sideNav {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 100%;
-    background-color: var(--main);
-    color: var(--main);
-    z-index: 9999;
- display: none;
- height: 100%;
- overflow-y: auto; /* Add scrolling if content exceeds height */
-
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background-color: var(--main);
+  color: var(--main);
+  z-index: 9999;
+  display: none;
+  height: 100%;
+  overflow-y: auto; /* Add scrolling if content exceeds height */
 }
 
-.layout{
-    display: flex;
-    gap: 40px;
-    
+.layout {
+  display: flex;
+  gap: 40px;
 }
-.side{
-    width: 25%;
-position: relative;
-padding: 30px;
-
- 
-
+.side {
+  width: 25%;
+  position: relative;
+  padding: 30px;
 }
 .side::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url(/assets/images/homePage/siderightpattern.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    opacity: 0.2; /* 10% opacity */
-    z-index: -1; /* Send the overlay behind content */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/assets/images/homePage/siderightpattern.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2; /* 10% opacity */
+  z-index: -1; /* Send the overlay behind content */
 }
-.logo{
-    display: flex;
-    justify-content: center;
+.logo {
+  display: flex;
+  justify-content: center;
 }
-.sideLinks{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 50px;
+.sideLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 50px;
 }
 
-.sideLinks span{
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    justify-content: space-between;
-    color: var(--font);
-    cursor: pointer;
+.sideLinks span {
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  justify-content: space-between;
+  color: var(--font);
+  cursor: pointer;
 }
-.sideLinks span.active{
-    background-color: var(--font);
-    color: #000;
+.sideLinks span.active {
+  background-color: var(--font);
+  color: #000;
 }
-.content{
-    width: 75%;
-    position: relative;
+.content {
+  width: 75%;
+  position: relative;
 }
-.content .header{
-    padding: 30px;
+.content .header {
+  padding: 30px;
 }
 .content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url(/assets/images/homePage/sideleftpattern.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    opacity: 0.2; /* 10% opacity */
-    z-index: -1; /* Send the overlay behind content */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/assets/images/homePage/sideleftpattern.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2; /* 10% opacity */
+  z-index: -1; /* Send the overlay behind content */
 }
-.top{
-    display: flex;
-    justify-content: space-between;
-    gap: 100px;
-
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
 }
-.inp{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #ffffff4f;
-    border-radius: 12px;
-    padding: 10px 24px;
-    width: 100%;
+.inp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ffffff4f;
+  border-radius: 12px;
+  padding: 10px 24px;
+  width: 100%;
 }
-.inp input{
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #fff;
-    width: 100%;
-
+.inp input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 100%;
 }
-.inp input::placeholder{
-    color: #fff;
+.inp input::placeholder {
+  color: #fff;
 }
-.mainContent{
-    color: var(--font);
-    display: flex;
-    padding-top: 50px;
+.mainContent {
+  color: var(--font);
+  display: flex;
+  padding-top: 50px;
 }
-.mainContent h2{
-    font-size: 35px;
+.mainContent h2 {
+  font-size: 35px;
 }
-.card{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.mainContent .links{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-
+.mainContent .links {
+  display: flex;
+  flex-direction: column;
 }
 .itemLink {
-    border-bottom: 1px solid #ffffff4f;
-    padding-bottom: 10px;
+  border-bottom: 1px solid #ffffff4f;
+  padding: 10px 0;
+  font-size: 24px;
+}
+.prLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ffffff4f;
+  font-size: 24px;
+  cursor: pointer;
+  width: 100%;
+}
+.card {
+  width: 100%;
+}
+.practiceLinkContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease;
+  gap: 20px;
+}
+.branchesOptions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.practiceLinkContainer a {
+  padding-top: 10px;
+}
+.practiceLinkContainer.show {
+  max-height: 500px;
+}
+
+.bottom {
+  color: var(--font);
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.login {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 24px;
+}
+.reg {
+  border-radius: 11px;
+  border: 1px solid #ffffff6d;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  line-height: 1.4;
+}
+.reg span {
+  font-weight: bold;
+}
+.reg a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  justify-content: center;
+  padding: 12px 8px;
+}
+
+.toggle {
+  cursor: pointer;
+}
+
+@media (max-width: 1191px) {
+  .mainContent h2 {
     font-size: 24px;
-
-}
-.prLink{
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #ffffff4f;
-    padding-bottom: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    width: 100%;
-}
-.card{
-    width: 100%;
-}
-.practiceLinkContainer{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 1s ease;
-    gap: 20px;
-}
-.branchesOptions{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 20px;
-}
-  .practiceLinkContainer a{
-    padding-top: 10px;
   }
-  .practiceLinkContainer.show {
-    max-height: 500px; 
-
+  .itemLink,
+  .prLink,
+  .sideLinks span {
+    font-size: 20px;
   }
-  
- 
-
-.bottom{
-    color: var(--font);
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  .side {
+    width: 35%;
+  }
+  .content {
+    width: 65%;
+  }
 }
-.login{
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 12px 24px;
-
-
-}
-.reg{
-    border-radius: 11px;
-    border: 1px solid #ffffff6d;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    line-height: 1.4;
-}
-.reg span{
-    font-weight: bold;
-}
-.reg a{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-radius: 6px;
-    background-color: #fff;
-    color: #000;
-    text-align: center;
-    justify-content: center;
-    padding: 12px 8px;
+@media (max-width: 900px) {
+  .reg {
+    padding: 20px 10px;
+  }
+  .reg a {
+    font-size: 14px;
+    letter-spacing: 0.2px;
+  }
+  .reg img {
+    width: 15px;
+    height: 15px;
+  }
 }
 
-
-
-
-.toggle{
-    cursor: pointer;
+@media (max-width: 768px) {
+  .top {
+    gap: 20px;
+  }
 }
 
-
-
-
-
-
-@media (max-width : 1191px) {
-    .mainContent h2{
-        font-size: 24px;
-    }
-    .itemLink , .prLink , .sideLinks span{
-        font-size: 20px;
-    }
-    .side{
-        width: 35%;
-    }
-    .content{
-        width: 65%;
-    }
+@media (min-width: 600px) {
+  .sideNav {
+    display: block;
+  }
 }
-@media (max-width : 900px) {
-    .reg{
-        padding: 20px 10px;
-    }
-    .reg a{
-        font-size: 14px;
-        letter-spacing: .2px;
-    }
-    .reg img{
-        width: 15px;
-        height: 15px;
-    }
-    
-}
-
-@media (max-width : 768px) {
-    .top{
-        gap: 20px;
-    }
-  
-    
-}
-
-
- @media (min-width : 600px) {
-    .sideNav{
-        display: block;
-    }
-    
- }

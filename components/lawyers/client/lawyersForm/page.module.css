@@ -44,11 +44,19 @@
   cursor: pointer;
 }
 .display {
-  padding-top: 50px;
+  /* padding-top: 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  column-gap: 80px;
+  row-gap: 20px;
+
+  justify-content: center; */
+  display: flex;
   justify-content: center;
+  column-gap: 80px;
+  row-gap: 20px;
+  padding-top: 50px;
+  flex-wrap: wrap;
 }
 .mobClear{
   display: none;

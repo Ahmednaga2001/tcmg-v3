@@ -1,7 +1,26 @@
 .subPage section{
     padding: 80px;
 }
-
+.hero{
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/assets/images/sub/subhero.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 100px;
+  background-position: center center;
+}
+.hero h1{
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .hero{
+      margin-top: 95px;
+  }
+}
 @media (max-width : 1191px) 
 {
   .subPage h2{

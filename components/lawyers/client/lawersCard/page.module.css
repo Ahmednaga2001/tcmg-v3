@@ -5,16 +5,29 @@
     border-radius: 19px;
     border: 1px solid rgba(157, 157, 157, 0.10);
     background: #111A35;
-    
+    width: 23rem;
     height: 169px;
+    position: relative;
     
   }
-
-  
+.cardImg{
+  position: absolute;
+ right: -15%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+  .cardImg img{
+    border: 1px solid #fff;
+    border-radius: 19px;
+  }
    .cardContent {
+    padding-right: 15%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 2px;
     align-items: center;
     text-align: center;
@@ -38,16 +51,48 @@
     font-size: 14px;
     color: gray;
   }
-
-
+@media (max-width: 1191px) {
+    .lawyerCard {
+      width: 25rem;
+    }
   
+}
+@media (max-width: 1048px) {
+    .lawyerCard {
+      width: 20rem;
+    }
+  
+}
+@media (max-width: 888px) {
+    .lawyerCard {
+      width: 80%;
+    }
+  
+}
   @media (max-width: 450px) {
-    /* .lawyerCard {
-     flex-direction: column;
-     height: auto;
-     align-items: center;
-     gap: 10px;
-     padding: 10px;
-    } */
-    
+    .lawyerCard {
+      width: 100%;   
+      height: auto;  
+    }
+  
+    .cardImg {
+      position: relative;  
+      top: 0;
+      left: 0;
+      transform: none;
+      right: 0;
+      bottom: 0;
+    }
+  
+    .cardImg img {
+      height: 100%; 
+      width: 100px;
+      object-fit: cover;
+    }
+  
+    .cardContent {
+      padding: 0 20px;  
+      width: 100%;  
+    }
   }
+  

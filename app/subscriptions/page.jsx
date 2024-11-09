@@ -5,7 +5,9 @@ import styles from "./page.module.css"
 export default function Subscriptions() {
   return (
     <div className={styles.subPage}>
-        <Hero path={"/assets/images/sub/subhero.png"} title={"الإشتراك"}/>
+           <section className={styles.hero}>
+        <h1>الإشتراك</h1>
+      </section>
         <SubForm/>
     </div>
   )

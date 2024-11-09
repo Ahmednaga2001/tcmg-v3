@@ -151,11 +151,12 @@ function SideNav({ isOpen, toggleSideNav }) {
           transition={{ duration: 0.5 }}
         >
           <div className={styles.layout}>
-            <motion.div className={styles.side}
-             initial={{ opacity: 0 }}
-             animate={{ opacity: 1 }}
-             exit={{ opacity: 0 }}
-             transition={{ duration: 0.5, delay: 0.4 }} 
+            <motion.div
+              className={styles.side}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
               <Link href="/" onClick={toggleSideNav} className={styles.logo}>
                 <Image
@@ -184,23 +185,6 @@ function SideNav({ isOpen, toggleSideNav }) {
                   />
                 </span>
                 <span
-                  className={activeItem === 1 ? styles.active : ""}
-                  onClick={() => handleItemClick(1)}
-                >
-                  إنضم الينا
-                  <Image
-                    quality={100}
-                    src={
-                      activeItem === 1
-                        ? "/assets/icons/form/arrow-left-black.png"
-                        : "/assets/icons/form/arrow-left-white.png"
-                    }
-                    width={24}
-                    height={24}
-                    alt="arrow left icon"
-                  />
-                </span>
-                <span
                   className={activeItem === 2 ? styles.active : ""}
                   onClick={() => handleItemClick(2)}
                 >
@@ -217,6 +201,24 @@ function SideNav({ isOpen, toggleSideNav }) {
                     alt="arrow left icon"
                   />
                 </span>
+                <span
+                  className={activeItem === 1 ? styles.active : ""}
+                  onClick={() => handleItemClick(1)}
+                >
+                  إنضم الينا
+                  <Image
+                    quality={100}
+                    src={
+                      activeItem === 1
+                        ? "/assets/icons/form/arrow-left-black.png"
+                        : "/assets/icons/form/arrow-left-white.png"
+                    }
+                    width={24}
+                    height={24}
+                    alt="arrow left icon"
+                  />
+                </span>
+
                 <span
                   className={activeItem === 3 ? styles.active : ""}
                   onClick={() => handleItemClick(3)}
@@ -280,11 +282,13 @@ function SideNav({ isOpen, toggleSideNav }) {
                 </div>
               </div>
             </motion.div>
-            <motion.div className={styles.content}     initial={{ opacity: 0 }}
+            <motion.div
+              className={styles.content}
+              initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }} 
-              >
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               <div className={styles.header}>
                 <div className={styles.top}>
                   <div className={styles.inp}>
@@ -313,20 +317,22 @@ function SideNav({ isOpen, toggleSideNav }) {
                   aboutUs.map((el, index) => (
                     <div key={index} className={styles.card}>
                       <h2>{el.title}</h2>
-                      <Link
-                        onClick={toggleSideNav}
-                        className={styles.itemLink}
-                        href={el.l1.ref}
-                      >
-                        {el.l1.title}
-                      </Link>
-                      <Link
-                        onClick={toggleSideNav}
-                        className={styles.itemLink}
-                        href={el.l2.ref}
-                      >
-                        {el.l2.title}
-                      </Link>
+                      <div className={styles.links}>
+                        <Link
+                          onClick={toggleSideNav}
+                          className={styles.itemLink}
+                          href={el.l1.ref}
+                        >
+                          {el.l1.title}
+                        </Link>
+                        <Link
+                          onClick={toggleSideNav}
+                          className={styles.itemLink}
+                          href={el.l2.ref}
+                        >
+                          {el.l2.title}
+                        </Link>
+                      </div>
                     </div>
                   ))}
 
@@ -334,38 +340,40 @@ function SideNav({ isOpen, toggleSideNav }) {
                   joinUs.map((el, index) => (
                     <div key={index} className={styles.card}>
                       <h2>
-                        {el.title.slice(0,50)}
-                        <br/>
+                        {el.title.slice(0, 50)}
+                        <br />
                         {el.title.slice(50)}
-                        </h2>
-                      <Link
-                        onClick={toggleSideNav}
-                        className={styles.itemLink}
-                        href={el.l0.ref}
-                      >
-                        {el.l0.t}
-                      </Link>
-                      <Link
-                        onClick={toggleSideNav}
-                        className={styles.itemLink}
-                        href={el.l1.ref}
-                      >
-                        {el.l1.t}
-                      </Link>
-                      <Link
-                        onClick={toggleSideNav}
-                        className={styles.itemLink}
-                        href={el.l2.ref}
-                      >
-                        {el.l2.t}
-                      </Link>
-                      <Link
-                        onClick={toggleSideNav}
-                        className={styles.itemLink}
-                        href={el.l3.ref}
-                      >
-                        {el.l3.t}
-                      </Link>
+                      </h2>
+                      <div className={styles.links}>
+                        <Link
+                          onClick={toggleSideNav}
+                          className={styles.itemLink}
+                          href={el.l0.ref}
+                        >
+                          {el.l0.t}
+                        </Link>
+                        <Link
+                          onClick={toggleSideNav}
+                          className={styles.itemLink}
+                          href={el.l1.ref}
+                        >
+                          {el.l1.t}
+                        </Link>
+                        <Link
+                          onClick={toggleSideNav}
+                          className={styles.itemLink}
+                          href={el.l2.ref}
+                        >
+                          {el.l2.t}
+                        </Link>
+                        <Link
+                          onClick={toggleSideNav}
+                          className={styles.itemLink}
+                          href={el.l3.ref}
+                        >
+                          {el.l3.t}
+                        </Link>
+                      </div>
                     </div>
                   ))}
 
@@ -496,13 +504,15 @@ function SideNav({ isOpen, toggleSideNav }) {
                           {el.title.slice(60)}
                         </h2>
                       </h2>
-                      <Link
-                        onClick={toggleSideNav}
-                        className={styles.itemLink}
-                        href={el.l1.ref}
-                      >
-                        {el.l1.title}
-                      </Link>
+                      <div className={styles.links}>
+                        <Link
+                          onClick={toggleSideNav}
+                          className={styles.itemLink}
+                          href={el.l1.ref}
+                        >
+                          {el.l1.title}
+                        </Link>
+                      </div>
                     </div>
                   ))}
 

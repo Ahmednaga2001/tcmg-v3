@@ -8,12 +8,12 @@ const LawyersCard = ({title , category , imgPath}) => {
           src={imgPath}
           alt="title"
           width={136}
-          height={169}
+          height={143}
         />
       </div>
       <div className={styles.cardContent}>
         <span className={styles.lawyerName}>{title}</span>
-        <span className={styles.lawyerCategory}>{category.toString()}</span>
+        <span className={styles.lawyerCategory}>{category}</span>
         {/* <span className={styles.lawyerPhone}>
           +201276299998
           <Image

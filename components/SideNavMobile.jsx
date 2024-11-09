@@ -190,14 +190,6 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                   height={24}
                 />
               </span>
-              <span onClick={() => handleItemClick(2, "إنضم الينا")}>
-                إنضم الينا
-                <Image
-                  src="/assets/icons/form/arrow-left-white.png"
-                  width={24}
-                  height={24}
-                />
-              </span>
               <span onClick={() => handleItemClick(1, "خدماتنا")}>
                 خدماتنا
                 <Image
@@ -206,6 +198,15 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                   height={24}
                 />
               </span>
+              <span onClick={() => handleItemClick(2, "إنضم الينا")}>
+                إنضم الينا
+                <Image
+                  src="/assets/icons/form/arrow-left-white.png"
+                  width={24}
+                  height={24}
+                />
+              </span>
+
               <span onClick={() => handleItemClick(4, "أخبار وروي")}>
                 أخبار وروي
                 <Image
@@ -252,7 +253,8 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3 }}
               >
-                <Link
+              <div className={styles.links}>
+              <Link
                   onClick={toggleSideNav}
                   className={styles.itemLink}
                   href={aboutUs[0].l1.ref}
@@ -266,6 +268,7 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                 >
                   {aboutUs[0].l2.title}
                 </Link>
+              </div>
               </motion.div>
             )}
 
@@ -278,7 +281,7 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                 transition={{ duration: 0.3 }}
               >
                 {joinUs.map((el, index) => (
-                  <div key={index} className={styles.card}>
+                  <div key={index} className={styles.links}>
                     <Link
                       onClick={toggleSideNav}
                       className={styles.itemLink}
@@ -322,7 +325,8 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  <Link
+                <div className={styles.links}>
+                <Link
                     onClick={toggleSideNav}
                     className={styles.itemLink}
                     href={el.l0.ref}
@@ -423,6 +427,8 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                   >
                     {el.l7.t}
                   </Link>
+
+                </div>
                 </motion.div>
               ))}
 
@@ -481,13 +487,15 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  <Link
+                 <div className={styles.links}>
+                 <Link
                     onClick={toggleSideNav}
                     className={styles.itemLink}
                     href={el.l1.ref}
                   >
                     {el.l1.title}
                   </Link>
+                 </div>
                 </motion.div>
               ))}
           </div>

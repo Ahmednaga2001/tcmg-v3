@@ -88,7 +88,8 @@
 }
 
 
-
+.links{
+}
 
 .toggle{
     cursor: pointer;
@@ -108,12 +109,11 @@ padding-top: 20px;
 .mainContent .links{
     display: flex;
     flex-direction: column;
-    gap: 5px;
 
 }
 .itemLink {
     border-bottom: 1px solid #ffffff4f;
-    padding-bottom: 10px;
+    padding: 10px 0;
     font-size: 24px;
 
 }
@@ -121,7 +121,7 @@ padding-top: 20px;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #ffffff4f;
-    padding-bottom: 10px;
+    padding: 10px 0;
     font-size: 24px;
     cursor: pointer;
 }
