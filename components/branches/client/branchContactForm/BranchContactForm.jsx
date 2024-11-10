@@ -10,6 +10,8 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useFormik } from "formik";
 import { TailSpin } from "react-loader-spinner";
+import { notifyError, notifySuccess } from "@/components/notify/Notify";
+import Api from "@/components/config/Api";
 const BranchContactForm = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [success, setsuccess] = useState(null);
@@ -30,14 +32,20 @@ const BranchContactForm = () => {
       message: Yup.string()
         .min(20, "يجب أن يكون على الأقل 20 حرفًا")
         .required("مطلوب"),
-        first_name: Yup.string()
+      first_name: Yup.string()
         .max(10, "يجب أن يكون 10 أحرف أو أقل")
         .required("مطلوب")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
+        .matches(
+          /^[a-zA-Z\u0600-\u06FF\s]*$/,
+          "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+        ),
       last_name: Yup.string()
         .max(10, "يجب أن يكون 10 أحرف أو أقل")
         .required("مطلوب")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
+        .matches(
+          /^[a-zA-Z\u0600-\u06FF\s]*$/,
+          "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+        ),
       email: Yup.string()
         .matches(
           /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -45,10 +53,7 @@ const BranchContactForm = () => {
         )
         .required("مطلوب"),
       phone: Yup.string()
-        .matches(
-          /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
-          "رقم الهاتف غير صالح"
-        )
+        .matches(/^[0-9]{11}$/, "رقم الهاتف يجب أن يكون مكونًا من 11 رقمًا فقط")
         .required("مطلوب"),
       clientType: Yup.string().required("مطلوب"),
 
@@ -58,33 +63,25 @@ const BranchContactForm = () => {
     }),
     validateOnBlur: true,
     validateOnChange: true,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       setisloading(true);
+      try {
+        const response = await Api.post("/contact-us", values);
 
-      axios
-        .post("https://tcmg-alpha.vercel.app/contact-us", values)
-        .then((res) => {
-          setisloading(false);
+        setisloading(false);
+        notifySuccess("تم الارسال بنجاح");
+        contact_us_form.resetForm();
+      } catch (error) {
 
-          setsuccess(res.data.status);
-          setTimeout(() => {
-            setsuccess(null);
-          }, 3000);
-        })
-        .catch((err) => {
-          setisloading(false);
-
-          // console.log(err.response?.data?.error[0]?.msg);
-          seterror(err.response?.data?.error[0]?.msg);
-          setTimeout(() => {
-            seterror(null);
-          }, 3000);
-        });
+        setisloading(false);
+        const errorMsg = error?.response?.data?.error?.[0]?.msg || "حدث خطأ ما";
+        seterror(errorMsg);
+        notifyError(errorMsg);
+      }
     },
   });
 
   const options = [{ value: "أفراد" }, { value: "مؤسسات وشركات" }];
-  // const [selectedOption, setSelectedOption] = useState(null);
   return (
     <section className={styles.contactForm}>
       <div className={styles.formPage}>
@@ -236,8 +233,8 @@ const BranchContactForm = () => {
             <Button text="إرسال استمارة التواصل" />
           )}
         </form>
-        <p className="err">{error}</p>
-        <p className="success">{success}</p>
+        {/* <p className="err">{error}</p>
+        <p className="success">{success}</p> */}
       </div>
     </section>
   );

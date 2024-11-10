@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SideNav from "@/components/SideNav";
 import FooterMobile from "@/components/FooterMobile";
+import Providers from "./Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,11 +17,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
       <SpeedInsights />
       <body className={inter.className}>
         <Nav />
         <SideNav />
-        <main>{children}</main>
+        <main>
+<Providers>
+
+          {children}
+</Providers>
+
+          </main>
         <Footer />
         <FooterMobile />
       </body>

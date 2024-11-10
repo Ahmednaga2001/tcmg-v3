@@ -1,5 +1,7 @@
 "use client";
 import styles from "@/components/ask-attorny/ask-attrony.module.css";
+import Api from "@/components/config/Api";
+import { notifyError, notifySuccess } from "@/components/notify/Notify";
 import Button from "@/components/ui/Button";
 // import styles from "./page.module.css";
 
@@ -7,7 +9,7 @@ import CheckBox from "@/components/ui/CheckBox";
 import Input from "@/components/ui/Input";
 import SelectComponent from "@/components/ui/selectComponent/SelectComponent";
 import axios from "axios";
-import { useFormik } from "formik";
+import { useFormik} from "formik";
 import Image from "next/image";
 import { useState } from "react";
 import { TailSpin } from "react-loader-spinner";
@@ -65,22 +67,28 @@ const AskLawyerForm = () => {
       first_name: Yup.string()
       .max(10, "يجب أن يكون 10 أحرف أو أقل")
       .required("مطلوب")
-      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "اسم غير صالح"),
+      .matches(
+        /^[a-zA-Z\u0600-\u06FF\s]*$/,
+        "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+      ),
     last_name: Yup.string()
       .max(10, "يجب أن يكون 10 أحرف أو أقل")
       .required("مطلوب")
-      .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "اسم غير صالح"),
-    email: Yup.string()
+      .matches(
+        /^[a-zA-Z\u0600-\u06FF\s]*$/,
+        "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+      ),  
+        email: Yup.string()
       .matches(
         /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
         "يرجى إدخال بريد إلكتروني صالح"
       )
       .required("مطلوب"),
     phone: Yup.string()
-      .matches(
-        /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
-        "رقم الهاتف غير صالح"
-      )
+    .matches(
+      /^[0-9]{11}$/,
+      "رقم الهاتف يجب أن يكون مكونًا من 11 رقمًا فقط"
+    )
       .required("مطلوب"),
       question: Yup.string()
       .required("مطلوب")
@@ -98,29 +106,23 @@ const AskLawyerForm = () => {
     }),
     validateOnBlur: true, // This ensures validation on blur
     validateOnChange: true,
-    onSubmit: (values) => {
-      setisloading(true);
-      // alert(JSON.stringify(values, null, 2));
-      axios
-        .post("https://tcmg-alpha.vercel.app/ask-attorney", values)
-        .then((res) => {
-          console.log("say", res.data.status);
-          setsuccess(res.data.status);
-          setisloading(false);
-          setTimeout(() => {
-            setsuccess(null);
-          }, 3000);
-        })
-        .catch((err) => {
-          console.log(err);
-          setisloading(false);
-          seterror("some thing went wrong");
-          setTimeout(() => {
-            seterror(null);
-          }, 3000);
-        });
-      console.log(values);
-      console.log("helloo");
+    onSubmit: async (values) => {
+      setisloading(true); 
+      try {
+        const response = await Api.post("/ask-attorney", values); 
+        console.log(response);
+        
+        setisloading(false); 
+        notifySuccess("تم الارسال بنجاح"); 
+        ask_lawyer_form.resetForm();
+      } catch (error) {
+        console.log(error);
+        
+        setisloading(false); 
+        const errorMsg = error?.response?.data?.error?.[0]?.msg || "حدث خطأ ما";
+        seterror(errorMsg);
+        notifyError(errorMsg); 
+      }
     },
   });
 
@@ -307,7 +309,7 @@ const AskLawyerForm = () => {
             <Button text="ارسال" />
           )}
         </form>
-        <p className="success">{success}</p>
+        {/* <p className="success">{success}</p> */}
       </div>
     </section>
   );

@@ -527,3 +527,8 @@ a {
  }
   
 }
+
+.toast_Success{
+  background-color: green !important;
+  color: white !important;
+}

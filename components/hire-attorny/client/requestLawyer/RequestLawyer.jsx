@@ -9,6 +9,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { Oval, TailSpin } from "react-loader-spinner";
+import Api from "@/components/config/Api";
+import { notifyError, notifySuccess } from "@/components/notify/Notify";
 const officeOptions = [
   {
     value: "القاهرة",
@@ -50,26 +52,28 @@ const RequestLawyer = () => {
       f_name: Yup.string()
         .max(10, "يجب أن يكون 10 أحرف أو أقل")
         .required("مطلوب")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "الاسم غير صالح "),
-      l_name: Yup.string()
+        .matches(
+          /^[a-zA-Z\u0600-\u06FF\s]*$/,
+          "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+        ),      l_name: Yup.string()
         .max(10, "يجب أن يكون 10 أحرف أو أقل")
         .required("مطلوب")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "الاسم غير صالح"),
-      email: Yup.string()
+        .matches(
+          /^[a-zA-Z\u0600-\u06FF\s]*$/,
+          "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+        ),      email: Yup.string()
         .matches(
           /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
           "الرجاء إدخال بريد إلكتروني صالح"
         )
         .required("مطلوب"),
       phone: Yup.string()
-        .matches(
-          /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
-          "رقم الهاتف غير صالح"
-        )
+      .matches(/^[0-9]{11}$/, "رقم الهاتف يجب أن يكون مكونًا من 11 رقمًا فقط")
+
         .required("مطلوب"),
       lawerSpecialization: Yup.string()
-        .required("مطلوب")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "معاق رئيسي "),
+        .required("مطلوب"),
+        // .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "معاق رئيسي "),
       legalCase: Yup.string()
         .min(20, "يجب أن يكون على الأقل 20 حرفًا")
         .required("مطلوب"),
@@ -81,30 +85,21 @@ const RequestLawyer = () => {
     }),
     validateOnBlur: true, // This ensures validation on blur
     validateOnChange: true,
-    onSubmit: (values) => {
-      setisloading(true); // alert(JSON.stringify(values, null, 2));
-      axios
-        .post("https://tcmg-alpha.vercel.app/hire-lawer", values)
-        .then((res) => {
-          console.log("hello");
+    onSubmit: async (values) => {
+      setisloading(true);
+      try {
+        const response = await Api.post("/hire-lawer", values);
 
-          console.log("say", res.data.message);
-          setisloading(false);
-          setsuccess(res.data.message);
-          setTimeout(() => {
-            setsuccess(null);
-          }, 3000);
-        })
-        .catch((err) => {
-          console.log(err);
-          setisloading(false);
+        setisloading(false);
+        notifySuccess("تم الارسال بنجاح");
+        formik.resetForm();
+      } catch (error) {
 
-          seterror("some thing went wrong");
-          setTimeout(() => {
-            seterror(null);
-          }, 3000);
-        });
-      console.log(values);
+        setisloading(false);
+        const errorMsg = error?.response?.data?.error?.[0]?.msg || "حدث خطأ ما";
+        seterror(errorMsg);
+        notifyError(errorMsg);
+      }
     },
   });
   return (
@@ -280,8 +275,8 @@ const RequestLawyer = () => {
             <Button text="ارسال" />
           )}
         </form>
-        <p className="success">{success}</p>
-        <p className="err">{error}</p>
+        {/* <p className="success">{success}</p>
+        <p className="err">{error}</p> */}
       </div>
     </section>
   );
