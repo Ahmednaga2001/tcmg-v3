@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import SideNav from "@/components/SideNav";
 import FooterMobile from "@/components/FooterMobile";
 import Providers from "./Providers";
+import Cookies from "@/components/cookies/Cookies";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,18 +18,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
       <SpeedInsights />
       <body className={inter.className}>
         <Nav />
         <SideNav />
         <main>
-<Providers>
-
-          {children}
-</Providers>
-
-          </main>
+          <Providers>{children}</Providers>
+          <Cookies/>
+        </main>
         <Footer />
         <FooterMobile />
       </body>
