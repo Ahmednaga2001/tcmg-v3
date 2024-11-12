@@ -10,6 +10,8 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useState } from "react";
 import { TailSpin } from "react-loader-spinner";
+import Api from "@/components/config/Api";
+import { notifyError, notifySuccess } from "@/components/notify/Notify";
 
 const InternGraduationForm = () => {
   const [cvFile, setCvFile] = useState(null);
@@ -37,11 +39,17 @@ const InternGraduationForm = () => {
       first_name: Yup.string()
         .max(10, "يجب أن يكون 10 أحرف أو أقل")
         .required("مطلوب")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "اسم غير صالح"),
+        .matches(
+          /^[a-zA-Z\u0600-\u06FF\s]*$/,
+          "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+        ),
       last_name: Yup.string()
         .max(10, "يجب أن يكون 10 أحرف أو أقل")
         .required("مطلوب")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "اسم غير صالح"),
+        .matches(
+          /^[a-zA-Z\u0600-\u06FF\s]*$/,
+          "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+        ),
       email: Yup.string()
         .matches(
           /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -49,10 +57,8 @@ const InternGraduationForm = () => {
         )
         .required("مطلوب"),
       phone: Yup.string()
-        .matches(
-          /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
-          "رقم الهاتف غير صالح"
-        )
+        .matches(/^[0-9]{11}$/, "رقم الهاتف يجب أن يكون مكونًا من 11 رقمًا فقط")
+
         .required("مطلوب"),
       address: Yup.string().required("مطلوب"),
       office: Yup.string().required("مطلوب"),
@@ -75,7 +81,7 @@ const InternGraduationForm = () => {
               value.type === "application/msword")
         ),
     }),
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       setisloading(true);
 
       const formData = new FormData();
@@ -89,24 +95,22 @@ const InternGraduationForm = () => {
       formData.append("email", values.email);
       formData.append("agreeToPrivacy", values.agreeToPrivacy);
 
-      axios
-        .post("https://tcmg-alpha.vercel.app/internship", formData, {
+      try {
+        const response = await Api.post("/internship", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        })
-        .then((res) => {
-          setisloading(false);
-
-          // console.log(res.data);
-          setSuccess(res.data.status);
-          setTimeout(() => setSuccess(null), 3000);
-        })
-        .catch((err) => {
-          setisloading(false);
-          setError(err.response?.data?.message || "Something went wrong");
-          setTimeout(() => setError(null), 3000);
         });
+        setisloading(false);
+        notifySuccess("تم الارسال بنجاح");
+        setFileName("");
+        setCvFile(null);
+        Intern_Graduation_Form.resetForm();
+      } catch (error) {
+        setisloading(false);
+        const errorMsg = error?.response?.data?.error?.[0]?.msg || "حدث خطأ ما";
+        notifyError(errorMsg);
+      }
     },
   });
 
@@ -115,7 +119,7 @@ const InternGraduationForm = () => {
       const file = e.target.files[0];
       setFileName(file.name);
       setCvFile(file);
-      Intern_Graduation_Form.setFieldValue("cv", file); // Set Formik field value
+      Intern_Graduation_Form.setFieldValue("cv", file);
     }
   };
 

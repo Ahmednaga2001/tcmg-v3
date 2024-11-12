@@ -10,6 +10,8 @@ import { useState } from "react";
 import * as Yup from "yup";
 import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
+import { notifyError, notifySuccess } from "@/components/notify/Notify";
+import Api from "@/components/config/Api";
 
 const HiringGraduationForm = () => {
   const [fileName, setFileName] = useState("");
@@ -38,11 +40,17 @@ const HiringGraduationForm = () => {
       first_name: Yup.string()
         .max(10, "يجب أن يكون 10 أحرف أو أقل")
         .required("مطلوب")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
+        .matches(
+          /^[a-zA-Z\u0600-\u06FF\s]*$/,
+          "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+        ),
       last_name: Yup.string()
         .max(10, "يجب أن يكون 10 أحرف أو أقل")
         .required("مطلوب")
-        .matches(/^[a-zA-Z]*(\s[A-Z][a-zA-Z]*)*$/, "غير صالح"),
+        .matches(
+          /^[a-zA-Z\u0600-\u06FF\s]*$/,
+          "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+        ),
       email: Yup.string()
         .matches(
           /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -50,10 +58,8 @@ const HiringGraduationForm = () => {
         )
         .required("مطلوب"),
       phone: Yup.string()
-        .matches(
-          /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}$/,
-          "رقم الهاتف غير صالح"
-        )
+        .matches(/^[0-9]{11}$/, "رقم الهاتف يجب أن يكون مكونًا من 11 رقمًا فقط")
+
         .required("مطلوب"),
       address: Yup.string().required("مطلوب"),
       office: Yup.string().required("مطلوب"),
@@ -79,7 +85,7 @@ const HiringGraduationForm = () => {
     }),
     validateOnBlur: true,
     validateOnChange: true,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       setisloading(true);
 
       const formData = new FormData();
@@ -93,31 +99,24 @@ const HiringGraduationForm = () => {
       formData.append("phone", values.phone);
       formData.append("email", values.email);
       formData.append("agreeToPrivacy", values.agreeToPrivacy);
-
-      axios
-        .post("https://tcmg-alpha.vercel.app/employments", formData, {
+      setisloading(true);
+      try {
+        const response = await Api.post("/employments", formData, {
           headers: {
-            "Content-Type": "multipart/form-data",
+            "Content-Type": "multipart/form-data", // تحديد نوع المحتوى
           },
-        })
-        .then((res) => {
-          setisloading(false);
-
-          console.log("say", res.data);
-          setsuccess(res.data.status);
-          setTimeout(() => {
-            setsuccess(null);
-          }, 3000);
-        })
-        .catch((err) => {
-          setisloading(false);
-
-          console.log(err);
-          seterror(err.response?.data?.message || "Something went wrong");
-          setTimeout(() => {
-            seterror(null);
-          }, 3000);
         });
+        setisloading(false);
+        notifySuccess("تم الارسال بنجاح");
+        setFileName("");
+        setCvFile(null);
+        Intern_Graduation_Form.resetForm();
+      } catch (error) {
+        setisloading(false);
+        const errorMsg = error?.response?.data?.error?.[0]?.msg || "حدث خطأ ما";
+        seterror(errorMsg);
+        notifyError(errorMsg);
+      }
     },
   });
 
@@ -400,8 +399,8 @@ const HiringGraduationForm = () => {
             <Button text="ارسال" />
           )}
         </form>
-        <p className="err">{error}</p>
-        <p className="success">{success}</p>
+        {/* <p className="err">{error}</p>
+        <p className="success">{success}</p> */}
       </div>
       <div className={styles.emailContact}>
         <p>

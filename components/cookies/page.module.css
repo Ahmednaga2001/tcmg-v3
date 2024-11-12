@@ -5,7 +5,7 @@
     z-index: 100;
     background-color: #0D152C;
     color: var(--font);
-    padding: 80px;
+    padding: 20px 80px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -242,6 +242,7 @@ width: 100%;
     @media (max-width : 768px) {
         .cookiesMang{
             width: 90%;
+            max-height: 70vh;
         }
         .bottomButtons{
             flex-direction: column-reverse;

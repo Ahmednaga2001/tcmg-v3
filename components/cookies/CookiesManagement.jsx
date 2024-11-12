@@ -1,6 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./page.module.css";
-export default function CookiesManagement() {
+
+export default function CookiesManagement({onSave, onRejectAll,setMainOpen}) {
+  const [preferences, setPreferences] = useState({
+    essential: true, 
+    functional: false,
+    analytics: false,
+    advertising: false,
+  });
+
+  const handleChange = (e) => {
+    const { name, checked } = e.target;
+    setPreferences((prev) => ({ ...prev, [name]: checked }));
+  };
+
+
+
+  const handleRejectAll = () => {
+    setPreferences({
+      essential: true, 
+      functional: false,
+      analytics: false,
+      advertising: false,
+    });
+    onRejectAll(); 
+    setMainOpen(false);
+  };
+
+  const handleAcceptAll = () => {
+    const updatedPreferences = {
+      essential: true,
+      functional: true,
+      analytics: true,
+      advertising: true,
+    };
+  
+    setPreferences(updatedPreferences); // تحديث الحالة أولاً
+    onSave(updatedPreferences); // ثم إرسال التفضيلات المحدثة إلى onSave
+    setMainOpen(false); // إغلاق النافذة
+  };
+  
+
   return (
     <section className={styles.cookiesMang}>
       <div className={styles.headerMang}>
@@ -12,7 +52,9 @@ export default function CookiesManagement() {
           نحتاج إلى إذنك. يستخدم هذا الموقع أنواعًا مختلفة من الكوكيز. يتم وضع
           بعض ملفات تعريف الارتباط بواسطة خدمات خارجية تظهر على صفحاتنا.
         </p>
-        <button className={styles.acceptAll}>قبول الجميع</button>
+        <button onClick={handleAcceptAll} className={styles.acceptAll}>
+          قبول الجميع
+        </button>
       </div>
       <div className={styles.cookiesList}>
         <div className={styles.cookieItemOne}>
@@ -35,7 +77,12 @@ export default function CookiesManagement() {
 
               <span>
                 <label className={styles.switch}>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    name="functional"
+                    checked={preferences.functional}
+                    onChange={handleChange}
+                  />
                   <span className={`${styles.slider} ${styles.round}`}></span>
                 </label>
               </span>
@@ -45,9 +92,7 @@ export default function CookiesManagement() {
               المثال، قد نستخدم هذه الكوكيز لتوفير وعرض مقاطع الفيديو والمحتوى
               المضمّن ولتوفير بعض الميزات الأخرى. يتم إدارة بعض هذه الكوكيز من
               قِبل أطراف ثالثة، بما في ذلك موردو الأطراف الثالثة الذين نستخدم
-              خدماتهم على موقعنا الإلكتروني. إذا لم تسمح بهذه الكوكيز، فقد لا
-              تكون بعض الميزات على هذا الموقع الإلكتروني متاحة أو تعمل بشكل
-              صحيح.
+              خدماتهم على موقعنا الإلكتروني.
             </p>
           </div>
         </div>
@@ -58,19 +103,18 @@ export default function CookiesManagement() {
               <strong>كوكيز التحليلات</strong>
               <span>
                 <label className={styles.switch}>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    name="analytics"
+                    checked={preferences.analytics}
+                    onChange={handleChange}
+                  />
                   <span className={`${styles.slider} ${styles.round}`}></span>
                 </label>
               </span>
             </div>
             <p>
-              تجمع هذه الكوكيز معلومات حول كيفية استخدامك لموقعنا الإلكتروني -
-              مثل الصفحات التي تزورها وما إذا كنت تواجه أي أخطاء. تتيح لنا عد
-              الزيارات ومصادر حركة المرور حتى نتمكن من قياس وتحسين أداء مواقعنا
-              الإلكترونية ومحتوياتها. على سبيل المثال، تساعدنا في معرفة الصفحات
-              الأكثر والأقل شعبية ورؤية كيفية تنقل الزوار في الموقع الإلكتروني.
-              يتم إدارة بعض ملفات تعريف الارتباط الخاصة بالأداء لدينا من قِبل
-              أطراف ثالثة.
+              تجمع هذه الكوكيز معلومات حول كيفية استخدامك لموقعنا الإلكتروني.
             </p>
           </div>
         </div>
@@ -81,34 +125,26 @@ export default function CookiesManagement() {
               <strong>كوكيز الإعلانات</strong>
               <span>
                 <label className={styles.switch}>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    name="advertising"
+                    checked={preferences.advertising}
+                    onChange={handleChange}
+                  />
                   <span className={`${styles.slider} ${styles.round}`}></span>
                 </label>
               </span>
             </div>
             <p>
               قد تجمع هذه الكوكيز بيانات التصفح والنشاط على مواقعنا الإلكترونية
-              وعلى مواقع الجهات الخارجية. نستخدمها لمساعدتنا في تزويدك بمحتوى
-              أكثر ملاءمة على موقعنا الإلكتروني وعلى قنوات التسويق الرقمي الخاصة
-              بنا. على سبيل المثال، نستخدم Vuture لإرسال رسائل البريد الإلكتروني
-              التسويقية الخاصة بنا، والتي قد تتضمن بكسلات تتبع تساعدنا في تقييم
-              أداء البريد الإلكتروني. إذا قمت بزيارة موقعنا الإلكتروني أو الوصول
-              إلى المحتوى عبر الإنترنت من خلال رابط في أحد رسائل البريد
-              الإلكتروني التسويقية الخاصة بنا، فإننا نستخدم الكوكيز على موقعنا
-              الإلكتروني لربط رحلتك التسويقية عبر البريد الإلكتروني برحلتك على
-              الموقع الإلكتروني. كما تستخدم كوكيز الإعلانات لتمكين وسائل التواصل
-              الاجتماعي وميزات الجهات الخارجية على هذا الموقع الإلكتروني. يتم
-              تعيين بعض كوكيز الإعلانات من قِبل أطراف ثالثة ويسمح لهم بتتبع
-              متصفحك وبيانات نشاطك عبر مواقعنا الإلكترونية ومواقع أخرى، والتي قد
-              يستخدمونها لبناء ملف تعريف لاهتماماتك واستهداف الإعلانات والمحتوى
-              لك عبر مواقع الجهات الخارجية.
+              وعلى مواقع الجهات الخارجية.
             </p>
           </div>
         </div>
       </div>
       <div className={`${styles.buttons} ${styles.bottomButtons}`}>
-        <button>حفظ وإغلاق</button>
-        <button>رفض الكل</button>
+        <button onClick={handleAcceptAll}>حفظ وإغلاق</button>
+        <button onClick={handleRejectAll}>رفض الكل</button>
       </div>
     </section>
   );
