@@ -26,7 +26,7 @@
   .stats div span:first-child {
     font-family: janna bol;
     font-size: 57px;
-    font-weight: 900;
+    font-weight: bold;
   }
   .stats div:nth-child(1){
     border-right: none;
@@ -53,13 +53,13 @@
 
     .stats div span:first-child {
       font-size: 23px;
-      font-weight: 800;
+      font-weight: bold;
       margin-bottom: 10px;
     }
     .stats div span:last-child {
       font-family: "Janna LT";
       font-size: 16px;
-      font-weight: 400;
+      font-weight: bold;
     }
   }
   
@@ -69,11 +69,11 @@
     }
       .stats div span:first-child {
           font-size: 14.983px;
-          font-weight: 800;
+          font-weight: bold;
         }
         .stats div span:last-child {
           font-family: "Janna LT";
           font-size: 12px;
-          font-weight: 400;
+          font-weight: bold;
         }
   }

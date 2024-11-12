@@ -32,7 +32,7 @@ export const ServiceOrCaseItemSlider = ({ services }) => {
           delay: 5000,
           disableOnInteraction: false,
         }}
-        modules={[EffectFade, Pagination, Autoplay, Navigation]}
+        modules={[EffectFade, Pagination, Navigation]}
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
@@ -57,7 +57,8 @@ export const ServiceOrCaseItemSlider = ({ services }) => {
                 {service.date && <span className={styles.date}>{service.date}</span>}
                 <p>{service.body}</p>
                 {service.ref && (
-                  <Link className="link" href={service.ref}>
+                <span className={styles.ref}>
+                    <Link className="link" href={service.ref}>
                     الذهاب إلي الصفحة
                     <Image
                       src="assets/icons/arrow-left.svg"
@@ -66,6 +67,7 @@ export const ServiceOrCaseItemSlider = ({ services }) => {
                       height={20}
                     />
                   </Link>
+                </span>
                 )}
               </div>
             </SwiperSlide>
