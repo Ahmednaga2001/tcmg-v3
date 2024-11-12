@@ -32,7 +32,7 @@ export const ServiceOrCaseItemSlider = ({ services }) => {
           delay: 5000,
           disableOnInteraction: false,
         }}
-        modules={[EffectFade, Pagination, Navigation]}
+        modules={[EffectFade, Pagination, Autoplay, Navigation]}
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
