@@ -3,6 +3,7 @@ import React from 'react'
 import styles from "./page.module.css"
 import { ServiceOrCaseItem } from './ServiceOrCaseItem '
 import { ServiceOrCaseItemSlider } from './ServiceOrCaseItemSlider'
+import Link from 'next/link'
 export default function HomeArticleScroll({articles}) {
   return (
     <article className={`${styles.scroll} ${styles.articles}`}>
@@ -13,7 +14,7 @@ export default function HomeArticleScroll({articles}) {
         البيئة القانونية من خلال استكشاف أحدث التطورات والمستجدات، واستفد من
         مجموعة متنوعة من المصادر القانونية المتكاملة.
       </p>
-      <span className="link">
+      <Link href="article" className="link">
         إقرا المزيد
         <Image
           src="assets/icons/arrow-left.svg"
@@ -21,7 +22,7 @@ export default function HomeArticleScroll({articles}) {
           width={20}
           height={20}
         />
-      </span>
+      </Link>
     </div>
     <div className={styles.left}>
 

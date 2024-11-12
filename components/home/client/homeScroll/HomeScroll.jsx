@@ -13,7 +13,7 @@ function HomeScroll({ cases, services }) {
                     <p>
                     نختصّ كشركة محاماة دولية في مصر بتقديم أكثر من 30 خدمة قانونية للأفراد والشركات بفهم واسع للبيئة القانونية. ونسعى جاهدين لتقديم أفضل مستوى من الحلول القانونية على الصعيد المحلي والدولي من خلال دمج خبرات فريق العمل المكون من أكثر من 40 محامي مختص في مجالات القانون المختلفة. تكمن قوة مكاتب محاماة TCMG في تقديم خدمات قانونية بمعايير أداء عالمية ومستوى فاعلية ممتاز في كلًا من الجودة والوقت.
                     </p>
-                    <Link href="legal-services" className="link">
+                    {/* <Link href="legal-services" className="link">
                         توجه إلي صفحة الخدمات القانونية
                         <Image
                             src="assets/icons/arrow-left.svg"
@@ -21,7 +21,7 @@ function HomeScroll({ cases, services }) {
                             width={20}
                             height={20}
                         />
-                    </Link>
+                    </Link> */}
                 </div>
                 <div className={styles.left}>
 
@@ -44,7 +44,7 @@ function HomeScroll({ cases, services }) {
                         بأسرع وقت وبأعلى جودة ممكنة؛ سعياً منا لنصبح أفضل شركة محاماة في مصر
                         في المستقبل القريب.
                     </p>
-                    <span className="link">
+                    <Link href="legal-services" className="link">
                         تصفح كامل الخدمات القانونية
                         <Image
                             src="assets/icons/arrow-left.svg"
@@ -52,7 +52,7 @@ function HomeScroll({ cases, services }) {
                             width={20}
                             height={20}
                         />
-                    </span>
+                    </Link>
                 </div>
                 <div className={styles.left}>
                     <ServiceOrCaseItem services={cases} />

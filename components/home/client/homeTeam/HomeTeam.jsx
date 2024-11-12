@@ -47,8 +47,8 @@ const HomeTeam = () => {
     <section className={styles.homeTeam}>
       <div className={styles.heading}>
         <div>
-          <h2>فريق العمل</h2>
-          <Image src="/assets/icons/crown.svg" width={30} height={30} alt='Crown Icon' />
+          <Image src="/assets/icons/crown.svg" width={60} height={25} alt='Crown Icon' />
+          <h2>خبراؤنا</h2>
         </div>
         <p>
           تتكون الهيكلة الإدارية للمجموعة التجارية والبحرية من أشهر محامين مصر أصحاب الخبرات في تخصصات القضايا المحلية والدولية المختلفة. حيث نضم مجموعة من الكوادر مجموعة من الكوادر البشرية المتخصصة في مجالات القانون المختلفة. ولأن الجودة والسرعة هي شعارنا؛ نعمل بروح الفريق لدمج الخبرات والمعرفة المتراكمة في دعم عملائنا الكرام على تحقيق أهدافهم القانونية.

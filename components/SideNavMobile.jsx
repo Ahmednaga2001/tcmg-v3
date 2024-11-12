@@ -215,7 +215,7 @@ function SideNavMob({ isOpen, toggleSideNav }) {
                   height={24}
                 />
               </span>
-              <span onClick={() => handleItemClick(3, "تواصلوا معنا")}>
+              <span onClick={() => handleItemClick(3, "تواصل معنا")}>
                 تواصل معنا
                 <Image
                   src="/assets/icons/form/arrow-left-white.png"

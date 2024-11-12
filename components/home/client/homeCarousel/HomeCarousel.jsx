@@ -11,6 +11,7 @@ import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 
 import styles from "./page.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const data = [
   {
@@ -19,6 +20,7 @@ const data = [
     body : "بخبرة قانونية واسعة، نقدم استشارات قانونية شاملة لجميع العملاء، مُقدمة من نخبة من أكفأ المحامين المتمرسين. فدورنا كشركة موثوقة للمحاماة والاستشارات القانونية هو دعم الموكلين المحليين والدوليين بالحلول القانونية المتكاملة التي تلبي احتياجاتهم. اطلب الآن استشارة قانونية من مكتبTCMG للمحاماة وتواصل مع أفضل مستشار قانوني متخصص قادر على حل قضاياك وتحقيق أهدافك.",
     img: "assets/symbols/bottomL.svg",
     span: "اطلب الأن أستشارة فورية",
+    ref : "legal-advice#reserve"
   },
   {
     id: 2,
@@ -52,7 +54,7 @@ const HomeCarousel = () => {
         "--swiper-pagination-bullet-width": "12px",
         "--swiper-pagination-bullet-height": "12px",
       }}>
-      {data.map((el) => (
+      {data.map((el,index) => (
         <SwiperSlide key={el.id} className={styles.carousel}>
           <div className={styles.caroChild}>
             <h2>{el.header}</h2>
@@ -62,7 +64,15 @@ const HomeCarousel = () => {
             </div>
             <div>
             <span className="link">
-              {el.span}
+              {
+                index === 1 ? (
+                  <a href="mailto:contact@tcmglaw.com" className="email-link">
+                  {el.span}
+                </a>
+                ) : (
+                  <Link href={el.ref}>{el.span}</Link>
+                )
+              }
               <Image
                 src="assets/icons/arrow-left.svg"
                 alt={el.img}

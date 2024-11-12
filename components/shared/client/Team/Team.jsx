@@ -88,8 +88,8 @@ const Team = ({ lawyers }) => {
         </Swiper>
       </div>
       <Link href="lawyers" className="link">
-        مشاهدة كامل فريق العمل
-        <Image src="/assets/icons/form/arrow-left-white.png" width={24} height={24} alt='View Icon' />
+      مشاهدة كامل خبراؤنا    
+          <Image src="/assets/icons/form/arrow-left-white.png" width={24} height={24} alt='View Icon' />
         </Link>
     </div>
     // </section>
