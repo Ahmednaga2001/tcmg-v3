@@ -1,48 +1,20 @@
 "use client";
 import SelectComponentThree from "@/components/ui/selectComponentThree/SelectComponentThree";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
-import LawyersCard from "../articleCard/ArticleCard";
 import ArticleCard from "../articleCard/ArticleCard";
-const practices = [
-  { id: 1, value: "الأندماج والاستحواذ" },
-  { id: 2, value: "قضايا أسواق المال" },
-  { id: 3, value: "قضايا التمويل والأوراق المالية" },
-  { id: 4, value: "التحكيم التجاري الدولي" },
-  { id: 5, value: "التجارة الدولية" },
-  { id: 6, value: "قضايا الاتصالات" },
-  { id: 7, value: "قضايا المعاملات المصرفية" },
-  { id: 8, value: "أعمال الشركات" },
-  { id: 9, value: "قضايا الأموال العامة" },
-  { id: 10, value: "قضايا الإنشاءات والمقاولات" },
-  { id: 11, value: "القضايا العقارية" },
-  { id: 12, value: "الملكية الفكرية" },
-  { id: 13, value: "قضايا التنفيذ والإفلاس" },
-  { id: 14, value: "قضايا الضرائب" },
-  { id: 15, value: "قضايا التأمين" },
-  { id: 16, value: "القضايا الإدارية" },
-  { id: 17, value: "القضايا الجنائية" },
-  { id: 18, value: "القضايا المدنية" },
-  { id: 19, value: "إستشارة قانونية" },
-  { id: 20, value: "استشارة قانونية مميزة VIP" },
-];
+import { AnimatePresence, motion } from "framer-motion";
 
 const sectors = [
-  { id: 1, value: "العقارات" },
-  { id: 2, value: "الخدمات المالية" },
-  { id: 3, value: "الرعاية الصحية" },
-  { id: 4, value: "الفنادق والترفيه" },
-  { id: 5, value: "التجزئة والمستهلك" },
-  { id: 6, value: "التصنيع" },
-  { id: 7, value: "النقل والشحن البحري" },
-  { id: 8, value: "النقل" },
-  { id: 9, value: "السيارات" },
-  { id: 10, value: "التأمين" },
-  { id: 11, value: "التعليم" },
-  { id: 12, value: "وسائل الإعلام" },
-  { id: 13, value: "الطاقة" },
-  { id: 14, value: "الاتصالات" },
+  { id: 1, value: "أسواق المال" },
+  { id: 2, value: "الإندماج والاستحواذ" },
+  { id: 3, value: "التحكيم التجاري" },
+  { id: 4, value: "التطوير العقاري والإنشاءات" },
+  { id: 5, value: "الخدمات البنكية والمالية" },
+  { id: 6, value: "الرعاية الصحية" },
+  { id: 7, value: "التجزئة والمستهلك" },
+  { id: 8, value: "التقاضي" },
 ];
 
 const locations = [
@@ -53,196 +25,212 @@ const locations = [
   { id: 5, value: "فلسطين" },
 ];
 
-const cities = [
-  { id: 1, value: "الجيزة" },
-  { id: 2, value: "الإسكندرية" },
-  { id: 3, value: "القاهرة" },
-  { id: 4, value: "العاشر من رمضان" },
+const years = [
+  { id: 1, value: "2023" },
+  { id: 2, value: "2022" },
+  { id: 3, value: "2021" },
+  { id: 4, value: "2020" },
+  { id: 5, value: "2019" },
+  { id: 6, value: "2018" },
 ];
-const lawyersInfo = [
-  {
-    id: 1,
-    title: "محمد أبو ضيف ",
-    category: "المؤسس والرئيس التنفيذي",
-    imgPath:
-      "/assets/images/lawyers/المحامي خلف حسين محامي مدني في المجموعة التجارية والبحرية للمحاماة_edited.png",
-  },
-  {
-    id: 2,
-    title: "هشام محمود",
-    category: "التطوير العقاري والتقاضي",
-    imgPath:
-      "/assets/images/lawyers/المحامي هشام محمود محامي جنائي في المجموعة التجارية والبحرية للمحاماة_edited.png",
-  },
-  {
-    id: 3,
-    title: "خلف حسين",
-    category: "التقاضى",
-    imgPath:
-      "/assets/images/lawyers/المحامي خلف حسين محامي مدني في المجموعة التجارية والبحرية للمحاماة_edited.png",
-  },
-  {
-    id: 4,
-    title: "سهى خيري",
-    category: "التمويل والبنوك",
-    imgPath: "/assets/images/lawyers/المحامية سهي خيري.png",
-  },
-  {
-    id: 5,
-    title: "فوزية يحيي",
-    category: "صياغة العقود",
-    imgPath:
-      "/assets/images/lawyers/المحامية فوزية يحيي محامية صياغة عقود في المجموعة التجارية والبحرية للمحاماة_edited.png",
-  },
-  {
-    id: 6,
-    title: "كرم موريس",
-    category: "أعمال الشركات",
-    imgPath:
-      "/assets/images/lawyers/المحامي كرم موريس محامي شركات في المجموعة التجارية والبحرية للمحاماة_edited.png",
-  },
-  {
-    id: 7,
-    title: "ميادة محمود",
-    category: "صياغة العقود",
-    imgPath: "/assets/images/lawyers/photo frame.png",
-  },
-  {
-    id: 8,
-    title: "آية محمد",
-    category: "النقل والشحن البحري",
-    imgPath: "/assets/images/lawyers/photo frame (1).png",
-  },
-  {
-    id: 9,
-    title: "رمضان رزق",
-    category: "التجزئة والمستهلك والتقاضي",
-    imgPath:
-      "/assets/images/lawyers/المحامي رمضان رزق محامي إحوال شخصية المج.png",
-  },
-  {
-    id: 10,
-    title: "دعاء قنديل",
-    category: "الدمج والاستحواذ وصياغة العقود",
-    imgPath: "/assets/images/lawyers/photo frame (2).png",
-  },
-  {
-    id: 11,
-    title: "أحمد السعيد",
-    category: "التحكيم التجاري وأسوق المال",
-    imgPath: "/assets/images/lawyers/photo frame (3).png",
-  },
-  {
-    id: 12,
-    title: "محمد سعيد",
-    category: "الملكية الفكرية وتأسيس الشركات",
-    imgPath:
-      "/assets/images/lawyers/المحامي محمد السعيد محامي زواج اجانب في المجموعة التجارية والبحرية للمحاماة_edited.png",
-  },
-  {
-    id: 13,
-    title: "أحمد عمارة",
-    category: "التأمين",
-    imgPath: "/assets/images/lawyers/photo frame (4).png",
-  },
-  {
-    id: 14,
-    title: "حسام نور",
-    category: "العلامات التجارية",
-    imgPath:
-      "/assets/images/lawyers/المحامي حسام نور محامي عقاري في المجموعة التجارية والبحرية للمحاماة_edited.png",
-  },
+const months = [
+  { id: 1, value: "يناير" },
+  { id: 2, value: "فبراير" },
+  { id: 3, value: "مارس" },
+  { id: 4, value: "ابريل" },
+  { id: 5, value: "مايو" },
+  { id: 6, value: "يونيو" },
 ];
-
 const ArticleForm = () => {
   const [name, setName] = useState("");
-  const [practice, setPractice] = useState(null);
+  const [year, setYear] = useState(null);
+  const [month, setMonth] = useState(null);
   const [selectedSector, setSelectedSector] = useState(null);
-  const [selectedLoction, setSelectedLoction] = useState(null);
-  const [selectedCity, setSelectedCity] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
-  const [FilteredLawyers, setFilteredLawyers] = useState(lawyersInfo);
-  
-  
-  
- const handleSubmit = (e) => {
-  const l = []
-  e.preventDefault();
-  FilteredLawyers.filter((lawyer) => {
-    if (lawyer.title.toLowerCase().includes(name.toLowerCase())) {
-      l.push(lawyer)
-    }
-    setFilteredLawyers(l)
-  })
+  const handleClear = () => {
+    setName("");
+    setYear(null);
+    setSelectedSector(null);
+    setYear(null);
+    setMonth(null);
+  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 450); 
+    };
 
- }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <section className={styles.l}>
-      <form action="" onSubmit={handleSubmit}>
-        <div className={styles.inputsSearchContainer}>
-          <div className={styles.customInput}>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              name="name"
-              placeholder="البحث"
-            />
-          </div>
-       
-          <div className={styles.sectors}>
-            <SelectComponentThree
-              options={sectors}
-              selectedOption={selectedSector}
-              setSelectedOption={setSelectedSector}
-              head={"القطعات"}
-            />
-          </div>
-          <div className={styles.practices}>
-            <SelectComponentThree
-              options={practices}
-              selectedOption={practice}
-              setSelectedOption={setPractice}
-              head={"السنة"}
-            />
-          </div>
-       
-          <div className={styles.locations}>
-            <SelectComponentThree
-              options={locations}
-              selectedOption={selectedLoction}
-              setSelectedOption={setSelectedLoction}
-              head={"الشهر"}
-            />
-          </div>
-
-          <div className={styles.search}>
-            <button type="submit">
-              بحث
-              <Image
-                src={"/assets/icons/form/arrow-left-black.png"}
-                width={24}
-                height={24}
-                alt="arrow left icon"
-              />
-            </button>
-          </div>
+      {!isFormVisible && (
+        <div
+          className={styles.Mob}
+          onClick={() => setIsFormVisible(!isFormVisible)}
+        >
+          <span>تصفية</span>
+          <Image
+            src={"/assets/icons/form/mynaui_filter-solid.svg"}
+            width={32}
+            height={32}
+            alt="filter icon"
+          />
         </div>
-      </form>
+      )}
+      <AnimatePresence>
+        {isMobile && (
+          <motion.div
+            key={isFormVisible ? "formContainerVisible" : "formContainerHidden"}
+            className={`${styles.formContainer} ${
+              isFormVisible ? styles.visible : ""
+            }`}
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "100%", transition: { duration: 0.3 } }}
+            transition={{ duration: 0.3 }}
+          >
+            <form action="" onSubmit={handleSubmit}>
+              <div className={styles.inputsSearchContainer}>
+                <div className={styles.mobClear}>
+                  <Image
+                    onClick={() => setIsFormVisible(!isFormVisible)}
+                    src={"/assets/icons/form/closeIcon.svg"}
+                    width={16}
+                    height={16}
+                    alt="close icon"
+                  />
+                  <span onClick={handleClear}>مسح الكل</span>
+                </div>
+                <div className={styles.customInput}>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    name="name"
+                    placeholder="البحث"
+                  />
+                </div>
+
+                <div className={styles.sectors}>
+                  <SelectComponentThree
+                    options={sectors}
+                    selectedOption={selectedSector}
+                    setSelectedOption={setSelectedSector}
+                    head={"القطاعات"}
+                  />
+                </div>
+                <div className={styles.practices}>
+                  <SelectComponentThree
+                    options={years}
+                    selectedOption={year}
+                    setSelectedOption={setYear}
+                    head={"السنة"}
+                  />
+                </div>
+
+                <div className={styles.locations}>
+                  <SelectComponentThree
+                    options={months}
+                    selectedOption={month}
+                    setSelectedOption={setMonth}
+                    head={"الشهر"}
+                  />
+                </div>
+
+                <div className={styles.search}>
+                  <button type="submit">
+                    بحث
+                    <Image
+                      src={"/assets/icons/form/arrow-left-black.png"}
+                      width={24}
+                      height={24}
+                      alt="arrow left icon"
+                    />
+                  </button>
+                </div>
+              </div>
+            </form>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {!isMobile && (
+        <div
+          className={`${styles.formContainer} ${
+            isFormVisible ? styles.visible : ""
+          }`}
+        >
+          <form action="" onSubmit={handleSubmit}>
+            <div className={styles.inputsSearchContainer}>
+              <div className={styles.customInput}>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  name="name"
+                  placeholder="البحث"
+                />
+              </div>
+
+              <div className={styles.sectors}>
+                <SelectComponentThree
+                  options={sectors}
+                  selectedOption={selectedSector}
+                  setSelectedOption={setSelectedSector}
+                  head={"القطاعات"}
+                />
+              </div>
+              <div className={styles.practices}>
+                <SelectComponentThree
+                  options={years}
+                  selectedOption={year}
+                  setSelectedOption={setYear}
+                  head={"السنة"}
+                />
+              </div>
+
+              <div className={styles.locations}>
+                <SelectComponentThree
+                  options={months}
+                  selectedOption={month}
+                  setSelectedOption={setMonth}
+                  head={"الشهر"}
+                />
+              </div>
+
+              <div className={styles.search}>
+                <button type="submit">
+                  بحث
+                  <Image
+                    src={"/assets/icons/form/arrow-left-black.png"}
+                    width={24}
+                    height={24}
+                    alt="arrow left icon"
+                  />
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      )}
 
       <div className={styles.display}>
-     
-            <ArticleCard/>
-            <ArticleCard/>
-            <ArticleCard/>
-            <ArticleCard/>
-            <ArticleCard/>
-            <ArticleCard/>
-        
-      
-        
-            
-           
+        <ArticleCard />
+        <ArticleCard />
+        <ArticleCard />
+        <ArticleCard />
+        <ArticleCard />
+        <ArticleCard />
       </div>
     </section>
   );

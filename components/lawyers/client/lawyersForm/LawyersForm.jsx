@@ -356,7 +356,7 @@ const LawyersForm = () => {
           </motion.div>
         )}
 
-        {!isMobile && ( // Show the form without animation on larger screens
+        {!isMobile && ( 
           <div className={styles.formContainer}>
             <form action="" onSubmit={handleSubmit}>
               <div className={styles.inputsSearchContainer}>

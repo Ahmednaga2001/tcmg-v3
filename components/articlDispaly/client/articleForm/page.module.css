@@ -7,6 +7,10 @@
 .l{
   margin-top: 100px;
 }
+.l .Mob {
+  display: none; 
+}
+
 @media (max-width : 800px) {
   .l{
     margin-top: 95px;
@@ -100,5 +104,30 @@
   .inputsSearchContainer .customInput,
   .inputsSearchContainer .search {
     grid-column: span 1; /* Make sure elements do not span extra columns */
+  }
+  .l .Mob{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .l .formContainer{
+    display: none;
+    border: 1px solid #ffffff89;
+    border-radius: 9px;
+    padding: 16px;
+  }
+  .l .formContainer.visible {
+    display: block; /* إظهار الفورم عند تفعيل الكلاس "visible" */
+  }
+  .mobClear{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mobClear img{
+    cursor: pointer;
   }
 }

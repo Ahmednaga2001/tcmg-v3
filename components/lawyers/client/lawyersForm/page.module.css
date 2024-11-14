@@ -132,14 +132,6 @@
     display: block; /* إظهار الفورم عند تفعيل الكلاس "visible" */
   }
   
-  .mobClear{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .mobClear img{
-    cursor: pointer;
-  }
   .inputsSearchContainer button{
     width: 100%;
   }
