@@ -1,58 +1,79 @@
+
 .numbers {
-  margin-top: 80px;
-  padding: 80px;
-  min-height: 300px;
-  background-image: url(/assets/images/about/Pattern3.png);
-  background-repeat: no-repeat;
+  background-image: url(/assets/images/homePage/باترن.svg);
+  background-color: #0E152C;
   background-size: cover;
-  color: #000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.numbers div{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.numbers span {
-  display: block;
-  font-size: 50px;
-  font-weight: 900;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .numbers {
-    background: #151C32;
-    color: white;
-    margin-top: 0px ;
-    min-height: 150px;
+  background-position: center;
+    width: 100%;
+    padding: 50px 80px !important;
+    color: var(--font);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
-  .numbers div{
+  
+  .numbers div {
+    display: flex;
+    align-items: center;
     justify-content: center;
-  }
-  .numbers div:not(:last-child){
-    border-left: 1px #fff solid;
-  }
-  .numbers span{
-    font-size: 15px;
-    font-weight: 800;
-  }
-  .numbers p{
-    color: #fff;
-    font-size: 12px;
-  }
-}
-
-/* @media (max-width: 414px){
-  .numbers{
     flex-direction: column;
-    gap: 10px;
+    flex-basis: 300px;
+    border-right: 2px solid #ffffff55;
+
   }
-} */
+  
+  .numbers div span:first-child {
+    font-family: janna bol;
+    font-size: 57px;
+    font-weight: bold;
+  }
+  .numbers div:nth-child(1){
+    border-right: none;
+  }
+  @media (max-width: 768px) {
+      .numbers {
+          background-image: url(/assets/images/homePage/باترن.svg);
+          background-color: #1c243d;
+          background-size: cover;
+          background-position: center;
+          padding: 80px 30px !important;
+          color: #fff;
+          flex-wrap: nowrap;
+        }
+    .numbers div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      flex-basis: 300px;
+      border-right: 2px solid #ffffff55;
+    }
+
+    .numbers div span:first-child {
+      font-size: 23px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .numbers div span:last-child {
+      font-family: "Janna LT";
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  
+  @media (max-width: 450px){
+    .numbers {
+          padding: 40px 30px !important;
+    }
+      .numbers div span:first-child {
+          font-size: 14.983px;
+          font-weight: bold;
+        }
+        .numbers div span:last-child {
+          font-family: "Janna LT";
+          font-size: 12px;
+          font-weight: bold;
+        }
+  }

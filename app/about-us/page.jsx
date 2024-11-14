@@ -27,7 +27,7 @@ function AboutUs() {
 
       <AboutOurExperts />
 
-      <AboutTeam />
+      {/* <AboutTeam /> */}
       <AboutOwner />
       <AboutMetrics />
     </div>

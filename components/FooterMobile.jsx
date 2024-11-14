@@ -117,9 +117,9 @@ function FooterMobile() {
               />
             </Link>
             <Link href="https://www.instagram.com/tcmglaw" target="_blank">
-              <Image
-                src="assets/icons/instagram.svg"
-                alt="Instagram Icon"
+            <Image
+                  src="assets/icons/instgram.svg"
+                  alt="Instagram Icon"
                 width={25}
                 height={25}
                 quality={100}
