@@ -26,8 +26,8 @@ function Internship() {
       <InternOffer />
       <InternExperience />
       <InternAspirations />
-      <InternGraduationForm />
       <InternTcmg/>
+      <InternGraduationForm />
       <Accordion/>
     </div>
   );

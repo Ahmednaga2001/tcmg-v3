@@ -36,7 +36,7 @@
     .about .top{
       width: 100%;
     }
-    .about .top img{
+    .about .top .topL{
       width: 50px;
       height: 50px;
     }
@@ -50,7 +50,7 @@
     .about .body{
       gap: 0px;
     }
-    .about .body img{
+    .about .body .bottomL{
       width: 50px;
       height: 40px;
     }
