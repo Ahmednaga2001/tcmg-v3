@@ -286,10 +286,12 @@ a {
   
 }
 .notFound{
-  min-height: 150vh;
+  margin-top: 100px;
+  min-height: 100vh;
   background-image: url(/assets/images/notfound/4044.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain; /* قم بتغيير cover إلى contain */
+  background-position: center; /* لضمان تمركز الصورة في المنتصف */
   width: 100%;
 }
 
