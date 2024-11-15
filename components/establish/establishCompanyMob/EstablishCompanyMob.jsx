@@ -4,59 +4,59 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, EffectFade,Navigation,Pagination } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 import Image from "next/image";
 const data = [
   {
-    id : 1,
+    id: 1,
     title: "1- احجز استشارة قانونية",
-    desc : "احصل على استشارة قانونية في مجال تأسيس الشركات مع خبراء من المجموعة التجارية والبحرية للمحاماة؛ لتحديد الشكل القانوني المناسب لشركتك.",
+    desc: "احصل على استشارة قانونية في مجال تأسيس الشركات مع خبراء من المجموعة التجارية والبحرية للمحاماة؛ لتحديد الشكل القانوني المناسب لشركتك.",
     path: "/assets/images/establish/Calender.svg",
-    alt: "حجز استشارة قانونية"
+    alt: "حجز استشارة قانونية",
   },
   {
-    id : 2,
+    id: 2,
     title: "2- قم بتوكيل محامي",
-    desc : "الآن انتهى دورنا، وبدء مشوارك في عالم ريادة الأعمال. اطمأن كل المعاينات والإجراءات تنتهي في بضعة ايام بعدها أعلن عن نشاطك التجاري وانطلق.",
+    desc: "الآن انتهى دورنا، وبدء مشوارك في عالم ريادة الأعمال. اطمأن كل المعاينات والإجراءات تنتهي في بضعة ايام بعدها أعلن عن نشاطك التجاري وانطلق.",
     path: "/assets/images/establish/Female -Lawyer.svg",
-    alt: "توكيل محامي تأسيس شركات"
+    alt: "توكيل محامي تأسيس شركات",
   },
   {
-    id : 3,
+    id: 3,
     title: "3- إنطلق في عالم الأعمال",
     desc: "الآن انتهى دورنا، وبدء مشوارك في عالم ريادة الأعمال. اطمأن كل المعاينات والإجراءات تنتهي في بضعة ايام بعدها أعلن عن نشاطك التجاري وانطلق.",
     path: "/assets/images/establish/Business-World.svg",
-    alt: "إبدأ نجاحك التجاري"
+    alt: "إبدأ نجاحك التجاري",
   },
   {
-    id : 1,
+    id: 1,
     title: "1- احجز استشارة قانونية",
-    desc : "احصل على استشارة قانونية في مجال تأسيس الشركات مع خبراء من المجموعة التجارية والبحرية للمحاماة؛ لتحديد الشكل القانوني المناسب لشركتك.",
+    desc: "احصل على استشارة قانونية في مجال تأسيس الشركات مع خبراء من المجموعة التجارية والبحرية للمحاماة؛ لتحديد الشكل القانوني المناسب لشركتك.",
     path: "/assets/images/establish/Calender.svg",
-    alt: "حجز استشارة قانونية"
+    alt: "حجز استشارة قانونية",
   },
   {
-    id : 2,
+    id: 2,
     title: "2- قم بتوكيل محامي",
-    desc : "الآن انتهى دورنا، وبدء مشوارك في عالم ريادة الأعمال. اطمأن كل المعاينات والإجراءات تنتهي في بضعة ايام بعدها أعلن عن نشاطك التجاري وانطلق.",
+    desc: "الآن انتهى دورنا، وبدء مشوارك في عالم ريادة الأعمال. اطمأن كل المعاينات والإجراءات تنتهي في بضعة ايام بعدها أعلن عن نشاطك التجاري وانطلق.",
     path: "/assets/images/establish/Female -Lawyer.svg",
-    alt: "توكيل محامي تأسيس شركات"
+    alt: "توكيل محامي تأسيس شركات",
   },
   {
-    id : 3,
+    id: 3,
     title: "3- إنطلق في عالم الأعمال",
     desc: "الآن انتهى دورنا، وبدء مشوارك في عالم ريادة الأعمال. اطمأن كل المعاينات والإجراءات تنتهي في بضعة ايام بعدها أعلن عن نشاطك التجاري وانطلق.",
     path: "/assets/images/establish/Business-World.svg",
-    alt: "إبدأ نجاحك التجاري"
+    alt: "إبدأ نجاحك التجاري",
   },
 ];
 const EstablishCompany = () => {
   const [bgColor, setBgColor] = useState("");
   const [scale, setScale] = useState(1);
-  const colorCycle = ['', "#1B2340"];
+  const colorCycle = ["", "#1B2340"];
   const scaleCycle = [1, 1.3, 1];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -84,7 +84,7 @@ const EstablishCompany = () => {
       <h2>اتبع الخطوات التالية لبدء تأسيس شركتك بنجاح</h2>
       <div className={styles.swiperContainer} id="Milestones">
         <Swiper
-        spaceBetween={20}
+          spaceBetween={20}
           navigation={{
             nextEl: ".next",
             prevEl: ".prev",
@@ -102,54 +102,49 @@ const EstablishCompany = () => {
           }}
           modules={[Navigation]}
         >
-      <div className={styles.swiperWrapper}>
-      {data.map((el, index) => (
-            <SwiperSlide key={index} className={styles.swiperSlide}>
-          {
-            !(activeIndex === index) && (
-              <span className={styles.headerId}>
-              {el.id}
-            </span>
-            )
-          }
-             
-            
-              <span className={styles.headerTitle}>{activeIndex === index ? el.title.slice(2) : ""}</span>
+          <div className={styles.swiperWrapper}>
+            {data.map((el, index) => (
+              <SwiperSlide key={index} className={styles.swiperSlide}>
+                {!(activeIndex === index) && (
+                  <span className={styles.headerId}>{el.id}</span>
+                )}
 
-            </SwiperSlide>
-          ))}
-      </div>
+                <span className={styles.headerTitle}>
+                  {activeIndex === index ? el.title.slice(2) : ""}
+                </span>
+              </SwiperSlide>
+            ))}
+          </div>
         </Swiper>
         <div className="swiper-button-prev prev" />
         <div className="swiper-button-next next" />
       </div>
 
-<div className={styles.slider}>
-<motion.div className={styles.slide} 
+      <div className={styles.slider}>
+        <motion.div
+          className={styles.slide}
           key={displayedCard.id}
-
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          exit={{ opacity: 0, y: -20 }} 
-          transition={{ duration: 0.5 }} 
-          >
-               <div className={styles.parent}>
-          <div className={styles.content}>
-            <h3>{displayedCard.title}</h3>
-            <p>{displayedCard.desc}</p>
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className={styles.parent}>
+            <div className={styles.content}>
+              <h3>{displayedCard.title}</h3>
+              <p>{displayedCard.desc}</p>
+            </div>
+            <div className={styles.Img}>
+              <Image
+                src={displayedCard.path}
+                width={300}
+                height={302}
+                alt={displayedCard.alt}
+              />
+            </div>
           </div>
-          <div className={styles.line}></div>
-          <div className={styles.Img}>
-            <Image
-              src={displayedCard.path}
-              width={300}
-              height={302}
-              alt={displayedCard.alt}
-            />
-          </div>
-        </div>
-          </motion.div>
-</div>
+        </motion.div>
+      </div>
       {/* <div className={styles.startcompanyparent}>
         <div className={styles.parent}>
           <div className={styles.content}>

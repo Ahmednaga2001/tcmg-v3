@@ -87,7 +87,13 @@ height: 350px;
 .accordionItem span {
   font-weight: bold;
 }
-
+.whyChooseContent{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
 @media (max-width : 1191px) {
   .accordionParent{
     grid-template-columns: repeat(2,48%);
@@ -135,6 +141,8 @@ height: 350px;
   .accordionItemHeader .headerContent img{
     width: 20px;
     height: 20px;
+    border-radius: 7px;
+
 
   }
   .accordionItemHeader{

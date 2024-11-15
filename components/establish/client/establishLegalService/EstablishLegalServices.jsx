@@ -57,6 +57,8 @@ const EstablishLegalServices = () => {
   return (
     <section className={styles.whyChoose}>
       <div className={styles.whyChooseContent}>
+      <Image src="/assets/icons/crown.svg" width={60} height={25} alt='Crown Icon' />
+
       <h2>خدماتنا القانونية في تأسيس الشركات</h2>
     
         <p>
