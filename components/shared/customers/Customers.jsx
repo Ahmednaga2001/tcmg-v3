@@ -42,20 +42,20 @@ const Customers = ({ customers }) => {
   return (
     <section className={styles.ourCustomers}>
       <div className={styles.header}>
-        <h2>آراء عملائنا الكرام</h2>
+        <h2>ماذا قال عملائنا عنّا؟        </h2>
         <Image
           src="/assets/icons/crown.svg"
           alt="Crown"
           width={60}
           height={25}
         />
-        <p>
+        {/* <p>
           تتكون الهيكلة الإدارية للمجموعة التجارية والبحرية من أشهر محامين مصر
           أصحاب الخبرات في تخصصات القضايا المحلية والدولية المختلفة. حيث نضم
           مجموعة من الكوادر مجموعة من الكوادر البشرية المتخصصة في مجالات القانون
           المختلفة. ولأن الجودة والسرعة هي شعارنا؛ نعمل بروح الفريق لدمج الخبرات
           والمعرفة المتراكمة في دعم عملائنا الكرام على تحقيق أهدافهم القانونية.
-        </p>
+        </p> */}
       </div>
       <div className={styles.customers}>
         <Swiper
@@ -125,7 +125,7 @@ const Customers = ({ customers }) => {
             ))}
         </Swiper>
       </div>
-      <div className="link">
+      {/* <div className="link">
         <span>مشاهدة كامل الأراء</span>
         <Image
           src="/assets/icons/arrow-left.svg"
@@ -133,7 +133,7 @@ const Customers = ({ customers }) => {
           width={20}
           height={20}
         />
-      </div>
+      </div> */}
     </section>
   );
 };
