@@ -36,7 +36,7 @@ function FooterMobile() {
             <li className={styles.space}>
               <span className={`${styles.boldLink} ${styles.space}`}>من نحن</span>
               <ul>
-                <li><Link href="about-us">تعرف علينا</Link></li>
+                <li><Link href="about-us">خبراؤنا</Link></li>
                 <li><Link href="lawyers">فريق العمل</Link></li>
               </ul>
             </li>
@@ -72,7 +72,8 @@ function FooterMobile() {
                 </div>
                 <div className={styles.leftLinks}>
                   <ul>
-                    <li><Link href="internship">المتدربين</Link></li>
+                    <li><Link href="internship">
+                    المتدربين</Link></li>
                     <li><Link href="protocol">العلاقات العامة</Link></li>
                   </ul>
                 </div>

@@ -64,7 +64,7 @@ function Footer() {
               من نحن
             </span>
             <Link href="about-us">تعرف علينا</Link>
-            <Link href="lawyers">فريق العمل</Link>
+            <Link href="lawyers">خبراؤنا</Link>
           </div>
           <div className={styles.linkItem}>
             <span  className={styles.boldLink}>
