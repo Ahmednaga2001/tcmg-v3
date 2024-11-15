@@ -18,16 +18,16 @@ const JoinAbout = () => {
           </p>
           <p className={styles.child3}>تعرف علينا</p>
           <span className={styles.linkContainer}>
-     <Link className="link"  href="about-us">
-        تعرف علينا
-        <Image
-          src="/assets/icons/joinus/arrow-left.png"
-          width={20}
-          height={20}
-          alt="arrow-left.png"
-        />
-      </Link>
-     </span>
+            <Link className="link" href="about-us">
+              تعرف علينا
+              <Image
+                src="/assets/icons/joinus/arrow-left.png"
+                width={20}
+                height={20}
+                alt="arrow-left.png"
+              />
+            </Link>
+          </span>
           <Image
             src="/assets/images/joinus/bottomL.png"
             width={135}

@@ -75,5 +75,6 @@
   .linkContainer{
     display: flex;
     justify-content: flex-start;
+    padding-bottom: 35px;
   }
 }

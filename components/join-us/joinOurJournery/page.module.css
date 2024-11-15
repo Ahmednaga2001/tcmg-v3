@@ -17,6 +17,7 @@
 .linkContainer{
   display: flex;
   justify-content: flex-start;
+  width: 100%;
 }
 
 
@@ -47,10 +48,6 @@
     font-size: 12px;
     font-weight: 400;
   }
-  .ourJourney a {
-    width: 100%;
-    justify-content: flex-start;
-    padding-top: 10px;
-  }
+
   
 }
