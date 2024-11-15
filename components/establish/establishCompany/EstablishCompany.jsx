@@ -24,23 +24,23 @@ const data = [
   },
 ];
 const EstablishCompany = () => {
-  const [bgColor, setBgColor] = useState("");
-  const [scale, setScale] = useState(1);
-  const colorCycle = ['', "#1B2340"];
-  const scaleCycle = [1, 1.3, 1];
+  // const [bgColor, setBgColor] = useState("");
+  // const [scale, setScale] = useState(1);
+  // const colorCycle = ['', "#1B2340"];
+  // const scaleCycle = [1, 1.3, 1];
 
-  useEffect(() => {
-    let index = 0;
-    let index2 = 0;
-    const interval = setInterval(() => {
-      setBgColor(colorCycle[index]);
-      setScale(scaleCycle[index2]);
-      index = (index + 1) % colorCycle.length;
-      index2 = (index + 1) % scaleCycle.length;
-    }, 500);
+  // useEffect(() => {
+  //   let index = 0;
+  //   let index2 = 0;
+  //   const interval = setInterval(() => {
+  //     setBgColor(colorCycle[index]);
+  //     setScale(scaleCycle[index2]);
+  //     index = (index + 1) % colorCycle.length;
+  //     index2 = (index + 1) % scaleCycle.length;
+  //   }, 500);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
   return (
     <section className={styles.startcompany}>
       <h2>اتبع الخطوات التالية لبدء تأسيس شركتك بنجاح</h2>
@@ -63,7 +63,7 @@ const EstablishCompany = () => {
 
         <div className={styles.parent}>
           <div className={styles.Img}>
-            <motion.div className={styles.personImg}
+            {/* <motion.div className={styles.personImg}
               initial={{ x: 0, y: 0 }}
               animate={{ x: .5, y: .5, backgroundColor: bgColor }} // Animate between colors
               transition={{
@@ -80,7 +80,18 @@ const EstablishCompany = () => {
                 height={192}
                 alt={data[1].alt}
               />
-            </motion.div>
+            </motion.div> */}
+            <div className={styles.personImg}
+             
+
+            >
+              <Image
+                src={data[1].path}
+                width={145}
+                height={192}
+                alt={data[1].alt}
+              />
+            </div>
           </div>
           <div className={styles.line}></div>
           <div className={styles.content}>
@@ -97,7 +108,7 @@ const EstablishCompany = () => {
           <div className={styles.line}></div>
           <div className={styles.Img}>
             <div
-              className={styles.worldImg}
+              className={styles.personImg}
             >              <Image width={181} height={192}
 
 

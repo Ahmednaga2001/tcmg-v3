@@ -57,9 +57,11 @@ const EstablishLegalServices = () => {
   return (
     <section className={styles.whyChoose}>
       <div className={styles.whyChooseContent}>
+      <div className={styles.header}>
       <Image src="/assets/icons/crown.svg" width={60} height={25} alt='Crown Icon' />
 
-      <h2>خدماتنا القانونية في تأسيس الشركات</h2>
+<h2>خدماتنا القانونية في تأسيس الشركات</h2>
+      </div>
     
         <p>
         عملنا بجد لتقديم خدمات ذكية ومرنة ومعقولة التكلفة تعود بالنفع على جميع عملائنا الراغبين في تأسيس الشركات في مصر والوطن العربي. تصفح قائمة خدماتنا ، واتصل بنا لحجز لقاء تمهيدي مع أحد خبراء مكاتب  TCMG.
