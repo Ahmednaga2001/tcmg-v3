@@ -17,16 +17,7 @@
   gap: 20px;
 }
 
-.link a{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: .3s;
-  justify-content: center;
-}
-.link a:hover{
-  gap: 15px;
-}
+
 .about .parent div p.child3{
   display: none;
 }
@@ -81,7 +72,7 @@
   .about .parent div .img{
     margin-top: -50px;
   }
-  .linkKnow{
+  .linkContainer{
     display: flex;
     justify-content: flex-start;
   }
