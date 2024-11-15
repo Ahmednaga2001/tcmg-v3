@@ -3,6 +3,10 @@
 .experience {
   /* min-height: 100vh; */
 }
+.whyChoose{
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.292);
+
+}
  .topContent {
   display: flex;
   flex-direction: column;

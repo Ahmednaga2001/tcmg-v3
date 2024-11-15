@@ -81,7 +81,8 @@
   .about .parent div .img{
     margin-top: -50px;
   }
-  .link a{
+  .linkKnow{
+    display: flex;
     justify-content: flex-start;
   }
 }

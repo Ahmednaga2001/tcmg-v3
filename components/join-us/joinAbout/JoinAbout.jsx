@@ -1,31 +1,42 @@
-import Image from "next/image"
-import styles from "./page.module.css"
-import Link from "next/link"
+import Image from "next/image";
+import styles from "./page.module.css";
+import Link from "next/link";
 const JoinAbout = () => {
   return (
     <section className={styles.about}>
-        <div className={styles.parent}>
+      <div className={styles.parent}>
         <div>
           <h2>من نحن؟</h2>
           <p>
-          المجموعة التجارية والبحرية للمحاماة مؤسسة قانونية رائدة في مصر والوطن العربي, نتخصص في تقديم خدمات متميزة في مجال القانون, حيث نُعد مكتبًا موثوقًا للإستشارات القانونية والتمثيل القانوني. نجمع بين الخبرة العميقة والخدمة المتميزة لعملائنا، وتضم مكاتبنا فريقًا متميزًا من المحامين والمستشارين القانونيين الذين يتمتعون بخبرة واسعة في مختلف مجالات القانون؛ مما يمكِّنهم من تقديم حلول فعّالة ومبتكرة لقضايا عملائهم
+            المجموعة التجارية والبحرية للمحاماة مؤسسة قانونية رائدة في مصر
+            والوطن العربي, نتخصص في تقديم خدمات متميزة في مجال القانون, حيث نُعد
+            مكتبًا موثوقًا للإستشارات القانونية والتمثيل القانوني. نجمع بين
+            الخبرة العميقة والخدمة المتميزة لعملائنا، وتضم مكاتبنا فريقًا
+            متميزًا من المحامين والمستشارين القانونيين الذين يتمتعون بخبرة واسعة
+            في مختلف مجالات القانون؛ مما يمكِّنهم من تقديم حلول فعّالة ومبتكرة
+            لقضايا عملائهم
           </p>
           <p className={styles.child3}>تعرف علينا</p>
-   <div className={styles.link}>
-   <Link href="about-us">
-       تعرف علينا
-      <Image src="/assets/icons/joinus/arrow-left.png" width={24} height={24} alt="arrow-left.png"/>
-      </Link>
-   </div>
+          <span className={styles.linkKnow}>
+      <Link href="about-us" className="link">
+                        تعرف علينا
+                        <Image
+                            src="assets/icons/arrow-left.svg"
+                            alt="Arrow Left Small"
+                            width={20}
+                            height={20}
+                        />
+                    </Link>
+      </span>
           <Image
-          src="/assets/images/joinus/bottomL.png"
-          width={135}
-          height={135}
-          alt="bottomL image"
-          className={styles.img}
-        />
+            src="/assets/images/joinus/bottomL.png"
+            width={135}
+            height={135}
+            alt="bottomL image"
+            className={styles.img}
+          />
         </div>
-     
+
         <Image
           src="/assets/images/joinus/topL.png"
           width={135}
@@ -33,9 +44,9 @@ const JoinAbout = () => {
           alt="topL image"
           className={styles.img}
         />
-        </div>
-      </section>
-  )
-}
+      </div>
+    </section>
+  );
+};
 
-export default JoinAbout
+export default JoinAbout;

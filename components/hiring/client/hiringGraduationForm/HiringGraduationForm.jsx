@@ -402,17 +402,7 @@ const HiringGraduationForm = () => {
         {/* <p className="err">{error}</p>
         <p className="success">{success}</p> */}
       </div>
-      <div className={styles.emailContact}>
-        <p>
-          بريد التواصل للمنحة الصيفية لطلاب السنة الثالثة والرابعة بكلية الحقوق{" "}
-        </p>
-        <a
-          href="mailto:Careers@tcmglaw.com"
-          style={{ textDecoration: "underline" }}
-        >
-          Careers@tcmglaw.com
-        </a>
-      </div>
+    
     </section>
   );
 };

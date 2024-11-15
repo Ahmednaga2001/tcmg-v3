@@ -351,10 +351,10 @@ const InternGraduationForm = () => {
           بريد التواصل للمنحة الصيفية لطلاب السنة الثالثة والرابعة بكلية الحقوق
         </p>
         <a
-          href="mailto:Careers@tcmglaw.com"
+          href="mailto:internship@tcmglaw.com"
           style={{ textDecoration: "underline" }}
         >
-          Careers@tcmglaw.com
+        internship@tcmglaw.com
         </a>
       </div>
     </section>

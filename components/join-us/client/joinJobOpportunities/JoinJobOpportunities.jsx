@@ -107,9 +107,8 @@ const JoinJobOpportunities = () => {
         </Swiper>
       </div>
     </div>
-      <Link className={styles.link} href="/careers">
-      اعرف التفاصيل
-      <Image src="/assets/icons/joinus/arrow-left.png" width={24} height={24} alt="arrow-left.png"/>
+      <Link className={styles.link} href="/offices">
+      تعرف علي فروعنا      <Image src="/assets/icons/joinus/arrow-left.png" width={24} height={24} alt="arrow-left.png"/>
       </Link>
     </section>
   );

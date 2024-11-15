@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #1b2340;
+  background: linear-gradient(to right, #0E152C 0%, #182758 100%); ;
   gap: 20px;
 }
 .aspirations ul{
