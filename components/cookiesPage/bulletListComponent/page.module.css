@@ -10,7 +10,6 @@
     flex-direction: column;
     gap: 20px;
 }
-
 .container .title{
     display: block;
     font-size: 35px;

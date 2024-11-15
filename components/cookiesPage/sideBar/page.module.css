@@ -1,0 +1,57 @@
+.sideBar {
+    width: 30%;
+    padding: 40px;
+}
+
+.activeItem {
+   border-right: 6px solid #fff !important;
+    background: linear-gradient(rgba(255, 255, 255,.05) 0%, rgba(216, 216, 216, .05));
+}
+.sideBar ul li {
+    cursor: pointer;
+   border-right: 6px solid #ffffff11;
+ padding: 20px;
+ border-radius: 20px 0 0 20px;
+   list-style-position: inside;
+
+}
+.sideBar ul li:not(:first-child){
+    padding-top: 20px;
+    
+
+}
+.itemMob img{
+    display: none;
+}
+section.content {
+    display: none;
+}
+@media (max-width: 1191px) {
+    .sideBar {
+        width: 40%;
+        padding:  20px;
+    }
+ 
+  
+}
+@media (max-width: 900px) {
+    .sideBar{
+        width: 100%;
+        min-height: auto;
+     }  
+     .itemMob img{
+        display: block;
+     }
+     .itemMob{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+     }
+     section.content {
+        display: block;
+        padding: 10px;
+        width: 100%;
+    }
+    
+}

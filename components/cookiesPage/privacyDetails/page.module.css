@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+}
+
+.content {
+    width: 70%;
+    padding: 80px;
+}
+
+@media (max-width: 1191px) {
+    .content{
+        width: 60%;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        text-align: right;
+    }
+
+    .content {
+        display: none;
+    }
+}
