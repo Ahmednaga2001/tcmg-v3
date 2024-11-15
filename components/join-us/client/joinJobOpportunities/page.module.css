@@ -42,16 +42,10 @@
   border-radius: 0 0 10px 10px;
   font-weight: bold;
 }
-.link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
+
+.link{
+  display: block;
   padding-top: 30px;
-  transition: 0.3s;
-}
-.link:hover {
-  gap: 10px;
 }
 @media (max-width: 1400px) {
   .jobOpportunities {
@@ -106,5 +100,9 @@
   }
   .swiperSlide{
     width: 100% !important;
+  }
+  .link{
+    display: flex;
+    justify-content: flex-start;
   }
 }

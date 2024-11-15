@@ -18,18 +18,12 @@
 .imgContainer img:first-child {
   position: absolute;
 }
-.startInternship a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding-top: 30px;
-  transition: 0.3s;
-}
-.startInternship a:hover {
-  gap: 10px;
-}
 
+.linkContainer{
+  padding-top: 30px;
+  display: block;
+
+}
 @media (max-width: 1191px) {
   .startInternship .imgContainer {
     display: none;
@@ -48,5 +42,10 @@
   .startInternship .content h2{
     width: 100%;
     text-align: right;
+  }
+ .linkContainer{
+    display: flex;
+    justify-content: flex-start;
+
   }
 }

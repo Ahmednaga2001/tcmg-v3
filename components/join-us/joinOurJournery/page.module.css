@@ -14,16 +14,9 @@
 .ourJourney p {
   width: 58%;
 }
-.ourJourney a {
+.linkContainer{
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-  gap: 5px;
-  padding-top: 30px;
-  transition: 0.3s;
-}
-.ourJourney a:hover {
-  gap: 10px;
 }
 
 

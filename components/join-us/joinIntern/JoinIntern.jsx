@@ -26,15 +26,17 @@ const JoinIntern = () => {
           />
         </div>
       </div>
-      <Link href="/internship">
+     <span className={styles.linkContainer}>
+     <Link className="link"  href="/internship">
         اعرف التفاصيل
         <Image
           src="/assets/icons/joinus/arrow-left.png"
-          width={24}
-          height={24}
+          width={20}
+          height={20}
           alt="arrow-left.png"
         />
       </Link>
+     </span>
     </section>
   );
 };
