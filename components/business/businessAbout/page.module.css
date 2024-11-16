@@ -37,3 +37,8 @@
     }
     
 }
+@media (max-width: 768px) {
+    .expert h2 , .expert p{
+        text-align: right;
+    }
+}
