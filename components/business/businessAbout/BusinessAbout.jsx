@@ -62,10 +62,10 @@ const BusinessAbout = () => {
         />
       </div>
       <Team lawyers={lawyers}/>
-      <Link href="lawyers" className={styles.link}>
+      {/* <Link href="lawyers" className={styles.link}>
       تعرف علينا
   <Image src="/assets/icons/form/arrow-left-white.png" width={24} height={24} alt="arrow left icon" />
-</Link>
+</Link> */}
     </section>
   );
 };

@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const WhyChooseAccordion = ({ title, path, desc }) => {
   const [isOpenOne, setIsOpenOne] = useState(false);
+console.log(path);
 
   const handleIsOpenOne = () => {
     setIsOpenOne(!isOpenOne);
@@ -15,13 +16,13 @@ const WhyChooseAccordion = ({ title, path, desc }) => {
     <div className={styles.accordionItem}>
       <div className={styles.accordionItemHeader} onClick={handleIsOpenOne}>
         <div className={styles.headerContent}>
-          {/* <Image
+          <Image
             src={path}
             width={60}
             height={60}
             alt={title}
             className={styles.accordionItemIcon}
-          /> */}
+          />
           <span>{title}</span>
         </div>
         <Image
