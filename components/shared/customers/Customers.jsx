@@ -42,13 +42,13 @@ const Customers = ({ customers }) => {
   return (
     <section className={styles.ourCustomers}>
       <div className={styles.header}>
-        <h2>ماذا قال عملائنا عنّا؟        </h2>
         <Image
           src="/assets/icons/crown.svg"
           alt="Crown"
           width={60}
           height={25}
         />
+        <h2>ماذا قال عملائنا عنّا؟        </h2>
         {/* <p>
           تتكون الهيكلة الإدارية للمجموعة التجارية والبحرية من أشهر محامين مصر
           أصحاب الخبرات في تخصصات القضايا المحلية والدولية المختلفة. حيث نضم

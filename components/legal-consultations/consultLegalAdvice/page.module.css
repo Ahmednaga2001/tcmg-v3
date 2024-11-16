@@ -227,3 +227,9 @@
 }
 
 
+@media (max-width:500px) {
+  .legalAdvice{
+    display: none;
+  }
+  
+}

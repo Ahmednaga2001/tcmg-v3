@@ -1,0 +1,177 @@
+.startcompany {
+  display: none;
+  text-align: center;
+}
+
+.swiperContainer{
+  background: linear-gradient(rgba(255, 255, 255, 0.05) 0%, rgba(216, 216, 216, .05) 100%);
+  border-radius: 47px;
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.swiperWrapper{
+display: flex;
+justify-content: center;
+}
+.swiperContainer .swiperSlide{
+  text-align: center;
+  display: flex;
+  align-items: center;
+position: relative;}
+.slider{
+  padding-top: 20px;
+}
+.slider .slide{
+
+  line-height: 1.4;
+
+
+}
+.parent{
+display: flex;
+flex-direction: column;
+gap: 40px;
+text-align: center;
+}
+
+.swiperSlide .headerTitle{
+font-size: 8px;
+font-weight: bold;
+z-index: 20;
+position: relative;
+z-index: 10;
+width: 100%;
+top: -2px;
+line-height: 1.4;
+}
+.swiperSlide .headerId{
+width: fit-content; 
+height: 20px;
+border-radius: 50%;
+background: linear-gradient(rgba(33, 35, 58, 0.29) 0%, rgba(13, 21, 44, 0.29) 100%);
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+position: relative;
+padding: 15px;
+z-index: 10;
+text-align: center;
+}
+
+
+.swiperSlide::before{
+position: absolute;
+content: "";
+left: 100%;
+top: 50%;
+transform: translateY(-50%);
+width: 100%;
+border-top: 3px solid #ffffff3d;
+z-index: -1;
+}
+
+
+
+
+
+
+/* Responsive */
+@media (max-width: 500px) {
+  .startcompany {
+    display: block;
+  }
+  .Img img {
+    width: 150px;
+    height: 150px;
+  }
+}
+.Img,
+.selectInp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Img .dropdownParent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+.Img .dropdownParent span:first-child {
+  text-align: start;
+}
+.Img .dropdown {
+  background-color: #fff;
+  width: 80%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #00000069;
+  border-radius: 6px;
+  font-size: 14px;
+}
+ .parent .whatupCard {
+  background-color: #1b2340;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:
+   center;
+  gap: 5px;
+  padding: 50px;
+}
+.whatupCard span {
+  font-size: 14px;
+  font-weight: bold;
+}
+ .card {
+  position: relative;
+  background-image: url("/assets/images/legalconsultations/cardpattern.png");
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+ .img2 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: -1;
+}
+
+
+.Img .dropdownParent span:first-child {
+  text-align: start;
+}
+
+.dropdown img{
+  width: 20px;
+  height: 20px;
+}
+.Img .dropdownParent {
+  width: 100%; /* Set to 100% to take full container width */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.Img .dropdown {
+  background-color: #fff;
+  width: 100%; /* Set to 100% to take full parent width */
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #00000069;
+  border-radius: 6px;
+  font-size: 14px;
+}

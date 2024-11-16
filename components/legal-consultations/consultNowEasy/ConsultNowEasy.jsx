@@ -12,7 +12,7 @@ const data = [
     desc : "اختر نوع الاستشارة الذي يناسب احتياجاتك سواء استشارة قانونية فورية عبر الاتصال أو تحديد موعد لزيارتنا بمكتبنا بالقاهرة, أو من خلال حجز استشارات قانونية اونلاين عبر تحديد موعد اجتماع مع مستشار قانوني متخصص.",
     images: [
       {
-        path: "/assets/icons/legalconsultations/whatsup.svg",
+        path: "/assets/icons/legalconsultations/Simplification.svg",
         label: "اجتماع اونلاين",
 
       },

@@ -100,7 +100,7 @@ const EstablishCompany = () => {
             "--swiper-navigation-color": "#fff",
             "--swiper-pagination-color": "#fff",
           }}
-          modules={[Navigation]}
+          modules={[Navigation,Autoplay]}
         >
           <div className={styles.swiperWrapper}>
             {data.map((el, index) => (

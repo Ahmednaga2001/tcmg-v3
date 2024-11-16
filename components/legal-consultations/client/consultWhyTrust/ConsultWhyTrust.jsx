@@ -11,27 +11,27 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 const data = [
   {
     path: "/assets/images/legalconsultations/clients.png",
-    title: "عدد العملاء السعداء",
-    targetNumber: 2900,
+    title: " عملاء سعداء",
+    targetNumber: 2800,
     alt: "عدد العملاء السعداء",
   },
   {
     path: "/assets/images/legalconsultations/users.png",
-    title: "عدد مستشارين المكتب",
+    title: " مستشارين المكتب",
     targetNumber: 50,
     alt: "عدد مستشارين مكتب TCMG",
   },
   {
     path: "/assets/images/legalconsultations/experiences.png",
-    title: "سنوات الخبرة",
+    title: "سنين الخبرة",
     targetNumber: 30,
     alt: "سنوات خبرة فريقنا القانوني",
   },
   {
     path: "/assets/images/legalconsultations/clients.png",
-    title: "عدد العملاء السعداء",
+    title : "إستشارة ناجحة",
     targetNumber: 2900,
-    alt: "عدد العملاء السعداء",
+    alt : "إستشارة ناجحة"
   },
   {
     path: "/assets/images/legalconsultations/users.png",
@@ -117,7 +117,7 @@ const ConsultWhyTrust = () => {
               spaceBetween: 10,
             },
             1200: {
-              slidesPerView: 3,
+              slidesPerView: 3, // Show 4 cards
               spaceBetween: 20,
             },
           }}
