@@ -5,39 +5,30 @@ import Image from 'next/image'
 const categoryData = [
     {
         id : 1,
-        title : "زواج الأجانب",
-        major : "إجراءات زواج الأجانب"
-    },
-    {
-        id : 2,
-        title : "أعمال الشركات",
-        major : "تأسيس الشركات"
-    },
-    {
-        id : 3,
-        title : "تجاري وشركات",
-        major : "قضايا تجاري وشركات"
-    },
-    {
-        id : 4,
         title : "مدني",
         major : "القضايا المدنية"
     },
     {
-        id : 5,
+        id : 2,
         title : "جنائي",
         major : "قضايا الجنايات"
     },
     {
-        id : 6,
+        id : 3,
         title : "مجلس الدولة",
         major : "قضايا مجلس الدولة"
+    },
+    {
+        id : 4,
+        title : "زواج الأجانب",
+        major : "إجراءات زواج الأجانب"
     },
     {
         id : 5,
         title : "أسرة",
         major : "قضايا أحوال شخصية"
     },
+    
     {
         id : 6,
         title : "جرائم إلكترونية",
@@ -53,12 +44,19 @@ const categoryData = [
         title : "تخصصات أخري",
         major : "تخصص أخر"
     }
+   
+   
+   
+ 
+  
+   
+  
     
 ]
 export const Category = ({onNextStep}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
-        onNextStep(); // Trigger next step on form submission
+        onNextStep();
       };
   return (
     <section className={styles.majors}>

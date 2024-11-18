@@ -110,7 +110,6 @@ const AskLawyerForm = () => {
       setisloading(true); 
       try {
         const response = await Api.post("/ask-attorney", values); 
-        console.log(response);
         
         setisloading(false); 
         notifySuccess("تم الارسال بنجاح"); 

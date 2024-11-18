@@ -45,7 +45,7 @@
 
 }
 .completed{
-    background-color: #845F38;
+    background-color: rgba(132, 95, 56, 0.5);
     /* background-image: url(/assets/icons/payment/correct.svg); */
 }
 .inactive{

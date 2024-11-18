@@ -87,15 +87,20 @@ const IndividualServices = () => {
               </span>
             ))}
           </div>
-          <Link href="/payment">
-            تحديد
-            <Image
-              src="/assets/icons/legalconsultations/arrow-left.png"
-              width={24}
-              height={24}
-              alt="arrow left icon"
-            />
-          </Link>
+          <Link 
+    href={{
+      pathname: service.title === "استشارة مكتبية" ? "/payment" : "",
+      query: { isOfficeConsultation: service.title === "استشارة مكتبية" }
+    }}
+  >
+    تحديد
+    <Image
+      src="/assets/icons/legalconsultations/arrow-left.png"
+      width={24}
+      height={24}
+      alt="arrow left icon"
+    />
+  </Link>
         </div>
       ))}
 

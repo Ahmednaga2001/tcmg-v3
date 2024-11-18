@@ -24,14 +24,26 @@ transform: translate(-50%, -50%);
 .imageWrapper{
     cursor: pointer;
 }
+.closeButton{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    cursor: pointer;
+}
 .uploadImgModal button{
     background: none;
     outline: none;
     border: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     cursor: pointer;
+    background-color: #0D152C;
+    width: 80%;
+    border-radius: 12px;
+    color: #fff;
+    padding: 15px;
 }
 .uploadImgModal span{
     color: gray;

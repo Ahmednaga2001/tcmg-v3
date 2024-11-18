@@ -8,18 +8,34 @@
     position: sticky;
     top: 100px; /* Adjust this value to control where the card sticks on scroll */
     z-index: 10; /* Ensure it stays on top of other elements */
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.header img , .header .total{
+    display: none;
 }
 .heading , .price{
     font-size: 18px;
-    font-weight: 700px;
+    font-weight: bold;
 }
 .totalParent{
     border-top: 1px solid #000;
-    font-size: 18px;
-    font-weight: bold;
+   
     padding-top: 10px;
 }
-
+.total{
+    font-size: 18px;
+    font-weight: bold;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.headerContent{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 .col{
     display: flex;
     flex-direction: column;
@@ -52,9 +68,48 @@ border: 1px solid rgba(128, 128, 128, 0.415);
         width: 40%;
     }
 }
+.arrow {
+    /* أزل الانتقال من السهم */
+}
 
+.content {
+    overflow: hidden;
+    max-height: 0; /* افتراضيًا، إخفاء المحتوى */
+    transition: max-height 0.3s ease; /* الانتقال على max-height */
+}
+
+.content.open {
+    max-height: 500px; /* القيمة تحدد الطول عند الفتح */
+}
+
+.content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .6s;
+}
+
+.content.open {
+    max-height: 500px; /* يتم تعديل الطول حسب المحتوى */
+}
+
+@media (min-width: 768px) {
+    .content {
+        max-height: none;
+    }
+ 
+
+}
 @media (max-width: 768px) {
     .cardInfo{
-        width: 100%;    
+        width: 100%;
+    }
+    .header img , .header .total{
+        display: block;
+    }
+    .cardInfo{
+        border-radius: 15px 15px 0 0 ;
+    }
+    .cardInfo{
+        margin-top: 80px;
     }
 }

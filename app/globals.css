@@ -169,13 +169,35 @@ a {
   z-index: 10 !important;
 
 }
+#succeesfactors{
+  position: relative;
+}
+#succeesfactors .swiper-button-next {
+  background-repeat: no-repeat !important;
+  background-size: 100% auto !important;
+  background-position: center !important;
+  background-image: url(/assets/icons/1.png) !important;
+  z-index: 10 !important;
+  right: -10px;
+}
+#succeesfactors .swiper-button-prev  {
+  position: absolute;
+  background-repeat: no-repeat !important;
+  background-size: 100% auto !important;
+  background-position: center !important;
+  background-image: url(/assets/icons/2.png) !important;
+  left: -10px;
+  z-index: 10 !important;
+
+}
 
 #featureSlide .swiper-button-next::after,
 #featureSlide .swiper-button-prev::after,
 #dreamCompany .swiper-button-next::after,
 #dreamCompany .swiper-button-prev::after,
 #companiesTypes .swiper-button-prev::after,
-#companiesTypes .swiper-button-next::after {
+#companiesTypes .swiper-button-next::after,#succeesfactors .swiper-button-next::after,
+#succeesfactors .swiper-button-prev::after {
   display: none !important;
   content: none !important;
 }
@@ -290,8 +312,8 @@ a {
   min-height: 100vh;
   background-image: url(/assets/images/notfound/4044.svg);
   background-repeat: no-repeat;
-  background-size: contain; /* قم بتغيير cover إلى contain */
-  background-position: center; /* لضمان تمركز الصورة في المنتصف */
+  background-size: contain; 
+  background-position: center; 
   width: 100%;
 }
 

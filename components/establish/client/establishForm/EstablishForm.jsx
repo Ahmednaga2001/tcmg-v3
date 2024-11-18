@@ -159,7 +159,7 @@ const EstablishForm = () => {
             />
             {Intern_Graduation_Form.touched.email &&
             Intern_Graduation_Form.errors.email ? (
-              <div className={styles.error}>
+              <div className="error">
                 {Intern_Graduation_Form.errors.email}
               </div>
             ) : null}

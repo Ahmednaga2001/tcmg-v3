@@ -6,6 +6,7 @@ import LegalServicesSuccessFactor from "@/components/legal-services/legalService
 import LegalServiceOurOfferings from "@/components/legal-services/client/legalServiceOurOfferings/LegalServiceOurOfferings";
 import LegalServicesSectors from "@/components/legal-services/legalServicesSectorAndPractices/LegalServicesSectors";
 import LegalServicesPractices from "@/components/legal-services/legalServicesSectorAndPractices/LegalServicesPractices";
+import LegalServicesSuccessFactorMob from "@/components/legal-services/legalServicesSuccessFactorMob/LegalServicesSuccessFactorMob";
 export const metadata = {
   title: 'Legal-Services',
   description : "إذا واجهتك أي مشكلة قانونية وترغب في الحفاظ على حقوقك فما عليك إلا التوجه إلى مكاتب TCMG؛ للحصول على خدمات قانونية بمعايير عالمية المستوى من أفضل خبراء القانون.",
@@ -17,6 +18,7 @@ function LegalServices() {
      <LegalServicesHero/>
      <LegalServiceOurOfferings/>
      <LegalServicesSuccessFactor/>
+     <LegalServicesSuccessFactorMob/>
       <LegalServicesPractices/>
       <LegalServicesSectors/>
       <Accordion/>

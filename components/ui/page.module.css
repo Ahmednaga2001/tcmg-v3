@@ -110,3 +110,19 @@
     gap: 20px;
     opacity: 80%;
   }
+  .inp input[type="date"] {
+    color: white;  
+    background-color: transparent; 
+    text-align: left; 
+    direction: ltr;
+    -webkit-appearance: none;  
+    -moz-appearance: none; 
+    appearance: none; 
+    padding-left: 10px; 
+    padding-right: 10px; 
+  }
+  
+  .inp input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); 
+  }
+

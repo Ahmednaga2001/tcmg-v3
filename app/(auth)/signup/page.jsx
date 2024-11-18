@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import styles from "./page.module.css";
 import Input from "@/components/ui/Input";
@@ -6,8 +7,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import CheckBox from "@/components/ui/CheckBox";
 import SelectComponent from "@/components/ui/selectComponent/SelectComponent";
+import Link from "next/link";
 
-export const EmailRegister = ({ onNextStep }) => {
+const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false); 
 
@@ -228,7 +230,14 @@ export const EmailRegister = ({ onNextStep }) => {
             alt="arrow-left icon"
           />
         </button>
+        <p className={styles.footer}>
+            <span>لديك حساب بالفعل؟</span>
+            <Link href="login"  style={{ cursor: 'pointer' }}>   تسجيل الدخول</Link> {/* Use onClick */}
+          </p>
       </form>
     </div>
   );
 };
+
+
+export default Register

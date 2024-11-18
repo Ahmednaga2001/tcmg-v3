@@ -1,9 +1,10 @@
- .registerCard{
+.registerCard{
     width: 70%;
     margin: auto;
     border: 1px solid #ffffff1d;
     padding: 30px;
     background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+    margin-top: 150px;
 
 }
 .registerCard .header{
@@ -20,6 +21,10 @@
     padding: 40px;
     
 }
+.footer{
+    width: 100%;
+    margin-top: 30px;
+  }
 .errorWrapper{
     width: 100%;
     display: flex;

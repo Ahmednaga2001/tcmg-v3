@@ -1,31 +1,24 @@
  .registerCard{
     width: 70%;
-    margin: auto;
+    margin: 0 auto;
     border: 1px solid #ffffff1d;
     padding: 30px;
-    background: linear-gradient(rgba(255, 255, 255,.03) 0%, rgba(216, 216, 216, .03));
+    margin-top: 100px;
 
 }
+
 .registerCard .header{
     display: block;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     width: 100%;
-    font-weight: bold;
 }
 .registerCard form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
     padding: 40px;
-    
-}
-.errorWrapper{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
 }
 .registerCard form .registerWay{
     display: flex;
@@ -39,7 +32,6 @@
     width: 100%;
     cursor: pointer;
     justify-content: center !important;
-    margin-top: 40px;
 }
 
 .registerCard p{
@@ -52,7 +44,9 @@
 .registerCard p span:first-child{
     color: gray;
 }
-
+.footer{
+  width: 100%;
+}
 @media (max-width: 1191px) {
     .registerCard{
         width: 80%;
@@ -64,7 +58,6 @@
 @media (max-width: 768px) {
     .registerCard form{
         padding: 0;
-       
     }
     .registerCard{
         width: 100%;

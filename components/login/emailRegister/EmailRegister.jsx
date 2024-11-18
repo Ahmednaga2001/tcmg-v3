@@ -228,6 +228,10 @@ export const EmailRegister = ({ onNextStep }) => {
             alt="arrow-left icon"
           />
         </button>
+        <p className={styles.footer}>
+            <span>أول مرة لك هنا ؟</span>
+            <span onClick={handleOpenRegister} style={{ cursor: 'pointer' }}> تسجيل حساب جديد</span> {/* Use onClick */}
+          </p>
       </form>
     </div>
   );

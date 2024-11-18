@@ -79,7 +79,7 @@ const CompaniesServices = () => {
             </div>
             <Link href={{
     pathname: service.title === "أعمال شركات" ? "/business-registration" : "/payment",
-    query: { fromBusinessPackage: service.title === "أعمال شركات" }
+    query: { fromBusinessPackage: service.title === "تأسيس شركات" }
   }}>
               تحديد
               <Image

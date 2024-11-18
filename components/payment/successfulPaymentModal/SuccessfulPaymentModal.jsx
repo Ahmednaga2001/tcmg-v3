@@ -2,17 +2,16 @@ import React, { useEffect } from 'react';
 import styles from './page.module.css';
 import Image from 'next/image';
 
-export default function SuccessfulPaymentModal({ onSuccess, setShowModal }) {
+export default function SuccessfulPaymentModal({ setShowModal }) {
     
     useEffect(() => {
      
         const timer = setTimeout(() => {
             setShowModal(false); 
-            onSuccess(); 
         }, 3000); 
 
         return () => clearTimeout(timer);
-    }, [onSuccess, setShowModal]);
+    }, [ setShowModal]);
 
     return (
         <div className={styles.successfulPaymentModal}>

@@ -1,6 +1,9 @@
+"use client";
+import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
 
 export default function RecentConsultations() {
+  const router = useRouter();
   return (
     <div className={styles.recentConsultations}>
       <div>
@@ -28,8 +31,9 @@ export default function RecentConsultations() {
             <td>مكتمل</td>
             <td className={styles.actions}>
               <button>مشاهدة الفاتورة</button>
-              <button>إعادة الإستشارة</button>
-            </td>
+              <button onClick={() => router.push('/payment?step=4&fromBusinessPackage=false&retryConsultation=true')}>
+  إعادة الإستشارة
+</button>              </td>
           </tr>
         </tbody>
       </table>

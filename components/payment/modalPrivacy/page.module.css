@@ -16,6 +16,7 @@ transform: translate(-50%, -50%);
 }
 .modalPrivacy p{
     color: gray;
+    text-align: start;
 }
 .modalPrivacy div{
   text-align: start;
