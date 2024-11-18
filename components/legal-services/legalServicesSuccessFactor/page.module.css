@@ -13,7 +13,8 @@
 .succeesfactors .card {
   width: 20rem;
   height: 430px;
-  background: linear-gradient(#1b2340, #1b2340);
+  background: linear-gradient(#1A223F, #101830);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   position: relative;
   cursor: pointer;
