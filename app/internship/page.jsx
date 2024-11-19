@@ -10,26 +10,54 @@ import Accordion from "@/components/internship/client/accordion/Accordion";
 import styles from "./page.module.css";
 import Discover from "@/components/internship/discover/Discover";
 import Links from "@/components/shared/linksPagination/Links";
-export const metadata={
-  title : "Internship",
-  description : "هل تبحث عن فرص تدريب محامين حديثي التخرج من كلية الحقوق؟ قدم طلب الآن لمكاتب TCMG للمحاماة وتدرب مع نخبة من أكفأ المحامين الممارسين في مصر",
-  keywords : "تدريب محامين حديثي التخرج"
-}
+import Head from "next/head";
+export const metadata = {
+  title: "التدريب",
+  description:
+    "هل تبحث عن فرص تدريب محامين حديثي التخرج من كلية الحقوق؟ قدم طلب الآن لمكاتب TCMG للمحاماة وتدرب مع نخبة من أكفأ المحامين الممارسين في مصر",
+  keywords: "تدريب محامين حديثي التخرج",
+  robots: "index, follow",
+  revisit: "2 days",
+};
 function Internship() {
   return (
-    <div className={styles.internPage}>
-      <InternHero />
-      <Links/>
-      <Discover/>
-      <PathToLegalExcellence />
-      <InternChallenges />
-      <InternOffer />
-      <InternExperience />
-      <InternAspirations />
-      <InternTcmg/>
-      <InternGraduationForm />
-      <Accordion/>
-    </div>
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "TCMG",
+              url: "https://www.tcmglaw.com/internship",
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  // telephone: "",
+                  contactType: "customer service",
+                  areaServed: "SA",
+                  availableLanguage: "Arabic",
+                },
+              ],
+            }),
+          }}
+        />
+      </Head>
+      <div className={styles.internPage}>
+        <InternHero />
+        <Links />
+        <Discover />
+        <PathToLegalExcellence />
+        <InternChallenges />
+        <InternOffer />
+        <InternExperience />
+        <InternAspirations />
+        <InternTcmg />
+        <InternGraduationForm />
+        <Accordion />
+      </div>
+    </>
   );
 }
 

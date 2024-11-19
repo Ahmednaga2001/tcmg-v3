@@ -5,7 +5,7 @@ import PrivacyStatement from "@/components/privacy/privacyStatement/PrivacyState
 import PrivacyDetails from "@/components/privacy/privacyDetails/PrivacyDetails";
 
 export const metadata = {
-  title: "Privacy Policy",
+  title: "سياسة الخصوصية",
 }
 export default function page() {
   return (

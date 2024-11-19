@@ -79,7 +79,9 @@
         font-size: 35px;
         text-align: center;
     }
-    
+    .atriclePage .mainTitle{
+        font-size: 35px;
+    }
 }
 @media (max-width:768px) {
     .atriclePage section{
@@ -212,4 +214,10 @@ padding: 10px;
 }
 .articleMarks .socialIcons img{
     cursor: pointer;
+}
+
+@media (max-width: 400px) {
+    .atriclePage .mainTitle{
+        font-size: 24px;
+    }
 }

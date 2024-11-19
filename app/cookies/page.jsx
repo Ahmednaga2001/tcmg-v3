@@ -4,7 +4,7 @@ import PrivacyStatement from "@/components/cookiesPage/privacyStatement/PrivacyS
 import styles from "./page.module.css"
 import CookiesFooter from "@/components/cookiesPage/cookiesFooter/CookiesFooter"
 export const metadata = {
-  title: "Cookies",
+  title: "ملفات تعريف الارتباط",
 }
 export default function page() {
   return (

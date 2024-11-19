@@ -17,7 +17,7 @@ const data = [
   "التقاضي",
 ];
 export const metadata = {
-  title: "Sectors",
+  title: "القطاعات",
 };
 const Sectors = () => {
   return (

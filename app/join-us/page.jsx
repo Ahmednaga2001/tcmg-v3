@@ -7,22 +7,50 @@ import JoinIntern from "@/components/join-us/joinIntern/JoinIntern";
 import JoinOurJourney from "@/components/join-us/joinOurJournery/JoinOurJourney";
 import styles from "./page.module.css";
 import JoinJobOpportunities from "@/components/join-us/client/joinJobOpportunities/JoinJobOpportunities";
-export const metadata={
-  title : "Join-Us",
-  description : "هل تبحث عن فرص قانونية مميزة؟ انضم إلى مكاتب TCMG للمحاماة الدولية, واكتشف فرص مثالية للتطوير المهني في بيئة عمل محفزة تسعى للتميز والكفاءة في تقديم الخدمات القانونية."
-}
+import Head from "next/head";
+export const metadata = {
+  title: "انضم الينا",
+  description:
+    "هل تبحث عن فرص قانونية مميزة؟ انضم إلى مكاتب TCMG للمحاماة الدولية, واكتشف فرص مثالية للتطوير المهني في بيئة عمل محفزة تسعى للتميز والكفاءة في تقديم الخدمات القانونية.",
+  robots: "index, follow",
+  revisit: "2 days",
+};
 function JoinUs() {
   return (
-    <div className={styles.joinPage}>
-      <JoinHero />
-      <Links />
-      <JoinAbout />
-      <JoinUsSlider />
-      <JoinValues />
-      <JoinIntern />
-      <JoinJobOpportunities />
-      <JoinOurJourney />
-    </div>
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "TCMG",
+              url: "https://www.tcmglaw.com/join-us",
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  // telephone: "",
+                  contactType: "customer service",
+                  areaServed: "SA",
+                  availableLanguage: "Arabic",
+                },
+              ],
+            }),
+          }}
+        />
+      </Head>
+      <div className={styles.joinPage}>
+        <JoinHero />
+        <Links />
+        <JoinAbout />
+        <JoinUsSlider />
+        <JoinValues />
+        <JoinIntern />
+        <JoinJobOpportunities />
+        <JoinOurJourney />
+      </div>
+    </>
   );
 }
 

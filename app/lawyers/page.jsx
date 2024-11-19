@@ -1,8 +1,11 @@
-import Hero from "@/components/shared/hero/Hero";
+
 import styles from "./page.module.css";
 import LawyersForm from "@/components/lawyers/client/lawyersForm/LawyersForm";
 
+export const metadata = {
+  title: "خبرؤنا",
 
+};
 const page = () => {
   return (
     <div className={styles.lawyersPage}>

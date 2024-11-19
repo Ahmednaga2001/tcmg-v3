@@ -8,6 +8,10 @@ import ArticleServieSix from "@/components/article/ArticleServieSix"
 import ArticleContact from "@/components/article/ArticleContact"
 import ArticleMarks from "@/components/article/ArticleMarks"
 import ArticleConclution from "@/components/article/ArticleConclution"
+export const metadata = {
+  title: "المقالات",
+
+};
  const Aertice = () => {
   return (
     <div className={styles.atriclePage}>

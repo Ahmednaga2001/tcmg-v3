@@ -13,7 +13,7 @@ const data = [
   "التوظيف",
 ];
 export const metadata = {
-  title: "Practices",
+  title: "الممارسات",
 };
 const Practices = () => {
   return (

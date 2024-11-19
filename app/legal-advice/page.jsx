@@ -12,12 +12,15 @@ import Accordion from "@/components/legal-consultations/client/Accordion";
 import ConsultStrongestLawyers from "@/components/legal-consultations/consultStrongestLawyers/ConsultStrongestLawyers";
 import ConsultMob from "@/components/legal-consultations/client/consultMob/ConsultMob";
 import EstablishLegalServices from "@/components/legal-consultations/client/establishLegalService/EstablishLegalServices";
+import Head from "next/head";
 export const metadata = {
-  title: "Legal Advice",
+  title: "الاستشارات القانونية",
   description:
     "هل تبحث عن أكبر مكتب استشارات قانونية مصرية؟ اطلب الآن استشارة قانونية فورية للأفراد والشركات واحصل على رد من مستشار قانوني أون لاين أو بالهاتف في مصر.",
   keywords:
     "استشارة قانونية فورية، استشارات قانونية، مكتب استشارات قانونية، استشارة محامي، استشارات قانونية اونلاين",
+  robots: "index, follow",
+  revisit: "2 days",
 };
 
 const customers = [
@@ -52,21 +55,45 @@ const customers = [
 ];
 function LegalConsultation() {
   return (
-    <div className={styles.consultPage}>
-      <ConsultHero />
-      <ConsultSupport />
-      <ConsultStrongestLawyers />
-      <ConsultLegalAdvice />
-      <EstablishLegalServices/>
-      <ConsultMob />
-      <ConsultNowEasy />
-      <ConsultReserve />
-      <DividerOne />
-      <ConsultWhyTrust />
-      <OurCustomers customers={customers} />
-      <DividerTwo />
-      <Accordion />
-    </div>
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "TCMG",
+              url: "https://www.tcmglaw.com/legal-advice",
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  // telephone: "",
+                  contactType: "customer service",
+                  areaServed: "SA",
+                  availableLanguage: "Arabic",
+                },
+              ],
+            }),
+          }}
+        />
+      </Head>
+      <div className={styles.consultPage}>
+        <ConsultHero />
+        <ConsultSupport />
+        <ConsultStrongestLawyers />
+        <ConsultLegalAdvice />
+        <EstablishLegalServices />
+        <ConsultMob />
+        <ConsultNowEasy />
+        <ConsultReserve />
+        <DividerOne />
+        <ConsultWhyTrust />
+        <OurCustomers customers={customers} />
+        <DividerTwo />
+        <Accordion />
+      </div>
+    </>
   );
 }
 

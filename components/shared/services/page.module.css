@@ -35,3 +35,15 @@
     gap: 20px;
   }
 }
+@media (max-width: 400px) {
+  .services span {
+    font-size: 13px;
+    width: 50%;
+  }
+  .service a {
+    font-size: 13px;
+  }
+  .services{
+    gap: 20px;
+  }
+}

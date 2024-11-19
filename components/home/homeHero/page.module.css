@@ -2,9 +2,11 @@
     position: relative; /* Ensure the pseudo-element is positioned correctly */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 10px;
     margin-top: 100px;
     z-index: 1; /* Keep the hero content above the background */
+    min-height: 100vh;
 }
 
 .hero::before {
@@ -14,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(/assets/images/homePage/hero.jpg);
+    background-image: url(/assets/images/homePage/hero.svg);
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.2; /* Set the desired opacity */
@@ -30,7 +32,10 @@
 }
 
 .animation {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 @media (max-width : 1191px) {
     .hero .content {
