@@ -27,7 +27,8 @@ const data = [
     header: "مكتب محاماة دولي بمعايير أداء عالمية",
     body : "نسعى جاهدين لأن نكون مكتب محاماة واستشارات قانونية موثوق؛ لذا نعمل على تقديم حلول قانونية دقيقة ومتكاملة للشركات والأفراد في مختلف المجالات. نضم في شركة المحاماة الخاصة بنا فريق من المستشارين القانونيين أصحاب الخبرات الواسعة والعميقة في مجالات القانون المختلفة؛ لذا فإن دعمنا القانوني قادر على حماية حقوقك وتحقيق أهدافك القانونية.",
     img: "assets/symbols/topL.svg",
-    span: "تواصل معنا عبر البريد الإلكتروني",
+    span: "تعرف علينا",
+    ref : "about-us"
   },
 ];
 const HomeCarousel = () => {
@@ -64,15 +65,9 @@ const HomeCarousel = () => {
             </div>
             <div>
             <span className="link">
-              {
-                index === 1 ? (
-                  <a href="mailto:contact@tcmglaw.com" className="email-link">
-                  {el.span}
-                </a>
-                ) : (
+            
                   <Link href={el.ref}>{el.span}</Link>
-                )
-              }
+                
               <Image
                 src="assets/icons/arrow-left.svg"
                 alt={el.img}
