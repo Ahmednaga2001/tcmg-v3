@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const data = [
   {
@@ -32,7 +32,8 @@ const data = [
     title : "إستشارة ناجحة",
     targetNumber: 2900,
     alt : "إستشارة ناجحة"
-  }
+  },
+
 
 ];
 
@@ -86,47 +87,9 @@ const ConsultWhyTrust = () => {
         القائمة؛ بفضل جهود مستشاريها المتخصصين وعملائها السعداء بتقديم أفضل
         استشارات قانونية. وهذه بعض الإحصاءات المميزة حول المكتب:{" "}
       </p>
-      <div className={styles.cards} id="customers">
-        <Swiper
-          effect="fade"
-          spaceBetween={10}
-          centeredSlides={true}
-          navigation={{
-            nextEl: ".prev",
-            prevEl: ".next",
-          }}
-          slidesPerView={1}
-          breakpoints={{
-            480: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            1000: {
-              slidesPerView: 2.5,
-              spaceBetween: 10,
-            },
-            1200: {
-              slidesPerView: 3, // Show 4 cards
-              spaceBetween: 20,
-            },
-          }}
-          loop={true}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          style={{
-            "--swiper-navigation-color": "#fff",
-            "--swiper-pagination-color": "#fff",
-          }}
-          modules={[Navigation,EffectFade, Autoplay, Pagination]} // Added modules back
-        >
+      <div className={styles.cards}>
+        
           {data.map((item, index) => (
-            <SwiperSlide key={index} className={styles.customers}>
               <div key={index} className={styles.card}>
                 <Image
                   src={item.path}
@@ -137,11 +100,7 @@ const ConsultWhyTrust = () => {
                 <Counter targetNumber={item.targetNumber} />
                 <span>{item.title}</span>
               </div>
-            </SwiperSlide>
           ))}
-        </Swiper>
-        <div className="swiper-button-prev prev" />
-        <div className="swiper-button-next next" />
       </div>
     </section>
   );

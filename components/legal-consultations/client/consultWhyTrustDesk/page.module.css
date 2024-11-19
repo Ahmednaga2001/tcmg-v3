@@ -1,9 +1,11 @@
 .whyUs {
-  display: none;
   }
   .whyUs h2,
   .whyUs p {
     text-align: center;
+  }
+  .cards{
+    display: flex;
   }
   .whyUs .card {
     background-color: #1b2340;
@@ -11,10 +13,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* flex-basis: 28rem; */
+    flex-basis: 28rem;
     height: 350px;
     width: 100%;
-    /* margin: 10px; */
+    margin: 10px;
     border-radius: 10px;
   }
   .whyUs .card p {
@@ -44,6 +46,6 @@
 
   @media (max-width: 500px) {
     .whyUs{
-      display: block;
+      display: none;
     }
   }

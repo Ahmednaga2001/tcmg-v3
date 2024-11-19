@@ -1,4 +1,3 @@
-import DividerOne from "@/components/legal-consultations/consultDivider/DividerOne";
 import DividerTwo from "@/components/legal-consultations/consultDivider/DividerTwo";
 import styles from "./page.module.css";
 import OurCustomers from "@/components/shared/customers/Customers";
@@ -8,6 +7,7 @@ import ConsultLegalAdvice from "@/components/legal-consultations/consultLegalAdv
 import ConsultNowEasy from "@/components/legal-consultations/consultNowEasy/ConsultNowEasy";
 import ConsultReserve from "@/components/legal-consultations/client/consultReserve/ReserveConsultation";
 import ConsultWhyTrust from "@/components/legal-consultations/client/consultWhyTrust/ConsultWhyTrust";
+import ConsultWhyTrustDesk from "@/components/legal-consultations/client/consultWhyTrustDesk/ConsultWhyTrust";
 import Accordion from "@/components/legal-consultations/client/Accordion";
 import ConsultStrongestLawyers from "@/components/legal-consultations/consultStrongestLawyers/ConsultStrongestLawyers";
 import ConsultMob from "@/components/legal-consultations/client/consultMob/ConsultMob";
@@ -87,7 +87,7 @@ function LegalConsultation() {
         <ConsultMob />
         <ConsultNowEasy />
         <ConsultReserve />
-        {/* <DividerOne /> */}
+        <ConsultWhyTrustDesk/>
         <ConsultWhyTrust />
         <OurCustomers customers={customers} />
         <DividerTwo />

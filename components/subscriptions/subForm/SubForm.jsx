@@ -9,6 +9,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
+import Api from "@/components/config/Api";
+import { notifyError, notifySuccess } from "@/components/notify/Notify";
 
 const practices = [
   { id: 1, value: "تأسيس الشركات" },
@@ -38,69 +40,79 @@ const SubForm = () => {
   const [error, seterror] = useState(null);
   const [isloading, setisloading] = useState(false);
 
-  const sub_form = useFormik({
+  const formik = useFormik({
     initialValues: {
       first_name: "",
       last_name: "",
+      phone: "",
       email: "",
       city: "",
       country: "",
-      sector: "",
-      practice: "",
-      agreeToPrivacy: false,
+      sectors: "",
+      practices: "",
+      agreeToPrivacy: true,
     },
     validationSchema: Yup.object({
       country: Yup.string()
-        .required("Required")
-        .matches(/^[a-zA-Z](\s[A-Z][a-zA-Z])*$/, " invalid country  "),
-      first_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z](\s[A-Z][a-zA-Z])*$/, "name invalid "),
-      last_name: Yup.string()
-        .max(10, "Must be 10 characters or less")
-        .required("Required")
-        .matches(/^[a-zA-Z](\s[A-Z][a-zA-Z])*$/, "name invalid "),
-      email: Yup.string()
+        .required("مطلوب")
         .matches(
-          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-          "please enter a valid email"
-        )
-        .required("Required"),
+          /^[a-zA-Z\u0600-\u06FF\s]*$/,
+          "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+        ),
+      first_name: Yup.string()
+        .max(10, "يجب أن يكون 10 أحرف أو أقل")
+        .required("مطلوب")
+        .matches(
+          /^[a-zA-Z\u0600-\u06FF\s]*$/,
+          "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+        ),
+      last_name: Yup.string()
+        .max(10, "يجب أن يكون 10 أحرف أو أقل")
+        .required("مطلوب")
+        .matches(
+          /^[a-zA-Z\u0600-\u06FF\s]*$/,
+          "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+        ),
+      email: Yup.string()
+        // .matches(
+        //   /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        //   "يرجى إدخال بريد إلكتروني صالح"
+        // )
+        .required("مطلوب"),
+      phone: Yup.string()
+        .matches(/^[0-9]{11}$/, "رقم الهاتف يجب أن يكون مكونًا من 11 رقمًا فقط")
+        .required("مطلوب"),
       city: Yup.string()
-        .matches(/^[a-zA-Z](\s[A-Z][a-zA-Z])*$/, " invalid city  ")
-        .required("Required"),
-      sector: Yup.string().required("Required"),
-      practice: Yup.string().required("Required"),
+        .matches(
+          /^[a-zA-Z\u0600-\u06FF\s]*$/,
+          "اسم غير صالح. يجب أن يتضمن حروف إنجليزية أو عربية فقط"
+        )
+        .required("مطلوب"),
+      sectors: Yup.string().required("مطلوب"),
+
+      practices: Yup.string().required("مطلوب"),
       agreeToPrivacy: Yup.boolean()
-        .oneOf([true], "You must agree to the privacy policy")
-        .required("Required"),
+        .oneOf([true], "يجب أن توافق على سياسة الخصوصية")
+        .required("مطلوب"),
     }),
     validateOnBlur: true,
     validateOnChange: true,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
+      console.log(values);
+
       setisloading(true);
+      try {
+        const response = await Api.post("/subscriptions", values);
 
-      // axios
-      //   .post("https://tcmg-alpha.vercel.app/contact-us", values)
-      //   .then((res) => {
-      //     setisloading(false);
+        setisloading(false);
+        notifySuccess("تم الارسال بنجاح");
+        formik.resetForm();
+      } catch (error) {
 
-      //     console.log("say", res.data);
-      //     setsuccess(res.data.status);
-      //     setTimeout(() => {
-      //       setsuccess(null);
-      //     }, 3000);
-      //   })
-      //   .catch((err) => {
-      //     setisloading(false);
-
-      //     // console.log(err.response?.data?.error[0]?.msg);
-      //     seterror(err.response?.data?.error[0]?.msg);
-      //     setTimeout(() => {
-      //       seterror(null);
-      //     }, 3000);
-      //   });
+        setisloading(false);
+        const errorMsg = error?.response?.data?.error?.[0]?.msg || "حدث خطأ ما";
+        notifyError(errorMsg);
+      }
     },
   });
 
@@ -108,7 +120,7 @@ const SubForm = () => {
     <section className={styles.RequestLawyer}>
       <h2>معلومات التواصل</h2>
       <div className={styles.formPage}>
-        <form onSubmit={sub_form.handleSubmit}>
+        <form onSubmit={formik.handleSubmit}>
           <div className={styles.errorWrapper}>
             <Input
               label="الاسم الاول"
@@ -116,13 +128,13 @@ const SubForm = () => {
               placeholder="الاسم الاول"
               alt={"person icon"}
               name={"first_name"}
-              value={sub_form.values.first_name}
-              change={sub_form.handleChange}
-              blur={sub_form.handleBlur}
+              value={formik.values.first_name}
+              change={formik.handleChange}
+              blur={formik.handleBlur}
               display="block"
             />
-            {sub_form.touched.first_name && sub_form.errors.first_name ? (
-              <div className="error">{sub_form.errors.first_name}</div>
+            {formik.touched.first_name && formik.errors.first_name ? (
+              <div className="error">{formik.errors.first_name}</div>
             ) : null}
           </div>
           <div className={styles.errorWrapper}>
@@ -133,12 +145,12 @@ const SubForm = () => {
               alt={"person icon"}
               display="block"
               name={"last_name"}
-              value={sub_form.values.last_name}
-              change={sub_form.handleChange}
-              blur={sub_form.handleBlur}
+              value={formik.values.last_name}
+              change={formik.handleChange}
+              blur={formik.handleBlur}
             />
-            {sub_form.touched.last_name && sub_form.errors.last_name ? (
-              <div className="error">{sub_form.errors.last_name}</div>
+            {formik.touched.last_name && formik.errors.last_name ? (
+              <div className="error">{formik.errors.last_name}</div>
             ) : null}
           </div>
           <div className={styles.errorWrapper}>
@@ -149,12 +161,29 @@ const SubForm = () => {
               alt={"email icon"}
               display="block"
               name={"email"}
-              value={sub_form.values.email}
-              change={sub_form.handleChange}
-              blur={sub_form.handleBlur}
+              value={formik.values.email}
+              change={formik.handleChange}
+              blur={formik.handleBlur}
             />
-            {sub_form.touched.email && sub_form.errors.email ? (
-              <div className="error">{sub_form.errors.email}</div>
+            {formik.touched.email && formik.errors.email ? (
+              <div className="error">{formik.errors.email}</div>
+            ) : null}
+          </div>
+          <div className={styles.errorWrapper}>
+            <Input
+              label="رقم الهاتف"
+              imgPath="/assets/icons/form/ic_round-phone.svg"
+              placeholder="رقم الهاتف"
+              alt={"phone icon"}
+              name={"phone"} // Ensure this matches initialValues and schema
+              value={formik.values.phone}
+              change={formik.handleChange}
+              blur={formik.handleBlur}
+              display="block"
+            />
+
+            {formik.touched.phone && formik.errors.phone ? (
+              <div className="error">{formik.errors.phone}</div>
             ) : null}
           </div>
           <div className={styles.errorWrapper}>
@@ -165,12 +194,12 @@ const SubForm = () => {
               alt={"email icon"}
               display="block"
               name={"city"}
-              value={sub_form.values.city}
-              change={sub_form.handleChange}
-              blur={sub_form.handleBlur}
+              value={formik.values.city}
+              change={formik.handleChange}
+              blur={formik.handleBlur}
             />
-            {sub_form.touched.city && sub_form.errors.city ? (
-              <div className="error">{sub_form.errors.city}</div>
+            {formik.touched.city && formik.errors.city ? (
+              <div className="error">{formik.errors.city}</div>
             ) : null}
           </div>
           <div className={styles.errorWrapper}>
@@ -181,12 +210,12 @@ const SubForm = () => {
               alt={"email icon"}
               display="block"
               name={"country"}
-              value={sub_form.values.country}
-              change={sub_form.handleChange}
-              blur={sub_form.handleBlur}
+              value={formik.values.country}
+              change={formik.handleChange}
+              blur={formik.handleBlur}
             />
-            {sub_form.touched.country && sub_form.errors.country ? (
-              <div className="error">{sub_form.errors.country}</div>
+            {formik.touched.country && formik.errors.country ? (
+              <div className="error">{formik.errors.country}</div>
             ) : null}
           </div>
 
@@ -200,15 +229,15 @@ const SubForm = () => {
               head={"إختر القطاعات من القائمة"}
               name="sector"
               id="sector"
-              selectedOption={sub_form.values.sector}
+              selectedOption={formik.values.sector}
               setSelectedOption={(value) => {
-                sub_form.setFieldValue("sector", value); // Update Formik state
+                formik.setFieldValue("sectors", value); // Update Formik state
               }}
-              onChange={sub_form.handleChange} // Bind Formik onChange
-              onBlur={sub_form.handleBlur} // Bind Formik onBlur
+              onChange={formik.handleChange} // Bind Formik onChange
+              onBlur={formik.handleBlur} // Bind Formik onBlur
             />
-            {sub_form.touched.sector && sub_form.errors.sector ? (
-              <div className="error">{sub_form.errors.sector}</div>
+            {formik.touched.sectors && formik.errors.sectors ? (
+              <div className="error">{formik.errors.sectors}</div>
             ) : null}
           </div>
           <div className={styles.errorWrapper}>
@@ -221,15 +250,15 @@ const SubForm = () => {
               options={practices}
               name="practice"
               id="practice"
-              selectedOption={sub_form.values.practice}
+              selectedOption={formik.values.practice}
               setSelectedOption={(value) => {
-                sub_form.setFieldValue("practice", value); // Update Formik state
+                formik.setFieldValue("practices", value); // Update Formik state
               }}
-              onChange={sub_form.handleChange} // Bind Formik onChange
-              onBlur={sub_form.handleBlur} // Bind Formik onBlur
+              onChange={formik.handleChange} // Bind Formik onChange
+              onBlur={formik.handleBlur} // Bind Formik onBlur
             />
-            {sub_form.touched.practice && sub_form.errors.practice ? (
-              <div className="error">{sub_form.errors.practice}</div>
+            {formik.touched.practices && formik.errors.practices? (
+              <div className="error">{formik.errors.practices}</div>
             ) : null}
           </div>
 
@@ -237,12 +266,11 @@ const SubForm = () => {
             <CheckBox
               label={"أوافق على سياسة الخصوصية و سياسة الإستخدام "}
               name="agreeToPrivacy"
-              checked={sub_form.values.agreeToPrivacy} // Control the checkbox
-              onChange={sub_form.handleChange} // Use Formik's onChange
-              onBlur={sub_form.handleBlur} // Use Formik's onBlur
+              checked={formik.values.agreeToPrivacy} // تعيين الحالة من Formik
+              onChange={formik.handleChange} // التغيير مرتبط بـ Formik
+              onBlur={formik.handleBlur} // للتفاعل مع Formik عند فقدان التركيز
               error={
-                sub_form.touched.agreeToPrivacy &&
-                sub_form.errors.agreeToPrivacy
+                formik.touched.agreeToPrivacy && formik.errors.agreeToPrivacy
               }
             />
           </div>
@@ -250,7 +278,15 @@ const SubForm = () => {
           {isloading ? (
             <>
               <div className="loader">
-                <Button disabled text="ارسال استمارة التاصل" />
+                <button type="submit" disabled className={styles.registerWay}>
+                  اشتراك
+                  <Image
+                    src="/assets/icons/form/arrow-left-black.png"
+                    width={24}
+                    height={24}
+                    alt="arrow-left icon"
+                  />
+                </button>{" "}
                 <TailSpin
                   visible={true}
                   height="30"
@@ -275,11 +311,10 @@ const SubForm = () => {
             </button>
           )}
         </form>
-        <p className="err">{error}</p>
-        <p className="success">{success}</p>
+
       </div>
     </section>
   );
 };
 
-export default SubForm;
+export default SubForm;

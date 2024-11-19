@@ -115,7 +115,6 @@ const AskLawyerForm = () => {
         notifySuccess("تم الارسال بنجاح"); 
         ask_lawyer_form.resetForm();
       } catch (error) {
-        console.log(error);
         
         setisloading(false); 
         const errorMsg = error?.response?.data?.error?.[0]?.msg || "حدث خطأ ما";

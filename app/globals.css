@@ -169,10 +169,10 @@ a {
   z-index: 10 !important;
 
 }
-#succeesfactors{
+#succeesfactors,#customers{
   position: relative;
 }
-#succeesfactors .swiper-button-next {
+#succeesfactors .swiper-button-next , #customers .swiper-button-next  {
   background-repeat: no-repeat !important;
   background-size: 100% auto !important;
   background-position: center !important;
@@ -180,7 +180,7 @@ a {
   z-index: 10 !important;
   right: -10px;
 }
-#succeesfactors .swiper-button-prev  {
+#succeesfactors .swiper-button-prev , #customers .swiper-button-prev  {
   position: absolute;
   background-repeat: no-repeat !important;
   background-size: 100% auto !important;
@@ -197,7 +197,7 @@ a {
 #dreamCompany .swiper-button-prev::after,
 #companiesTypes .swiper-button-prev::after,
 #companiesTypes .swiper-button-next::after,#succeesfactors .swiper-button-next::after,
-#succeesfactors .swiper-button-prev::after {
+#succeesfactors .swiper-button-prev::after , #customers .swiper-button-next::after, #customers .swiper-button-prev::after{
   display: none !important;
   content: none !important;
 }
