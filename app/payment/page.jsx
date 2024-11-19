@@ -20,11 +20,7 @@ const ahmedSaid = {
     desc: "محامٍ بارز في القانون التجاري يتمتع بـ 19 عامًا من الخبرة في قانون الشركات، والتحكيم التجاري الدولي، والرعاية الصحية، وقانون التكنولوجيا والاتصالات. يجيد صياغة العقود الدولية المعقدة والتفاوض على الصفقات الكبيرة. ويمتلك القدرة على التعامل مع العملاء من مختلف القطاعات، وحماية مصالحهم بكفاءة ومهنية عالية.",
     imgPath: "/assets/images/lawyers/photo frame (3).png"
 };
-export const metadata = {
-    title: "الدفع",
-    robots: "noindex, nofollow",
-  
-  };
+
 function Page() {     
     const searchParams = useSearchParams();
     const fromBusinessPackage = searchParams.get('fromBusinessPackage') === 'true'; 
