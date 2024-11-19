@@ -87,7 +87,7 @@ function LegalConsultation() {
         <ConsultMob />
         <ConsultNowEasy />
         <ConsultReserve />
-        <DividerOne />
+        {/* <DividerOne /> */}
         <ConsultWhyTrust />
         <OurCustomers customers={customers} />
         <DividerTwo />
