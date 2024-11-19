@@ -30,7 +30,9 @@
     cursor: pointer;
     justify-content: center !important;
 }
-
+.footer{
+    width: 100%;
+}
 .registerCard p{
     border: 1px solid #ffffff1d;
     border-radius: 12px;
