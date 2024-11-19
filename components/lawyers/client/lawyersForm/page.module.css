@@ -122,6 +122,11 @@
     font-size: 20px;
     cursor: pointer;
   }
+  .mobClear{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .l .formContainer{
     display: none;
     border: 1px solid #ffffff89;
