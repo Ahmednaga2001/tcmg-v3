@@ -54,11 +54,12 @@ export const EmailLogin = ({ onNextStep }) => {
               المتابعة
               <Image src="/assets/icons/form/arrow-left-black.png" width={24} height={24} alt="arrow-left icon" />
             </button>
-          </form>
-          <p className={styles.footer}>
+            <p className={styles.footer}>
             <span>أول مرة لك هنا ؟</span>
             <span onClick={handleOpenRegister} style={{ cursor: 'pointer' }}> إنضم إلينا </span> {/* Use onClick */}
           </p>
+          </form>
+       
         </div>
       ) : (
         <EmailRegister onNextStep={onNextStep} /> // Show the registration form when "إنضم إلينا" is clicked

@@ -256,14 +256,14 @@ function SideNav({ isOpen, toggleSideNav }) {
               </div>
 
               <div className={styles.bottom}>
-                <div className={styles.login}>
+                <Link href="login" onClick={toggleSideNav} className={styles.login}>
                   <Image
                     src="/assets/icons/form/solar_user-bold.png"
                     width={24}
                     height={24}
                   />
                   تسجيل الدخول
-                </div>
+                </Link>
                 <div className={styles.reg}>
                   <span>احجز استشارتك الآن</span>
                   <p>
