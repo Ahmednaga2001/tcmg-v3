@@ -26,7 +26,7 @@ const BranchContactForm = () => {
       phone: "",
       message: "",
       clientType: "",
-      agreeToPrivacy: false,
+      agreeToPrivacy: true,
     },
     validationSchema: Yup.object({
       message: Yup.string()
