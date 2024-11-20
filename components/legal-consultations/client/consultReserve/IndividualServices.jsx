@@ -64,10 +64,12 @@ const IndividualServices = () => {
           {service.isPopular && <span className={styles.popular}>الأكثر طلباً</span>}
           <div className={styles.topData}>
             <h3>{service.title}</h3>
-            <span>{service.priceOriginal}</span>
-            <span>
+          <div className={styles.priceContainer}>
+          <span className={styles.price}>{service.priceOriginal}</span>
+            <span style={{paddingTop: "10px" , display: "block"}}>
               {service.priceDiscounted}<sub>EGY</sub>
             </span>
+          </div>
           </div>
           <div className={styles.bodyData}>
             <div className={styles.offer}>

@@ -124,6 +124,14 @@
   gap: 5px;
   justify-content: flex-end;
 }
+.priceContainer{
+  position: relative;
+}
+.priceContainer .price{
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
 @media (max-width: 768px) {
   .reserveConsultation .companiesServices .card,
   .individualServices .card {

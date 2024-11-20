@@ -48,13 +48,13 @@ const CompaniesServices = () => {
             <div className={styles.topData}>
               <h3>{service.title}</h3>
               {service.price ? (
-                <>
-                  <span>{service.price}</span>
-                  <span>
+                <div className={styles.priceContainer}>
+                  <span className={styles.price}>{service.price}</span>
+                  <span style={{paddingTop: "10px" , display: "block"}}>
                     {service.price}
                     <sub>EGY</sub>
                   </span>
-                </>
+                </div>
               ) : (
                 <span className={styles.info}>{service.info}</span>
               )}
