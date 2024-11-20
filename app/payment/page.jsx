@@ -12,13 +12,13 @@ import FollowPayment from '@/components/payment/followPayment/FollowPayment';
 const heshamMahmod = {
     name: "هشام محمود",
     desc: "هشام محمود محامي جنايات متمرس ومرخص من وزارة العدل لديه خبرة في القانون الجنائي وقضايا الأموال العامة وقانون الأحوال الشخصية في مصر والترافع أمام المحاكم المصرية بخبرة تتجاوز ال ١٢ سنة، كما عُرف بكونه محامي جنائي محنك تمكن من حل العديد من القضايا المعقدة.",
-    imgPath: "/assets/images/lawyers/المحامي هشام محمود محامي جنائي في المجموعة التجارية والبحرية للمحاماة_edited.webp"
+    imgPath: "/assets/images/lawyers/المحامي هشام محمود محامي جنائي في المجموعة التجارية والبحرية للمحاماة_edited.webp",
 };
 
 const ahmedSaid = {
-    name: "أحمد السعيد",
+    name: "أحمد سعيد",
     desc: "محامٍ بارز في القانون التجاري يتمتع بـ 19 عامًا من الخبرة في قانون الشركات، والتحكيم التجاري الدولي، والرعاية الصحية، وقانون التكنولوجيا والاتصالات. يجيد صياغة العقود الدولية المعقدة والتفاوض على الصفقات الكبيرة. ويمتلك القدرة على التعامل مع العملاء من مختلف القطاعات، وحماية مصالحهم بكفاءة ومهنية عالية.",
-    imgPath: "/assets/images/lawyers/photo frame (3).png"
+    imgPath: "/assets/images/lawyers/احمد سعيد.jpeg",
 };
 
 function Page() {     
@@ -61,12 +61,27 @@ function Page() {
         <div className={styles.paymentPage}>             
             <section>                 
                 <h2>                     
-                    {currentStep === 1 && "تسجيل الدخول"}                     
+                    {/* {currentStep === 1 && "تسجيل الدخول"}                     
                     {currentStep === 2 && !fromBusinessPackage && "إختيار التخصص"}                     
                     {currentStep === 2 && fromBusinessPackage && "إختيار المحامي"}                     
-                    {currentStep === 3 && "إختيار المحامي"}                     
+                    {currentStep === 3 && " المحامي المتاح للتخصص المطلوب "}                     
                     {currentStep === 4 && "معلومات إضافية"}                     
-                    {currentStep === 5 && "متابعة الدفع"}             
+                    {currentStep === 5 && "متابعة الدفع"}              */}
+                   {(() => {
+        if (currentStep === 1) return "تسجيل الدخول";
+        if (currentStep === 2 && !fromBusinessPackage) return "إختيار التخصص";
+
+        if (currentStep === 2 && fromBusinessPackage) return "المحامي المتاح للتخصص المطلوب";
+
+        if (currentStep === 3 && !fromBusinessPackage) return "المحامي المتاح للتخصص المطلوب";
+        
+        if (currentStep === 3 && fromBusinessPackage) return "معلومات إضافية";
+        if (currentStep === 4 && !fromBusinessPackage) return "معلومات إضافية";
+
+        if (currentStep === 5 && !fromBusinessPackage) return "متابعة الدفع";
+        if (currentStep === 4 && fromBusinessPackage) return "متابعة الدفع";
+        return null;
+    })()}
                 </h2>                 
                 <ul className={styles.steps}>                     
                     {Array.from({ length: 5 }, (_, index) => index + 1).map((step) => { 

@@ -87,6 +87,9 @@
   display: flex;
   justify-content: flex-start;
 }
+.businessPage h2{
+  text-align: center;
+ }
 @media (max-width: 1191px) {
    .formPage{
     width: 60%;

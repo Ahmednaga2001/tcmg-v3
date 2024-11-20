@@ -10,6 +10,7 @@ import { useFormik } from "formik";
 import CheckBox from "@/components/ui/CheckBox";
 import Api from "@/components/config/Api";
 import { notifyError, notifySuccess } from "@/components/notify/Notify";
+import SuccessfulModal from "@/components/shared/successfulModal/SuccessfulModal";
 const sectorOptions = [
   { id: 1, value: "أسواق المال" },
   { id: 2, value: "الإندماج والاستحواذ" },
@@ -23,7 +24,7 @@ const sectorOptions = [
 
 const BusinessRegistration = () => {
   const [isloading, setisloading] = useState(false);
-
+const [showModal , setShowModal] = useState(false);
   const formik = useFormik({
     initialValues: {
       company_name: "",
@@ -95,7 +96,7 @@ const BusinessRegistration = () => {
       try {
         const response = await Api.post("/companies-operations", values);
         setisloading(false);
-        notifySuccess("تم الارسال بنجاح");
+        setShowModal(true); 
         formik.resetForm(); // Reset form after successful submission
       } catch (error) {
         setisloading(false);
@@ -105,16 +106,14 @@ const BusinessRegistration = () => {
     },
   });
 
-  const [selectedSector, setSelectedSector] = useState("");
   return (
     <div className={styles.businessPage}>
+            {showModal && <SuccessfulModal text={"تم الإرسال بنجاح "} setShowModal={setShowModal} />}
+
       <section>
        <h2>إستشارة أعمال الشركات</h2>
         <div className={styles.formPage}>
-          <p>
-            يرجي إدخال بيانات بشكل صحيح وسيتم التواصل خلال ساعة من الحجز في خلال
-            مواعيد العمل الرسمية من 9 صباحًا لـ 11 مساءًا
-          </p>
+       
           <form onSubmit={formik.handleSubmit}>
             <div className={styles.errorWrapper}>
               <Input
