@@ -81,7 +81,7 @@ function FooterMobile() {
             </li>
 
             <li className={`${styles.boldLink} ${styles.space}`}>اخبار ورؤي</li>
-            <li><Link href="article-display">المقالات</Link></li>
+            <li><Link href="news-insights">المقالات</Link></li>
             <li className={`${styles.boldLink} ${styles.space}`}>تواصل معنا</li>
             <li><Link href="offices">الفروع</Link></li>
           </ul>

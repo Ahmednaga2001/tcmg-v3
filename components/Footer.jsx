@@ -79,7 +79,7 @@ function Footer() {
             <span  className={styles.boldLink}>
             أخبار ورؤي 
             </span>
-            <Link href="article-display">المقالات</Link>
+            <Link href="news-insights">المقالات</Link>
            
           </div>
         </div>

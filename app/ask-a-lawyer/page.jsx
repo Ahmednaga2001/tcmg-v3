@@ -10,7 +10,7 @@ export const metadata = {
   description:
     "اسأل محامي مصري الآن من خلال اكبر مكتب محاماة في مصر والشرق الأوسط, مع خبرة لأكثر من 30 عاماً بالتميز والتفوق في مجال المحاماة وتقديم الاستشارات القانونية",
   keywords: "اسال محامي في مصر، اسال محامي مصري اون لاين",
-  robots: "index, follow",
+  robots: "noindex, nofollow",
   revisit: "2 days",
 };
 function AskAttorny() {

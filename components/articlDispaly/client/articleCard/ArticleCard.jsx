@@ -1,10 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css"
+import Link from "next/link";
 const ArticleCard = () => {
   return (
     
       
-            <div className={styles.card}>
+    <Link href={`/post/1`} className={styles.card}>
               <div className={styles.topData}>
                 <span>24 يناير , 2024</span>
                 <span>بواسطة محي الدين </span>
@@ -14,7 +15,7 @@ const ArticleCard = () => {
               </div>
               <p>تسجيل العلامة التجارية: دليلك لتوكيل أفضل محامي علامات تجارية لعام 2024</p>
 
-            </div>
+            </Link>
  
 
   );

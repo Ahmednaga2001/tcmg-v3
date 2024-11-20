@@ -1,4 +1,4 @@
-import styles from "@/app/article/page.module.css"
+import styles from "@/app/post/page.module.css"
 const ArticleContact = () => {
   return (
     <section className={styles.articleContact}>

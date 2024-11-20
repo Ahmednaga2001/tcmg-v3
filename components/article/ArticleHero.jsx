@@ -1,12 +1,14 @@
-import styles from "/app/article/page.module.css"
- const ArticleHero = () => {
+import styles from "/app/post/page.module.css"
+ const ArticleHero = ({ data }) => {
   return (
     <section className={styles.articleHero}>
       <span> 29 يناير . 2024</span>
       <h1>
-      تسجيل العلامة التجارية: 
+        {data.title.slice(0,25)}
       <br/>
-      دليلك لتوكيل أفضل محامي علامات تجارية لعام 2024
+      {
+        data.title.slice(25)
+      }
       </h1>
     </section>
   )

@@ -64,7 +64,7 @@ const aboutUs = [
 
 const news = [
   {
-    l1: { title: "المقالات", ref: "article-display" },
+    l1: { title: "المقالات", ref: "news-insights" },
   },
 ];
 const contact = [

@@ -1,20 +1,16 @@
-import styles from "@/app/article/page.module.css";
+import styles from "@/app/post/page.module.css";
 import Image from "next/image";
 import Link from "next/link";
-const ArticleMarks = () => {
+const ArticleMarks = ({options}) => {
   return (
     <section className={styles.articleMarks}>
       <div className={styles.topContent}>
         <h2>العلامات:</h2>
         <div className={styles.marksContainer}>
-          <p>محامي علامات تجارية</p>
-          <p>تسجيل العلامات التجارية</p>
-          <p>تسجيل العلامات التجارية في مصر</p>
-          <p>تكاليف تسجيل علامة تجارية في مصر </p>
-          <p>تسجيل العلامة التجارية بالسعودية</p>
-          <p>كيفية تسجيل علامة تجارية في مصر </p>
-          <p>تسجيل العلامة التجارية بالإمارات</p>
-        </div>
+  {options.map((el, index) => (
+    <p key={index}>{el}</p>
+  ))}
+</div>
       </div>
       <div className={styles.bottom}>
         <h4>أخبار ومقالات </h4>

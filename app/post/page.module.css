@@ -1,8 +1,10 @@
 .atriclePage section{
     padding: 80px;
 }
+
 .atriclePage .mainTitle{
     font-size: 50px;
+    font-weight: bold;
     display: block;
     line-height: 1.4;
     padding: 20px 0;
@@ -36,28 +38,29 @@
     line-height: 1.8;
 }
 .bulletContent{
-    margin-top: 30px;
+    /* margin-top: 30px; */
     line-height: 1.8;
 }
 .bulletContent ul , .orderedContent ol{
     margin-top: 10px;
 }
-.bulletContent .desc{
+/* .bulletContent .desc{
     padding: 20px 0;
-}
- .serviceContent{
+   
+} */
+ /* .serviceContent{
     display: flex;
     flex-direction: column;
     gap: 50px;
-}
+} */
 .serviceContent{
     
 }
-.brand{
+/* .brand{
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
+} */
 .headTitle{
     font-weight: bold;
     font-size: 20px;
@@ -68,6 +71,7 @@
 }
 .brandImportant img , .regImg{
     margin-top: 30px;
+
 }
 
 @media (max-width:1191px) {
@@ -173,6 +177,7 @@ margin: auto;
     text-align: center;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
+    padding-top: 20px;
 }
 .marksContainer p{
 border-radius: 4px;
@@ -217,7 +222,32 @@ padding: 10px;
 }
 
 @media (max-width: 400px) {
-    .atriclePage .mainTitle{
+    .atriclePage .mainTitle , .articleHero h1{
         font-size: 24px;
     }
+    .mainTitle{
+        text-align: start;
+    }
+    .atriclePage p , .atriclePage li{
+        text-align: start;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .atriclePage .headTitle{
+        text-align: start;
+    }
+    .articleContact{
+        align-items: flex-start;
+        text-align: start;
+    }
+    .articleConclution h2{
+        text-align: start;
+        width: 100%;
+    }
+    .divider p{
+        margin: auto;    
+          font-size: 14px;
+            width: 90%;
+           
+        }
 }

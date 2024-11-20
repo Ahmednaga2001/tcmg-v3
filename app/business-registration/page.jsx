@@ -36,7 +36,7 @@ const BusinessRegistration = () => {
       major: "",
       message: "",
       how_did_you_hear_about_us: "",
-      agreeToPrivacy: false,
+      agreeToPrivacy: true,
     },
     validationSchema: Yup.object({
       message: Yup.string()
@@ -109,7 +109,7 @@ const BusinessRegistration = () => {
   return (
     <div className={styles.businessPage}>
       <section>
-        <h2>إستمارة أعمال الشركات</h2>
+       <h2>إستشارة أعمال الشركات</h2>
         <div className={styles.formPage}>
           <p>
             يرجي إدخال بيانات بشكل صحيح وسيتم التواصل خلال ساعة من الحجز في خلال
@@ -304,16 +304,18 @@ const BusinessRegistration = () => {
             <div className={styles.errorWrapper}> </div>
 
             <div className={styles.errorWrapper}>
-              <CheckBox
+             <div className={styles.terms}>
+             <CheckBox
                 label="   إوافق على سياسة الخصوصية وسياسة الاستخدام   "
                 name="agreeToPrivacy"
-                checked={formik.values.agreeToPrivacy} // Control the checkbox
+                checked={formik.values.agreeToPrivacy} // Control the checkbox based on Formik value
                 onChange={formik.handleChange} // Use Formik's onChange
                 onBlur={formik.handleBlur} // Use Formik's onBlur
                 error={
                   formik.touched.agreeToPrivacy && formik.errors.agreeToPrivacy
                 }
               />
+             </div>
             </div>
             {isloading ? (
               <>

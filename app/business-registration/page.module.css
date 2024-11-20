@@ -82,6 +82,11 @@
     margin-top: 30px;
 }
 
+
+.terms{
+  display: flex;
+  justify-content: flex-start;
+}
 @media (max-width: 1191px) {
    .formPage{
     width: 60%;
