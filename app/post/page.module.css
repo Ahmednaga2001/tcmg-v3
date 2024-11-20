@@ -220,6 +220,9 @@ padding: 10px;
 .articleMarks .socialIcons img{
     cursor: pointer;
 }
+.marksContainer p{
+    text-align: center !important;
+}
 
 @media (max-width: 400px) {
     .atriclePage .mainTitle , .articleHero h1{
