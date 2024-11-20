@@ -109,6 +109,20 @@ const EstablishLegalServices = () => {
           alt = {data[5].alt}
 
         />
+        <LegalServiceCard
+          title={data[6].title}
+          path={data[6].path}
+          desc={data[6].desc}
+          alt = {data[6].alt}
+
+        />
+        <LegalServiceCard
+          title={data[7].title}
+          path={data[7].path}
+          desc={data[7].desc}
+          alt = {data[7].alt}
+
+        />
       </div>
     </section>
   );

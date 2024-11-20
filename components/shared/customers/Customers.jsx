@@ -59,7 +59,6 @@ const Customers = ({ customers }) => {
       </div>
       <div className={styles.customers}>
         <Swiper
-          effect="coverflow"
           spaceBetween={10}
           centeredSlides={true}
           slidesPerView={1}

@@ -32,6 +32,13 @@
     /* justify-content: space-between; */
     padding-top: 50px;
   }
+  .imgContainer{
+    background-color: #0D1329;
+    border-radius: 42px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+  }
   @media (max-width: 1191px) {
     .whyUs .cards {
       flex-wrap: wrap;

@@ -104,7 +104,7 @@ const  LegalServicesPractices = () => {
           height={30}
         />
       </Link>
-      <Link href="#" className={styles.linkItem}>
+      {/* <Link href="#" className={styles.linkItem}>
         احجز موعدك مع أحد خبرائنا
         <Image
           src="/assets/icons/legalservices/calender.png"
@@ -112,7 +112,7 @@ const  LegalServicesPractices = () => {
           width={30}
           height={30}
         />
-      </Link>
+      </Link> */}
     </div>
   </section>
   )

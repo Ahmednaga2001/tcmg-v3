@@ -1,0 +1,61 @@
+.companyEst{
+    background-image: url(/assets/images/business/imagslide.png);
+    position: relative;
+    min-height: 60vh;
+    transition: .6s;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.companyEst .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content h2{
+    font-size: 50px;
+}
+.content p{
+    font-size: 35px;
+}
+.companyEst:hover{
+    background-image: url(/assets/images/business/imagslide2.png);
+
+}
+
+@media (max-width:1191px) {
+    .content h2{
+        font-size: 35px;
+    }
+    .content p{
+        font-size: 25px;
+    }
+    
+}
+@media (max-width:1191px) {
+    .content h2{
+        font-size: 25px;
+    }
+    .content p{
+        font-size: 20px;
+    }
+}
+
+@media (max-width:800px) {
+    .content h2{
+        font-size: 20px;
+        letter-spacing: 0px;
+    }
+    .content p{
+        font-size: 16px;
+        line-height: 0px;
+        line-height: 24px;
+    }
+    .companyEst {
+        min-height: 35vh;
+    }
+}

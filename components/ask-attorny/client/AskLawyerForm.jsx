@@ -43,12 +43,8 @@ const officeOptions = [
   },
 ];
 const AskLawyerForm = () => {
-  const [selectedmajor, setSelectedmajor] = useState();
-  const [selectedOffice, setSelectedOffice] = useState(null);
   const [isloading, setisloading] = useState(false);
-  const [error, seterror] = useState(null);
 
-  const [success, setsuccess] = useState(null);
 
   const ask_lawyer_form = useFormik({
     initialValues: {
@@ -61,7 +57,7 @@ const AskLawyerForm = () => {
       questionTitle: "",
       questionCategory: "",
       howDidYouHearAboutUs: "",
-      agreeToPrivacy: false, // Checkbox state
+      agreeToPrivacy: true, // Checkbox state
     },
     validationSchema: Yup.object({
       first_name: Yup.string()
@@ -118,7 +114,6 @@ const AskLawyerForm = () => {
         
         setisloading(false); 
         const errorMsg = error?.response?.data?.error?.[0]?.msg || "حدث خطأ ما";
-        seterror(errorMsg);
         notifyError(errorMsg); 
       }
     },
@@ -307,7 +302,6 @@ const AskLawyerForm = () => {
             <Button text="ارسال" />
           )}
         </form>
-        {/* <p className="success">{success}</p> */}
       </div>
     </section>
   );

@@ -2,8 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 const servicesData = [
+ 
   {
     id : 1,
+    title: "استشارة هاتفية",
+    priceOriginal: 999,
+    priceDiscounted: 499,
+    features: [
+      // "دعم من مستشار قانوني متخصص",
+      // "خصوصية عملائنا",
+      // "التوجيه القانوني",
+      // "البحث القانوني في موضوع القضية",
+      // "تحديد موعد الاستشارة",
+      "للاستفسارات القانونية العامة والسريعة",
+      "استشارة قانونية فورية",
+      "التواصل مع مستشار قانوني متخصص"
+    ],
+  },
+  {
+    id : 2,
     title: "اجتماع اونلاين",
     priceOriginal: 1999,
     priceDiscounted: 999,
@@ -18,23 +35,8 @@ const servicesData = [
       "البحث القانوني وتوفير كل الحلول",
       "التواصل التفاعلي للاجابة على كل الأسئلة القانونية"
     ],
-  },
-  {
-    id : 2,
-    title: "استشارة هاتفية",
-    priceOriginal: 999,
-    priceDiscounted: 499,
-    features: [
-      // "دعم من مستشار قانوني متخصص",
-      // "خصوصية عملائنا",
-      // "التوجيه القانوني",
-      // "البحث القانوني في موضوع القضية",
-      // "تحديد موعد الاستشارة",
-      "للاستفسارات القانونية العامة والسريعة",
-      "استشارة قانونية فورية",
-      "التواصل مع مستشار قانوني متخصص"
-    ],
     isPopular: true,
+
   },
   {
     id:3,
@@ -74,7 +76,7 @@ const IndividualServices = () => {
           <div className={styles.bodyData}>
             <div className={styles.offer}>
               <span></span>
-              <span>{service.id==1?'إجتماع Zoom , Google meet' : 'لفترة محدودة'}</span>
+              <span>{service.id==2?'إجتماع Zoom , Google meet' : 'لفترة محدودة'}</span>
               <span></span>
             </div>
             {service.features.map((feature, idx) => (

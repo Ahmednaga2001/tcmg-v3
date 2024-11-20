@@ -8,6 +8,7 @@ import BusinessAbout from "@/components/business/businessAbout/BusinessAbout";
 import Slider from "@/components/shared/client/slider/Slider";
 import TcmgPartnership from "@/components/business/tcmgPartnership/TcmgPartnership";
 import Head from "next/head";
+import CompanyEst from "@/components/business/companyEst/CompanyEst";
 const data = [
   {
     imgPath: "/assets/images/business/slideimg1.png",
@@ -66,7 +67,8 @@ const page = () => {
         <BusinessExperience />
         <BusinessAbout />
 
-        <Slider data={data} />
+        {/* <Slider data={data} /> */}
+        <CompanyEst/> 
         <TcmgPartnership />
       </div>
     </>

@@ -109,7 +109,7 @@ const LegalServicesSectors = () => {
             height={30}
           />
         </Link>
-        <Link href="#" className={styles.linkItem}>
+        {/* <Link href="#" className={styles.linkItem}>
           راسلنا عبر البريد الالكتروني
           <Image
             src="/assets/icons/legalservices/calender.png"
@@ -117,7 +117,7 @@ const LegalServicesSectors = () => {
             width={30}
             height={30}
           />
-        </Link>
+        </Link> */}
       </div>
     </section>
   );

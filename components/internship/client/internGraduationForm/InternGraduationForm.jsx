@@ -30,7 +30,7 @@ const InternGraduationForm = () => {
       address: "",
       phone: "",
       email: "",
-      agreeToPrivacy: false,
+      agreeToPrivacy: true,
     },
     validationSchema: Yup.object({
       howDidYouHearAboutUs: Yup.string()
@@ -78,7 +78,10 @@ const InternGraduationForm = () => {
           (value) =>
             value &&
             (value.type === "application/pdf" ||
-              value.type === "application/msword")
+              value.type === "application/msword" ||
+              value.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+
+            )
         ),
     }),
     onSubmit: async (values) => {

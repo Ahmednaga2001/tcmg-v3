@@ -8,6 +8,12 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+.imgContainer{
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+}
 .ourofferings .card {
   width: 20rem;
   border-radius: 40px !important;
@@ -20,12 +26,14 @@
 
 }
 .ourofferings .topCard {
+  position: relative;
   padding: 100px 50px;
   background: linear-gradient(180deg, #1b2340 6.8%, #0e152c 100%);
   cursor: pointer;
   position: relative;
   border-radius: 40px ;
   border: 1px solid rgba(255, 255, 255, 0.1);
+
 
 
 }
@@ -54,11 +62,18 @@
 .ourofferings .card .bottomCard {
   max-height: 0;
   overflow: hidden;
-  height: 200px;
+  height: 250px;
   transition:  1s;
   text-align: center; 
   border-radius: 0 0 40px 40px;
   transition: .6s;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  
+}
+.imgBack{
+ cursor: pointer;
 }
 .ourofferings .card .bottomCard p {
   padding: 20px;

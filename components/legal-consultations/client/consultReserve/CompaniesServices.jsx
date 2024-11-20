@@ -6,6 +6,7 @@ const servicesData = [
   {
     title: "تأسيس شركات",
     price: "1999",
+    originalPrice: "2999",
     features: [
       "تسجيل الشركة",
       "إستراتيجية الأعمال",
@@ -20,16 +21,7 @@ const servicesData = [
     title: "أعمال شركات",
     info: "تواصل معنا للحجز",
     features: [
-      // "دعم من مستشار قانوني متخصص",
-      // "خصوصية عملائنا",
-      // "التوجيه القانوني",
-      // "البحث القانوني في موضوع القضية",
-      // "تحديد موعد الاستشارة",
-      // "تقديم الاستشارة مكتوبة",
-      // "امكانية الاجتماع أون لاين",
-      // "المتابعة القانونية بعد الاستشارة",
-      // "علاقات استراتيجية",
-      "الدمج والاستحواذ",
+     
       "تسجيل الملكية الفكرية",
       "التنفيذ والإفلاس",
       "قضايا الضرائب",
@@ -49,7 +41,7 @@ const CompaniesServices = () => {
               <h3>{service.title}</h3>
               {service.price ? (
                 <div className={styles.priceContainer}>
-                  <span className={styles.price}>{service.price}</span>
+                  <span className={styles.price}>{service.originalPrice}</span>
                   <span style={{paddingTop: "10px" , display: "block"}}>
                     {service.price}
                     <sub>EGY</sub>

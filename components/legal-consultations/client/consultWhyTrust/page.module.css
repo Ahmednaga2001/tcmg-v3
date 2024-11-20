@@ -47,3 +47,12 @@
       display: block;
     }
   }
+
+
+  .imgContainer{
+    background-color: #0D1329;
+    border-radius: 42px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+  }

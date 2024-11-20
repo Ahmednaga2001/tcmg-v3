@@ -32,8 +32,9 @@ const HomeHero = () => {
           <AnimatePresence>
             {open && (
               <motion.a
-                href="#"
-                style={{ textAlign: "center" }}
+              href="tel:+201276299998" 
+              target="_blank"
+                              style={{ textAlign: "center" }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -41,7 +42,7 @@ const HomeHero = () => {
               >
                 <Image
                   src="/assets/icons/phone.svg"
-                  alt="chat icon"
+                  alt="phone icon"
                   width={44}
                   height={44}
                 />
@@ -64,7 +65,8 @@ const HomeHero = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.5 }}
                   transition={{ duration: 0.3 }}
-                  href="#"
+                  href="https://api.whatsapp.com/send?phone=201276299998"
+                  target="_blank"
                 >
                   <Image
                     src="/assets/icons/whatsup.svg"
@@ -79,8 +81,9 @@ const HomeHero = () => {
           <AnimatePresence>
             {open && (
               <motion.a
-                href="#"
-                className={styles.email}
+              href="mailto:contact@tcmglaw.com"
+              target="_blank"
+                              className={styles.email}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}

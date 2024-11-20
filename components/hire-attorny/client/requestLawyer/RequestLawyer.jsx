@@ -33,9 +33,7 @@ const officeOptions = [
 ];
 
 const RequestLawyer = () => {
-  const [success, setsuccess] = useState(null);
   const [isloading, setisloading] = useState(false);
-  const [error, seterror] = useState(null);
   const formik = useFormik({
     initialValues: {
       f_name: "",
@@ -46,7 +44,7 @@ const RequestLawyer = () => {
       phone: "",
       legalCase: "",
       lawerSpecialization: "",
-      agreeToPrivacy: false, // Checkbox state
+      agreeToPrivacy: true, // Checkbox state
     },
     validationSchema: Yup.object({
       f_name: Yup.string()

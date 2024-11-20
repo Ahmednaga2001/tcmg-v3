@@ -31,7 +31,7 @@ const HiringGraduationForm = () => {
       phone: "",
       email: "",
       job: "",
-      agreeToPrivacy: false,
+      agreeToPrivacy: true,
     },
     validationSchema: Yup.object({
       howDidYouHearAboutUs: Yup.string()
@@ -80,7 +80,10 @@ const HiringGraduationForm = () => {
           (value) =>
             value &&
             (value.type === "application/pdf" ||
-              value.type === "application/msword")
+              value.type === "application/msword" ||
+              value.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+
+            )
         ),
     }),
     validateOnBlur: true,

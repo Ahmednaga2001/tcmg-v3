@@ -14,7 +14,7 @@ export default function HomeArticleScroll({articles}) {
         البيئة القانونية من خلال استكشاف أحدث التطورات والمستجدات، واستفد من
         مجموعة متنوعة من المصادر القانونية المتكاملة.
       </p>
-      <Link href="article" className="link">
+      <Link href="news-insights" className="link">
         إقرا المزيد
         <Image
           src="assets/icons/arrow-left.svg"

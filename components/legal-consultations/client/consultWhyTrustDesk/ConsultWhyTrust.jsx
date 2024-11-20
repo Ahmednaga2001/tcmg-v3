@@ -2,33 +2,30 @@
 import { useEffect, useState, useRef } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
+
 
 const data = [
   {
-    path: "/assets/images/legalconsultations/clients.png",
+    path: "/assets/icons/legalconsultations/rating (1) 1.svg",
     title: " عملاء سعداء",
     targetNumber: 2800,
     alt: "عدد العملاء السعداء",
   },
   {
-    path: "/assets/images/legalconsultations/users.png",
+    path: "/assets/icons/legalconsultations/عدد مستشارين المكتب 2.svg",
     title: " مستشارين المكتب",
     targetNumber: 50,
     alt: "عدد مستشارين مكتب TCMG",
   },
   {
-    path: "/assets/images/legalconsultations/experiences.png",
+    path: "/assets/icons/legalconsultations/union-1.svg",
     title: "سنين الخبرة",
     targetNumber: 30,
     alt: "سنوات خبرة فريقنا القانوني",
   },
   {
-    path: "/assets/images/legalconsultations/clients.png",
+    path: "/assets/icons/legalconsultations/agree.svg",
     title : "إستشارة ناجحة",
     targetNumber: 2900,
     alt : "إستشارة ناجحة"
@@ -91,12 +88,14 @@ const ConsultWhyTrust = () => {
         
           {data.map((item, index) => (
               <div key={index} className={styles.card}>
-                <Image
+             <div className={styles.imgContainer}>
+             <Image
                   src={item.path}
-                  width={169}
-                  height={170}
+                  width={66}
+                  height={66}
                   alt={item.alt} // Use title for alt attribute
                 />
+             </div>
                 <Counter targetNumber={item.targetNumber} />
                 <span>{item.title}</span>
               </div>
