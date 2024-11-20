@@ -1,4 +1,3 @@
-import Hero from "@/components/shared/hero/Hero";
 import Services from "@/components/shared/services/Services";
 import styles from "./page.module.css";
 
